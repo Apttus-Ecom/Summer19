@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngs-workspace documentation</title>
+        <title>@apttus/ecommerce documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,7 +13,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ngs-workspace documentation</a>
+            <a href="./" class="navbar-brand">@apttus/ecommerce documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -26,7 +26,7 @@
     <ul class="list">
 
         <li class="title">
-            <a href="index.html" data-type="index-link">ngs-workspace documentation</a>
+            <a href="index.html" data-type="index-link">@apttus/ecommerce documentation</a>
         </li>
 
         <li class="divider"></li>
@@ -478,9 +478,6 @@
         </li>
 
 
-        <li class="chapter">
-            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-        </li>
 
         <li class="divider"></li>
         <li class="copyright">
@@ -502,7 +499,7 @@
     <ul class="list">
 
         <li class="title">
-            <a href="index.html" data-type="index-link">ngs-workspace documentation</a>
+            <a href="index.html" data-type="index-link">@apttus/ecommerce documentation</a>
         </li>
 
         <li class="divider"></li>
@@ -957,9 +954,6 @@
         </li>
 
 
-        <li class="chapter">
-            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-        </li>
 
         <li class="divider"></li>
         <li class="copyright">
@@ -976,20 +970,63 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="ngsworkspace">NgsWorkspace</h1>
-<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 6.0.0.</p>
-<h2 id="development-server">Development server</h2>
-<p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
-<h2 id="code-scaffolding">Code scaffolding</h2>
-<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
-<h2 id="build">Build</h2>
-<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory. Use the <code>--prod</code> flag for a production build.</p>
-<h2 id="running-unit-tests">Running unit tests</h2>
-<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
-<h2 id="running-end-to-end-tests">Running end-to-end tests</h2>
-<p>Run <code>ng e2e</code> to execute the end-to-end tests via <a href="http://www.protractortest.org/">Protractor</a>.</p>
-<h2 id="further-help">Further help</h2>
-<p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href="https://github.com/angular/angular-cli/blob/master/README.md">Angular CLI README</a>.</p>
+<h1 id="-apttus-ecommerce">@apttus/ecommerce</h1>
+<h2 id="pre-installation">Pre Installation</h2>
+<p>Prior to installing @apttus/ecommerce, you must have access to a Salesforce org. </p>
+<h2 id="installation">Installation</h2>
+<p>To install this library, run:</p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm install ng-salesforce &#64;apttus/ecommerce --save</code></pre></div><p>During installation, you will be asked for a number of things to connect the application to your salesforce org (will be skipped if you already installed ng-salesforce).</p>
+<p>and then from your Angular <code>AppModule</code>:</p>
+<div><pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#64;angular/platform-browser&#39;;
+import { NgModule } from &#39;&#64;angular/core&#39;;
+
+import { AppComponent } from &#39;./app.component&#39;;
+
+// Import your library
+import { SalesforceModule } from &#39;ng-salesforce&#39;;
+import { CommerceModule } from &#39;&#64;apttus/ecommerce&#39;;
+
+// salesforce.config.ts will be created during installation and saved at src/app/salesforce.config.ts
+import { Configuration } from &#39;./salesforce.config&#39;;
+
+&#64;NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+
+    // Specify your ng-salesforce as an import
+    SalesforceModule.forRoot(Configuration),
+
+    // Specify the Ecommerce Module as in import
+    // The only parameter is the string name of the APTSMD_Store__c record you want to use.
+    CommerceModule.forRoot(&#39;My Store&#39;)
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }</code></pre></div><p>Once your library is imported, you can use its components, directives and pipes in your Angular application:</p>
+<h2 id="deploy">deploy</h2>
+<p>To lint all <code>*.ts</code> files:</p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm run lint</code></pre></div><p>To deploy your code to your salesforce org</p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm run deploy</code></pre></div><h2 id="known-issues">Known Issues</h2>
+<h3 id="-angular-cli-6-0-0-uncaught-referenceerror-global-is-not-defined">@Angular/cli 6.0.0 Uncaught ReferenceError: global is not defined</h3>
+<p>If you&#39;ve upgraded to @angular/cli 6, and you&#39;re seeing the following error</p>
+<div><pre class="line-numbers"><code class="language-bash">Uncaught ReferenceError: global is not defined
+    at Object.../../node_modules/lodash.support/index.js (index.js:30)
+    at __webpack_require__ (bootstrap:81)
+    at Object.../../node_modules/lodash._basecreatecallback/index.js (index.js:12)
+    at __webpack_require__ (bootstrap:81)
+    at Object.../../node_modules/lodash.foreach/index.js (index.js:9)
+    at __webpack_require__ (bootstrap:81)
+    at Object.../../node_modules/convert-units/lib/index.js (index.js:3)
+    at __webpack_require__ (bootstrap:81)
+    at Object.../../dist/&#64;apttus/ecommerce/fesm5/apttus-ecommerce.js (main.js:98)
+    at __webpack_require__ (bootstrap:81)</code></pre></div><h4 id="fix-add-the-global-polyfill">Fix: Add the global polyfill</h4>
+<p>Add the following to your polyfills.ts file:</p>
+<div><pre class="line-numbers"><code class="language-typescript">(window as any).global = window;</code></pre></div><h2 id="license">License</h2>
+<p>MIT © <a href="mailto:chmoyle@apttus.com">Christopher Moyle</a></p>
 
 
 
