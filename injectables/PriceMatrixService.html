@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1087,11 +1084,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-matrix.service.ts:30</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1158,11 +1150,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-matrix.service.ts:22</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1241,11 +1228,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-matrix.service.ts:15</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1333,11 +1315,6 @@
                             <i>Default value : </i><code>this.injector.get(PriceListService, &#x27;priceListService&#x27;)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-matrix.service.ts:13</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1347,46 +1324,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { SObjectService, SObjectType } from &#x27;ng-salesforce&#x27;;
-import { PriceMatrix, PriceListItem,  } from &#x27;../classes/index&#x27;;
-import { PriceListService } from &#x27;./index&#x27;;
-import { Observable } from &#x27;rxjs/Observable&#x27;;
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-@SObjectType(PriceMatrix)
-export class PriceMatrixService extends SObjectService {
-
-    priceListService &#x3D; this.injector.get(PriceListService, &#x27;priceListService&#x27;);
-
-    public getPriceMatrixDataByCode(productCode: string, attributeGroupName?: string): Observable&lt;Array&lt;PriceMatrix&gt;&gt; {
-        return this.priceListService.getPriceListId()
-            .flatMap(priceListId &#x3D;&gt;
-                this.where(&#x60;Apttus_Config2__PriceListItemId__r.Apttus_Config2__ProductId__r.ProductCode &#x3D; &#x27;&#x60; + productCode + &#x60;&#x27;&#x60;
-                    + ((attributeGroupName) ? PriceMatrixService.attributeGroupNameQuery(attributeGroupName) : &#x60;&#x60;)
-                ));
-    }
-    public getPriceMatrixData(priceListItemList: Array&lt;PriceListItem&gt;, attributeGroupName?: string): Observable&lt;Array&lt;PriceMatrix&gt;&gt; {
-        const ids &#x3D; SObjectService.toIdArray(priceListItemList);
-        return this.where(
-            &#x60;Apttus_Config2__PriceListItemId__c IN (&#x60; + SObjectService.arrayToCsv(ids) + &#x60;)&#x60;
-            + ((attributeGroupName) ? PriceMatrixService.attributeGroupNameQuery(attributeGroupName) : &#x60;&#x60;)
-        );
-    }
-
-    private static attributeGroupNameQuery(attributeGroupName: string): string {
-        return &#x60; AND (Apttus_Config2__Dimension1Id__r.Apttus_Config2__AttributeId__r.Apttus_Config2__AttributeGroupId__r.Name &#x3D; &#x27;&#x60; + attributeGroupName + &#x60;&#x27;&#x60;
-            + &#x60; OR Apttus_Config2__Dimension2Id__r.Apttus_Config2__AttributeId__r.Apttus_Config2__AttributeGroupId__r.Name &#x3D; &#x27;&#x60; + attributeGroupName + &#x60;&#x27;&#x60;
-            + &#x60; OR Apttus_Config2__Dimension3Id__r.Apttus_Config2__AttributeId__r.Apttus_Config2__AttributeGroupId__r.Name &#x3D; &#x27;&#x60; + attributeGroupName + &#x60;&#x27;&#x60;
-            + &#x60; OR Apttus_Config2__Dimension4Id__r.Apttus_Config2__AttributeId__r.Apttus_Config2__AttributeGroupId__r.Name &#x3D; &#x27;&#x60; + attributeGroupName + &#x60;&#x27;&#x60;
-            + &#x60; OR Apttus_Config2__Dimension5Id__r.Apttus_Config2__AttributeId__r.Apttus_Config2__AttributeGroupId__r.Name &#x3D; &#x27;&#x60; + attributeGroupName + &#x60;&#x27;&#x60;
-            + &#x60; OR Apttus_Config2__Dimension6Id__r.Apttus_Config2__AttributeId__r.Apttus_Config2__AttributeGroupId__r.Name &#x3D; &#x27;&#x60; + attributeGroupName + &#x60;&#x27;)&#x60;;
-    }
-}</code></pre>
-    </div>
 
 </div>
 

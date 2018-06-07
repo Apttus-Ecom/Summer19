@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1079,11 +1076,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/conversion.service.ts:16</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1130,11 +1122,6 @@
 
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/conversion.service.ts:13</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1164,11 +1151,6 @@
                             <i>Default value : </i><code>this.injector.get(UserService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/conversion.service.ts:14</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1178,39 +1160,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { UserService } from &#x27;./index&#x27;;
-import { SObjectService, CacheService } from &#x27;ng-salesforce&#x27;;
-import { User } from &#x27;../classes/index&#x27;;
-import { Observable } from &#x27;rxjs/Observable&#x27;;
-import { BehaviorSubject } from &#x27;rxjs/BehaviorSubject&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-export class ConversionService extends SObjectService {
-
-    private _get: BehaviorSubject&lt;any&gt;;
-    private userService &#x3D; this.injector.get(UserService);
-
-    getConversionRate(): Observable&lt;any&gt; {
-        if (!this._get) {
-            this._get &#x3D; new BehaviorSubject&lt;any&gt;(null);
-
-            this.userService.me().subscribe(user &#x3D;&gt; {
-                this.forceService.post(&#x27;conversionRates&#x27;, &#x27;conversionRates&#x27;).subscribe(rateList &#x3D;&gt; {
-                    const rate &#x3D; rateList.filter(r &#x3D;&gt; rate.IsoCode &#x3D;&#x3D;&#x3D; user._currency)[0];
-                    this._get.next(rate);
-                });
-            });
-        }
-        return this._get;
-    }
-
-}
-</code></pre>
-    </div>
 
 </div>
 

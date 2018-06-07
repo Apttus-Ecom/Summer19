@@ -992,9 +992,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1046,11 +1043,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">projects/apttus/ecommerce/src/lib/pipes/convert.pipe.ts:55</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1112,77 +1104,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform, NgZone } from &#x27;@angular/core&#x27;;
-import { CurrencyPipe } from &#x27;@angular/common&#x27;;
-import { ConversionService, UserService } from &#x27;../services/index&#x27;;
-import { Observable } from &#x27;rxjs/Rx&#x27;;
-import convert from &#x27;convert-units&#x27;;
-import * as LocaleCurrency from &#x27;locale-currency&#x27;;
-
-@Pipe({
-    name: &#x27;localCurrency&#x27;
-})
-export class LocalCurrencyPipe implements PipeTransform {
-
-    private currencyCode: string &#x3D; &#x27;EUR&#x27;;
-    private locale: string &#x3D; &#x27;de-DE&#x27;;
-    private _val;
-    constructor(private conversionService: ConversionService, private userService: UserService, private ngZone: NgZone) { }
-
-    transform(value: any, args?: any): any {
-
-        return Observable.combineLatest(this.conversionService.getConversionRate(), this.userService.me())
-            .map(([rate, user]) &#x3D;&gt; {
-                if (!value || value &#x3D;&#x3D; null || value &#x3D;&#x3D; undefined)
-                    value &#x3D; 0;
-
-                const currencyCode &#x3D; (rate &amp;&amp; rate.IsoCode) ? rate.IsoCode : LocaleCurrency.getCurrency(this.userService.getDefaultLocale(false));
-                const conversionRate &#x3D; (rate &amp;&amp; rate.ConversionRate) ? rate.ConversionRate : 1;
-                return new Intl.NumberFormat(this.userService.getDefaultLocale(false), { style: &#x27;currency&#x27;, currency: currencyCode }).format(value * conversionRate);
-            });
-    }
-}
-
-@Pipe({
-    name: &#x27;formatCurrency&#x27;
-})
-export class FormatCurrencyPipe implements PipeTransform {
-    constructor(private userService: UserService) { }
-
-    transform(value, args?: any): any {
-        if (!value || value &#x3D;&#x3D; null || value &#x3D;&#x3D; undefined)
-            value &#x3D; 0;
-        return this.userService.me()
-            .filter(user &#x3D;&gt; user !&#x3D; null)
-            .map(user &#x3D;&gt; (user._currency) ? user._currency : &#x27;USD&#x27;)
-            .map(currency &#x3D;&gt; new Intl.NumberFormat(this.userService.getDefaultLocale(false), { style: &#x27;currency&#x27;, currency: currency }).format(value));
-    }
-}
-
-@Pipe({
-    name: &#x27;convertUnits&#x27;
-})
-export class ConvertUnitsPipe implements PipeTransform {
-
-    constructor(private userService: UserService) { }
-
-    transform(value, args?: any): any {
-        if (!value || value &#x3D;&#x3D; null || value &#x3D;&#x3D; undefined)
-            value &#x3D; 0;
-        try {
-            let conversion &#x3D; convert(value).from(args.toLowerCase()).toBest();
-            return this.userService.me().map(user &#x3D;&gt; {
-                let number &#x3D; new Intl.NumberFormat(this.userService.getDefaultLocale(false), { style: &#x27;decimal&#x27;, minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(conversion.val);
-                return number + &#x27; &#x27; + conversion.unit;
-            });
-        } catch (e) {
-            return Observable.of(value + &#x27; &#x27; + args);
-        }
-    }
-
-}</code></pre>
-    </div>
 
 </div>
 

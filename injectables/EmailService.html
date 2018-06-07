@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1071,11 +1068,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/email.service.ts:11</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1142,11 +1134,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/email.service.ts:15</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1237,11 +1224,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/email.service.ts:22</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1328,36 +1310,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SObjectService, SObject } from &#x27;ng-salesforce&#x27;;
-import { Observable } from &#x27;rxjs/Rx&#x27;;
-import { User, MailContent, TemplateMailFactory } from &#x27;../classes/index&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-export class EmailService extends SObjectService {
-
-    public sendEmail(emailContentList: MailContent[]): Observable&lt;any&gt; {
-        return this.forceService.post(&#x27;sendEmail&#x27;, emailContentList);
-    }
-
-    public sendEmailTemplate(templateName: string, to: User, what: SObject): Observable&lt;any&gt; {
-        let content &#x3D; TemplateMailFactory(templateName, what.Id, to.Id, [to.Email]);
-        return this.forceService.post(&#x27;sendEmail&#x27;, [
-            content
-        ]);
-    }
-
-    public sendEmailToAddress(templateName: string, from: User, to: string, what: SObject): Observable&lt;any&gt; {
-        let content &#x3D; TemplateMailFactory(templateName, what.Id, from.Id, [to]);
-        return this.forceService.post(&#x27;sendEmail&#x27;, [
-            content
-        ]);
-    }
-}</code></pre>
-    </div>
 
 </div>
 

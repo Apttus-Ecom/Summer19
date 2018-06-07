@@ -993,9 +993,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1085,11 +1082,6 @@
 
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/product-attribute-rule.model.ts:26</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1124,11 +1116,6 @@
                             <i>Default value : </i><code>(this._lookups) ? new ProductAttributeRule() : undefined</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/product-attribute-rule.model.ts:28</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1158,11 +1145,6 @@
 
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/product-attribute-rule.model.ts:25</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1197,11 +1179,6 @@
                             <i>Default value : </i><code>(this._lookups) ? new Product() : undefined</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/product-attribute-rule.model.ts:27</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1217,56 +1194,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SObject, ChildRecord, SObjectModel } from &#x27;ng-salesforce&#x27;;
-import { Product } from &#x27;./product.model&#x27;;
-
-@SObjectModel({ name: &#x27;Apttus_Config2__ProductAttributeRule__c&#x27;})
-export class ProductAttributeRule extends SObject {
-    Apttus_Config2__AccountScope__c: string &#x3D; null;
-    Apttus_Config2__AccountScopeOper__c: string &#x3D; null;
-    Apttus_Config2__Active__c: boolean &#x3D; null;
-    Apttus_Config2__ConditionCriteria__c: string &#x3D; null;
-    Apttus_Config2__ConditionCriteriaExpression__c: string &#x3D; null;
-    Apttus_Config2__Description__c: string &#x3D; null;
-    Apttus_Config2__EffectiveDate__c: Date &#x3D; null;
-    Apttus_Config2__ExpirationDate__c: Date &#x3D; null;
-    Apttus_Config2__ProductFamilyScope__c: string &#x3D; null;
-    Apttus_Config2__ProductFamilyScopeOper__c: string &#x3D; null;
-    Apttus_Config2__ProductGroupScope__c: string &#x3D; null;
-    Apttus_Config2__ProductGroupScopeOper__c: string &#x3D; null;
-    Apttus_Config2__ProductScope__c: string &#x3D; null;
-    Apttus_Config2__ProductScopeOper__c: string &#x3D; null;
-    Apttus_Config2__ProductAttributeRuleActions__r: ChildRecord &#x3D; (this._relatedLists) ? new ChildRecord(new ProductAttributeRuleAction(false, false)) : undefined;
-}
-
-@SObjectModel({ name: &#x27;Apttus_Config2__ProductAttributeRuleView__c&#x27;})
-export class ProductAttributeRuleView extends SObject {
-    Apttus_Config2__ProductId__c: string;
-    Apttus_Config2__ProductAttributeRuleId__c: string;
-    Apttus_Config2__ProductId__r: Product &#x3D; (this._lookups) ? new Product() : undefined;
-    Apttus_Config2__ProductAttributeRuleId__r: ProductAttributeRule &#x3D; (this._lookups) ? new ProductAttributeRule() : undefined;
-}
-
-@SObjectModel({ name: &#x27;Apttus_Config2__ProductAttributeRuleAction__c&#x27;})
-export class ProductAttributeRuleAction extends SObject {
-    Apttus_Config2__AccountScope__c: string &#x3D; null;
-    Apttus_Config2__AccountScopeOper__c: string &#x3D; null;
-    Apttus_Config2__Action__c: string &#x3D; null;
-    Apttus_Config2__ActionCriteria__c: string &#x3D; null;
-    Apttus_Config2__ActionCriteriaExpression__c: string &#x3D; null;
-    Apttus_Config2__Message__c: string &#x3D; null;
-    Apttus_Config2__ProductAttributeRuleId__c: string &#x3D; null;
-    Apttus_Config2__ProductAttributeRuleId__r: ProductAttributeRule &#x3D; (this._lookups) ? new ProductAttributeRule() : undefined;
-    Apttus_Config2__ProductFamilyScope__c: string &#x3D; null;
-    Apttus_Config2__ProductGroupScope__c: string &#x3D; null;
-    Apttus_Config2__ProductGroupScopeOper__c: string &#x3D; null;
-    Apttus_Config2__ProductScope__c: string &#x3D; null;
-    Apttus_Config2__ProductScopeOper__c: string &#x3D; null;
-    Apttus_Config2__Field__c: string &#x3D; null;
-    Apttus_Config2__ValueExpression__c: string &#x3D; null;
-}</code></pre>
-    </div>
 </div>
 
 

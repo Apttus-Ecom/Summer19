@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1063,11 +1060,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/contact.service.ts:11</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1087,27 +1079,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { Contact } from &#x27;../classes/index&#x27;;
-import { SObjectService, SObjectType } from &#x27;ng-salesforce&#x27;;
-import { Observable } from &#x27;rxjs/Rx&#x27;;
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-@SObjectType(Contact)
-export class ContactService extends SObjectService {
-    public getMyContact(): Observable&lt;Contact&gt; {
-        return this.forceService.userId().flatMap(userId &#x3D;&gt; {
-            if (userId)
-                return this.where(&#x60;Id IN (SELECT ContactId FROM User WHERE Id &#x3D; \&#x27;&#x60; + userId+ &#x60;\&#x27;)&#x60;);
-            else
-                return Observable.of([this.getInstance()]);
-        }).map((contacts: Array&lt;Contact&gt;) &#x3D;&gt; contacts[0]);
-    }
-}</code></pre>
-    </div>
 
 </div>
 

@@ -993,9 +993,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1061,11 +1058,6 @@
 <code>constructor(productPrice: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, basePrice: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, discountPrice: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, unitPrice: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="193" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price.service.ts:193</a></div>
-                            </td>
-                        </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -1173,11 +1165,6 @@
                             <i>Default value : </i><code>0</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="195" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price.service.ts:195</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1213,11 +1200,6 @@
                             <i>Default value : </i><code>0</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="196" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price.service.ts:196</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1253,11 +1235,6 @@
                             <i>Default value : </i><code>0</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="194" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price.service.ts:194</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1293,11 +1270,6 @@
                             <i>Default value : </i><code>0</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="197" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price.service.ts:197</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1313,207 +1285,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Product, ProductAttributeValue, ProductOptionComponent, PriceListItem, PriceMatrix, PriceMatrixEntry, ProductAttribute } from &#x27;../classes/index&#x27;;
-import { PriceListService, PriceMatrixService } from &#x27;./index&#x27;;
-import { ProductOptionForm } from &#x27;../interfaces/index&#x27;;
-
-import { Observable } from &#x27;rxjs/Observable&#x27;;
-import { Injector, Inject, forwardRef } from &#x27;@angular/core&#x27;;
-import * as _ from &#x27;lodash&#x27;;
-
-export class PriceService {
-
-    constructor(@Inject(forwardRef(() &#x3D;&gt; PriceListService)) private priceListService: PriceListService,
-        @Inject(forwardRef(() &#x3D;&gt; PriceMatrixService)) private priceMatrixService: PriceMatrixService) { }
-
-
-    public getProductPrice(product: Product, quantity: number &#x3D; 1, attributes?: Array&lt;ProductAttributeValue&gt;, options?: Array&lt;ProductOptionForm&gt;): Observable&lt;Price&gt; {
-        return this.priceListService.getPriceList().flatMap(priceList &#x3D;&gt; {
-            const p: Price &#x3D; new Price();
-
-            const productPriceLists &#x3D; _.get(product, &#x27;Apttus_Config2__PriceLists__r.records&#x27;);
-            const priceListItem &#x3D; productPriceLists.filter(pli &#x3D;&gt; pli.Apttus_Config2__PriceListId__c &#x3D;&#x3D;&#x3D; priceList.Id)[0];
-
-            if (!priceListItem)
-                return Observable.throw(new Error(&#x27;Product does not have a valid price list item&#x27;));
-            else {
-                p.productPrice &#x3D; priceListItem.Apttus_Config2__ListPrice__c;
-                return this.priceMatrixService.getPriceMatrixData([priceListItem]).flatMap(priceMatrixData &#x3D;&gt; {
-                    p.basePrice &#x3D; priceListItem.Apttus_Config2__ListPrice__c * quantity;
-                    p.discountPrice &#x3D; priceListItem.Apttus_Config2__ContractPrice__c * quantity;
-
-                    // Calculate the matrices
-                    attributes.forEach(attribute &#x3D;&gt; this.matrixAdjustment(p, priceMatrixData, attribute, quantity));
-
-                    // Calculate options
-                    this.optionAdjustment(p, options);
-
-                    // Check if there is a price list level discount
-                    if (priceList.Apttus_Config2__BasedOnAdjustmentType__c &amp;&amp; priceList.Apttus_Config2__BasedOnAdjustmentAmount__c)
-                        this.priceListAdjustment(p, priceList.Apttus_Config2__BasedOnAdjustmentType__c, priceList.Apttus_Config2__BasedOnAdjustmentAmount__c, priceListItem);
-                    return Observable.of(p);
-                });
-            }
-        });
-    }
-
-    public getAttributePriceForProduct(product: Product, attribute: ProductAttribute, attributeValue: any): Observable&lt;number&gt; {
-        return this.priceListService.getPriceList().flatMap(priceList &#x3D;&gt; {
-
-            const productPriceLists &#x3D; _.get(product, &#x27;Apttus_Config2__PriceLists__r.records&#x27;);
-            const priceListItem &#x3D; productPriceLists.filter(pli &#x3D;&gt; pli.Apttus_Config2__PriceListId__c &#x3D;&#x3D;&#x3D; priceList.Id)[0];
-
-            if (!priceListItem)
-                return Observable.throw(new Error(&#x27;Product does not have a valid price list item&#x27;));
-            else {
-                return this.priceMatrixService.getPriceMatrixData([priceListItem]).map(priceMatrixData &#x3D;&gt; {
-                    if (priceMatrixData.length &gt; 0 &amp;&amp; _.get(priceMatrixData[0], &#x27;Apttus_Config2__MatrixEntries__r.records&#x27;)) {
-                        const sortedDimensions &#x3D; priceMatrixData.sort((n1, n2) &#x3D;&gt; n1.Apttus_Config2__Sequence__c - n2.Apttus_Config2__Sequence__c);
-                        let val &#x3D; null;
-                        for (const matrix of sortedDimensions) {
-                            matrix.Apttus_Config2__MatrixEntries__r.records.forEach(entry &#x3D;&gt; {
-                                for (let i &#x3D; 1; i &lt;&#x3D; 6; i++) {
-                                    if (attribute.Apttus_Config2__Field__c &#x3D;&#x3D;&#x3D; _.get(matrix, &#x27;Apttus_Config2__Dimension&#x27; + i + &#x27;Id__r.Apttus_Config2__Datasource__c&#x27;) &amp;&amp;
-                                        _.get(entry, &#x27;Apttus_Config2__Dimension&#x27; + i + &#x27;Value__c&#x27;) &#x3D;&#x3D;&#x3D; attributeValue) {
-                                        val &#x3D; PriceService.adjustValue(entry.Apttus_Config2__AdjustmentAmount__c, entry.Apttus_Config2__AdjustmentType__c, priceListItem.Apttus_Config2__ListPrice__c);
-                                        break;
-                                    }
-                                }
-                            });
-                        }
-                        return (val - priceListItem.Apttus_Config2__ListPrice__c);
-                    } else
-                        return null;
-                });
-            }
-        });
-    }
-
-    private priceListAdjustment(price: Price, adjustmentType: string, adjustmentAmount: number, priceListItem: PriceListItem): void {
-        let baseAmount &#x3D; (priceListItem.Apttus_Config2__ContractPrice__c) ? priceListItem.Apttus_Config2__ContractPrice__c : priceListItem.Apttus_Config2__ListPrice__c;
-
-        price.basePrice &#x3D; baseAmount;
-        price.discountPrice &#x3D; PriceService.adjustValue(adjustmentAmount, adjustmentType, baseAmount);
-    }
-
-    private matrixAdjustment(p: Price, priceMatrices: Array&lt;PriceMatrix&gt;, attributeValue: ProductAttributeValue, quantity: number): void {
-        const originalPrice &#x3D; p.basePrice;
-
-        if (priceMatrices.length &gt; 0 &amp;&amp; _.get(priceMatrices[0], &#x27;Apttus_Config2__MatrixEntries__r.records&#x27;)) {
-            const sortedDimensions &#x3D; priceMatrices.sort((n1, n2) &#x3D;&gt; n1.Apttus_Config2__Sequence__c - n2.Apttus_Config2__Sequence__c);
-
-            for (const matrix of sortedDimensions) {
-                let previousValue &#x3D; 0;
-                for (const matrixEntry of matrix.Apttus_Config2__MatrixEntries__r.records) {
-                    let validEntry: boolean &#x3D; false;
-                    for (let i &#x3D; 1; i &lt;&#x3D; 6; i++) {
-                        const prefix &#x3D; &#x27;Apttus_Config2__Dimension&#x27; + i;
-
-                        if (_.get(matrix, prefix + &#x27;Id__r.Apttus_Config2__ContextType__c&#x27;)) {
-                            if (_.get(matrix, prefix + &#x27;Id__r.Apttus_Config2__ContextType__c&#x27;) &#x3D;&#x3D;&#x3D; &#x27;Product Attribute&#x27;) {
-                                if (attributeValue.hasOwnProperty(_.get(matrix, prefix + &#x27;Id__r.Apttus_Config2__Datasource__c&#x27;))) {
-                                    const attrValue &#x3D; _.get(attributeValue, _.get(matrix, prefix + &#x27;Id__r.Apttus_Config2__Datasource__c&#x27;));
-                                    const attrType &#x3D; _.get(matrix, prefix + &#x27;ValueType__c&#x27;);
-                                    validEntry &#x3D; this.validateMatrixEntry(attrType, attrValue, _.get(matrixEntry, prefix + &#x27;Value__c&#x27;), previousValue);
-                                    previousValue &#x3D; attrValue;
-                                }
-                            } else if (_.get(matrix, prefix + &#x27;Id__r.Apttus_Config2__ContextType__c&#x27;) &#x3D;&#x3D;&#x3D; &#x27;Line Item&#x27; || _.get(matrix, prefix + &#x27;Id__r.Apttus_Config2__ContextType__c&#x27;) &#x3D;&#x3D;&#x3D; &#x27;Order Line Item&#x27;) {
-                                const attrValue &#x3D; quantity;
-                                const attrType &#x3D; _.get(matrix, prefix + &#x27;ValueType__c&#x27;);
-                                validEntry &#x3D; this.validateMatrixEntry(attrType, attrValue, _.get(matrixEntry, prefix + &#x27;Value__c&#x27;), previousValue);
-                                previousValue &#x3D; attrValue;
-                            }
-                        }
-                        if (!validEntry)
-                            break;
-                    }
-
-                    if (validEntry) {
-                        p.basePrice &#x3D; PriceService.adjustValue(_.get(matrixEntry, &#x27;Apttus_Config2__AdjustmentAmount__c&#x27;), _.get(matrixEntry, &#x27;Apttus_Config2__AdjustmentType__c&#x27;), p.basePrice);
-                        p.discountPrice &#x3D; PriceService.adjustValue(_.get(matrixEntry, &#x27;Apttus_Config2__AdjustmentAmount__c&#x27;), _.get(matrixEntry, &#x27;Apttus_Config2__AdjustmentType__c&#x27;), p.discountPrice);
-                    }
-                }
-                if (matrix.Apttus_Config2__StopProcessingMoreMatrices__c) {
-                    break;
-                }
-            }
-        }
-    }
-
-    private optionAdjustment(p: Price, productOptions: Array&lt;ProductOptionForm&gt;): void {
-        if (productOptions) {
-            productOptions.forEach(po &#x3D;&gt; {
-                po.productOptionComponent.Apttus_Config2__OptionPrices__r.records.forEach(price &#x3D;&gt; {
-                    if (!price.Apttus_Config2__PriceIncludedInBundle__c) {
-                        const amount &#x3D; (price.Apttus_Config2__RollupPriceMethod__c &#x3D;&#x3D;&#x3D; &#x27;Flat Price&#x27;) ? price.Apttus_Config2__AdjustmentAmount__c : price.Apttus_Config2__AdjustmentAmount__c * po.quantity;
-                        p.basePrice &#x3D; PriceService.adjustValue(price.Apttus_Config2__AdjustmentAmount__c, price.Apttus_Config2__AdjustmentType__c, p.basePrice);
-                        p.discountPrice &#x3D; PriceService.adjustValue(price.Apttus_Config2__AdjustmentAmount__c, price.Apttus_Config2__AdjustmentType__c, p.discountPrice);
-                    }
-                });
-                if (po.attributeValues) {
-                    po.attributeValues.forEach(attribute &#x3D;&gt; this.matrixAdjustment(p, attribute.priceMatrices, attribute.attributeValue, po.quantity));
-                }
-            });
-        }
-    }
-
-    private validateMatrixEntry(attrType: string, attrValue: number, expectedValue: number, previousValue: number): boolean {
-        if (attrType &#x3D;&#x3D;&#x3D; &#x27;Discrete&#x27;)
-            return attrValue &#x3D;&#x3D;&#x3D; expectedValue;
-        else if (attrType &#x3D;&#x3D;&#x3D; &#x27;Range&#x27;)
-            return attrValue &gt;&#x3D; previousValue &amp;&amp; attrValue &lt;&#x3D; expectedValue;
-        else if (attrType &#x3D;&#x3D;&#x3D; &#x27;Cumulative Range&#x27;)
-            return attrValue &gt;&#x3D; previousValue;
-        else
-            return false;
-    }
-
-    public static adjustValue(adjustmentAmount: number, adjustmentType: string, amount: number): number {
-        adjustmentAmount &#x3D; (isNaN(adjustmentAmount)) ? 0 : adjustmentAmount;
-        let val &#x3D; amount;
-        if (adjustmentType &#x3D;&#x3D;&#x3D; PriceService.ADJ_TYPE_PER_DISCOUNT)
-            val &#x3D; amount * (1 - (adjustmentAmount / 100));
-        else if (adjustmentType &#x3D;&#x3D;&#x3D; PriceService.ADJ_TYPE_DISCOUNT_AMOUNT)
-            val &#x3D; amount - adjustmentAmount;
-        else if (adjustmentType &#x3D;&#x3D;&#x3D; PriceService.ADJ_TYPE_PER_MARKUP)
-            val &#x3D; amount * (1 + (adjustmentAmount / 100));
-        else if (adjustmentType &#x3D;&#x3D;&#x3D; PriceService.ADJ_TYPE_MARKUP_AMT)
-            val &#x3D; amount + adjustmentAmount;
-        else if (adjustmentType &#x3D;&#x3D;&#x3D; PriceService.ADJ_TYPE_PRICE_FACTOR)
-            val &#x3D; amount / adjustmentAmount;
-        else if (adjustmentType &#x3D;&#x3D;&#x3D; PriceService.ADJ_TYPE_LIST_PRICE_OVERRIDE)
-            val &#x3D; adjustmentAmount;
-
-        return val;
-    }
-    private static ADJ_TYPE_PER_DISCOUNT &#x3D; &#x27;% Discount&#x27;;
-    private static ADJ_TYPE_DISCOUNT_AMOUNT &#x3D; &#x27;Discount Amount&#x27;;
-    private static ADJ_TYPE_PER_MARKUP &#x3D; &#x27;% Markup&#x27;;
-    private static ADJ_TYPE_MARKUP_AMT &#x3D; &#x27;Markup Amount&#x27;;
-    private static ADJ_TYPE_PRICE_FACTOR &#x3D; &#x27;Price Factor&#x27;;
-    private static ADJ_TYPE_LIST_PRICE_OVERRIDE &#x3D; &#x27;List Price Override&#x27;;
-
-    private static FREQUENCY &#x3D; {
-        &#x27;Hourly&#x27;: &#x27;Per Hour&#x27;,
-        &#x27;Daily&#x27;: &#x27;Per Day&#x27;,
-        &#x27;Weekly&#x27;: &#x27;Per Week&#x27;,
-        &#x27;Monthly&#x27;: &#x27;Per Month&#x27;,
-        &#x27;Quarterly&#x27;: &#x27;Per Quarter&#x27;,
-        &#x27;Half Yearly&#x27;: &#x27;Per Half Year&#x27;,
-        &#x27;Yearly&#x27;: &#x27;Per Year&#x27;
-    };
-}
-
-
-export class Price {
-    constructor(public productPrice: number &#x3D; 0
-        , public basePrice: number &#x3D; 0
-        , public discountPrice: number &#x3D; 0
-        , public unitPrice: number &#x3D; 0) { }
-}
-</code></pre>
-    </div>
 </div>
 
 

@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1080,11 +1077,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/constraint-rule.service.ts:15</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1149,11 +1141,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/constraint-rule.service.ts:20</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1241,11 +1228,6 @@
                             <i>Default value : </i><code>this.injector.get(PriceListService, &#x27;priceListService&#x27;)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/constraint-rule.service.ts:12</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1274,11 +1256,6 @@
                             <i>Default value : </i><code>this.injector.get(ProductService, &#x27;productService&#x27;)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/constraint-rule.service.ts:13</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1288,38 +1265,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { SObjectService, SObjectType } from &#x27;ng-salesforce&#x27;;
-import { Product, ConstraintRuleCondition, ConstraintRule } from &#x27;../classes/index&#x27;;
-import { PriceListService, ProductService } from &#x27;./index&#x27;;
-import { Observable } from &#x27;rxjs/Observable&#x27;;
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-@SObjectType(ConstraintRule)
-export class ConstraintRuleService extends SObjectService {
-    plService &#x3D; this.injector.get(PriceListService, &#x27;priceListService&#x27;);
-    productService &#x3D; this.injector.get(ProductService, &#x27;productService&#x27;);
-
-    getConstraintRules(product: Product): Observable&lt;Array&lt;ConstraintRule&gt;&gt; {
-        return this.where(&#x60;Id IN (SELECT Apttus_Config2__ConstraintRuleId__c
-                                    FROM Apttus_Config2__ConstraintRuleCondition__c WHERE Apttus_Config2__ProductId__c &#x3D; &#x27;&#x60; + product.Id + &#x60;&#x27;)&#x60;);
-    }
-
-    getProductsForContstraintRuleCondition(constraintRuleConditions: Array&lt;ConstraintRuleCondition&gt;, type: string): Observable&lt;Array&lt;Product&gt;&gt; {
-        if (constraintRuleConditions &amp;&amp; constraintRuleConditions.length &gt; 0) {
-            return this.plService.getPriceListId()
-                .flatMap((priceListId: string) &#x3D;&gt; {
-                    let idArray &#x3D; SObjectService.arrayToCsv(SObjectService.toPropertyArray(constraintRuleConditions, &#x27;Apttus_Config2__ConstraintRuleId__c&#x27;));
-                    return this.productService.queryBuilder(&#x60;Id IN (SELECT Apttus_Config2__ProductId__c FROM Apttus_Config2__ConstraintRuleAction__c WHERE Apttus_Config2__ConstraintRuleId__c IN (&#x60; + idArray + &#x60;) AND Apttus_Config2__ActionType__c &#x3D; &#x27;&#x60; + type + &#x60;&#x27;)&#x60;, null, null, null, null);
-                }).flatMap((contentList: Array&lt;Product&gt;) &#x3D;&gt; this.productService.translateProduct(contentList));
-        } else
-            return Observable.of([]);
-    }
-}</code></pre>
-    </div>
 
 </div>
 

@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1063,11 +1060,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/storefront.service.ts:13</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1087,26 +1079,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SObjectType, SObjectService } from &#x27;ng-salesforce&#x27;;
-import { Storefront } from &#x27;../classes/storefront.model&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-import { Observable } from &#x27;rxjs/Observable&#x27;;
-
-
-@SObjectType(Storefront)
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-export class StorefrontService extends SObjectService{
-
-    public getStorefront(): Observable&lt;Storefront&gt;{
-        return this.where(&#x60;Name &#x3D; &#x27;&#x60; + this.injector.get(&#x27;storefront&#x27;) + &#x60;&#x27;&#x60;)
-        .filter(res &#x3D;&gt; res &amp;&amp; res.length &gt; 0)
-        .map(res &#x3D;&gt; res[0]);
-    }
-}</code></pre>
-    </div>
 
 </div>
 

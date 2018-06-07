@@ -993,9 +993,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1093,11 +1090,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/product-option.model.ts:8</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1132,11 +1124,6 @@
                             <i>Default value : </i><code>new Category()</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/product-option.model.ts:14</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1173,11 +1160,6 @@
             : undefined</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/product-option.model.ts:10</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1212,11 +1194,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/product-option.model.ts:9</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1251,11 +1228,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/product-option.model.ts:7</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1271,71 +1243,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SObject, ChildRecord, SObjectModel } from &#x27;ng-salesforce&#x27;;
-import { Product } from &#x27;./product.model&#x27;;
-import { Category } from &#x27;./category.model&#x27;;
-
-@SObjectModel({name : &#x27;Apttus_Config2__ProductOptionGroup__c&#x27;})
-export class ProductOptionGroup extends SObject {
-    Name: string &#x3D; null;
-    Apttus_Config2__ContentType__c: string &#x3D; null;
-    Apttus_Config2__Sequence__c: number &#x3D; null;
-    Apttus_Config2__Options__r: ChildRecord &#x3D;
-        (this._relatedLists)
-            ? new ChildRecord(new ProductOptionComponent())
-            : undefined;
-    Apttus_Config2__OptionGroupId__r: Category &#x3D; new Category();
-}
-
-@SObjectModel({ name: &#x27;Apttus_Config2__ProductOptionComponent__c&#x27; })
-export class ProductOptionComponent extends SObject {
-    Name: string &#x3D; null;
-    Apttus_Config2__ParentProductId__c: string &#x3D; null;
-    Apttus_Config2__ParentProductId__r: Product &#x3D; new Product();
-    Apttus_Config2__ComponentProductId__r: Product &#x3D; new Product();
-    Apttus_Config2__ComponentProductId__c: string &#x3D; null;
-    Apttus_Config2__ProductOptionGroupId__r: ProductOptionGroup &#x3D; new ProductOptionGroup(true, false);
-    Apttus_Config2__MinQuantity__c: number &#x3D; null;
-    Apttus_Config2__AllowCloning__c: boolean &#x3D; null;
-    Apttus_Config2__AutoUpdateQuantity__c: boolean &#x3D; null;
-    Apttus_Config2__ConfigType__c: string &#x3D; null;
-    Apttus_Config2__Default__c: boolean &#x3D; null;
-    Apttus_Config2__DefaultQuantity__c: number &#x3D; null;
-    Apttus_Config2__DefaultQuantityExpressionId__c: string &#x3D; null;
-    Apttus_Config2__InclusionCriteria__c: string &#x3D; null;
-    Apttus_Config2__MaxQuantity__c: number &#x3D; null;
-    Apttus_Config2__MaxQuantityExpressionId__c: number &#x3D; null;
-    Apttus_Config2__MinQuantityExpressionId__c: string &#x3D; null;
-    Apttus_Config2__Modifiable__c: boolean &#x3D; null;
-    Apttus_Config2__RelationshipType__c: string &#x3D; null;
-    Apttus_Config2__Required__c: boolean &#x3D; null;
-    Apttus_Config2__Sequence__c: number &#x3D; null;
-    Apttus_Config2__ProductOptionGroupId__c: string &#x3D; null;
-    Apttus_Config2__OptionPrices__r: ChildRecord
-        &#x3D; new ChildRecord(new ProductOptionPrice());
-}
-
-@SObjectModel({ name: &#x27;Apttus_Config2__ProductOptionPrice__c&#x27; })
-export class ProductOptionPrice extends SObject {
-    Apttus_Config2__AdjustmentAmount__c: number &#x3D; null;
-    Apttus_Config2__AdjustmentType__c: string &#x3D; null;
-    Apttus_Config2__AllocateGroupAdjustment__c: boolean &#x3D; null;
-    Apttus_Config2__AllowManualAdjustment__c: boolean &#x3D; null;
-    Apttus_Config2__ChargeType__c: string &#x3D; null;
-    Apttus_Config2__ContractPrice__c: number &#x3D; null;
-    Apttus_Config2__HideInvoiceDisplay__c: boolean &#x3D; null;
-    Apttus_Config2__IsQuantityReadOnly__c: boolean &#x3D; null;
-    Apttus_Config2__IsSellingTermReadOnly__c: boolean &#x3D; null;
-    Apttus_Config2__PriceIncludedInBundle__c: boolean &#x3D; null;
-    Apttus_Config2__PriceListId__c: string &#x3D; null;
-    Apttus_Config2__PriceOverride__c: number &#x3D; null;
-    Apttus_Config2__ProductOptionId__c: string &#x3D; null;
-    Apttus_Config2__RollupPriceMethod__c: string &#x3D; null;
-    Apttus_Config2__RollupPriceToBundle__c: boolean &#x3D; null;
-    Apttus_Config2__Sequence__c: number &#x3D; null;
-}</code></pre>
-    </div>
 </div>
 
 

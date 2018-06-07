@@ -993,9 +993,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1105,11 +1102,6 @@
                             <i>Default value : </i><code>new ProductAttribute()</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/price-dimension.model.ts:8</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1144,11 +1136,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/price-dimension.model.ts:9</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1183,11 +1170,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/price-dimension.model.ts:10</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1222,11 +1204,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/price-dimension.model.ts:11</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1261,11 +1238,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/price-dimension.model.ts:13</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1300,11 +1272,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/price-dimension.model.ts:12</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1339,11 +1306,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/price-dimension.model.ts:14</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1378,11 +1340,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/price-dimension.model.ts:15</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1417,11 +1374,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/price-dimension.model.ts:16</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1437,32 +1389,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SObject, SObjectModel } from &#x27;ng-salesforce&#x27;;
-import { ProductAttribute } from &#x27;./product-attribute.model&#x27;;
-
-@SObjectModel({
-    name : &#x27;Apttus_Config2__PriceDimension__c&#x27;
-})
-export class PriceDimensionBase extends SObject {
-    Apttus_Config2__AttributeId__r: ProductAttribute &#x3D; new ProductAttribute();
-    Apttus_Config2__BusinessObject__c: string &#x3D; null;
-    Apttus_Config2__childFilterName__c: string &#x3D; null;
-    Apttus_Config2__contextType__c: string &#x3D; null;
-    Apttus_Config2__Description__c: string &#x3D; null;
-    Apttus_Config2__Datasource__c: string &#x3D; null;
-    Apttus_Config2__IncentiveId__c: string &#x3D; null;
-    Apttus_Config2__RelationType__c: string &#x3D; null;
-    Apttus_Config2__Type__c: string &#x3D; null;
-}
-
-@SObjectModel({
-    name: &#x27;Apttus_Config2__PriceDimension__c&#x27;
-})
-export class PriceDimension extends PriceDimensionBase {
-    Apttus_Config2__CumulativeDimensionId__r: PriceDimensionBase &#x3D; new PriceDimensionBase();
-}</code></pre>
-    </div>
 </div>
 
 

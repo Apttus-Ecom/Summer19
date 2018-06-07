@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1094,11 +1091,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/account.service.ts:36</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1134,11 +1126,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/account.service.ts:18</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1174,11 +1161,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/account.service.ts:48</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1274,11 +1256,6 @@
 
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/account.service.ts:14</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1309,11 +1286,6 @@
 
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/account.service.ts:15</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1343,11 +1315,6 @@
                             <i>Default value : </i><code>this.injector.get(UserService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/account.service.ts:16</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1357,61 +1324,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Inject, Injector } from &#x27;@angular/core&#x27;;
-import { Account } from &#x27;../classes/account.model&#x27;;
-import { SObjectService, SObjectType } from &#x27;ng-salesforce&#x27;;
-import { Observable, BehaviorSubject } from &#x27;rxjs/Rx&#x27;;
-import { UserService } from &#x27;./user.service&#x27;;
-import * as _ from &#x27;lodash&#x27;;
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-@SObjectType(Account)
-export class AccountService extends SObjectService {
-
-    private _account: BehaviorSubject&lt;Account&gt;;
-    private _currentAccount: BehaviorSubject&lt;Account&gt;;
-    private userService &#x3D; this.injector.get(UserService);
-
-    public getMyAccount(): Observable&lt;Account&gt; {
-        if (!this._account) {
-            this._account &#x3D; new BehaviorSubject&lt;Account&gt;(null);
-            this.userService.me()
-                .flatMap(user &#x3D;&gt; {
-                    if (_.get(user, &#x27;Contact.AccountId&#x27;))
-                        return this.get([user.Contact.AccountId]);
-                    else
-                        return Observable.of([this.getInstance()]);
-                })
-                .map((res: any) &#x3D;&gt; (res &amp;&amp; res.length &gt; 0) ? res[0] : this.getInstance())
-                .subscribe(res &#x3D;&gt; {
-                    this._account.next(res);
-                }, err &#x3D;&gt; this._account.error(err));
-        }
-        return this._account;
-    }
-
-    public getCurrentAccount(): Observable&lt;Account&gt; {
-        if (!this._currentAccount) {
-            this._currentAccount &#x3D; new BehaviorSubject&lt;Account&gt;(null);
-            this.cacheService.get(&#x27;current-account&#x27;, () &#x3D;&gt; Observable.if(() &#x3D;&gt; this.cacheService._get(&#x27;ca&#x27;) !&#x3D; null,
-                Observable.of(this.cacheService._get(&#x27;ca&#x27;)),
-                this.getMyAccount()))
-                .subscribe(account &#x3D;&gt; this._currentAccount.next(account), err &#x3D;&gt; this._currentAccount.error(err));
-        }
-
-        return this._currentAccount;
-    }
-
-    public setAccount(account: Account, localStorage: boolean &#x3D; false): Observable&lt;Account&gt; {
-        this.cacheService._set(&#x27;ca&#x27;, account, localStorage);
-        return this.cacheService.update(&#x27;current-account&#x27;);
-    }
-
-}</code></pre>
-    </div>
 
 </div>
 

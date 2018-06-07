@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1063,11 +1060,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/product-attribute-rule.service.ts:12</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1118,26 +1110,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SObjectService, SObjectType } from &#x27;ng-salesforce&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-import { ProductAttributeRule } from &#x27;../classes/index&#x27;;
-import { Observable } from &#x27;rxjs/Rx&#x27;;
-
-@SObjectType(ProductAttributeRule)
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-export class ProductAttributeRuleService extends SObjectService {
-
-    public getProductRules(productCode: string): Observable&lt;Array&lt;ProductAttributeRule&gt;&gt; {
-        return this.where(&#x60;ID IN
-                (SELECT Apttus_Config2__ProductAttributeRuleId__c
-                    FROM Apttus_Config2__ProductAttributeRuleView__c
-                    WHERE Apttus_Config2__ProductId__r.ProductCode &#x3D; &#x27;&#x60; + productCode + &#x60;&#x27;)&#x60;);
-    }
-}</code></pre>
-    </div>
 
 </div>
 

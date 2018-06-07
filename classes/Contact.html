@@ -993,9 +993,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1111,11 +1108,6 @@
                             <i>Default value : </i><code>new Account()</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/contact.model.ts:9</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1150,11 +1142,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/contact.model.ts:8</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1189,11 +1176,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/contact.model.ts:11</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1228,11 +1210,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/contact.model.ts:6</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1267,11 +1244,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/contact.model.ts:7</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1306,11 +1278,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/contact.model.ts:14</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1345,11 +1312,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/contact.model.ts:16</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1384,11 +1346,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/contact.model.ts:15</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1423,11 +1380,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/contact.model.ts:13</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1462,11 +1414,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/contact.model.ts:12</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1501,11 +1448,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/contact.model.ts:10</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1521,26 +1463,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SObject, SObjectModel } from &#x27;ng-salesforce&#x27;;
-import { Account } from &#x27;./account.model&#x27;;
-
-@SObjectModel({name : &#x27;Contact&#x27;})
-export class Contact extends SObject {
-    FirstName: string &#x3D; null;
-    LastName: string &#x3D; null;
-    AccountId: string &#x3D; null;
-    Account: Account &#x3D; new Account();
-    Phone: string &#x3D; null;
-    Email: string &#x3D; null;
-    MailingStreet: string &#x3D; null;
-    MailingState: string &#x3D; null;
-    MailingCity: string &#x3D; null;
-    MailingPostalCode: number &#x3D; null;
-    MailingCountryCode: string &#x3D; null;
-}
-</code></pre>
-    </div>
 </div>
 
 

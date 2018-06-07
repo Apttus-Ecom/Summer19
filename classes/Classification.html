@@ -993,9 +993,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1087,11 +1084,6 @@
                             <i>Default value : </i><code>new ChildRecord(new Category(), () &#x3D;&gt; &#x60;(Apttus_Config2__AncestorId__c &lt;&gt; null OR Apttus_Config2__IsLeaf__c &#x3D; \&#x27;no\&#x27;)&#x60;)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/classification.model.ts:8</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1126,11 +1118,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/classification.model.ts:6</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1165,11 +1152,6 @@
                             <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">projects/apttus/ecommerce/src/lib/classes/classification.model.ts:7</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1185,18 +1167,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SObject, ChildRecord, SObjectModel } from &#x27;ng-salesforce&#x27;;
-import { Category } from &#x27;./category.model&#x27;;
-
-@SObjectModel({ name: &#x27;Apttus_Config2__ClassificationName__c&#x27;})
-export class Classification extends SObject {
-    Apttus_Config2__HierarchyLabel__c: string &#x3D; null;
-    Apttus_Config2__Type__c: string &#x3D; null;
-    Apttus_Config2__CategoryHierarchies__r: ChildRecord &#x3D; new ChildRecord(new Category(), () &#x3D;&gt; &#x60;(Apttus_Config2__AncestorId__c &lt;&gt; null OR Apttus_Config2__IsLeaf__c &#x3D; \&#x27;no\&#x27;)&#x60;);
-}
-</code></pre>
-    </div>
 </div>
 
 

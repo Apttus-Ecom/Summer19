@@ -1139,9 +1139,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1198,51 +1195,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule, ModuleWithProviders } from &#x27;@angular/core&#x27;;
-import { CommonModule } from &#x27;@angular/common&#x27;;
-import { LaddaModule } from &#x27;angular2-ladda&#x27;;
-import { SalesforceConfig, Provider } from &#x27;ng-salesforce&#x27;;
-import { SalesforceModule } from &#x27;ng-salesforce&#x27;;
-import { RouterModule } from &#x27;@angular/router&#x27;;
-
-// pipes
-import { LocalCurrencyPipe, FormatCurrencyPipe, ConvertUnitsPipe } from &#x27;./pipes/index&#x27;;
-
-// components
-import { MiniCartComponent } from &#x27;./components/index&#x27;;
-
-const pipes &#x3D; [LocalCurrencyPipe, FormatCurrencyPipe, ConvertUnitsPipe, MiniCartComponent];
-
-export * from &#x27;./classes/index&#x27;;
-export * from &#x27;./interfaces/index&#x27;;
-export * from &#x27;./pipes/index&#x27;;
-export * from &#x27;./services/index&#x27;;
-export * from &#x27;./components/index&#x27;;
-
-@NgModule({
-    imports: [
-        CommonModule,
-        SalesforceModule,
-        LaddaModule,
-        RouterModule
-    ],
-    declarations: [pipes],
-    providers : [],
-    exports: [pipes]
-})
-export class CommerceModule {
-    public static forRoot(storefront: string): ModuleWithProviders{
-        return {
-            ngModule: CommerceModule,
-            providers : [
-                {provide: &#x27;storefront&#x27;, useValue: storefront}
-            ]
-        };
-    }
-}
-</code></pre>
-    </div>
 </div>
 
 

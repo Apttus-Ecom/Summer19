@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1096,11 +1093,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/search.service.ts:67</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1177,11 +1169,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/search.service.ts:39</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1354,11 +1341,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/search.service.ts:17</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1509,11 +1491,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/search.service.ts:76</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1638,11 +1615,6 @@
                             <i>Default value : </i><code>this.injector.get(CategoryService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/search.service.ts:14</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1672,11 +1644,6 @@
                             <i>Default value : </i><code>this.injector.get(PriceListService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/search.service.ts:15</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1706,11 +1673,6 @@
                             <i>Default value : </i><code>this.injector.get(ProductService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/search.service.ts:13</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1720,102 +1682,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { PriceListService, ProductService, CategoryService } from &#x27;./index&#x27;;
-import { PriceList, Product, Category } from &#x27;../classes/index&#x27;;
-import { PriceTier, SearchResults } from &#x27;../interfaces/index&#x27;;
-import { SObjectService } from &#x27;ng-salesforce&#x27;;
-import { Observable } from &#x27;rxjs/Rx&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-export class SearchService extends SObjectService {
-
-    private productService &#x3D; this.injector.get(ProductService);
-    private categoryService &#x3D; this.injector.get(CategoryService);
-    private plService &#x3D; this.injector.get(PriceListService);
-
-    searchProductsByCategory(categoryId: string, limit: number, offset: number, orderBy: string, orderDirection: &#x27;ASC&#x27; | &#x27;DESC&#x27;, categoryFilter: Array&lt;Category&gt;, priceTier: PriceTier, adtlFilters: Array&lt;string&gt;): Observable&lt;SearchResults&gt; {
-        return this.plService.getPriceListId()
-            .filter(plid &#x3D;&gt; (plid !&#x3D; null &amp;&amp; plid !&#x3D;&#x3D; undefined))
-            .flatMap((priceListId: string) &#x3D;&gt; {
-                return Observable.combineLatest(this.productService.getProductsByCategory(categoryId, limit, offset, orderBy, orderDirection, categoryFilter, priceTier, adtlFilters),
-                    this.categoryService.getCategoryBranch(categoryId),
-                    this.categoryService.getSubcategories(categoryId),
-                    this.categoryService.getRelatedCategories(categoryId),
-                    this.productService.aggregate(ProductService.where(priceListId, categoryId, categoryFilter, null, priceTier, adtlFilters)),
-                    this.productService.getAggregatesForCategory(categoryId, null, null, null)).map(res &#x3D;&gt; {
-                        return {
-                            productList: res[0],
-                            breadcrumb: res[1],
-                            subcategories: res[2],
-                            relatedCategories: res[3],
-                            totalRecords: res[4],
-                            aggregateTotal: res[5]
-                        } as SearchResults;
-                    });
-            });
-    }
-
-    getSearchResults(query: string, limit: number &#x3D; 10, offset: number &#x3D; 0, orderBy: string &#x3D; null, orderDirection: &#x27;ASC&#x27; | &#x27;DESC&#x27; &#x3D; null, categoryFilter: Array&lt;Category&gt; &#x3D; null, priceTier: PriceTier &#x3D; null, adtlFilters: Array&lt;string&gt; &#x3D; null): Observable&lt;SearchResults&gt; {
-        return this.plService.getPriceListId()
-            .filter(plid &#x3D;&gt; (plid !&#x3D; null &amp;&amp; plid !&#x3D;&#x3D; undefined))
-            .flatMap((priceListId: string) &#x3D;&gt; {
-
-                return this.productService.search(this.findQuery(query, priceListId))
-                    .map(res &#x3D;&gt; SObjectService.toIdArray(res[0]))
-                    .flatMap(idArray &#x3D;&gt; {
-                        let csv &#x3D; SObjectService.arrayToCsv(idArray);
-                        let product$ &#x3D; this.productService.queryBuilder(this.selectQuery(csv, priceListId, categoryFilter, priceTier, adtlFilters), limit, offset, orderBy, orderDirection, false, true)
-                            .flatMap(res &#x3D;&gt; this.productService.translateProduct(res));
-                        let category$ &#x3D; this.categoryService.where(&#x60;ID IN (SELECT Apttus_Config2__ClassificationId__c FROM Apttus_Config2__ProductClassification__c WHERE Apttus_Config2__ProductId__c IN (&#x60; + csv + &#x60;)) ORDER BY Name ASC LIMIT 10&#x60;);
-                        let aggregateTotal$ &#x3D; this.productService.getAggregatesForProductList(idArray, null, null, null);
-                        let count$ &#x3D; this.productService.aggregate(this.selectQuery(csv, priceListId, categoryFilter, priceTier, adtlFilters));
-
-                        return Observable.combineLatest(product$, category$, count$, aggregateTotal$).map(res &#x3D;&gt; {
-                            return {
-                                productList: res[0],
-                                subcategories: res[1],
-                                totalRecords: res[2],
-                                aggregateTotal: res[3]
-                            } as SearchResults;
-                        });
-                    });
-            });
-    }
-
-
-    private findQuery(query: string, priceListId: string): string {
-        query &#x3D; query.replace(/([&lt;&gt;*()?-])/g, &#x27;\\$1&#x27;);
-        return &#x60;FIND {*&#x60; + query + &#x60;*} IN ALL FIELDS
-              RETURNING Product2(Id WHERE IsActive &#x3D; true AND ID IN
-                                  (SELECT Apttus_Config2__ProductId__c
-                                    FROM Apttus_Config2__PriceListItem__c
-                                    WHERE Apttus_Config2__PriceListId__c &#x3D; &#x27;&#x60; + priceListId + &#x60;&#x27; AND Apttus_Config2__ListPrice__c &lt;&gt; NULL AND Apttus_Config2__Active__c &#x3D; TRUE))&#x60;;
-    }
-
-    private selectQuery(csv: string, priceListId: string, categoryList: Array&lt;Category&gt;, priceTier: PriceTier, adtlFilters: Array&lt;string&gt;): string {
-        return &#x60;
-    Id IN (SELECT Apttus_Config2__ProductId__c
-            FROM Apttus_Config2__PriceListItem__c
-            WHERE Apttus_Config2__PriceListId__c &#x3D; &#x27;&#x60; + priceListId + &#x60;&#x27;&#x60;
-            + &#x60; AND Apttus_Config2__ListPrice__c &lt;&gt; NULL AND Apttus_Config2__Active__c &#x3D; TRUE&#x60;
-            + ((priceTier &amp;&amp; priceTier.minPrice) ? &#x60; AND Apttus_Config2__ListPrice__c &gt;&#x3D; &#x60; + priceTier.minPrice : &#x60;&#x60;)
-            + ((priceTier &amp;&amp; priceTier.maxPrice) ? &#x60; AND Apttus_Config2__ListPrice__c &lt;&#x3D; &#x60; + priceTier.maxPrice : &#x60;&#x60;)
-            + ((adtlFilters &amp;&amp; adtlFilters.length &gt; 0) ? &#x27; AND &#x27; + adtlFilters.join(&#x27; AND &#x27;) : &#x27;&#x27;)
-            + &#x60;)
-        AND ID IN (&#x60; + csv + &#x60;)&#x60;
-            + ((categoryList &amp;&amp; categoryList.length &gt; 0) ? &#x60; AND ID IN
-                                (SELECT Apttus_Config2__ProductId__c
-                                  FROM Apttus_Config2__ProductClassification__c
-                                  WHERE Apttus_Config2__ClassificationId__c IN (&#x60; + SObjectService.arrayToCsv(SObjectService.toIdArray(categoryList)) + &#x60;))&#x60; : &#x60;&#x60;);
-    }
-
-}
-</code></pre>
-    </div>
 
 </div>
 

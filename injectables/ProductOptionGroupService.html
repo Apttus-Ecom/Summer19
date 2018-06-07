@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1075,11 +1072,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/product-option.service.ts:41</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1125,11 +1117,6 @@
                             <i>Default value : </i><code>this.injector.get(PriceListService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/product-option.service.ts:39</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1139,56 +1126,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { SObjectService, SObjectType, FieldFilter } from &#x27;ng-salesforce&#x27;;
-import { ProductOptionComponent, ProductOptionGroup } from &#x27;../classes/index&#x27;;
-import { Observable } from &#x27;rxjs/Rx&#x27;;
-import { PriceListService } from &#x27;./index&#x27;;
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-@SObjectType(ProductOptionComponent)
-export class ProductOptionService extends SObjectService {
-
-    private pliService &#x3D; this.injector.get(PriceListService);
-
-    getOptionsForGroup(name: string, productCode: string): Observable&lt;Array&lt;ProductOptionComponent&gt;&gt; {
-        return this.queryBuilder(&#x60;Apttus_Config2__ProductOptionGroupId__r.Apttus_Config2__OptionGroupId__r.Name &#x3D; &#x27;&#x60; + name + &#x60;&#x27;
-                        AND Apttus_Config2__ParentProductId__r.ProductCode &#x3D; &#x27;&#x60; + productCode + &#x60;&#x27;&#x60;
-            , null
-            , null
-            , &#x27;Apttus_Config2__Sequence__c&#x27;
-            , &#x27;ASC&#x27;);
-    }
-
-    fieldFilter(): Observable&lt;Array&lt;FieldFilter&gt;&gt;{
-        return this.pliService.getPriceListId().map(plId &#x3D;&gt; {
-            return [
-                { fieldName: &#x27;Apttus_Config2__OptionPrices__r&#x27;, filterValue: &#x60;Apttus_Config2__PriceListId__c &#x3D; &#x27;&#x60; + plId + &#x60;&#x27; ORDER BY Apttus_Config2__Sequence__c ASC&#x60;}
-            ];
-        });
-    }
-}
-
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-@SObjectType(ProductOptionGroup)
-export class ProductOptionGroupService extends SObjectService {
-    private pliService &#x3D; this.injector.get(PriceListService);
-
-    fieldFilter(): Observable&lt;Array&lt;FieldFilter&gt;&gt;{
-        return this.pliService.getPriceListId().map(plId &#x3D;&gt; {
-            return [
-                { fieldName: &#x27;Apttus_Config2__Options__r&#x27;, filterValue: &#x60;Apttus_Config2__ParentProductId__c IN (SELECT Apttus_Config2__ProductId__c FROM Apttus_Config2__PriceListItem__c WHERE Apttus_Config2__PriceListId__c &#x3D; &#x27;&#x60; + plId + &#x60;&#x27;)  ORDER BY Apttus_Config2__Sequence__c ASC&#x60; }
-            ];
-        });
-    }
-}</code></pre>
-    </div>
 
 </div>
 

@@ -994,9 +994,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1481,56 +1478,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface MailContent {
-    toAddresses: string[];
-    ccAddresses?: string[];
-    replyTo?: string;
-    displayName?: string;
-    subject: string;
-    bccSender?: boolean;
-    useSignature?: boolean;
-    plainBody?: string;
-    htmlBody?: string;
-    templateName?: string;
-    contactId?: string;
-    whatId?: string;
-}
-
-export function MailFactory(toAddresses: string[], subject: string, plainBody: string): MailContent {
-    return {
-        toAddresses: toAddresses,
-        ccAddresses: null,
-        replyTo: null,
-        displayName: null,
-        subject: subject,
-        bccSender: false,
-        useSignature: false,
-        plainBody: plainBody,
-        htmlBody: null,
-        templateName: null,
-        contactId: null,
-        whatId: null
-    } as MailContent;
-}
-
-export function TemplateMailFactory(templateName: string, whatId: string, contactId: string, toAddresses: string[]) {
-    return {
-        toAddresses: toAddresses,
-        ccAddresses: null,
-        replyTo: null,
-        displayName: null,
-        subject: null,
-        bccSender: false,
-        useSignature: false,
-        plainBody: null,
-        htmlBody: null,
-        templateName: templateName,
-        contactId: contactId,
-        whatId: whatId
-    } as MailContent;
-}</code></pre>
-    </div>
 </div>
 
 

@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1102,11 +1099,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/order.service.ts:31</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1192,11 +1184,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/order.service.ts:21</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1280,11 +1267,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/order.service.ts:71</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1360,11 +1342,6 @@
                             <i>Default value : </i><code>this.injector.get(AccountService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/order.service.ts:16</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1393,11 +1370,6 @@
                             <i>Default value : </i><code>this.injector.get(CartService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/order.service.ts:14</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1426,11 +1398,6 @@
                             <i>Default value : </i><code>this.injector.get(CartItemService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/order.service.ts:18</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1459,11 +1426,6 @@
                             <i>Default value : </i><code>this.injector.get(PriceListService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/order.service.ts:15</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1492,11 +1454,6 @@
                             <i>Default value : </i><code>this.injector.get(QuoteService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/order.service.ts:17</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1525,11 +1482,6 @@
                             <i>Default value : </i><code>this.injector.get(SoapService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/order.service.ts:19</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1558,11 +1510,6 @@
                             <i>Default value : </i><code>this.injector.get(UserService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/order.service.ts:13</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1572,115 +1519,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { SObjectService, SoapService, SObjectType } from &#x27;ng-salesforce&#x27;;
-import { Order, CartItem, Quote, OrderLineItem } from &#x27;../classes/index&#x27;;
-import { Observable } from &#x27;rxjs/Rx&#x27;;
-import { UserService, PriceListService, AccountService, CartService, CartItemService, QuoteService } from &#x27;./index&#x27;;
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-@SObjectType(Order)
-export class OrderService extends SObjectService {
-
-    userService &#x3D; this.injector.get(UserService);
-    cartService &#x3D; this.injector.get(CartService);
-    priceListService &#x3D; this.injector.get(PriceListService);
-    accountService &#x3D; this.injector.get(AccountService);
-    quoteService &#x3D; this.injector.get(QuoteService);
-    itemService &#x3D; this.injector.get(CartItemService);
-    soapService &#x3D; this.injector.get(SoapService);
-
-    public getMyOrders(accountId: string &#x3D; null, days: number &#x3D; 30) {
-        return this.userService.me().flatMap(u &#x3D;&gt; this.queryBuilder(&#x60;OwnerId &#x3D; &#x27;&#x60; + u.Id + &#x60;&#x27;&#x60;
-            + ((accountId) ? &#x60; AND Apttus_Config2__BillToAccountId__c &#x3D; &#x27;&#x60; + accountId + &#x60;&#x27;&#x60; : &#x60;&#x60;)
-            + ((days) ? &#x60; AND CreatedDate &#x3D; LAST_N_DAYS:&#x60; + days : &#x60;&#x60;)
-            , null
-            , null
-            , &#x27;CreatedDate&#x27;
-            , &#x27;DESC&#x27;));
-    }
-
-    public convertCartToOrder(order: Order &#x3D; new Order(), quote: Quote &#x3D; new Quote()): Observable&lt;Order&gt; {
-        return Observable.combineLatest(this.priceListService.getEffectivePriceListId(), this.accountService.getCurrentAccount(), this.userService.me(), this.cartService.getMyCart())
-            .take(1)
-            .flatMap(([priceListId, account, user, cart]) &#x3D;&gt; {
-                order.Apttus_Config2__PriceListId__c &#x3D; priceListId,
-                order.Apttus_Config2__ShipToAccountId__c &#x3D; account.Id;
-                order.Apttus_Config2__BillToAccountId__c &#x3D; account.Id;
-                order.Apttus_Config2__PrimaryContactId__c &#x3D; user.ContactId;
-                order.Apttus_Config2__SoldToAccountId__c &#x3D; account.Id;
-
-                quote.Apttus_Proposal__Account__c &#x3D; account.Id;
-                quote.Apttus_Proposal__Proposal_Name__c &#x3D; account.Name + &#x27;:&#x27; + user.LastName;
-                quote.Apttus_QPConfig__AutoActivateOrder__c &#x3D; true;
-                quote.Apttus_QPConfig__BillToAccountId__c &#x3D; account.Id;
-                quote.Apttus_QPConfig__ShipToAccountId__c &#x3D; account.Id;
-                return this.quoteService.create([quote])
-                    .map(res &#x3D;&gt; res[0])
-                    .flatMap(quoteId &#x3D;&gt; {
-                        order.Apttus_QPConfig__ProposalId__c &#x3D; quoteId;
-                        return this.create([order]).map(res &#x3D;&gt; res[0])
-                            .flatMap(orderId &#x3D;&gt; {
-                                cart.Apttus_Config2__OrderId__c &#x3D; orderId;
-                                cart.Apttus_QPConfig__Proposald__c &#x3D; quoteId;
-                                cart.Apttus_Config2__Status__c &#x3D; &#x27;Finalized&#x27;;
-                                cart.Apttus_Config2__BusinessObjectId__c &#x3D; quoteId;
-                                cart.Apttus_Config2__BusinessObjectRefId__c &#x3D; quoteId;
-                                cart.Apttus_Config2__BusinessObjectType__c &#x3D; &#x27;Proposal&#x27;;
-
-                                return this.cartService.update([cart])
-                                    .flatMap(() &#x3D;&gt; Observable.zip(
-                                        this.soapService.doRequest(&#x27;Apttus_CPQApi/CPQWebService&#x27;, &#x27;synchronizeCart&#x27;, { request: { &#x27;CartId&#x27;: cart.Id } }),
-                                        this.soapService.doRequest(&#x27;Apttus_Config2/OrderWebService&#x27;, &#x27;acceptOrder&#x27;, { request: { &#x27;OrderId&#x27;: orderId } }),
-                                        this.cacheService.update(&#x27;cart&#x27;)
-                                    ))
-                                    .flatMap(() &#x3D;&gt; this.get([orderId])).map(res &#x3D;&gt; res[0]);
-                            });
-                    });
-            });
-    }
-
-    mergeCartItems(orderItemList: Array&lt;OrderLineItem&gt;): Observable&lt;void&gt; {
-
-        return this.cartService.getMyCart().take(1).flatMap(cart &#x3D;&gt; this.priceListService.getPriceListId().flatMap(priceListId &#x3D;&gt; {
-            let cartItemInsertList: Array&lt;CartItem&gt; &#x3D; [];
-            let cartItemUpdateList: Array&lt;CartItem&gt; &#x3D; [];
-
-            for (let oldCartItem of orderItemList) {
-                let cartItem &#x3D; new CartItem();
-                if (cart.Apttus_Config2__LineItems__r &amp;&amp; cart.Apttus_Config2__LineItems__r.records) {
-                    let currentCartItem &#x3D; cart.Apttus_Config2__LineItems__r.records.filter(item &#x3D;&gt; item.Apttus_Config2__ProductId__c &#x3D;&#x3D;&#x3D; oldCartItem.Apttus_Config2__ProductId__c)[0];
-                    if (currentCartItem) {
-                        cartItem.Id &#x3D; currentCartItem.Id;
-                        cartItem.Apttus_Config2__Quantity__c &#x3D; currentCartItem.Apttus_Config2__Quantity__c;
-                        cartItemUpdateList.push(cartItem);
-                    }
-                }
-
-                if (!cartItem.Id) {
-                    cartItem.Apttus_Config2__ProductId__c &#x3D; oldCartItem.Apttus_Config2__ProductId__c;
-                    cartItem.Apttus_Config2__PriceListId__c &#x3D; priceListId;
-                    cartItem.Apttus_Config2__ItemSequence__c &#x3D; cart.Apttus_Config2__NumberOfItems__c + 1;
-                    cartItem.Apttus_Config2__LineNumber__c &#x3D; cart.Apttus_Config2__NumberOfItems__c + 1;
-                    cartItem.Apttus_Config2__PrimaryLineNumber__c &#x3D; cart.Apttus_Config2__NumberOfItems__c + 1;
-                    cartItem.Apttus_Config2__ConfigurationId__c &#x3D; cart.Id;
-                    cartItemInsertList.push(cartItem);
-                }
-                cartItem.Apttus_Config2__Quantity__c +&#x3D; oldCartItem.Apttus_Config2__Quantity__c;
-            }
-
-            return Observable.if(() &#x3D;&gt; cartItemUpdateList.length &gt; 0, this.itemService.update(cartItemUpdateList), Observable.of(null))
-                .flatMap(() &#x3D;&gt; Observable.if(() &#x3D;&gt; cartItemInsertList.length &gt; 0, this.itemService.create(cartItemInsertList), Observable.of(null)));
-
-        }).flatMap(() &#x3D;&gt; this.soapService.doRequest(&#x27;Apttus_CPQApi/CPQWebService&#x27;, &#x27;updatePriceForCart&#x27;, { request: { &#x27;CartId&#x27;: cart.Id } })))
-            .flatMap(res &#x3D;&gt; this.cacheService.update(&#x27;cart&#x27;));
-    }
-
-}</code></pre>
-    </div>
 
 </div>
 

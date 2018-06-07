@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1102,11 +1099,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-list.service.ts:17</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1173,11 +1165,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-list.service.ts:40</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1213,11 +1200,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-list.service.ts:44</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1253,11 +1235,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-list.service.ts:36</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1293,11 +1270,6 @@
                 </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-list.service.ts:32</a></div>
-                            </td>
-                        </tr>
 
 
                 <tr>
@@ -1374,11 +1346,6 @@
                             <i>Default value : </i><code>this.injector.get(AccountService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-list.service.ts:13</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1408,11 +1375,6 @@
                             <i>Default value : </i><code>this.injector.get(PriceListItemService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-list.service.ts:14</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1442,11 +1404,6 @@
                             <i>Default value : </i><code>this.injector.get(StorefrontService)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/apttus/ecommerce/src/lib/services/price-list.service.ts:15</a></div>
-                            </td>
-                        </tr>
 
 
             </tbody>
@@ -1456,61 +1413,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SObjectService, SObjectType } from &#x27;ng-salesforce&#x27;;
-import { PriceList, PriceListItem, User, PriceMatrix } from &#x27;../classes/index&#x27;;
-import { UserService, AccountService, PriceMatrixService, StorefrontService } from &#x27;./index&#x27;;
-import { Observable, BehaviorSubject } from &#x27;rxjs/Rx&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-@SObjectType(PriceList)
-export class PriceListService extends SObjectService {
-
-    private accountService &#x3D; this.injector.get(AccountService);
-    private pliService &#x3D; this.injector.get(PriceListItemService);
-    private storefrontService &#x3D; this.injector.get(StorefrontService);
-
-    private _loadPriceListId(effective: boolean): Observable&lt;any&gt; {
-        return this.accountService.getCurrentAccount()
-            .flatMap(currentAccount &#x3D;&gt; {
-                if (currentAccount &amp;&amp; currentAccount.Price_List__r &amp;&amp; currentAccount.Price_List__r.Apttus_Config2__BasedOnPriceListId__c &amp;&amp; effective &#x3D;&#x3D;&#x3D; false) {
-                    return Observable.of(currentAccount.Price_List__r.Apttus_Config2__BasedOnPriceListId__c);
-                }
-                else if (currentAccount &amp;&amp; currentAccount.Price_List__c) {
-                    return Observable.of(currentAccount.Price_List__c);
-                }
-                else {
-                    return this.storefrontService.getStorefront().map(res &#x3D;&gt; res.APTSMD_Price_List__c);
-                }
-            });
-    }
-
-    public getPriceListItemByCode(productCode: string): Observable&lt;PriceListItem&gt; {
-        return this.getPriceListId().flatMap(priceListId &#x3D;&gt; this.pliService.where(&#x60;Apttus_Config2__ProductId__r.ProductCode &#x3D; &#x27;&#x60; + productCode + &#x60;&#x27;&#x60;).map(res &#x3D;&gt; res[0]));
-    }
-
-    public getPriceListId(): Observable&lt;string&gt; {
-        return this.cacheService.get(&#x27;inherited&#x27;, () &#x3D;&gt; this._loadPriceListId(false));
-    }
-
-    public getEffectivePriceListId(): Observable&lt;string&gt; {
-        return this.cacheService.get(&#x27;effective&#x27;, () &#x3D;&gt; this._loadPriceListId(true));
-    }
-
-    public getPriceList(): Observable&lt;PriceList&gt; {
-        return this.getPriceListId().flatMap(priceListId &#x3D;&gt; this.where(&#x60;Id &#x3D; &#x27;&#x60; + priceListId + &#x60;&#x27;&#x60;)).map(res &#x3D;&gt; res[0]);
-    }
-}
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-@SObjectType(PriceListItem)
-export class PriceListItemService extends SObjectService {}</code></pre>
-    </div>
 
 </div>
 

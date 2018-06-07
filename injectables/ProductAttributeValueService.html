@@ -990,9 +990,6 @@
         <li class="active">
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
 </ul>
 
 <div class="tab-content">
@@ -1013,52 +1010,6 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { SObjectService, SObjectType } from &#x27;ng-salesforce&#x27;;
-import { ProductAttribute, Product, ProductAttributeValue } from &#x27;../classes/index&#x27;;
-import { Observable } from &#x27;rxjs/Rx&#x27;;
-import * as _ from &#x27;lodash&#x27;;
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-@SObjectType(ProductAttribute)
-export class ProductAttributeService extends SObjectService {
-
-    getProductAttributes(product: Product, attributeGroupName?: string): Observable&lt;Array&lt;ProductAttribute&gt;&gt; {
-        return this.queryBuilder(
-            &#x60;Apttus_Config2__AttributeGroupId__c IN
-      (SELECT Apttus_Config2__AttributeGroupId__c
-        FROM Apttus_Config2__ProductAttributeGroupMember__c
-        WHERE Apttus_Config2__ProductId__c &#x3D; &#x27;&#x60; + product.Id + &#x60;&#x27;&#x60;
-            + ((attributeGroupName !&#x3D; null) ? &#x60; AND Apttus_Config2__AttributeGroupId__r.Name &#x3D; &#x27;&#x60; + attributeGroupName + &#x60;&#x27;&#x60; : &#x60;&#x60;)
-            + &#x60;)&#x60;,
-            null,
-            null,
-            &#x27;Apttus_Config2__Sequence__c&#x27;,
-            &#x27;ASC&#x27;)
-            .flatMap(attributes &#x3D;&gt; {
-                const data &#x3D; { objectList: _.uniq(_.map(attributes, &#x27;Apttus_Config2__AttributeGroupId__r.Apttus_Config2__BusinessObject__c&#x27;)) };
-                return this.forceService.post(&#x27;describeObjectList&#x27;, data).map(objectDescribes &#x3D;&gt; {
-                    attributes.forEach(attribute &#x3D;&gt; {
-                        const objDescribe &#x3D; objectDescribes.filter(record &#x3D;&gt; attribute.Apttus_Config2__AttributeGroupId__r.Apttus_Config2__BusinessObject__c.toLowerCase() &#x3D;&#x3D;&#x3D; record.name.toLowerCase())[0];
-                        const fieldDescribe &#x3D; objDescribe.fields.filter(field &#x3D;&gt; field.name.toLowerCase() &#x3D;&#x3D;&#x3D; attribute.Apttus_Config2__Field__c.toLowerCase())[0];
-                        attribute._describe &#x3D; fieldDescribe;
-                    });
-                    return attributes;
-                });
-            });
-    }
-}
-
-@SObjectType(ProductAttributeValue)
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-export class ProductAttributeValueService extends SObjectService{}
-</code></pre>
-    </div>
 
 </div>
 
