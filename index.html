@@ -932,8 +932,6 @@
                    <div class="content-data">
 
 <h1 id="-apttus-ecommerce">@apttus/ecommerce</h1>
-<h2 id="pre-installation">Pre Installation</h2>
-<p>Prior to installing @apttus/ecommerce, you must have access to a Salesforce org. </p>
 <h2 id="installation">Installation</h2>
 <p>To install this library, run:</p>
 <div><pre class="line-numbers"><code class="language-bash">$ npm install ng-salesforce &#64;apttus/ecommerce --save</code></pre></div><p>During installation, you will be asked for a number of things to connect the application to your salesforce org (will be skipped if you already installed ng-salesforce).</p>
@@ -968,11 +966,205 @@ import { Configuration } from &#39;./salesforce.config&#39;;
   bootstrap: [AppComponent]
 })
 export class AppModule { }</code></pre></div><p>Once your library is imported, you can use its components, directives and pipes in your Angular application:</p>
-<h2 id="deploy">deploy</h2>
+<h2 id="defining-a-model">Defining a model</h2>
+<p>Propert state management is crucial to a successful Angular PWA. To that end, accessing data within Salesforce requires you to define your model
+within a Typescript class. Behind the scenes, ng-salesforce is managing how your components access and interact with that data to avoid uncessary
+operations and maintain synchronicity. </p>
+<p>Here&#39;s an example that defines the account and contact relationship for a component.</p>
+<div><pre class="line-numbers"><code class="language-typescript">import { SObjectModel, SObject, ChildRecord } from &#39;ng-salesforce&#39;;
+
+// We use the decorator SObjectModel to tell ng-salesforce this class maps to the &#39;Account&#39; object
+// In order to access standard sObject fields, our Account class must extend &#39;SObject&#39;
+// The class name can be anything, but the name property in the SObjectModel decorator must map to an object API name
+&#64;SObjectModel({name : &#39;Account&#39;})             
+export class Account extends SObject{         
+
+  // Define the fields you would like in your object. The name of the field must map to a field API name in salesforce
+  public Name: string = null;                 
+  public IsCustomerPortal: boolean = null;
+  public My_Custom_Field__c: number = null;
+
+  //Related Lists
+  public Opportunities: ChildRecord = new ChildRecord(new Opportunity())
+}
+
+&#64;SObjectModel({name : &#39;Opportunity&#39;})
+export class Oppoortunity extends SObject{
+  public Name: string = null;
+  public AccountId: string = null;
+}
+
+&#64;SobjectModel({name : &#39;Contact&#39;})
+export class Contact extends SObject{
+  public Name: string = null;
+
+  //Lookup
+  public Account: Account = new Account();
+}</code></pre></div><h2 id="defining-a-service">Defining a Service</h2>
+<p>After defining your model, you can access the data by creating a service for the models. The SObjectService class contains many of the standard DML and query operations to access the data, however you may add
+any convenience methods you want to your service. The core service methods are usually very simple.</p>
+<div><pre class="line-numbers"><code class="language-typescript">import { SObjectService, SObjectType } from &#39;ng-salesforce&#39;;
+import { Injectable } from &#39;&#64;angular/core&#39;;
+import { Account } from &#39;./account.model.ts&#39;  // This is a reference to the account model created in the previous section
+
+
+&#64;Injectable({
+    providedIn : &#39;root&#39;
+})
+export class AccountService extends SObjectService{
+  //Add service methods here
+  type = Account;
+}</code></pre></div><h2 id="access-the-data-in-your-component">Access the data in your component</h2>
+<div><pre class="line-numbers"><code class="language-typescript">import { Component, OnOnit } from &#39;&#64;angular/core&#39;;
+import { AccountService } from &#39;./account.service.ts&#39;;
+import { Account } from &#39;./account.model.ts&#39;;
+
+&#64;Component({
+  selector : &#39;app-account&#39;,
+  template : `
+
+  `,
+  styles : [``]
+})
+export class AccountComponent implements OnInit{
+
+  constructor(private accountService: AccountService){}
+
+  // Always perform service methods in the ngOnInit method
+  ngOnInit(){
+    this.accountService.where(`Id &lt;&gt; NULL LIMIT 1`).subscribe(res =&gt; {
+      /*
+      res === [
+        {
+          Name : &#39;Account A&#39;,
+          IsCustomerPortal : false,
+          My_Custom_Field__c : 1,
+          Id : &#39;xxx&#39;,
+          ...
+          Opportunities : {
+            totalSize : 1,
+            records : [
+              Name : &#39;Opportunity A&#39;,
+              AccountId : &#39;xxx&#39;,
+              Id : &#39;xxx&#39;,
+              ...
+            ]
+          }
+        }
+      ]
+      */
+    });
+    this.accountService.describe(&#39;My_Custom_Field__c&#39;, false).subscribe(res =&gt; {
+      // Describe information for My_Custom_Field__c
+    });
+
+    this.accountService.search(`FIND &#39;map*&#39; IN ALL FIELDS RETURNING Account (Id, Name)`).subscribe(res =&gt; {
+      // SOSL Search Results
+      // Note : search does not follow the model pattern and will return results specified in the query
+    });
+
+    this.accountService.get([&#39;00Fxxxxxxx&#39;, &#39;00Fxxxxxxx&#39;]).subscribe(res =&gt; {
+      // Returns an array of account records
+    })
+
+    this.accountService.aggregate(`ID &lt;&gt; NULL`).subscribe(res =&gt; {
+      // Returns aggregates for the specified clause. (i.e. total records as well as max/min values for all 
+      // fields specified in the model)
+    })
+
+    this.accountService.create([new Account()]).subscribe(res =&gt; {
+      // Returns list of id&#39;s created
+    })
+
+    this.accountService.update([new Account()]).subscribe(res =&gt; {
+      // Returns list of id&#39;s updated
+    })  
+
+    this.accountService.upsert([new Account()]).subscribe(res =&gt; {
+      // Returns list of objects upserted
+    }) 
+
+    this.accountService.delete([new Account()]).subscribe(res =&gt; {
+      // Returns list of boolean values for accounts that were successfully deleted
+    }) 
+
+    /**
+     *  Low level method to build a structured query
+     *  &#64;Param where clause
+     *  &#64;Param limit (optional)
+     *  &#64;Param offset (optional)
+     *  &#64;Param sort by (optional)
+     *  &#64;Param sort direction (optional)
+     *  &#64;Param ignore cache (optional default false)
+     *  &#64;Param ignore constraints (optional default false)
+     */
+    this.accountService.queryBuilder(&#39;ID &lt;&gt; NULL&#39;, 5, 2, &#39;Name&#39;, &#39;ASC&#39;, false, false).subscribe(res =&gt; {
+      // Returns query results
+    })
+  }
+}
+</code></pre></div><h2 id="deploy">deploy</h2>
 <p>To lint all <code>*.ts</code> files:</p>
 <div><pre class="line-numbers"><code class="language-bash">$ npm run lint</code></pre></div><p>To deploy your code to your salesforce org</p>
 <div><pre class="line-numbers"><code class="language-bash">$ npm run deploy</code></pre></div><h2 id="known-issues">Known Issues</h2>
-<h3 id="-angular-cli-6-0-0-uncaught-referenceerror-global-is-not-defined">@Angular/cli 6.0.0 Uncaught ReferenceError: global is not defined</h3>
+<h3 id="-angular-cli-6-0-0-can-t-resolve-stream">@Angular/cli 6.0.0 Can&#39;t Resolve Stream</h3>
+<p>If you&#39;ve upgraded to @angular/cli 6, and you&#39;re seeing the following error</p>
+<div><pre class="line-numbers"><code class="language-bash">WARNING in C:/Workspace/ngs-workspace/node_modules/xml2js/node_modules/sax/lib/sax.js
+Module not found: Error: Can&#39;t resolve &#39;stream&#39; in &#39;C:\Workspace\ngs-workspace\node_modules\xml2js\node_modules\sax\lib&#39;
+
+ERROR in C:/Workspace/ngs-workspace/node_modules/csv-parse/lib/index.js
+Module not found: Error: Can&#39;t resolve &#39;stream&#39; in &#39;C:\Workspace\ngs-workspace\node_modules\csv-parse\lib&#39;
+ERROR in C:/Workspace/ngs-workspace/node_modules/csv-stringify/lib/index.js
+Module not found: Error: Can&#39;t resolve &#39;stream&#39; in &#39;C:\Workspace\ngs-workspace\node_modules\csv-stringify\lib&#39;
+ERROR in C:/Workspace/ngs-workspace/node_modules/xml2js/lib/parser.js
+Module not found: Error: Can&#39;t resolve &#39;timers&#39; in &#39;C:\Workspace\ngs-workspace\node_modules\xml2js\lib&#39;
+i ｢wdm｣: Failed to compile.</code></pre></div><h4 id="fix-add-path">Fix: Add path</h4>
+<p>Add the following to your tsconfig.app.json file under &#39;compilerOptions&#39;:</p>
+<div><pre class="line-numbers"><code class="language-json">&quot;paths&quot; : {
+  &quot;jsforce&quot; : [&quot;./node_modules/jsforce/build/jsforce.min.js&quot;]
+  ...
+}</code></pre></div><h3 id="uncaught-error-no-base-href-set-please-provide-a-value-for-the-app_base_href-token-or-add-a-base-element-to-the-document-">Uncaught Error: No base href set. Please provide a value for the APP_BASE_HREF token or add a base element to the document.</h3>
+<p>In order to work on a visualforce page, your app needs to be setup to use the hash routing location strategy instead of the default</p>
+<h4 id="fix-set-the-usehash-flag-in-your-app-routing-module-ts-file">Fix: Set the useHash flag in your app-routing.module.ts file</h4>
+<p>In your app-routing.module.ts file, set the useHash flag in the RouterModule.forRoot(...) call</p>
+<div><pre class="line-numbers"><code class="language-typescript">&#64;NgModule({
+  imports: [RouterModule.forRoot(appRoutes,  { useHash: true })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }</code></pre></div><h3 id="no-access-control-allow-origin-header-is-present-on-the-requested-resource">No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource</h3>
+<p>Even if you enabled CORS during setup, Salesforce only supports it for certain APIs. This won&#39;t be an issue when you deploy to production.
+However, during development you will see this error for calls to the SOAP API. To bypass this, you must setup a proxy in @angular/cli. </p>
+<h4 id="fix-setup-angular-cli-proxy">Fix: Setup @angular/cli proxy</h4>
+<p>First, create a file called &#39;proxy.conf.json&#39; in your root directory. This json file will look like the following:</p>
+<div><pre class="line-numbers"><code class="language-json">{
+  &quot;/services/Soap/*&quot;: {
+    &quot;target&quot;: &quot;https://my.community.url.force.com&quot;,
+    &quot;secure&quot;: false,
+    &quot;logLevel&quot;: &quot;debug&quot;,
+    &quot;changeOrigin&quot;: true
+  }
+}
+</code></pre></div><p>Make sure you set the target to be the community url you are using.</p>
+<p>Secondly, point your angular.json configuration to this newly created proxy configuration.</p>
+<div><pre class="line-numbers"><code class="language-json">{
+  ...
+  &quot;projects&quot; : {
+    ...
+    &quot;myProject&quot; : {
+      ...
+      &quot;architect&quot; : {
+        ...
+        &quot;serve&quot; : {
+          ...
+          &quot;options&quot; : {
+            ...
+            &quot;proxyConfig&quot;: &quot;./proxy.conf.json&quot;
+          }
+        }
+      }
+    }
+  }
+}</code></pre></div><h3 id="-angular-cli-6-0-0-uncaught-referenceerror-global-is-not-defined">@Angular/cli 6.0.0 Uncaught ReferenceError: global is not defined</h3>
 <p>If you&#39;ve upgraded to @angular/cli 6, and you&#39;re seeing the following error</p>
 <div><pre class="line-numbers"><code class="language-bash">Uncaught ReferenceError: global is not defined
     at Object.../../node_modules/lodash.support/index.js (index.js:30)
