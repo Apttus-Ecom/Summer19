@@ -1107,7 +1107,7 @@ export class AccountComponent implements OnInit{
 <p>To lint all <code>*.ts</code> files:</p>
 <div><pre class="line-numbers"><code class="language-bash">$ npm run lint</code></pre></div><p>To deploy your code to your salesforce org</p>
 <div><pre class="line-numbers"><code class="language-bash">$ npm run deploy</code></pre></div><h2 id="known-issues">Known Issues</h2>
-<h3 id="-angular-cli-6-0-0-can-t-resolve-stream">@Angular/cli 6.0.0 Can&#39;t Resolve Stream</h3>
+<h2 id="-angular-cli-6-0-0-can-t-resolve-stream">@Angular/cli 6.0.0 Can&#39;t Resolve Stream</h2>
 <p>If you&#39;ve upgraded to @angular/cli 6, and you&#39;re seeing the following error</p>
 <div><pre class="line-numbers"><code class="language-bash">WARNING in C:/Workspace/ngs-workspace/node_modules/xml2js/node_modules/sax/lib/sax.js
 Module not found: Error: Can&#39;t resolve &#39;stream&#39; in &#39;C:\Workspace\ngs-workspace\node_modules\xml2js\node_modules\sax\lib&#39;
@@ -1123,7 +1123,7 @@ i ｢wdm｣: Failed to compile.</code></pre></div><h4 id="fix-add-path">Fix: Add
 <div><pre class="line-numbers"><code class="language-json">&quot;paths&quot; : {
   &quot;jsforce&quot; : [&quot;./node_modules/jsforce/build/jsforce.min.js&quot;]
   ...
-}</code></pre></div><h3 id="uncaught-error-no-base-href-set-please-provide-a-value-for-the-app_base_href-token-or-add-a-base-element-to-the-document-">Uncaught Error: No base href set. Please provide a value for the APP_BASE_HREF token or add a base element to the document.</h3>
+}</code></pre></div><h2 id="uncaught-error-no-base-href-set-please-provide-a-value-for-the-app_base_href-token-or-add-a-base-element-to-the-document-">Uncaught Error: No base href set. Please provide a value for the APP_BASE_HREF token or add a base element to the document.</h2>
 <p>In order to work on a visualforce page, your app needs to be setup to use the hash routing location strategy instead of the default</p>
 <h4 id="fix-set-the-usehash-flag-in-your-app-routing-module-ts-file">Fix: Set the useHash flag in your app-routing.module.ts file</h4>
 <p>In your app-routing.module.ts file, set the useHash flag in the RouterModule.forRoot(...) call</p>
@@ -1131,7 +1131,7 @@ i ｢wdm｣: Failed to compile.</code></pre></div><h4 id="fix-add-path">Fix: Add
   imports: [RouterModule.forRoot(appRoutes,  { useHash: true })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }</code></pre></div><h3 id="no-access-control-allow-origin-header-is-present-on-the-requested-resource">No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource</h3>
+export class AppRoutingModule { }</code></pre></div><h2 id="no-access-control-allow-origin-header-is-present-on-the-requested-resource">No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource</h2>
 <p>Even if you enabled CORS during setup, Salesforce only supports it for certain APIs. This won&#39;t be an issue when you deploy to production.
 However, during development you will see this error for calls to the SOAP API. To bypass this, you must setup a proxy in @angular/cli. </p>
 <h4 id="fix-setup-angular-cli-proxy">Fix: Setup @angular/cli proxy</h4>
@@ -1164,7 +1164,7 @@ However, during development you will see this error for calls to the SOAP API. T
       }
     }
   }
-}</code></pre></div><h3 id="-angular-cli-6-0-0-uncaught-referenceerror-global-is-not-defined">@Angular/cli 6.0.0 Uncaught ReferenceError: global is not defined</h3>
+}</code></pre></div><h2 id="-angular-cli-6-0-0-uncaught-referenceerror-global-is-not-defined">@Angular/cli 6.0.0 Uncaught ReferenceError: global is not defined</h2>
 <p>If you&#39;ve upgraded to @angular/cli 6, and you&#39;re seeing the following error</p>
 <div><pre class="line-numbers"><code class="language-bash">Uncaught ReferenceError: global is not defined
     at Object.../../node_modules/lodash.support/index.js (index.js:30)
