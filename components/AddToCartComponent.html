@@ -965,7 +965,7 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
                 <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
@@ -1057,10 +1057,10 @@
                                 <a href="#getConfiguration">getConfiguration</a>
                             </li>
                             <li>
-                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                                <a href="#ngOnChanges">ngOnChanges</a>
                             </li>
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
                             </li>
                             <li>
                                 <a href="#setAttributeDefaults">setAttributeDefaults</a>
@@ -1357,18 +1357,18 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="ngOnDestroy"></a>
+                        <a name="ngOnChanges"></a>
                         <span class="name">
                             <b>
-                            ngOnDestroy
+                            ngOnChanges
                             </b>
-                            <a href="#ngOnDestroy"><span class="fa fa-link"></span></a>
+                            <a href="#ngOnChanges"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>ngOnDestroy()</code>
+<code>ngOnChanges()</code>
                     </td>
                 </tr>
 
@@ -1390,18 +1390,18 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="ngOnInit"></a>
+                        <a name="ngOnDestroy"></a>
                         <span class="name">
                             <b>
-                            ngOnInit
+                            ngOnDestroy
                             </b>
-                            <a href="#ngOnInit"><span class="fa fa-link"></span></a>
+                            <a href="#ngOnDestroy"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>ngOnInit()</code>
+<code>ngOnDestroy()</code>
                     </td>
                 </tr>
 
@@ -1653,7 +1653,7 @@
 
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;product&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div&gt;
   &lt;!-- Basic product with no attributes --&gt;
   &lt;form class&#x3D;&quot;row&quot; *ngIf&#x3D;&quot;!product?.Apttus_Config2__HasAttributes__c&quot;&gt;
     &lt;div class&#x3D;&quot;col-12 col-md-6&quot;&gt;
@@ -1673,7 +1673,7 @@
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;col-12 col-md-6&quot;&gt;
-      &lt;button class&#x3D;&quot;btn btn-block btn-primary btn-sm&quot; (click)&#x3D;&quot;addToCart()&quot; [ladda]&#x3D;&quot;loading&quot;&gt;Add to Cart&lt;/button&gt;
+      &lt;button class&#x3D;&quot;btn btn-block btn-primary btn-sm&quot; (click)&#x3D;&quot;addToCart()&quot; [ladda]&#x3D;&quot;loading&quot; data-style&#x3D;&quot;zoom-in&quot;&gt;Add to Cart&lt;/button&gt;
     &lt;/div&gt;
   &lt;/form&gt;
   
@@ -1739,7 +1739,7 @@
                   &lt;/button&gt;
                 &lt;/div&gt;
               &lt;/div&gt;
-              &lt;button class&#x3D;&quot;btn btn-block btn-primary btn-sm&quot; (click)&#x3D;&quot;addToCart()&quot; [ladda]&#x3D;&quot;loading&quot;&gt;Add to Cart&lt;/button&gt;
+              &lt;button class&#x3D;&quot;btn btn-block btn-primary btn-sm&quot; (click)&#x3D;&quot;addToCart()&quot; [ladda]&#x3D;&quot;loading&quot; data-style&#x3D;&quot;zoom-in&quot;&gt;Add to Cart&lt;/button&gt;
             &lt;/div&gt;
           &lt;/div&gt;
   
@@ -1776,7 +1776,7 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="product">  <!-- Basic product with no attributes -->  <form class="row" *ngIf="!product?.Apttus_Config2__HasAttributes__c">    <div class="col-12 col-md-6">      <div class="input-group input-group-sm">        <div class="input-group-prepend">          <button class="btn btn-outline-secondary btn-icon" type="button" (click)="quantity = (quantity > 1) ? quantity - 1 : 1">            <span class="oi oi-minus"></span>          </button>        </div>        <input type="number" class="form-control text-center" min="1" placeholder="Quantity" [(ngModel)]="quantity"          name="quantity" aria-label="" aria-describedby="basic-addon1">        <div class="input-group-append">          <button class="btn btn-outline-secondary btn-icon" type="button" (click)="quantity = quantity + 1">            <span class="oi oi-plus"></span>          </button>        </div>      </div>    </div>    <div class="col-12 col-md-6">      <button class="btn btn-block btn-primary btn-sm" (click)="addToCart()" [ladda]="loading">Add to Cart</button>    </div>  </form>    <button class="btn btn-block btn-primary btn-sm" *ngIf="product?.Apttus_Config2__HasAttributes__c" data-toggle="modal" type="button"    [attr.data-target]="\'#\' + product.Id + \'-configure-modal\'">Configure</button>    <!-- Modal -->  <div class="modal fade" [id]="product.Id + \'-configure-modal\'" tabindex="-1" role="dialog" aria-labelledby="configureModalLabel"    aria-hidden="true" #configureModal>    <div class="modal-dialog" role="document">      <div class="modal-content">        <div class="modal-header">          <h5 class="modal-title" [id]="product.Id + \'-configure-modal-label\'">Configuration</h5>          <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body d-flex justify-content-center" *ngIf="!attributes">          <apt-md-spinner></apt-md-spinner>        </div>        <div class="modal-body p-0" *ngIf="attributes">          <div class="accordion" [id]="product.Id + \'-attribute-accordion\'">            <div class="card" *ngFor="let attributeMap of attributes; let i = index">              <div class="card-header">                <h5 class="mb-0">                  <button class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="\'#\' + attributeMap.groupMember.Id"                    aria-expanded="true" aria-controls="collapseOne">                    {{attributeMap.groupMember.Apttus_Config2__AttributeGroupId__r?.Name}}                  </button>                </h5>              </div>                <div [id]="attributeMap.groupMember.Id" class="collapse" [class.show]="i === 0" [attr.data-parent]="\'#\' + product.Id + \'-attribute-accordion\'">                <div class="card-body">                  <div *ngFor="let attribute of attributeMap.productAttributeList">                    <apt-input-field [field]="attribute[\'_describe\']" [(ngModel)]="attributeMap.attributeValue[attribute.Apttus_Config2__Field__c]"                      [priceData]="attributeMap.priceMatrices | priceMatrixFilter : attribute[\'_describe\']?.name" *ngIf="attribute?.Apttus_Config2__AttributeGroupId__c === attributeMap.groupMember.Apttus_Config2__AttributeGroupId__c">                    </apt-input-field>                  </div>                </div>              </div>            </div>          </div>          </div>        <div class="modal-footer" *ngIf="attributes">          <div class="d-flex w-100 justify-content-between align-items-center flex-wrap">            <strong class="mr-auto">              <price [product]="product" [quantity]="quantity" [productAttributeValues]="getAttributeValues()"></price>            </strong>            <div class="d-flex">              <div class="input-group input-group-sm mr-3">                <div class="input-group-prepend">                  <button class="btn btn-outline-secondary btn-icon" type="button" (click)="quantity = (quantity > 1) ? quantity - 1 : 1">                    <span class="oi oi-minus"></span>                  </button>                </div>                <input type="number" class="form-control text-center" min="1" placeholder="Quantity"                  [(ngModel)]="quantity" name="quantity" aria-label="" aria-describedby="basic-addon1">                <div class="input-group-append">                  <button class="btn btn-outline-secondary btn-icon" type="button" (click)="quantity = quantity + 1">                    <span class="oi oi-plus"></span>                  </button>                </div>              </div>              <button class="btn btn-block btn-primary btn-sm" (click)="addToCart()" [ladda]="loading">Add to Cart</button>            </div>          </div>          </div>      </div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div>  <!-- Basic product with no attributes -->  <form class="row" *ngIf="!product?.Apttus_Config2__HasAttributes__c">    <div class="col-12 col-md-6">      <div class="input-group input-group-sm">        <div class="input-group-prepend">          <button class="btn btn-outline-secondary btn-icon" type="button" (click)="quantity = (quantity > 1) ? quantity - 1 : 1">            <span class="oi oi-minus"></span>          </button>        </div>        <input type="number" class="form-control text-center" min="1" placeholder="Quantity" [(ngModel)]="quantity"          name="quantity" aria-label="" aria-describedby="basic-addon1">        <div class="input-group-append">          <button class="btn btn-outline-secondary btn-icon" type="button" (click)="quantity = quantity + 1">            <span class="oi oi-plus"></span>          </button>        </div>      </div>    </div>    <div class="col-12 col-md-6">      <button class="btn btn-block btn-primary btn-sm" (click)="addToCart()" [ladda]="loading" data-style="zoom-in">Add to Cart</button>    </div>  </form>    <button class="btn btn-block btn-primary btn-sm" *ngIf="product?.Apttus_Config2__HasAttributes__c" data-toggle="modal" type="button"    [attr.data-target]="\'#\' + product.Id + \'-configure-modal\'">Configure</button>    <!-- Modal -->  <div class="modal fade" [id]="product.Id + \'-configure-modal\'" tabindex="-1" role="dialog" aria-labelledby="configureModalLabel"    aria-hidden="true" #configureModal>    <div class="modal-dialog" role="document">      <div class="modal-content">        <div class="modal-header">          <h5 class="modal-title" [id]="product.Id + \'-configure-modal-label\'">Configuration</h5>          <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body d-flex justify-content-center" *ngIf="!attributes">          <apt-md-spinner></apt-md-spinner>        </div>        <div class="modal-body p-0" *ngIf="attributes">          <div class="accordion" [id]="product.Id + \'-attribute-accordion\'">            <div class="card" *ngFor="let attributeMap of attributes; let i = index">              <div class="card-header">                <h5 class="mb-0">                  <button class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="\'#\' + attributeMap.groupMember.Id"                    aria-expanded="true" aria-controls="collapseOne">                    {{attributeMap.groupMember.Apttus_Config2__AttributeGroupId__r?.Name}}                  </button>                </h5>              </div>                <div [id]="attributeMap.groupMember.Id" class="collapse" [class.show]="i === 0" [attr.data-parent]="\'#\' + product.Id + \'-attribute-accordion\'">                <div class="card-body">                  <div *ngFor="let attribute of attributeMap.productAttributeList">                    <apt-input-field [field]="attribute[\'_describe\']" [(ngModel)]="attributeMap.attributeValue[attribute.Apttus_Config2__Field__c]"                      [priceData]="attributeMap.priceMatrices | priceMatrixFilter : attribute[\'_describe\']?.name" *ngIf="attribute?.Apttus_Config2__AttributeGroupId__c === attributeMap.groupMember.Apttus_Config2__AttributeGroupId__c">                    </apt-input-field>                  </div>                </div>              </div>            </div>          </div>          </div>        <div class="modal-footer" *ngIf="attributes">          <div class="d-flex w-100 justify-content-between align-items-center flex-wrap">            <strong class="mr-auto">              <price [product]="product" [quantity]="quantity" [productAttributeValues]="getAttributeValues()"></price>            </strong>            <div class="d-flex">              <div class="input-group input-group-sm mr-3">                <div class="input-group-prepend">                  <button class="btn btn-outline-secondary btn-icon" type="button" (click)="quantity = (quantity > 1) ? quantity - 1 : 1">                    <span class="oi oi-minus"></span>                  </button>                </div>                <input type="number" class="form-control text-center" min="1" placeholder="Quantity"                  [(ngModel)]="quantity" name="quantity" aria-label="" aria-describedby="basic-addon1">                <div class="input-group-append">                  <button class="btn btn-outline-secondary btn-icon" type="button" (click)="quantity = quantity + 1">                    <span class="oi oi-plus"></span>                  </button>                </div>              </div>              <button class="btn btn-block btn-primary btn-sm" (click)="addToCart()" [ladda]="loading" data-style="zoom-in">Add to Cart</button>            </div>          </div>          </div>      </div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'PriceComponent', 'selector': 'price'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AddToCartComponent'};
