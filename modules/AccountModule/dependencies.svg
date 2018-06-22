@@ -22,29 +22,41 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_AccountModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="172,-70 172,-195 324,-195 324,-70 172,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="92,-70 92,-195 404,-195 404,-70 92,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_AccountModule_imports</title>
-<polygon fill="none" stroke="#000000" points="180,-78 180,-130 316,-130 316,-78 180,-78"/>
+<g id="clust6" class="cluster">
+<title>cluster_AccountModule_providers</title>
+<polygon fill="none" stroke="#000000" points="100,-78 100,-130 396,-130 396,-78 100,-78"/>
 </g>
-<!-- CommerceModule -->
+<!-- AccountService -->
 <g id="node1" class="node">
-<title>CommerceModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="308.472,-122 305.472,-126 284.472,-126 281.472,-122 187.528,-122 187.528,-86 308.472,-86 308.472,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommerceModule</text>
+<title>AccountService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="315" cy="-104" rx="72.9121" ry="18"/>
+<text text-anchor="middle" x="315" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AccountService</text>
 </g>
 <!-- AccountModule -->
-<g id="node2" class="node">
+<g id="node3" class="node">
 <title>AccountModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="301.4762,-187 298.4762,-191 277.4762,-191 274.4762,-187 194.5238,-187 194.5238,-151 301.4762,-151 301.4762,-187"/>
-<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">AccountModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="293.4762,-187 290.4762,-191 269.4762,-191 266.4762,-187 186.5238,-187 186.5238,-151 293.4762,-151 293.4762,-187"/>
+<text text-anchor="middle" x="240" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">AccountModule</text>
 </g>
-<!-- CommerceModule&#45;&gt;AccountModule -->
+<!-- AccountService&#45;&gt;AccountModule -->
 <g id="edge1" class="edge">
-<title>CommerceModule&#45;&gt;AccountModule</title>
-<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
+<title>AccountService&#45;&gt;AccountModule</title>
+<path fill="none" stroke="#000000" d="M267.8912,-117.7848C267.8912,-117.7848 267.8912,-140.5475 267.8912,-140.5475"/>
+<polygon fill="#000000" stroke="#000000" points="264.3913,-140.5474 267.8912,-150.5475 271.3913,-140.5475 264.3913,-140.5474"/>
+</g>
+<!-- UserService -->
+<g id="node2" class="node">
+<title>UserService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="166" cy="-104" rx="58.4415" ry="18"/>
+<text text-anchor="middle" x="166" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">UserService</text>
+</g>
+<!-- UserService&#45;&gt;AccountModule -->
+<g id="edge2" class="edge">
+<title>UserService&#45;&gt;AccountModule</title>
+<path fill="none" stroke="#000000" d="M205.3661,-117.468C205.3661,-117.468 205.3661,-140.8642 205.3661,-140.8642"/>
+<polygon fill="#000000" stroke="#000000" points="201.8662,-140.8641 205.3661,-150.8642 208.8662,-140.8642 201.8662,-140.8641"/>
 </g>
 </g>
 </svg>
