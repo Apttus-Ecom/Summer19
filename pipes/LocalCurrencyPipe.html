@@ -64,6 +64,15 @@
             <code>src/lib/modules/pricing/pipes/convert.pipe.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Core pipe to convert a number into the currency and format of the given user.</p>
+<h3 id="example-">Example:</h3>
+<div><pre class="line-numbers"><code class="language-html">    &lt;!-- Renders $5.55 for USD users --&gt;
+    &lt;span&gt;{{5.55 | localCurrencyPipe | async}}&lt;/span&gt;</code></pre></div>
+            </p>
 
 
         <section>
@@ -98,7 +107,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>transform(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, args?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>transform(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
 
@@ -116,13 +125,14 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
                                                         <td>value</td>
                                                         <td>
-                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                                         </td>
                                                     
                                                     <td>
@@ -130,18 +140,10 @@
                                                     </td>
                                                     
 
-                                                </tr>
-                                                <tr>
-                                                        <td>args</td>
                                                         <td>
-                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                                <code><p>the number to convert</p>
+</code>
                                                         </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-
                                                 </tr>
                                         </tbody>
                                     </table>
