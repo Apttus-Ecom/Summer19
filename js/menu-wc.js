@@ -38,7 +38,20 @@
                 </li>
             </ul>
         </li>
- 
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#additional-pages"' :
+                'data-target="#xs-additional-pages"'}>
+                <span class="icon ion-ios-book"></span>
+                <span>Additional documentation</span>
+                <span class="icon ion-ios-arrow-down"></span>
+            </div>
+            <ul class="links collapse" ${ isNormalMode ? 'id="additional-pages"' : 'id="xs-additional-pages"' }>
+                <li class="link ">
+                    <a href="additional-documentation/apttus-copyright-disclaimer.html" data-type="entity-link" data-context-id="additional">Apttus Copyright Disclaimer</a>
+                </li>
+            </ul>
+        </li>
+         
         <li class="chapter modules">
             <a data-type="chapter-link" href="modules.html">
                 <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ? 'data-target="#modules-links"' :
