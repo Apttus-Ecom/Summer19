@@ -148,7 +148,7 @@ There are also pipes provided that wrap this service to provide pricing within a
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(priceListService: <a href="../injectables/PriceListService.html">PriceListService</a>, cartService: <a href="../injectables/CartService.html">CartService</a>, priceMatrixService: <a href="../injectables/PriceMatrixService.html">PriceMatrixService</a>, productOptionService: <a href="../injectables/ProductOptionService.html">ProductOptionService</a>, cacheService: CacheService, localCurrencyPipe: LocalCurrencyPipe)</code>
+<code>constructor(priceListService: <a href="../injectables/PriceListService.html">PriceListService</a>, cartService: <a href="../injectables/CartService.html">CartService</a>, priceMatrixService: <a href="../injectables/PriceMatrixService.html">PriceMatrixService</a>, productOptionService: <a href="../injectables/ProductOptionService.html">ProductOptionService</a>, priceRuleService: <a href="../injectables/PriceRuleService.html">PriceRuleService</a>, cacheService: CacheService, localCurrencyPipe: LocalCurrencyPipe)</code>
                     </td>
                 </tr>
 
@@ -206,6 +206,18 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                   
                                                         <td>
                                                                     <code><a href="../injectables/ProductOptionService.html" target="_self" >ProductOptionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>priceRuleService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/PriceRuleService.html" target="_self" >PriceRuleService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -486,7 +498,7 @@ There are also pipes provided that wrap this service to provide pricing within a
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getCartItemPrice(cartItem: <a href="../classes/CartItem.html">CartItem</a>)</code>
+                        <code>getCartItemPrice(cartItem: <a href="../classes/CartItem.html">CartItem</a>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
                     </td>
                 </tr>
 
@@ -524,6 +536,20 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                         <td>
                                                                 <code><p>The instance of the cart item to return a price for.</p>
 </code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>cart</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -808,7 +834,7 @@ There are also pipes provided that wrap this service to provide pricing within a
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getProductPrice(product: <a href="../classes/Product.html">Product</a>, quantity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, attributes?: <a href="../classes/ProductAttributeValue.html">Array<ProductAttributeValue></a>, options?: <a href="../interfaces/ProductOptionForm.html">Array<ProductOptionForm></a>, priceListItemOverride?: <a href="../classes/PriceListItem.html">PriceListItem</a>)</code>
+                        <code>getProductPrice(product: <a href="../classes/Product.html">Product</a>, quantity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, attributes?: <a href="../classes/ProductAttributeValue.html">Array<ProductAttributeValue></a>, options?: <a href="../interfaces/ProductOptionForm.html">Array<ProductOptionForm></a>, priceListItemOverride?: <a href="../classes/PriceListItem.html">PriceListItem</a>, context?: <a href="../classes/OrderLineItem.html">CartItem | OrderLineItem</a>)</code>
                     </td>
                 </tr>
 
@@ -910,6 +936,22 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                         <td>priceListItemOverride</td>
                                                         <td>
                                                                     <code><a href="../classes/PriceListItem.html" target="_self" >PriceListItem</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>context</td>
+                                                        <td>
+                                                                    <code><a href="../classes/OrderLineItem.html" target="_self" >CartItem | OrderLineItem</a></code>
                                                         </td>
                                                     
                                                     <td>

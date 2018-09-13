@@ -487,6 +487,9 @@
                     <a href="classes/PriceRuleEntry.html" data-type="entity-link">PriceRuleEntry</a>
                 </li>
                 <li class="link">
+                    <a href="classes/PriceRuleSet.html" data-type="entity-link">PriceRuleSet</a>
+                </li>
+                <li class="link">
                     <a href="classes/Product.html" data-type="entity-link">Product</a>
                 </li>
                 <li class="link">
