@@ -62,6 +62,16 @@
     <code>src/lib/modules/cart/components/mini-cart/mini-cart.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Mini Cart Component</p>
+<p>The Mini Cart component is a cart icon with an associated dropdown menu. The cart icon should be displayed in a fixed header of a page so it is accessible to the user at all times. Once items have been added to the user&#39;s current cart a badge will appear next to the Mini Cart icon with the total number of items.</p>
+<p>When a user clicks the Mini Cart icon the associated dropdown menu will be displayed. The Mini Cart dropdown menu shows the current line items that have been added to the cart. Line items include information about the product, controls for updating the quantity of items, and a control for removing the item from the cart. A cart total price and checkout button are also shown in the Mini Cart dropdown.</p>
+<p>Example Usage:</p>
+
+    </p>
 
 
     <p class="comment">
@@ -69,8 +79,17 @@
     </p>
     <p class="comment">
                 <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
+    <p class="comment">
+        <h3>Example</h3>
+    </p>
+    <div class="io-description">
+                <div>
+                    <pre class="line-numbers"><code class="language-html">&lt;apt-mini-cart&gt;&lt;/apt-mini-cart&gt;</code></pre>
+                </div>
+    </div>
 
 <section>
     <h3>Metadata</h3>
@@ -144,6 +163,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#changeItemQuantity">changeItemQuantity</a>
+                            </li>
+                            <li>
+                                <a href="#getItemCount">getItemCount</a>
+                            </li>
+                            <li>
                                 <a href="#removeCartItem">removeCartItem</a>
                             </li>
                         </ul>
@@ -160,6 +185,9 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#cartLink">cartLink</a>
+                            </li>
+                            <li>
+                                <a href="#manageCartLink">manageCartLink</a>
                             </li>
                             <li>
                                 <a href="#productIdentifier">productIdentifier</a>
@@ -190,6 +218,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor for Mini Cart Component for injecting dependencies.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -198,6 +228,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -212,6 +243,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Instance of CartService</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>sanitizer</td>
@@ -224,6 +259,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Instance of DomSanitizer</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -250,6 +289,25 @@
                             </p>
                         <p>
                             <em>Default value : </em><code>&#x27;/cart&#x27;</code>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="manageCartLink"></a>
+                        <code>manageCartLink</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>&#x27;/manage-cart&#x27;</code>
                         </p>
                     </td>
                 </tr>
@@ -306,6 +364,110 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="changeItemQuantity"></a>
+                        <span class="name">
+                            <b>
+                            changeItemQuantity
+                            </b>
+                            <a href="#changeItemQuantity"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>changeItemQuantity(cartItem: <a href="../classes/CartItem.html">CartItem</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Changes the quantity of the cart item passed to this method.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cartItem</td>
+                                                        <td>
+                                                                    <code><a href="../classes/CartItem.html" target="_self" >CartItem</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>Cart item reference to change quantity.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getItemCount"></a>
+                        <span class="name">
+                            <b>
+                            getItemCount
+                            </b>
+                            <a href="#getItemCount"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getItemCount()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="removeCartItem"></a>
                         <span class="name">
                             <b>
@@ -326,6 +488,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Removes the provided CartItem from the user&#39;s current active cart.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -335,6 +499,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -349,6 +514,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>CartItem instance to remove from cart.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>evt</td>
@@ -360,6 +529,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>Event associated with the user action.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -410,6 +583,12 @@
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The current active cart to reference line item information from.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -439,6 +618,12 @@
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The item count shown as a badge next to the cart icon.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -469,6 +654,11 @@
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">Instance of DomSanitizer</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -482,37 +672,37 @@
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;dropdown&quot;&gt;
     &lt;button class&#x3D;&quot;btn btn-link nav-link mr-3 dropdown-toggle&quot; data-toggle&#x3D;&quot;dropdown&quot;&gt;
         &lt;span class&#x3D;&quot;oi oi-cart oi-lg&quot;&gt;&lt;/span&gt;
-        &lt;span class&#x3D;&quot;badge badge-secondary&quot; *ngIf&#x3D;&quot;itemCount &amp;&amp; itemCount &gt; 0&quot;&gt;{{itemCount}}&lt;/span&gt;
+        &lt;span class&#x3D;&quot;badge badge-secondary&quot; *ngIf&#x3D;&quot;getItemCount() &gt; 0&quot;&gt;{{getItemCount()}}&lt;/span&gt;
     &lt;/button&gt;
     &lt;div class&#x3D;&quot;dropdown-menu dropdown-menu-right m-0 p-0&quot; aria-labelledby&#x3D;&quot;dropdownMenuButton&quot; *ngIf&#x3D;&quot;cart&quot;&gt;
-        &lt;ul class&#x3D;&quot;list-group&quot; *ngIf&#x3D;&quot;cart?.Apttus_Config2__LineItems__r?.records?.length &gt; 0; else empty&quot;&gt;
-            &lt;ng-container *ngFor&#x3D;&quot;let item of cart?.Apttus_Config2__LineItems__r?.records&quot;&gt;
-                &lt;li class&#x3D;&quot;media list-group-item d-flex&quot; *ngIf&#x3D;&quot;item.Apttus_Config2__LineType__c &#x3D;&#x3D;&#x3D; &#x27;Product/Service&#x27; &amp;&amp; item.Apttus_Config2__ProductId__r&quot;&gt;
-                    &lt;img class&#x3D;&quot;mr-3 align-self-center&quot; [src]&#x3D;&quot;sanitizer.bypassSecurityTrustUrl(item.Apttus_Config2__ProductId__r?.Apttus_Config2__IconId__c | image)&quot;
+        &lt;ul class&#x3D;&quot;list-group&quot; *ngIf&#x3D;&quot;cart?.LineItems?.length &gt; 0; else empty&quot;&gt;
+            &lt;ng-container *ngFor&#x3D;&quot;let item of cart?.LineItems; let i &#x3D; index&quot;&gt;
+                &lt;li class&#x3D;&quot;media list-group-item d-flex&quot; *ngIf&#x3D;&quot;item.LineType &#x3D;&#x3D;&#x3D; &#x27;Product/Service&#x27; &amp;&amp; item.Product&quot;&gt;
+                    &lt;img class&#x3D;&quot;mr-3 align-self-center&quot; [src]&#x3D;&quot;sanitizer.bypassSecurityTrustUrl(item.Product?.IconId | image)&quot;
                         alt&#x3D;&quot;Generic placeholder image&quot;&gt;
                     &lt;div class&#x3D;&quot;media-body&quot;&gt;
                         &lt;h6 class&#x3D;&quot;m-0&quot;&gt;
-                            &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[productLink, item.Apttus_Config2__ProductId__r[productIdentifier]]&quot;&gt;
-                                {{item.Apttus_Config2__ProductId__r?.Name}}
+                            &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[productLink, item.Product[productIdentifier]]&quot;&gt;
+                                {{item.Product?.Name}}
                             &lt;/a&gt;
                         &lt;/h6&gt;
-                        &lt;small class&#x3D;&quot;d-block&quot;&gt;{{item.Apttus_Config2__ProductId__r?.ProductCode}}&lt;/small&gt;
-                        &lt;small&gt;
-                            &lt;strong&gt;{{(item | CartItemPricePipe | async)?.totalPrice$ | async}}&lt;/strong&gt;
-                    
-                            &lt;span class&#x3D;&quot;mx-2&quot;&gt;|&lt;/span&gt;
-                            Quantity: {{item.Apttus_Config2__Quantity__c}}
-                        &lt;/small&gt;
+                        &lt;small class&#x3D;&quot;d-block&quot;&gt;{{item.Product?.ProductCode}}&lt;/small&gt;
+                        &lt;div class&#x3D;&quot;d-flex align-items-center small&quot;&gt;
+                            Quantity: &lt;input type&#x3D;&quot;number&quot; [(ngModel)]&#x3D;&quot;item.Quantity&quot; (ngModelChange)&#x3D;&quot;changeItemQuantity(item)&quot; class&#x3D;&quot;w-25 m-2 pl-3&quot;/&gt;
+                            &lt;!-- &lt;apt-input-quantity [min]&#x3D;&quot;1&quot; [(ngModel)]&#x3D;&quot;item.Quantity&quot; (ngModelChange)&#x3D;&quot;changeItemQuantity(item, $event)&quot;&gt;&lt;/apt-input-quantity&gt; --&gt;
+                            &lt;strong class&#x3D;&quot;ml-auto&quot;&gt;
+                                &lt;apt-price [record]&#x3D;&quot;item&quot;&gt;&lt;/apt-price&gt;
+                            &lt;/strong&gt;
+                        &lt;/div&gt;
                     &lt;/div&gt;
                     &lt;div class&#x3D;&quot;ml-auto&quot;&gt;
                         &lt;button class&#x3D;&quot;btn btn-link btn-sm&quot; (click)&#x3D;&quot;removeCartItem(item, $event)&quot; [ladda]&#x3D;&quot;item?._metadata?._deleting&quot; data-style&#x3D;&quot;zoom-in&quot;
                             data-spinner-color&#x3D;&quot;black&quot;&gt;
                             &lt;span class&#x3D;&quot;oi oi-trash&quot;&gt;&lt;/span&gt;
                         &lt;/button&gt;
-                    &lt;/div&gt;
+                    &lt;/div&gt;                   
                 &lt;/li&gt;
             &lt;/ng-container&gt;
-
             &lt;li class&#x3D;&quot;list-group-item bg-light&quot;&gt;
                 &lt;div class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
                     &lt;span&gt;Cart Total&lt;/span&gt;
@@ -521,9 +711,11 @@
                     &lt;/strong&gt;
                 &lt;/div&gt;
             &lt;/li&gt;
-
-            &lt;li class&#x3D;&quot;list-group-item bg-light&quot; *ngIf&#x3D;&quot;cart?.Apttus_Config2__Status__c !&#x3D;&#x3D; &#x27;Approval Required&#x27;; else approval&quot;&gt;
-                &lt;button class&#x3D;&quot;btn btn-primary btn-block&quot; [routerLink]&#x3D;&quot;[cartLink]&quot;&gt;Checkout&lt;/button&gt;
+            &lt;li class&#x3D;&quot;list-group-item bg-light&quot; *ngIf&#x3D;&quot;cart?.Status !&#x3D;&#x3D; &#x27;Approval Required&#x27;; else approval&quot;&gt;
+                &lt;div class&#x3D;&quot;btn-group w-100&quot; role&#x3D;&quot;group&quot;&gt;
+                    &lt;button class&#x3D;&quot;btn btn-outline-secondary w-50 mr-2&quot; [routerLink]&#x3D;&quot;[manageCartLink]&quot;&gt;View Cart&lt;/button&gt;
+                    &lt;button class&#x3D;&quot;btn btn-primary w-50 ml-2&quot; [routerLink]&#x3D;&quot;[cartLink]&quot;&gt;Checkout&lt;/button&gt;
+                &lt;/div&gt;
             &lt;/li&gt;
             &lt;ng-template #approval&gt;
                 &lt;li class&#x3D;&quot;list-group-item bg-light list-group-item bg-light d-flex justify-content-center text-danger&quot;&gt;
@@ -569,8 +761,8 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="dropdown">    <button class="btn btn-link nav-link mr-3 dropdown-toggle" data-toggle="dropdown">        <span class="oi oi-cart oi-lg"></span>        <span class="badge badge-secondary" *ngIf="itemCount && itemCount > 0">{{itemCount}}</span>    </button>    <div class="dropdown-menu dropdown-menu-right m-0 p-0" aria-labelledby="dropdownMenuButton" *ngIf="cart">        <ul class="list-group" *ngIf="cart?.Apttus_Config2__LineItems__r?.records?.length > 0; else empty">            <ng-container *ngFor="let item of cart?.Apttus_Config2__LineItems__r?.records">                <li class="media list-group-item d-flex" *ngIf="item.Apttus_Config2__LineType__c === \'Product/Service\' && item.Apttus_Config2__ProductId__r">                    <img class="mr-3 align-self-center" [src]="sanitizer.bypassSecurityTrustUrl(item.Apttus_Config2__ProductId__r?.Apttus_Config2__IconId__c | image)"                        alt="Generic placeholder image">                    <div class="media-body">                        <h6 class="m-0">                            <a href="javascript:void(0)" [routerLink]="[productLink, item.Apttus_Config2__ProductId__r[productIdentifier]]">                                {{item.Apttus_Config2__ProductId__r?.Name}}                            </a>                        </h6>                        <small class="d-block">{{item.Apttus_Config2__ProductId__r?.ProductCode}}</small>                        <small>                            <strong>{{(item | CartItemPricePipe | async)?.totalPrice$ | async}}</strong>                                                <span class="mx-2">|</span>                            Quantity: {{item.Apttus_Config2__Quantity__c}}                        </small>                    </div>                    <div class="ml-auto">                        <button class="btn btn-link btn-sm" (click)="removeCartItem(item, $event)" [ladda]="item?._metadata?._deleting" data-style="zoom-in"                            data-spinner-color="black">                            <span class="oi oi-trash"></span>                        </button>                    </div>                </li>            </ng-container>            <li class="list-group-item bg-light">                <div class="d-flex justify-content-between">                    <span>Cart Total</span>                    <strong>                        <apt-price [record]="cart"></apt-price>                    </strong>                </div>            </li>            <li class="list-group-item bg-light" *ngIf="cart?.Apttus_Config2__Status__c !== \'Approval Required\'; else approval">                <button class="btn btn-primary btn-block" [routerLink]="[cartLink]">Checkout</button>            </li>            <ng-template #approval>                <li class="list-group-item bg-light list-group-item bg-light d-flex justify-content-center text-danger">                    <small class="oi oi-warning mr-2 mt-1"></small>                    Approval is required for this cart                </li>            </ng-template>        </ul>        <ng-template #empty>            <ul class="list-group">                <li class="list-group-item bg-light">                    Your cart is empty                </li>            </ul>        </ng-template>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductReviewsComponent', 'selector': 'apt-product-reviews'}];
+        var COMPONENT_TEMPLATE = '<div><div class="dropdown">    <button class="btn btn-link nav-link mr-3 dropdown-toggle" data-toggle="dropdown">        <span class="oi oi-cart oi-lg"></span>        <span class="badge badge-secondary" *ngIf="getItemCount() > 0">{{getItemCount()}}</span>    </button>    <div class="dropdown-menu dropdown-menu-right m-0 p-0" aria-labelledby="dropdownMenuButton" *ngIf="cart">        <ul class="list-group" *ngIf="cart?.LineItems?.length > 0; else empty">            <ng-container *ngFor="let item of cart?.LineItems; let i = index">                <li class="media list-group-item d-flex" *ngIf="item.LineType === \'Product/Service\' && item.Product">                    <img class="mr-3 align-self-center" [src]="sanitizer.bypassSecurityTrustUrl(item.Product?.IconId | image)"                        alt="Generic placeholder image">                    <div class="media-body">                        <h6 class="m-0">                            <a href="javascript:void(0)" [routerLink]="[productLink, item.Product[productIdentifier]]">                                {{item.Product?.Name}}                            </a>                        </h6>                        <small class="d-block">{{item.Product?.ProductCode}}</small>                        <div class="d-flex align-items-center small">                            Quantity: <input type="number" [(ngModel)]="item.Quantity" (ngModelChange)="changeItemQuantity(item)" class="w-25 m-2 pl-3"/>                            <!-- <apt-input-quantity [min]="1" [(ngModel)]="item.Quantity" (ngModelChange)="changeItemQuantity(item, $event)"></apt-input-quantity> -->                            <strong class="ml-auto">                                <apt-price [record]="item"></apt-price>                            </strong>                        </div>                    </div>                    <div class="ml-auto">                        <button class="btn btn-link btn-sm" (click)="removeCartItem(item, $event)" [ladda]="item?._metadata?._deleting" data-style="zoom-in"                            data-spinner-color="black">                            <span class="oi oi-trash"></span>                        </button>                    </div>                                   </li>            </ng-container>            <li class="list-group-item bg-light">                <div class="d-flex justify-content-between">                    <span>Cart Total</span>                    <strong>                        <apt-price [record]="cart"></apt-price>                    </strong>                </div>            </li>            <li class="list-group-item bg-light" *ngIf="cart?.Status !== \'Approval Required\'; else approval">                <div class="btn-group w-100" role="group">                    <button class="btn btn-outline-secondary w-50 mr-2" [routerLink]="[manageCartLink]">View Cart</button>                    <button class="btn btn-primary w-50 ml-2" [routerLink]="[cartLink]">Checkout</button>                </div>            </li>            <ng-template #approval>                <li class="list-group-item bg-light list-group-item bg-light d-flex justify-content-center text-danger">                    <small class="oi oi-warning mr-2 mt-1"></small>                    Approval is required for this cart                </li>            </ng-template>        </ul>        <ng-template #empty>            <ul class="list-group">                <li class="list-group-item bg-light">                    Your cart is empty                </li>            </ul>        </ng-template>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MiniCartComponent'};
 </script>

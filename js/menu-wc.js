@@ -101,13 +101,13 @@
                 <li class="link">
                     <a href="modules/CatalogModule.html" data-type="entity-link">CatalogModule</a>
                     <li class="chapter inner">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links-module-CatalogModule-c5326469778d28cac093bb30b8508588"' :
-                            'data-target="#xs-components-links-module-CatalogModule-c5326469778d28cac093bb30b8508588"' }>
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links-module-CatalogModule-ecd6ecfe560c8b0077bb0d820002929a"' :
+                            'data-target="#xs-components-links-module-CatalogModule-ecd6ecfe560c8b0077bb0d820002929a"' }>
                             <span class="icon ion-md-cog"></span>
                             <span>Components</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-CatalogModule-c5326469778d28cac093bb30b8508588"' : 'id="xs-components-links-module-CatalogModule-c5326469778d28cac093bb30b8508588"' }>
+                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-CatalogModule-ecd6ecfe560c8b0077bb0d820002929a"' : 'id="xs-components-links-module-CatalogModule-ecd6ecfe560c8b0077bb0d820002929a"' }>
                             <li class="link">
                                 <a href="components/BreadcrumbComponent.html" data-type="entity-link" data-context="sub-entity"
                                     data-context-id="modules">BreadcrumbComponent</a>
@@ -124,32 +124,20 @@
                                 <a href="components/ProductImagesComponent.html" data-type="entity-link" data-context="sub-entity"
                                     data-context-id="modules">ProductImagesComponent</a>
                             </li>
-                            <li class="link">
-                                <a href="components/ProductReviewsComponent.html" data-type="entity-link" data-context="sub-entity"
-                                    data-context-id="modules">ProductReviewsComponent</a>
-                            </li>
                         </ul>
                     </li>
                        
                     <li class="chapter inner">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links-module-CatalogModule-c5326469778d28cac093bb30b8508588"' :
-                            'data-target="#xs-injectables-links-module-CatalogModule-c5326469778d28cac093bb30b8508588"' }>
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links-module-CatalogModule-ecd6ecfe560c8b0077bb0d820002929a"' :
+                            'data-target="#xs-injectables-links-module-CatalogModule-ecd6ecfe560c8b0077bb0d820002929a"' }>
                             <span class="icon ion-md-arrow-round-down"></span>
                             <span>Injectables</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CatalogModule-c5326469778d28cac093bb30b8508588"' : 'id="xs-injectables-links-module-CatalogModule-c5326469778d28cac093bb30b8508588"' }>
+                        <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CatalogModule-ecd6ecfe560c8b0077bb0d820002929a"' : 'id="xs-injectables-links-module-CatalogModule-ecd6ecfe560c8b0077bb0d820002929a"' }>
                             <li class="link">
                                 <a href="injectables/CategoryService.html" data-type="entity-link" data-context="sub-entity"
                                     data-context-id="modules" }>CategoryService</a>
-                            </li>
-                            <li class="link">
-                                <a href="injectables/ConstraintRuleConditionService.html" data-type="entity-link" data-context="sub-entity"
-                                    data-context-id="modules" }>ConstraintRuleConditionService</a>
-                            </li>
-                            <li class="link">
-                                <a href="injectables/ConstraintRuleService.html" data-type="entity-link" data-context="sub-entity"
-                                    data-context-id="modules" }>ConstraintRuleService</a>
                             </li>
                             <li class="link">
                                 <a href="injectables/ProductAttributeRuleService.html" data-type="entity-link" data-context="sub-entity"
@@ -179,16 +167,90 @@
                     </li>
                                      </li>
                 <li class="link">
-                    <a href="modules/OrderModule.html" data-type="entity-link">OrderModule</a>
+                    <a href="modules/ConstraintsModule.html" data-type="entity-link">ConstraintsModule</a>
    
                     <li class="chapter inner">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links-module-OrderModule-0cc31fab6f0d4980b7bac18d9a9804be"' :
-                            'data-target="#xs-injectables-links-module-OrderModule-0cc31fab6f0d4980b7bac18d9a9804be"' }>
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links-module-ConstraintsModule-a75d425c2b084e58074e9d6f8f653889"' :
+                            'data-target="#xs-injectables-links-module-ConstraintsModule-a75d425c2b084e58074e9d6f8f653889"' }>
                             <span class="icon ion-md-arrow-round-down"></span>
                             <span>Injectables</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-OrderModule-0cc31fab6f0d4980b7bac18d9a9804be"' : 'id="xs-injectables-links-module-OrderModule-0cc31fab6f0d4980b7bac18d9a9804be"' }>
+                        <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-ConstraintsModule-a75d425c2b084e58074e9d6f8f653889"' : 'id="xs-injectables-links-module-ConstraintsModule-a75d425c2b084e58074e9d6f8f653889"' }>
+                            <li class="link">
+                                <a href="injectables/ConstraintRuleConditionService.html" data-type="entity-link" data-context="sub-entity"
+                                    data-context-id="modules" }>ConstraintRuleConditionService</a>
+                            </li>
+                            <li class="link">
+                                <a href="injectables/ConstraintRuleService.html" data-type="entity-link" data-context="sub-entity"
+                                    data-context-id="modules" }>ConstraintRuleService</a>
+                            </li>
+                        </ul>
+                    </li>
+                                     </li>
+                <li class="link">
+                    <a href="modules/CrmModule.html" data-type="entity-link">CrmModule</a>
+   
+                    <li class="chapter inner">
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links-module-CrmModule-5a78bb268d2bd2c84ec05ba3446e9fcf"' :
+                            'data-target="#xs-injectables-links-module-CrmModule-5a78bb268d2bd2c84ec05ba3446e9fcf"' }>
+                            <span class="icon ion-md-arrow-round-down"></span>
+                            <span>Injectables</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CrmModule-5a78bb268d2bd2c84ec05ba3446e9fcf"' : 'id="xs-injectables-links-module-CrmModule-5a78bb268d2bd2c84ec05ba3446e9fcf"' }>
+                            <li class="link">
+                                <a href="injectables/AccountLocationService.html" data-type="entity-link" data-context="sub-entity"
+                                    data-context-id="modules" }>AccountLocationService</a>
+                            </li>
+                            <li class="link">
+                                <a href="injectables/AccountService.html" data-type="entity-link" data-context="sub-entity"
+                                    data-context-id="modules" }>AccountService</a>
+                            </li>
+                            <li class="link">
+                                <a href="injectables/ContactService.html" data-type="entity-link" data-context="sub-entity"
+                                    data-context-id="modules" }>ContactService</a>
+                            </li>
+                            <li class="link">
+                                <a href="injectables/EmailService.html" data-type="entity-link" data-context="sub-entity"
+                                    data-context-id="modules" }>EmailService</a>
+                            </li>
+                            <li class="link">
+                                <a href="injectables/UserService.html" data-type="entity-link" data-context="sub-entity"
+                                    data-context-id="modules" }>UserService</a>
+                            </li>
+                        </ul>
+                    </li>
+                                     </li>
+                <li class="link">
+                    <a href="modules/DocGenModule.html" data-type="entity-link">DocGenModule</a>
+   
+                    <li class="chapter inner">
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links-module-DocGenModule-310f296864560065105bc441bd1f68bd"' :
+                            'data-target="#xs-injectables-links-module-DocGenModule-310f296864560065105bc441bd1f68bd"' }>
+                            <span class="icon ion-md-arrow-round-down"></span>
+                            <span>Injectables</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-DocGenModule-310f296864560065105bc441bd1f68bd"' : 'id="xs-injectables-links-module-DocGenModule-310f296864560065105bc441bd1f68bd"' }>
+                            <li class="link">
+                                <a href="injectables/TemplateService.html" data-type="entity-link" data-context="sub-entity"
+                                    data-context-id="modules" }>TemplateService</a>
+                            </li>
+                        </ul>
+                    </li>
+                                     </li>
+                <li class="link">
+                    <a href="modules/OrderModule.html" data-type="entity-link">OrderModule</a>
+   
+                    <li class="chapter inner">
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links-module-OrderModule-dbf9ff7fe3071fe3d321f497009d94f0"' :
+                            'data-target="#xs-injectables-links-module-OrderModule-dbf9ff7fe3071fe3d321f497009d94f0"' }>
+                            <span class="icon ion-md-arrow-round-down"></span>
+                            <span>Injectables</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-OrderModule-dbf9ff7fe3071fe3d321f497009d94f0"' : 'id="xs-injectables-links-module-OrderModule-dbf9ff7fe3071fe3d321f497009d94f0"' }>
                             <li class="link">
                                 <a href="injectables/OrderService.html" data-type="entity-link" data-context="sub-entity"
                                     data-context-id="modules" }>OrderService</a>
@@ -196,10 +258,6 @@
                             <li class="link">
                                 <a href="injectables/QuoteService.html" data-type="entity-link" data-context="sub-entity"
                                     data-context-id="modules" }>QuoteService</a>
-                            </li>
-                            <li class="link">
-                                <a href="injectables/TemplateService.html" data-type="entity-link" data-context="sub-entity"
-                                    data-context-id="modules" }>TemplateService</a>
                             </li>
                         </ul>
                     </li>
@@ -306,13 +364,13 @@
                 <li class="link">
                     <a href="modules/StoreModule.html" data-type="entity-link">StoreModule</a>
                     <li class="chapter inner">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links-module-StoreModule-73017fc96a6052b83184356abe1e39d3"' :
-                            'data-target="#xs-components-links-module-StoreModule-73017fc96a6052b83184356abe1e39d3"' }>
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links-module-StoreModule-a934f3c686f932ad7583d850f4762831"' :
+                            'data-target="#xs-components-links-module-StoreModule-a934f3c686f932ad7583d850f4762831"' }>
                             <span class="icon ion-md-cog"></span>
                             <span>Components</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-StoreModule-73017fc96a6052b83184356abe1e39d3"' : 'id="xs-components-links-module-StoreModule-73017fc96a6052b83184356abe1e39d3"' }>
+                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-StoreModule-a934f3c686f932ad7583d850f4762831"' : 'id="xs-components-links-module-StoreModule-a934f3c686f932ad7583d850f4762831"' }>
                             <li class="link">
                                 <a href="components/AddressComponent.html" data-type="entity-link" data-context="sub-entity"
                                     data-context-id="modules">AddressComponent</a>
@@ -345,36 +403,16 @@
                     </li>
                        
                     <li class="chapter inner">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links-module-StoreModule-73017fc96a6052b83184356abe1e39d3"' :
-                            'data-target="#xs-injectables-links-module-StoreModule-73017fc96a6052b83184356abe1e39d3"' }>
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links-module-StoreModule-a934f3c686f932ad7583d850f4762831"' :
+                            'data-target="#xs-injectables-links-module-StoreModule-a934f3c686f932ad7583d850f4762831"' }>
                             <span class="icon ion-md-arrow-round-down"></span>
                             <span>Injectables</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-StoreModule-73017fc96a6052b83184356abe1e39d3"' : 'id="xs-injectables-links-module-StoreModule-73017fc96a6052b83184356abe1e39d3"' }>
-                            <li class="link">
-                                <a href="injectables/AccountLocationService.html" data-type="entity-link" data-context="sub-entity"
-                                    data-context-id="modules" }>AccountLocationService</a>
-                            </li>
-                            <li class="link">
-                                <a href="injectables/AccountService.html" data-type="entity-link" data-context="sub-entity"
-                                    data-context-id="modules" }>AccountService</a>
-                            </li>
-                            <li class="link">
-                                <a href="injectables/ContactService.html" data-type="entity-link" data-context="sub-entity"
-                                    data-context-id="modules" }>ContactService</a>
-                            </li>
-                            <li class="link">
-                                <a href="injectables/EmailService.html" data-type="entity-link" data-context="sub-entity"
-                                    data-context-id="modules" }>EmailService</a>
-                            </li>
+                        <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-StoreModule-a934f3c686f932ad7583d850f4762831"' : 'id="xs-injectables-links-module-StoreModule-a934f3c686f932ad7583d850f4762831"' }>
                             <li class="link">
                                 <a href="injectables/StorefrontService.html" data-type="entity-link" data-context="sub-entity"
                                     data-context-id="modules" }>StorefrontService</a>
-                            </li>
-                            <li class="link">
-                                <a href="injectables/UserService.html" data-type="entity-link" data-context="sub-entity"
-                                    data-context-id="modules" }>UserService</a>
                             </li>
                         </ul>
                     </li>
@@ -469,6 +507,9 @@
                     <a href="classes/PriceListBase.html" data-type="entity-link">PriceListBase</a>
                 </li>
                 <li class="link">
+                    <a href="classes/PriceListCategory.html" data-type="entity-link">PriceListCategory</a>
+                </li>
+                <li class="link">
                     <a href="classes/PriceListData.html" data-type="entity-link">PriceListData</a>
                 </li>
                 <li class="link">
@@ -539,9 +580,6 @@
                 </li>
                 <li class="link">
                     <a href="classes/ProductOptionPrice.html" data-type="entity-link">ProductOptionPrice</a>
-                </li>
-                <li class="link">
-                    <a href="classes/ProductReview.html" data-type="entity-link">ProductReview</a>
                 </li>
                 <li class="link">
                     <a href="classes/ProductTranslation.html" data-type="entity-link">ProductTranslation</a>

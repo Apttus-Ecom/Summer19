@@ -100,8 +100,8 @@
     &lt;/li&gt;
 
     &lt;li class&#x3D;&quot;breadcrumb-item&quot; *ngFor&#x3D;&quot;let crumb of (breadcrumbs$ | async); let l &#x3D; last&quot; [class.active]&#x3D;&quot;l &amp;&amp; !isProduct&quot;&gt;
-      &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/product-list&#x27;, crumb.Name]&quot; *ngIf&#x3D;&quot;!l || isProduct&quot;&gt;{{crumb.Apttus_Config2__Label__c}}&lt;/a&gt;
-      &lt;span *ngIf&#x3D;&quot;l &amp;&amp; !isProduct&quot;&gt;{{crumb.Apttus_Config2__Label__c}}&lt;/span&gt;
+      &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/product-list&#x27;, crumb.Name]&quot; *ngIf&#x3D;&quot;!l || isProduct&quot;&gt;{{crumb.Label}}&lt;/a&gt;
+      &lt;span *ngIf&#x3D;&quot;l &amp;&amp; !isProduct&quot;&gt;{{crumb.Label}}&lt;/span&gt;
     &lt;/li&gt;
 
     &lt;li class&#x3D;&quot;breadcrumb-item active&quot; *ngIf&#x3D;&quot;isProduct&quot;&gt;{{sobject?.Name}}&lt;/li&gt;
@@ -328,8 +328,8 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav aria-label="breadcrumb">  <ol class="breadcrumb">    <li class="breadcrumb-item">      <a href="javascript:void(0)" [routerLink]="[\'/\']">Home</a>    </li>    <li class="breadcrumb-item" *ngFor="let crumb of (breadcrumbs$ | async); let l = last" [class.active]="l && !isProduct">      <a href="javascript:void(0)" [routerLink]="[\'/product-list\', crumb.Name]" *ngIf="!l || isProduct">{{crumb.Apttus_Config2__Label__c}}</a>      <span *ngIf="l && !isProduct">{{crumb.Apttus_Config2__Label__c}}</span>    </li>    <li class="breadcrumb-item active" *ngIf="isProduct">{{sobject?.Name}}</li>  </ol></nav></div>'
-    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductReviewsComponent', 'selector': 'apt-product-reviews'}];
+        var COMPONENT_TEMPLATE = '<div><nav aria-label="breadcrumb">  <ol class="breadcrumb">    <li class="breadcrumb-item">      <a href="javascript:void(0)" [routerLink]="[\'/\']">Home</a>    </li>    <li class="breadcrumb-item" *ngFor="let crumb of (breadcrumbs$ | async); let l = last" [class.active]="l && !isProduct">      <a href="javascript:void(0)" [routerLink]="[\'/product-list\', crumb.Name]" *ngIf="!l || isProduct">{{crumb.Label}}</a>      <span *ngIf="l && !isProduct">{{crumb.Label}}</span>    </li>    <li class="breadcrumb-item active" *ngIf="isProduct">{{sobject?.Name}}</li>  </ol></nav></div>'
+    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BreadcrumbComponent'};
 </script>

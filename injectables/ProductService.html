@@ -97,12 +97,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#fieldFilter">fieldFilter</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#filter">filter</a>
+                                    <span class="modifier">Static</span>
+                                <a href="#categoryFilter">categoryFilter</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -119,6 +115,18 @@
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getProductsByCode">getProductsByCode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#globalFilter">globalFilter</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#globalJoin">globalJoin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#priceListItemFilter">priceListItemFilter</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -146,20 +154,20 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="fieldFilter"></a>
+                        <a name="categoryFilter"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
-                            fieldFilter
+                                <span class="modifier">Static</span>
+                            categoryFilter
                             </b>
-                            <a href="#fieldFilter"><span class="icon ion-ios-link"></span></a>
+                            <a href="#categoryFilter"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>fieldFilter()</code>
+                        <code>categoryFilter(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, categoryList: <a href="../classes/Category.html">Array<Category></a>, operand: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                     </td>
                 </tr>
 
@@ -168,63 +176,74 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>The field specific filter for all products. The default filter applies to price list items pulled with the product.
-All products will only have the price list data for those active price lists which are associated with the current user&#39;s account.</p>
-</div>
 
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Default value</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>categoryId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                </tr>
+                                                <tr>
+                                                        <td>categoryList</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Category.html" target="_self" >Array&lt;Category&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>[]</code>
+                                                        </td>
+
+                                                </tr>
+                                                <tr>
+                                                        <td>operand</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>&#x27;Id&#x27;</code>
+                                                        </td>
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;Array&lt;FieldFilter&gt;&gt;</code>
+                                <b>Returns : </b>    <code>AJoin</code>
 
                             </div>
                                 <div class="io-description">
-                                    <p>A field filter array observable that maps a specific field with a filter</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="filter"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            filter
-                            </b>
-                            <a href="#filter"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>filter()</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>The global filter for retrieving products from this service.
-The default filter is set to only get products that are active and have an active price list item associated with the current user&#39;s account.</p>
-</div>
-
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>A string observable with the filter query for the products.</p>
-
+                                    
                                 </div>
                     </td>
                 </tr>
@@ -519,7 +538,7 @@ The default filter is set to only get products that are active and have an activ
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getProductsByCategory(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, offset: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", categoryFilter: <a href="../classes/Category.html">Array<Category></a>, priceTier: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlFilters: Array<string>)</code>
+                        <code>getProductsByCategory(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", categoryFilter: <a href="../classes/Category.html">Array<Category></a>, priceTier: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlConditions: Array<ACondition>)</code>
                     </td>
                 </tr>
 
@@ -597,7 +616,7 @@ The default filter is set to only get products that are active and have an activ
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>offset</td>
+                                                        <td>pageNumber</td>
                                                         <td>
                                                                     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                                         </td>
@@ -611,8 +630,6 @@ The default filter is set to only get products that are active and have an activ
                                                         </td>
 
                                                         <td>
-                                                                <code><p>the database offset</p>
-</code>
                                                         </td>
                                                 </tr>
                                                 <tr>
@@ -692,9 +709,9 @@ The default filter is set to only get products that are active and have an activ
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>adtlFilters</td>
+                                                        <td>adtlConditions</td>
                                                         <td>
-                                                                    <code>Array&lt;string&gt;</code>
+                                                                    <code>Array&lt;ACondition&gt;</code>
                                                         </td>
                                                     
                                                     <td>
@@ -706,8 +723,6 @@ The default filter is set to only get products that are active and have an activ
                                                         </td>
 
                                                         <td>
-                                                                <code><p>an array of strings that will be used in the where clause (i.e. [&#39;ProductFamily = x&#39;, &#39;Active = TRUE&#39;])</p>
-</code>
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -810,6 +825,196 @@ The default filter is set to only get products that are active and have an activ
                                 <div class="io-description">
                                     <p>a product array observable with the list of products</p>
 
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="globalFilter"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            globalFilter
+                            </b>
+                            <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>globalFilter()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>The global filter is for retrieving products from this service.
+The default filter is set to only get products that are active and have an active price list item associated with the current user&#39;s account.</p>
+</div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;Array&lt;AFilter&gt;&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>An observable array of AFilter objects.</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="globalJoin"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            globalJoin
+                            </b>
+                            <a href="#globalJoin"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>globalJoin()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>The global join is for retrieving products form this service.
+This allows for conditions that include joins on other tables to be included on the global filter.</p>
+</div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;Array&lt;AJoin&gt;&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>An observable arrya of AJoin objects.</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="priceListItemFilter"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            priceListItemFilter
+                            </b>
+                            <a href="#priceListItemFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>priceListItemFilter(priceListId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, priceTier: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlFilters: Array<string>, productIdList?: Array<string>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>priceListId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>priceTier</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/PriceTier.html" target="_self" >PriceTier</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>adtlFilters</td>
+                                                        <td>
+                                                                    <code>Array&lt;string&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>productIdList</td>
+                                                        <td>
+                                                                    <code>Array&lt;string&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>AFilter</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
                                 </div>
                     </td>
                 </tr>

@@ -125,7 +125,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getSearchResults(query: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, offset: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", categoryFilter: <a href="../classes/Category.html">Array<Category></a>, priceTier: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlFilters: Array<string>)</code>
+                        <code>getSearchResults(query: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", categoryFilter: <a href="../classes/Category.html">Array<Category></a>, priceTier: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlConditions: Array<ACondition>)</code>
                     </td>
                 </tr>
 
@@ -203,7 +203,7 @@
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>offset</td>
+                                                        <td>pageNumber</td>
                                                         <td>
                                                                     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                                         </td>
@@ -217,8 +217,6 @@
                                                         </td>
 
                                                         <td>
-                                                                <code><p>the offset of the products to return (i.e. for results 10-20, offset will be 10)</p>
-</code>
                                                         </td>
                                                 </tr>
                                                 <tr>
@@ -298,9 +296,9 @@
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>adtlFilters</td>
+                                                        <td>adtlConditions</td>
                                                         <td>
-                                                                    <code>Array&lt;string&gt;</code>
+                                                                    <code>Array&lt;ACondition&gt;</code>
                                                         </td>
                                                     
                                                     <td>
@@ -312,8 +310,6 @@
                                                         </td>
 
                                                         <td>
-                                                                <code><p>An array of strings specifying additional filters for the results</p>
-</code>
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -350,7 +346,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>searchProductsByCategory(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, offset: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", categoryFilter?: <a href="../classes/Category.html">Array<Category></a>, priceTier?: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlFilters?: Array<string>)</code>
+                        <code>searchProductsByCategory(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, offset: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", categoryFilter?: <a href="../classes/Category.html">Array<Category></a>, priceTier?: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlConditions?: Array<ACondition>)</code>
                     </td>
                 </tr>
 
@@ -521,9 +517,9 @@
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>adtlFilters</td>
+                                                        <td>adtlConditions</td>
                                                         <td>
-                                                                    <code>Array&lt;string&gt;</code>
+                                                                    <code>Array&lt;ACondition&gt;</code>
                                                         </td>
                                                     
                                                     <td>
@@ -534,8 +530,6 @@
                                                         </td>
 
                                                         <td>
-                                                                <code><p>An array of strings specifying additional filters for the results</p>
-</code>
                                                         </td>
                                                 </tr>
                                         </tbody>

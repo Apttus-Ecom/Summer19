@@ -97,11 +97,11 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#filter">filter</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getPriceListItemByCode">getPriceListItemByCode</a>
+                            </li>
+                            <li>
+                                <a href="#globalFilter">globalFilter</a>
                             </li>
                         </ul>
                     </td>
@@ -121,47 +121,6 @@
         <h3 id="methods">
             Methods
         </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="filter"></a>
-                        <span class="name">
-                            <b>
-                            filter
-                            </b>
-                            <a href="#filter"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>filter()</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Default price list filter. This service will only return price list items where the price list id equals the current price list id and it has a list price and its active and its effective</p>
-</div>
-
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>a string observable containing the filter query</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -230,6 +189,47 @@
                             </div>
                                 <div class="io-description">
                                     <p>A hot observable containing the price list item for the request product</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="globalFilter"></a>
+                        <span class="name">
+                            <b>
+                            globalFilter
+                            </b>
+                            <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>globalFilter()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Default price list filter. This service will only return price list items where the price list id equals the current price list id and it has a list price and its active and its effective</p>
+</div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;Array&lt;AFilter&gt;&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>a string observable containing the filter query</p>
 
                                 </div>
                     </td>

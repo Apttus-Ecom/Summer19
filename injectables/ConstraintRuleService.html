@@ -57,7 +57,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/lib/modules/catalog/services/constraint-rule.service.ts</code>
+            <code>src/lib/modules/constraints/services/constraint-rule.service.ts</code>
         </p>
 
             <p class="comment">
@@ -98,11 +98,11 @@ The condition service</p>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#filter">filter</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getConstraintRules">getConstraintRules</a>
+                            </li>
+                            <li>
+                                <a href="#globalFilter">globalFilter</a>
                             </li>
                         </ul>
                     </td>
@@ -122,48 +122,6 @@ The condition service</p>
         <h3 id="methods">
             Methods
         </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="filter"></a>
-                        <span class="name">
-                            <b>
-                            filter
-                            </b>
-                            <a href="#filter"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>filter()</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>The global filter for constraint rules returned by the constraint-rule service. Returns only constraint rules between the effective date
-and the expiration date that are active.</p>
-</div>
-
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>a string observable with the query string filter</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -247,6 +205,48 @@ and the expiration date that are active.</p>
                             </div>
                                 <div class="io-description">
                                     <p>an array of constraint rules in an observable for the given product</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="globalFilter"></a>
+                        <span class="name">
+                            <b>
+                            globalFilter
+                            </b>
+                            <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>globalFilter()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>The global filter for constraint rules returned by the constraint-rule service. Returns only constraint rules between the effective date
+and the expiration date that are active.</p>
+</div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;AFilter[]&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>AFilter array observable with the query filter</p>
 
                                 </div>
                     </td>

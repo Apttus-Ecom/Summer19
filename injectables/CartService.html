@@ -114,10 +114,6 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#filter">filter</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#getCartItem">getCartItem</a>
                             </li>
                             <li>
@@ -127,6 +123,10 @@
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getMyCarts">getMyCarts</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#globalFilter">globalFilter</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -183,7 +183,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>addProductToCart(product: <a href="../classes/Product.html">Product</a>, quantity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, merge: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, attributeValues?: <a href="../classes/ProductAttributeValue.html">Array<ProductAttributeValue></a>, productOptions?: <a href="../interfaces/ProductOptionForm.html">Array<ProductOptionForm></a>, quick: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, rollBackOnFail: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, timeout: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                        <code>addProductToCart(product: <a href="../classes/Product.html">Product</a>, quantity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, merge: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, attributeValues?: <a href="../classes/ProductAttributeValue.html">Array<ProductAttributeValue></a>, productOptions?: <a href="../interfaces/ProductOptionForm.html">Array<ProductOptionForm></a>)</code>
                     </td>
                 </tr>
 
@@ -310,63 +310,6 @@
 
                                                         <td>
                                                                 <code><p>an array of product option form instances associated with the prodcut</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>quick</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>true</code>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>(deprecated) A boolean flag that can be set to true if you wish to wait for the repricing cart to finish before returning</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>rollBackOnFail</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>true</code>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>(deprecated) a boolean flag that will delete the item from the cart if the cart fails to reprice</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>timeout</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>60000</code>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>(deprecated) The maximum amount of time the reprice operation should take to complete</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -687,50 +630,6 @@ the method will throw an error specifying the product codes that cannot be added
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="filter"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            filter
-                            </b>
-                            <a href="#filter"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>filter()</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>The global filter used for retrieving carts. Will return only those carts where the user is the owner and matches the current selected account.
-Also further filters the carts returned by the currently selected price list and effective price list</p>
-</div>
-
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>an Observable of type string with the filter query</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="getCartItem"></a>
                         <span class="name">
                             <b>
@@ -877,7 +776,7 @@ Also further filters the carts returned by the currently selected price list and
                                                     </td>
                                                     
                                                         <td>
-                                                                <code>cart.Apttus_Config2__NumberOfItems__c + 1</code>
+                                                                <code>cart.NumberOfItems + 1</code>
                                                         </td>
 
                                                 </tr>
@@ -892,7 +791,7 @@ Also further filters the carts returned by the currently selected price list and
                                                     </td>
                                                     
                                                         <td>
-                                                                <code>cart.Apttus_Config2__NumberOfItems__c + 1</code>
+                                                                <code>cart.NumberOfItems + 1</code>
                                                         </td>
 
                                                 </tr>
@@ -986,7 +885,7 @@ Also further filters the carts returned by the currently selected price list and
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getMyCarts(limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, offset: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC")</code>
+                        <code>getMyCarts(limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC")</code>
                     </td>
                 </tr>
 
@@ -1031,7 +930,7 @@ Also further filters the carts returned by the currently selected price list and
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>offset</td>
+                                                        <td>pageNumber</td>
                                                         <td>
                                                                     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                                         </td>
@@ -1098,6 +997,50 @@ Also further filters the carts returned by the currently selected price list and
                             </div>
                                 <div class="io-description">
                                     <p>Observable&lt;Array<Cart>&gt; returns an observable list of cart records</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="globalFilter"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            globalFilter
+                            </b>
+                            <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>globalFilter()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>The global filter used for retrieving carts. Will return only those carts where the user is the owner and matches the current selected account.
+Also further filters the carts returned by the currently selected price list and effective price list</p>
+</div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;Array&lt;AFilter&gt;&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>an Observable of type string with the filter query</p>
 
                                 </div>
                     </td>
@@ -1350,7 +1293,7 @@ Also further filters the carts returned by the currently selected price list and
                                                     </td>
                                                     
                                                         <td>
-                                                                <code>100</code>
+                                                                <code>10</code>
                                                         </td>
 
                                                         <td>

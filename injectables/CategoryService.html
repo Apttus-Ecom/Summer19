@@ -64,8 +64,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Categories allow you to organize your Products into hierarchical groups. That means these groups can also contain other Categories, which can then be viewed in a tree structure.
-All categories returned from this service are translated based on the user&#39;s locale</p>
+                <p>Products are the core resource to any Apttus project. They can be associated by category, collection, brands and more.</p>
 
             </p>
 
@@ -98,9 +97,6 @@ All categories returned from this service are translated based on the user&#39;s
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#filter">filter</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getCategories">getCategories</a>
                             </li>
@@ -124,6 +120,14 @@ All categories returned from this service are translated based on the user&#39;s
                                     <span class="modifier">Public</span>
                                 <a href="#getSubcategories">getSubcategories</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#globalFilter">globalFilter</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#globalJoin">globalJoin</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -142,39 +146,6 @@ All categories returned from this service are translated based on the user&#39;s
         <h3 id="methods">
             Methods
         </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="filter"></a>
-                        <span class="name">
-                            <b>
-                            filter
-                            </b>
-                            <a href="#filter"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>filter()</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -722,6 +693,76 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                                     <p>an array of subcategories for the given category id in an Observable</p>
 
                                 </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="globalFilter"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            globalFilter
+                            </b>
+                            <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>globalFilter()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;Array&lt;AFilter&gt;&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="globalJoin"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            globalJoin
+                            </b>
+                            <a href="#globalJoin"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>globalJoin()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;Array&lt;AJoin&gt;&gt;</code>
+
+                            </div>
                     </td>
                 </tr>
             </tbody>

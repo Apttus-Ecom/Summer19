@@ -105,15 +105,15 @@
                                 <a href="#convertOrderToCart">convertOrderToCart</a>
                             </li>
                             <li>
-                                <a href="#filter">filter</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getMyOrders">getMyOrders</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getOrderByName">getOrderByName</a>
+                            </li>
+                            <li>
+                                <a href="#globalFilter">globalFilter</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -358,47 +358,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="filter"></a>
-                        <span class="name">
-                            <b>
-                            filter
-                            </b>
-                            <a href="#filter"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>filter()</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>the global filter for orders returned by this service. Will only return orders that the current user owns.</p>
-</div>
-
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>a string observable with the filter query</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="getMyOrders"></a>
                         <span class="name">
                             <b>
@@ -412,7 +371,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getMyOrders(accountId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, days?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, offset: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC")</code>
+                        <code>getMyOrders(accountId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, days?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC")</code>
                     </td>
                 </tr>
 
@@ -509,7 +468,7 @@
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>offset</td>
+                                                        <td>pageNumber</td>
                                                         <td>
                                                                     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                                         </td>
@@ -523,8 +482,6 @@
                                                         </td>
 
                                                         <td>
-                                                                <code><p>the offset of the records to return (i.e. records 10-20, the offset will be 10)</p>
-</code>
                                                         </td>
                                                 </tr>
                                                 <tr>
@@ -675,6 +632,47 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="globalFilter"></a>
+                        <span class="name">
+                            <b>
+                            globalFilter
+                            </b>
+                            <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>globalFilter()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>the global filter for orders returned by this service. Will only return orders that the current user owns.</p>
+</div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;Array&lt;AFilter&gt;&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>a string observable with the filter query</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="mergeCartItems"></a>
                         <span class="name">
                             <b>
@@ -706,7 +704,7 @@
            constructor(private orderService: OrderService){}
 
            addOrderItemsToCart(order: Order){
-               this.orderService.mergeCartItems(order.Apttus_Config2__OrderLineItems__r.records)
+               this.orderService.mergeCartItems(order.OrderLineItems)
                 .subscribe(
                     () =&gt; {...},
                     err =&gt; {...}
