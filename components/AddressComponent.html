@@ -174,6 +174,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
                                 <a href="#readonly">readonly</a>
                             </li>
                             <li>
@@ -295,6 +298,25 @@
 
     <section>
     <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="form"></a>
+                        <code>form</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://angular.io/api/forms/NgForm" target="_blank" >NgForm</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>new NgForm(null, null)</code>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -902,8 +924,8 @@
   &lt;ng-container *ngIf&#x3D;&quot;!readonly; else read&quot;&gt;
     &lt;div class&#x3D;&quot;mb-3&quot;&gt;
       &lt;label [for]&#x3D;&quot;getId(&#x27;street&#x27;)&quot;&gt;Address&lt;/label&gt;
-      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [id]&#x3D;&quot;getId(&#x27;street&#x27;)&quot; placeholder&#x3D;&quot;1234 Main St&quot; required&#x3D;&quot;&quot; [(ngModel)]&#x3D;&quot;record[street]&quot;
-        name&#x3D;&quot;street&quot;&gt;
+      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [id]&#x3D;&quot;getId(&#x27;street&#x27;)&quot; placeholder&#x3D;&quot;1234 Main St&quot; required [(ngModel)]&#x3D;&quot;record[street]&quot;
+        name&#x3D;&quot;street&quot; #address&#x3D;&quot;ngModel&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: address.invalid &amp;&amp; (address.touched || address.dirty || form.submitted) }&quot;&gt;
       &lt;div class&#x3D;&quot;invalid-feedback&quot;&gt;
         Please enter your shipping address.
       &lt;/div&gt;
@@ -911,8 +933,11 @@
     
     &lt;div class&#x3D;&quot;mb-3&quot;&gt;
       &lt;label [for]&#x3D;&quot;getId(&#x27;city&#x27;)&quot;&gt;City&lt;/label&gt;
-      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [id]&#x3D;&quot;getId(&#x27;city&#x27;)&quot; placeholder&#x3D;&quot;City&quot; [(ngModel)]&#x3D;&quot;record[city]&quot;
-        name&#x3D;&quot;city&quot;&gt;
+      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [id]&#x3D;&quot;getId(&#x27;city&#x27;)&quot; placeholder&#x3D;&quot;City&quot; required [(ngModel)]&#x3D;&quot;record[city]&quot;
+        name&#x3D;&quot;city&quot; #city&#x3D;&quot;ngModel&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: city.invalid &amp;&amp; (city.touched || city.dirty || form.submitted) }&quot;&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback&quot;&gt;
+        Please enter your city.
+      &lt;/div&gt;
     &lt;/div&gt;
     
     &lt;div class&#x3D;&quot;row&quot;&gt;
@@ -921,8 +946,8 @@
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;col-md-3 mb-3&quot;&gt;
         &lt;label [for]&#x3D;&quot;getId(&#x27;zip&#x27;)&quot;&gt;Zip&lt;/label&gt;
-        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [id]&#x3D;&quot;getId(&#x27;zip&#x27;)&quot; placeholder&#x3D;&quot;&quot; required&#x3D;&quot;&quot; [(ngModel)]&#x3D;&quot;record[postalCode]&quot;
-          name&#x3D;&quot;postal-code&quot;&gt;
+        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [id]&#x3D;&quot;getId(&#x27;zip&#x27;)&quot; required [(ngModel)]&#x3D;&quot;record[postalCode]&quot;
+          name&#x3D;&quot;postal-code&quot; #zipcode&#x3D;&quot;ngModel&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: zipcode.invalid &amp;&amp; (zipcode.touched || zipcode.dirty || form.submitted) }&quot;&gt;
         &lt;div class&#x3D;&quot;invalid-feedback&quot;&gt;
           Zip code required.
         &lt;/div&gt;
@@ -965,7 +990,7 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="record">  <ng-container *ngIf="!readonly; else read">    <div class="mb-3">      <label [for]="getId(\'street\')">Address</label>      <input type="text" class="form-control" [id]="getId(\'street\')" placeholder="1234 Main St" required="" [(ngModel)]="record[street]"        name="street">      <div class="invalid-feedback">        Please enter your shipping address.      </div>    </div>        <div class="mb-3">      <label [for]="getId(\'city\')">City</label>      <input type="text" class="form-control" [id]="getId(\'city\')" placeholder="City" [(ngModel)]="record[city]"        name="city">    </div>        <div class="row">      <div class="col-md-9 mb-3">        <apt-dependent-picklist [fieldMethod]="fieldService" [field]="stateCode" [parentField]="countryCode" [(ngModel)]="countryState" (ngModelChange)="countryStateChange($event)"></apt-dependent-picklist>      </div>      <div class="col-md-3 mb-3">        <label [for]="getId(\'zip\')">Zip</label>        <input type="text" class="form-control" [id]="getId(\'zip\')" placeholder="" required="" [(ngModel)]="record[postalCode]"          name="postal-code">        <div class="invalid-feedback">          Zip code required.        </div>      </div>    </div>  </ng-container>  <ng-template #read>    <address>      {{record[street]}}      <br> {{record[city]}}, {{record[state]}} {{record[postalCode]}}      <br> {{record[country]}}    </address>  </ng-template></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="record">  <ng-container *ngIf="!readonly; else read">    <div class="mb-3">      <label [for]="getId(\'street\')">Address</label>      <input type="text" class="form-control" [id]="getId(\'street\')" placeholder="1234 Main St" required [(ngModel)]="record[street]"        name="street" #address="ngModel" [ngClass]="{ \'is-invalid\': address.invalid && (address.touched || address.dirty || form.submitted) }">      <div class="invalid-feedback">        Please enter your shipping address.      </div>    </div>        <div class="mb-3">      <label [for]="getId(\'city\')">City</label>      <input type="text" class="form-control" [id]="getId(\'city\')" placeholder="City" required [(ngModel)]="record[city]"        name="city" #city="ngModel" [ngClass]="{ \'is-invalid\': city.invalid && (city.touched || city.dirty || form.submitted) }">      <div class="invalid-feedback">        Please enter your city.      </div>    </div>        <div class="row">      <div class="col-md-9 mb-3">        <apt-dependent-picklist [fieldMethod]="fieldService" [field]="stateCode" [parentField]="countryCode" [(ngModel)]="countryState" (ngModelChange)="countryStateChange($event)"></apt-dependent-picklist>      </div>      <div class="col-md-3 mb-3">        <label [for]="getId(\'zip\')">Zip</label>        <input type="text" class="form-control" [id]="getId(\'zip\')" required [(ngModel)]="record[postalCode]"          name="postal-code" #zipcode="ngModel" [ngClass]="{ \'is-invalid\': zipcode.invalid && (zipcode.touched || zipcode.dirty || form.submitted) }">        <div class="invalid-feedback">          Zip code required.        </div>      </div>    </div>  </ng-container>  <ng-template #read>    <address>      {{record[street]}}      <br> {{record[city]}}, {{record[state]}} {{record[postalCode]}}      <br> {{record[country]}}    </address>  </ng-template></div></div>'
     var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AddressComponent'};
