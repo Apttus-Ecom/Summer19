@@ -65,13 +65,13 @@
                 <li class="link">
                     <a href="modules/CartModule.html" data-type="entity-link">CartModule</a>
                     <li class="chapter inner">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links-module-CartModule-517bd01c7b6158894e4154ead5b8d89c"' :
-                            'data-target="#xs-components-links-module-CartModule-517bd01c7b6158894e4154ead5b8d89c"' }>
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links-module-CartModule-7677a30c6d2a668a9d16278111762d82"' :
+                            'data-target="#xs-components-links-module-CartModule-7677a30c6d2a668a9d16278111762d82"' }>
                             <span class="icon ion-md-cog"></span>
                             <span>Components</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-CartModule-517bd01c7b6158894e4154ead5b8d89c"' : 'id="xs-components-links-module-CartModule-517bd01c7b6158894e4154ead5b8d89c"' }>
+                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-CartModule-7677a30c6d2a668a9d16278111762d82"' : 'id="xs-components-links-module-CartModule-7677a30c6d2a668a9d16278111762d82"' }>
                             <li class="link">
                                 <a href="components/AddToCartComponent.html" data-type="entity-link" data-context="sub-entity"
                                     data-context-id="modules">AddToCartComponent</a>
@@ -84,13 +84,13 @@
                     </li>
                        
                     <li class="chapter inner">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links-module-CartModule-517bd01c7b6158894e4154ead5b8d89c"' :
-                            'data-target="#xs-injectables-links-module-CartModule-517bd01c7b6158894e4154ead5b8d89c"' }>
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links-module-CartModule-7677a30c6d2a668a9d16278111762d82"' :
+                            'data-target="#xs-injectables-links-module-CartModule-7677a30c6d2a668a9d16278111762d82"' }>
                             <span class="icon ion-md-arrow-round-down"></span>
                             <span>Injectables</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CartModule-517bd01c7b6158894e4154ead5b8d89c"' : 'id="xs-injectables-links-module-CartModule-517bd01c7b6158894e4154ead5b8d89c"' }>
+                        <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CartModule-7677a30c6d2a668a9d16278111762d82"' : 'id="xs-injectables-links-module-CartModule-7677a30c6d2a668a9d16278111762d82"' }>
                             <li class="link">
                                 <a href="injectables/CartService.html" data-type="entity-link" data-context="sub-entity"
                                     data-context-id="modules" }>CartService</a>
@@ -666,7 +666,10 @@
                 <span class="icon ion-ios-arrow-down"></span>
             </div>
             <ul class="links collapse" ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
- 
+                <li class="link">
+                    <a href="miscellaneous/enumerations.html" data-type="entity-link">Enums</a>
+                </li>
+                 
                 <li class="link">
                     <a href="miscellaneous/functions.html" data-type="entity-link">Functions</a>
                 </li>

@@ -85,6 +85,15 @@ There are also pipes provided that wrap this service to provide pricing within a
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#cartPending">cartPending</a>
+                            </li>
+                            <li>
+                                <a href="#matrixData">matrixData</a>
+                            </li>
+                            <li>
+                                <a href="#previousCartPrice">previousCartPrice</a>
+                            </li>
+                            <li>
                                 <a href="#queryKey">queryKey</a>
                             </li>
                             <li>
@@ -148,7 +157,7 @@ There are also pipes provided that wrap this service to provide pricing within a
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(priceListService: <a href="../injectables/PriceListService.html">PriceListService</a>, cartService: <a href="../injectables/CartService.html">CartService</a>, priceMatrixService: <a href="../injectables/PriceMatrixService.html">PriceMatrixService</a>, productOptionService: <a href="../injectables/ProductOptionService.html">ProductOptionService</a>, priceRuleService: <a href="../injectables/PriceRuleService.html">PriceRuleService</a>, cacheService: CacheService, localCurrencyPipe: LocalCurrencyPipe)</code>
+<code>constructor(priceListService: <a href="../injectables/PriceListService.html">PriceListService</a>, cartService: <a href="../injectables/CartService.html">CartService</a>, priceMatrixService: <a href="../injectables/PriceMatrixService.html">PriceMatrixService</a>, productOptionService: <a href="../injectables/ProductOptionService.html">ProductOptionService</a>, priceRuleService: <a href="../injectables/PriceRuleService.html">PriceRuleService</a>, cacheService: CacheService, localCurrencyPipe: LocalCurrencyPipe, metadataService: MetadataService)</code>
                     </td>
                 </tr>
 
@@ -249,6 +258,18 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>metadataService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MetadataService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -280,7 +301,7 @@ There are also pipes provided that wrap this service to provide pricing within a
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>adjustValue(adjustmentAmount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, adjustmentType: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, amount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, quantity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                        <code>adjustValue(adjustmentAmount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, adjustmentType: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, amount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
 
@@ -298,7 +319,6 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Default value</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -312,8 +332,6 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                        </td>
 
                                                 </tr>
                                                 <tr>
@@ -326,8 +344,6 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                        </td>
 
                                                 </tr>
                                                 <tr>
@@ -340,23 +356,6 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                        </td>
-
-                                                </tr>
-                                                <tr>
-                                                        <td>quantity</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>1</code>
-                                                        </td>
 
                                                 </tr>
                                         </tbody>
@@ -622,7 +621,7 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                     </td>
                                                     
                                                         <td>
-                                                                <code>this.cartService.getMyCart()</code>
+                                                                <code>this.cartService.getMyCart(false)</code>
                                                         </td>
 
                                                         <td>
@@ -988,6 +987,108 @@ There are also pipes provided that wrap this service to provide pricing within a
         <h3 id="inputs">
             Properties
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cartPending"></a>
+                        <span class="name">
+                            <b>
+                            cartPending
+                            </b>
+                            <a href="#cartPending"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>cartPending:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="matrixData"></a>
+                        <span class="name">
+                            <b>
+                            matrixData
+                            </b>
+                            <a href="#matrixData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>matrixData:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="previousCartPrice"></a>
+                        <span class="name">
+                            <b>
+                            previousCartPrice
+                            </b>
+                            <a href="#previousCartPrice"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>previousCartPrice:     <code><a href="../classes/Price.html" target="_self" >Price</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/Price.html" target="_self" >Price</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>

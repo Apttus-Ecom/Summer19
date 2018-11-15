@@ -62,6 +62,16 @@
     <code>src/lib/modules/store/components/input-quantity/input-quantity.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Input Quantity Component</p>
+<p>The Input Quantity component is an input element with controls to increase/decrease the quantity of cart line items added to user&#39;s active cart.</p>
+<p>The comonent has an input text box where user can directly update the quantity of items to be added to the cart. It also has two control buttons to decrease/increase the added quantity. The quantity is always defaulted to value 1.</p>
+<p>Example Usage:</p>
+
+    </p>
 
 
     <p class="comment">
@@ -73,6 +83,14 @@
                 <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
     </p>
 
+    <p class="comment">
+        <h3>Example</h3>
+    </p>
+    <div class="io-description">
+                <div>
+                    <pre class="line-numbers"><code class="language-html">&lt;apt-input-quantity&gt;&lt;/apt-input-quantity&gt;</code></pre>
+                </div>
+    </div>
 
 <section>
     <h3>Metadata</h3>
@@ -353,6 +371,7 @@
                                             <tr>
                                                 <td>Name</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -364,6 +383,12 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>represnting the event associated with the user action.
+Decreases the quantity value by 1 when the decrease button is clicked.
+Propagates the event associated wit the user action in the event chain.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -413,6 +438,7 @@
                                             <tr>
                                                 <td>Name</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -424,6 +450,12 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>represnting the event associated with the user action.
+Increases the quantity value by 1 when the increase button is clicked.
+Propagates the event associated wit the user action in the event chain.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -598,6 +630,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -612,6 +645,11 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>representing the quantity of items to be added to cart.
+Updates the quantity every time user changes the input controller. The quantity value ranges from 1 through 9999999.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -695,6 +733,12 @@
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A numberic value representing the quantity of line items to be added to user&#39;s active cart.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>

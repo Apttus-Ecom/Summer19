@@ -82,6 +82,14 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onCartError">onCartError</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onCartPriceError">onCartPriceError</a>
+                            </li>
+                            <li>
                                 <a href="#type">type</a>
                             </li>
                         </ul>
@@ -828,7 +836,7 @@ the method will throw an error specifying the product codes that cannot be added
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getMyCart()</code>
+                        <code>getMyCart(reprice: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                     </td>
                 </tr>
 
@@ -854,6 +862,41 @@ the method will throw an error specifying the product codes that cannot be added
            }
       }</code></pre></div></div>
 
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Default value</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>reprice</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>true</code>
+                                                        </td>
+
+                                                        <td>
+                                                                <code><p>true / false will trigger a reprice operation if there are any pending line items</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
                             <div>
                             </div>
                             <div class="io-description">
@@ -1040,7 +1083,7 @@ Also further filters the carts returned by the currently selected price list and
 
                             </div>
                                 <div class="io-description">
-                                    <p>an Observable of type string with the filter query</p>
+                                    <p>an Observable with an array of filter query instance.</p>
 
                                 </div>
                     </td>
@@ -1149,7 +1192,7 @@ Also further filters the carts returned by the currently selected price list and
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>priceCart(cart: <a href="../classes/Cart.html">Cart</a>, cartItemList: <a href="../classes/CartItem.html">Array<CartItem></a>, timeout: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, rollBackOnFail: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, force: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, attempts: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                        <code>priceCart(cart: <a href="../classes/Cart.html">Cart</a>, force: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                     </td>
                 </tr>
 
@@ -1207,63 +1250,6 @@ Also further filters the carts returned by the currently selected price list and
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>cartItemList</td>
-                                                        <td>
-                                                                    <code><a href="../classes/CartItem.html" target="_self" >Array&lt;CartItem&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>(deprecated) an array of cart items that will be deleted if the reprice fails</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>timeout</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>30000</code>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>(deprecated) the maximum time to wait for the reprice operation. Defaults to 30 seconds</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>rollBackOnFail</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>true</code>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>(deprecated) when set to true, will delete the corresponding cart item if the reprice fails</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
                                                         <td>force</td>
                                                         <td>
                                                                     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
@@ -1279,25 +1265,6 @@ Also further filters the carts returned by the currently selected price list and
 
                                                         <td>
                                                                 <code><p>sets all line items to &#39;pending&#39; before repricing</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>attempts</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>10</code>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>the maximum number of times to poll the reprice operation. Increase this number if done on a large cart that will take a while to reprice.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -1502,7 +1469,7 @@ Also further filters the carts returned by the currently selected price list and
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>updateQuantity(cartItemList: <a href="../classes/CartItem.html">Array<CartItem></a>)</code>
+                        <code>updateQuantity(cartItemList: <a href="../classes/CartItem.html">Array<CartItem></a>, async: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                     </td>
                 </tr>
 
@@ -1511,22 +1478,6 @@ Also further filters the carts returned by the currently selected price list and
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Updates the quantity of the items specified in the cart item array with the quantity on those items. Will trigger a reprice cart operation.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { CartService, CartItem } from &#39;&#64;apttus/ecommerce&#39;;
-
-      export class MyComponent implements OnInit{
-
-           constructor(private cartService: CartService){}
-
-           updateQuantity(cartItem: CartItem, quantity: number): void{
-               cartItem.Apttus_Config2__Quantity__c = quantity;
-               this.cartService.updateQuantity([cartItem]).subscribe(
-                   () =&gt; {...},
-                   err =&gt; {...}
-               );
-           }
-      }</code></pre></div></div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -1536,7 +1487,7 @@ Also further filters the carts returned by the currently selected price list and
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Description</td>
+                                                    <td>Default value</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1550,11 +1501,24 @@ Also further filters the carts returned by the currently selected price list and
                                                             No
                                                     </td>
                                                     
-
                                                         <td>
-                                                                <code><p>an array of cart items. Matches based on the id and updates the related cart items with the quantity only</p>
-</code>
                                                         </td>
+
+                                                </tr>
+                                                <tr>
+                                                        <td>async</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>true</code>
+                                                        </td>
+
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -1566,8 +1530,7 @@ Also further filters the carts returned by the currently selected price list and
 
                             </div>
                                 <div class="io-description">
-                                    <p>a void observable when the operation has completed.</p>
-
+                                    
                                 </div>
                     </td>
                 </tr>
@@ -1580,6 +1543,76 @@ Also further filters the carts returned by the currently selected price list and
         <h3 id="inputs">
             Properties
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onCartError"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            onCartError
+                            </b>
+                            <a href="#onCartError"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>onCartError:     <code><a href="../classes/Cart.html" target="_self" >EventEmitter&lt;CartError&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/Cart.html" target="_self" >EventEmitter&lt;CartError&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new EventEmitter&lt;CartError&gt;(null)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onCartPriceError"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            onCartPriceError
+                            </b>
+                            <a href="#onCartPriceError"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>onCartPriceError:     <code><a href="../classes/Cart.html" target="_self" >EventEmitter&lt;CartError&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/Cart.html" target="_self" >EventEmitter&lt;CartError&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new EventEmitter&lt;CartError&gt;(null)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>

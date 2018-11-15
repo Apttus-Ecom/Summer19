@@ -62,6 +62,15 @@
     <code>src/lib/modules/store/components/input-field/input-field.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Input field component</p>
+<p>The Input field component displays the field values as a radio button, checkbox, dropdown, a text area or a label value, depending upon the field type. </p>
+<p>Example Usage:</p>
+
+    </p>
 
 
     <p class="comment">
@@ -72,6 +81,14 @@
                 <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
     </p>
 
+    <p class="comment">
+        <h3>Example</h3>
+    </p>
+    <div class="io-description">
+                <div>
+                    <pre class="line-numbers"><code class="language-html">&lt;apt-input-field&gt;&lt;/apt-input-field&gt;</code></pre>
+                </div>
+    </div>
 
 <section>
     <h3>Metadata</h3>
@@ -505,7 +522,8 @@
 
                             </div>
                                 <div class="io-description">
-                                    
+                                    <p>String representing the default value of a field.</p>
+
                                 </div>
                     </td>
                 </tr>
@@ -535,6 +553,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Sets the field value to the selected checbox value.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -543,6 +563,7 @@
                                             <tr>
                                                 <td>Name</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -554,6 +575,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>check box value selected by user.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -595,6 +620,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Sets the field value to the selected radio button value.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -820,6 +847,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Sets the field value to null or its default.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -999,6 +1028,19 @@
                         <span class="accessor"><b>get</b><code>options()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Adds the field values to be displayed, to an object with key value properties. The field would be a read only if the disabled property is set to true.</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="../interfaces/PicklistValue.html" target="_self" >Array&lt;PicklistValue&gt;</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>

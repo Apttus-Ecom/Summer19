@@ -62,6 +62,16 @@
     <code>src/lib/modules/store/components/address/address.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Address Component</p>
+<p>Address component allows user to enter address details. The details include street name, city name, country code, state code and zip code.
+When a user tries to add a new address or update an existing address associated with his account, he can fill in details like street, city name and zip in the respective text boxes provided.</p>
+<p>Example Usage:</p>
+
+    </p>
 
 
     <p class="comment">
@@ -71,6 +81,14 @@
                 <code><a href="https://angular.io/api/forms/ControlValueAccessor" target="_blank" >ControlValueAccessor</a></code>
     </p>
 
+    <p class="comment">
+        <h3>Example</h3>
+    </p>
+    <div class="io-description">
+                <div>
+                    <pre class="line-numbers"><code class="language-html">&lt;apt-address&gt;&lt;/apt-address&gt;</code></pre>
+                </div>
+    </div>
 
 <section>
     <h3>Metadata</h3>
@@ -108,6 +126,16 @@
                 <td class="col-md-9"><code>./address.component.html</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">viewProviders</td>
+                <td class="col-md-9">
+                    <code>
+                            <code>{
+    provide: ControlContainer, useExisting: NgForm
+}</code>
+                    </code>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -157,9 +185,6 @@
                             </li>
                             <li>
                                 <a href="#registerOnTouched">registerOnTouched</a>
-                            </li>
-                            <li>
-                                <a href="#writeValue">writeValue</a>
                             </li>
                         </ul>
                     </td>
@@ -240,6 +265,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor for Address Component for injecting dependencies.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -248,6 +275,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -262,6 +290,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Instance of AccountLocationService</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>contactService</td>
@@ -274,6 +306,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Instance of ContactService</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>accountService</td>
@@ -286,6 +322,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Instance of AccountService</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -396,6 +436,7 @@
                                             <tr>
                                                 <td>Name</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -407,6 +448,11 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>Event associated with the user action.
+Sets the country and state inforamtion selected by th user.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -457,6 +503,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -471,6 +518,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>Address type for which a unique id has to be generated.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -482,7 +533,8 @@
 
                             </div>
                                 <div class="io-description">
-                                    
+                                    <p>unique id which is associated to the address fields entered. Address details iclude street name, city name and zip code.</p>
+
                                 </div>
                     </td>
                 </tr>
@@ -608,70 +660,6 @@
                 </tr>
             </tbody>
         </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="writeValue"></a>
-                        <span class="name">
-                            <b>
-                            writeValue
-                            </b>
-                            <a href="#writeValue"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>writeValue(value: <a href="../classes/Contact.html">AccountLocation | Account | Contact</a>)</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>value</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Contact.html" target="_self" >AccountLocation | Account | Contact</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 </section>
 
     <section>
@@ -739,6 +727,12 @@
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A variable to hold user&#39;s address details.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -768,6 +762,12 @@
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A string value to generate a unique id for street name, city name or postal code of user&#39;s address record.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -791,6 +791,13 @@
                         <span class="accessor"><b>get</b><code>street()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -808,6 +815,13 @@
                         <span class="accessor"><b>get</b><code>city()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -825,6 +839,13 @@
                         <span class="accessor"><b>get</b><code>state()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -842,6 +863,13 @@
                         <span class="accessor"><b>get</b><code>stateCode()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -859,6 +887,13 @@
                         <span class="accessor"><b>get</b><code>postalCode()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -876,6 +911,13 @@
                         <span class="accessor"><b>get</b><code>country()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -893,6 +935,13 @@
                         <span class="accessor"><b>get</b><code>countryCode()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -910,6 +959,17 @@
                         <span class="accessor"><b>get</b><code>fieldService()</code></span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>AObjectService</code>
+
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -934,7 +994,7 @@
     &lt;div class&#x3D;&quot;mb-3&quot;&gt;
       &lt;label [for]&#x3D;&quot;getId(&#x27;city&#x27;)&quot;&gt;City&lt;/label&gt;
       &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [id]&#x3D;&quot;getId(&#x27;city&#x27;)&quot; placeholder&#x3D;&quot;City&quot; required [(ngModel)]&#x3D;&quot;record[city]&quot;
-        name&#x3D;&quot;city&quot; #city&#x3D;&quot;ngModel&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: city.invalid &amp;&amp; (city.touched || city.dirty || form.submitted) }&quot;&gt;
+        name&#x3D;&quot;city&quot; #cityTemplate&#x3D;&quot;ngModel&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: cityTemplate.invalid &amp;&amp; (cityTemplate.touched || cityTemplate.dirty || form.submitted) }&quot;&gt;
       &lt;div class&#x3D;&quot;invalid-feedback&quot;&gt;
         Please enter your city.
       &lt;/div&gt;
@@ -942,7 +1002,7 @@
     
     &lt;div class&#x3D;&quot;row&quot;&gt;
       &lt;div class&#x3D;&quot;col-md-9 mb-3&quot;&gt;
-        &lt;apt-dependent-picklist [fieldMethod]&#x3D;&quot;fieldService&quot; [field]&#x3D;&quot;stateCode&quot; [parentField]&#x3D;&quot;countryCode&quot; [(ngModel)]&#x3D;&quot;countryState&quot; (ngModelChange)&#x3D;&quot;countryStateChange($event)&quot;&gt;&lt;/apt-dependent-picklist&gt;
+        &lt;apt-dependent-picklist name&#x3D;&quot;dependentPicklist&quot; [fieldMethod]&#x3D;&quot;fieldService&quot; [field]&#x3D;&quot;stateCode&quot; [parentField]&#x3D;&quot;countryCode&quot; [(ngModel)]&#x3D;&quot;countryState&quot; (ngModelChange)&#x3D;&quot;countryStateChange($event)&quot;&gt;&lt;/apt-dependent-picklist&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;col-md-3 mb-3&quot;&gt;
         &lt;label [for]&#x3D;&quot;getId(&#x27;zip&#x27;)&quot;&gt;Zip&lt;/label&gt;
@@ -990,7 +1050,7 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="record">  <ng-container *ngIf="!readonly; else read">    <div class="mb-3">      <label [for]="getId(\'street\')">Address</label>      <input type="text" class="form-control" [id]="getId(\'street\')" placeholder="1234 Main St" required [(ngModel)]="record[street]"        name="street" #address="ngModel" [ngClass]="{ \'is-invalid\': address.invalid && (address.touched || address.dirty || form.submitted) }">      <div class="invalid-feedback">        Please enter your shipping address.      </div>    </div>        <div class="mb-3">      <label [for]="getId(\'city\')">City</label>      <input type="text" class="form-control" [id]="getId(\'city\')" placeholder="City" required [(ngModel)]="record[city]"        name="city" #city="ngModel" [ngClass]="{ \'is-invalid\': city.invalid && (city.touched || city.dirty || form.submitted) }">      <div class="invalid-feedback">        Please enter your city.      </div>    </div>        <div class="row">      <div class="col-md-9 mb-3">        <apt-dependent-picklist [fieldMethod]="fieldService" [field]="stateCode" [parentField]="countryCode" [(ngModel)]="countryState" (ngModelChange)="countryStateChange($event)"></apt-dependent-picklist>      </div>      <div class="col-md-3 mb-3">        <label [for]="getId(\'zip\')">Zip</label>        <input type="text" class="form-control" [id]="getId(\'zip\')" required [(ngModel)]="record[postalCode]"          name="postal-code" #zipcode="ngModel" [ngClass]="{ \'is-invalid\': zipcode.invalid && (zipcode.touched || zipcode.dirty || form.submitted) }">        <div class="invalid-feedback">          Zip code required.        </div>      </div>    </div>  </ng-container>  <ng-template #read>    <address>      {{record[street]}}      <br> {{record[city]}}, {{record[state]}} {{record[postalCode]}}      <br> {{record[country]}}    </address>  </ng-template></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="record">  <ng-container *ngIf="!readonly; else read">    <div class="mb-3">      <label [for]="getId(\'street\')">Address</label>      <input type="text" class="form-control" [id]="getId(\'street\')" placeholder="1234 Main St" required [(ngModel)]="record[street]"        name="street" #address="ngModel" [ngClass]="{ \'is-invalid\': address.invalid && (address.touched || address.dirty || form.submitted) }">      <div class="invalid-feedback">        Please enter your shipping address.      </div>    </div>        <div class="mb-3">      <label [for]="getId(\'city\')">City</label>      <input type="text" class="form-control" [id]="getId(\'city\')" placeholder="City" required [(ngModel)]="record[city]"        name="city" #cityTemplate="ngModel" [ngClass]="{ \'is-invalid\': cityTemplate.invalid && (cityTemplate.touched || cityTemplate.dirty || form.submitted) }">      <div class="invalid-feedback">        Please enter your city.      </div>    </div>        <div class="row">      <div class="col-md-9 mb-3">        <apt-dependent-picklist name="dependentPicklist" [fieldMethod]="fieldService" [field]="stateCode" [parentField]="countryCode" [(ngModel)]="countryState" (ngModelChange)="countryStateChange($event)"></apt-dependent-picklist>      </div>      <div class="col-md-3 mb-3">        <label [for]="getId(\'zip\')">Zip</label>        <input type="text" class="form-control" [id]="getId(\'zip\')" required [(ngModel)]="record[postalCode]"          name="postal-code" #zipcode="ngModel" [ngClass]="{ \'is-invalid\': zipcode.invalid && (zipcode.touched || zipcode.dirty || form.submitted) }">        <div class="invalid-feedback">          Zip code required.        </div>      </div>    </div>  </ng-container>  <ng-template #read>    <address>      {{record[street]}}      <br> {{record[city]}}, {{record[state]}} {{record[postalCode]}}      <br> {{record[country]}}    </address>  </ng-template></div></div>'
     var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AddressComponent'};
