@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@apttus/ecommerce documentation</title>
+        <title>Apttus Ecommerce</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,15 +14,12 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">@apttus/ecommerce documentation</a>
+            <a href="./" class="navbar-brand">Apttus Ecommerce</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -61,7 +58,7 @@ import { NgModule } from &#39;&#64;angular/core&#39;;
 import { AppComponent } from &#39;./app.component&#39;;
 
 // Import your library
-import { ApttusModule } from &#39;&#64;apttus/core&#39;;
+import { SalesforceModule } from &#39;ng-salesforce&#39;;
 import { CommerceModule } from &#39;&#64;apttus/ecommerce&#39;;
 
 // salesforce.config.ts will be created during installation and saved at src/app/salesforce.config.ts
@@ -75,7 +72,7 @@ import { Configuration } from &#39;./salesforce.config&#39;;
     BrowserModule,
 
     // Specify your ng-salesforce as an import
-    ApttusModule.forRoot(Configuration),
+    SalesforceModule.forRoot(Configuration),
 
     // Specify the Ecommerce Module as in import
     // The only parameter is the string name of the APTSMD_Store__c record you want to use.
@@ -346,7 +343,9 @@ However, during development you will see this error for calls to the SOAP API. T
 
        <script src="./js/libs/custom-elements.min.js"></script>
        <script src="./js/libs/lit-html.js"></script>
-       <script src="./js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>
 

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@apttus/ecommerce documentation</title>
+        <title>Apttus Ecommerce</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,15 +14,12 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">@apttus/ecommerce documentation</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -50,6 +47,9 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -59,7 +59,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/lib/modules/store/components/input-field/input-field.component.ts</code>
+    <code>projects/apttus/ecommerce/src/lib/modules/store/components/input-field/input-field.component.ts</code>
 </p>
 
     <p class="comment">
@@ -120,7 +120,7 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>input-field.component.scss</code></td>
+                <td class="col-md-9"><code>./input-field.component.scss</code></td>
             </tr>
 
 
@@ -129,6 +129,12 @@
                 <td class="col-md-3">templateUrl</td>
                 <td class="col-md-9"><code>./input-field.component.html</code></td>
             </tr>
+
+
+
+
+
+
 
 
         </tbody>
@@ -483,7 +489,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getDefaultValue(field: )</code>
+                        <code>getDefaultValue(field)</code>
                     </td>
                 </tr>
 
@@ -544,7 +550,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>onMultiChange(data: )</code>
+<code>onMultiChange(data)</code>
                     </td>
                 </tr>
 
@@ -1060,7 +1066,7 @@
           {{option.label}}
           &amp;nbsp;&amp;nbsp;&amp;nbsp;
           &lt;span *ngIf&#x3D;&quot;product &amp;&amp; (option.value | AttributeValuePricePipe: product: productAttribute | async)?.totalPrice &gt; 0&quot;&gt;
-            +{{(option.value | AttributeValuePricePipe: product: productAttribute | async)?.totalPrice$ | async}}
+            +{{(option.value | AttributeValuePricePipe: product: productAttribute | async)?.netPrice$ | async}}
           &lt;/span&gt;
         &lt;/option&gt;
       &lt;/select&gt;
@@ -1072,7 +1078,7 @@
             {{option.label}}
           &lt;/label&gt;
           &lt;small class&#x3D;&quot;text-muted&quot; *ngIf&#x3D;&quot;product &amp;&amp; (option.value | AttributeValuePricePipe: product: productAttribute | async)?.totalPrice &gt; 0&quot;&gt;
-            +{{(option.value | AttributeValuePricePipe: product: productAttribute | async)?.totalPrice$ | async}}
+            +{{(option.value | AttributeValuePricePipe: product: productAttribute | async)?.netPrice$ | async}}
           &lt;/small&gt;
         &lt;/div&gt;
       &lt;/ng-template&gt;
@@ -1104,6 +1110,19 @@
   &lt;/div&gt;</code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./input-field.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host{
+    display: block;
+}
+
+select{
+    text-indent: 5px;
+}</code></pre>
+    </div>
+
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
@@ -1129,8 +1148,8 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div [ngSwitch]="field?.type" class="form-group">    <label *ngIf="label" class="font-weight-bold">{{field?.label}}</label>      <!--Picklist-->    <div *ngSwitchCase="\'picklist\'">      <select class="custom-select" [class.custom-select-sm]="small" *ngIf="field.picklistValues.length > 4; else checkboxes" [(ngModel)]="value" (change)="propagateChange(value)">        <option *ngFor="let option of options" [value]="option.value" [selected]="option.value === value">          {{option.label}}          &nbsp;&nbsp;&nbsp;          <span *ngIf="product && (option.value | AttributeValuePricePipe: product: productAttribute | async)?.totalPrice > 0">            +{{(option.value | AttributeValuePricePipe: product: productAttribute | async)?.totalPrice$ | async}}          </span>        </option>      </select>      <ng-template #checkboxes>        <div *ngFor="let option of options" class="custom-control custom-radio" [class.custom-radio-sm]="small" [class.custom-control-inline]="inline">          <input type="radio" class="custom-control-input" [name]="field.name" [value]="option.value" [id]="field.name + \'_\' + option.value"            [(ngModel)]="value" (change)="onRadioChange()" [disabled]="readonly || option.disabled">          <label class="custom-control-label mr-auto" [for]="field.name + \'_\' + option.value">            {{option.label}}          </label>          <small class="text-muted" *ngIf="product && (option.value | AttributeValuePricePipe: product: productAttribute | async)?.totalPrice > 0">            +{{(option.value | AttributeValuePricePipe: product: productAttribute | async)?.totalPrice$ | async}}          </small>        </div>      </ng-template>    </div>      <!--Checkbox-->    <select class="form-control" [class.form-control-sm]="small" *ngSwitchCase="\'boolean\'" [(ngModel)]="value" [class.custom-control-inline]="inline" (change)="propagateChange(value)">      <option [value]="true">Yes</option>      <option [value]="false">No</option>    </select>      <!--Multi select picklist-->    <ng-container *ngSwitchCase="\'multipicklist\'">      <div *ngFor="let option of field.picklistValues" class="custom-control custom-checkbox" [class.custom-checkbox-sm]="small" [class.custom-control-inline]="inline">        <input type="checkbox" class="custom-control-input" [checked]="value?.indexOf(option.value) > -1" [id]="option.value"               (change)="onMultiChange(option.value)">        <label class="custom-control-label" [for]="option.value">{{option.label}}</label>      </div>    </ng-container>      <!-- String -->    <input type="text" class="form-control" [class.form-control-sm]="small" [id]="value" [(ngModel)]="value" *ngSwitchCase="\'text\'" (change)="propagateChange(value)"/>      <input type="number" class="form-control" [class.form-control-sm]="small" [id]="value" [(ngModel)]="value" *ngSwitchCase="\'double\'" (change)="propagateChange(value)"/>      <div class="px-3" *ngSwitchCase="\'string\'">      <textarea [(ngModel)]="value" class="form-control" [class.form-control-sm]="small" (change)="propagateChange(value)"></textarea>    </div>  </div></div>'
-    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
+        var COMPONENT_TEMPLATE = '<div><div [ngSwitch]="field?.type" class="form-group">    <label *ngIf="label" class="font-weight-bold">{{field?.label}}</label>      <!--Picklist-->    <div *ngSwitchCase="\'picklist\'">      <select class="custom-select" [class.custom-select-sm]="small" *ngIf="field.picklistValues.length > 4; else checkboxes" [(ngModel)]="value" (change)="propagateChange(value)">        <option *ngFor="let option of options" [value]="option.value" [selected]="option.value === value">          {{option.label}}          &nbsp;&nbsp;&nbsp;          <span *ngIf="product && (option.value | AttributeValuePricePipe: product: productAttribute | async)?.totalPrice > 0">            +{{(option.value | AttributeValuePricePipe: product: productAttribute | async)?.netPrice$ | async}}          </span>        </option>      </select>      <ng-template #checkboxes>        <div *ngFor="let option of options" class="custom-control custom-radio" [class.custom-radio-sm]="small" [class.custom-control-inline]="inline">          <input type="radio" class="custom-control-input" [name]="field.name" [value]="option.value" [id]="field.name + \'_\' + option.value"            [(ngModel)]="value" (change)="onRadioChange()" [disabled]="readonly || option.disabled">          <label class="custom-control-label mr-auto" [for]="field.name + \'_\' + option.value">            {{option.label}}          </label>          <small class="text-muted" *ngIf="product && (option.value | AttributeValuePricePipe: product: productAttribute | async)?.totalPrice > 0">            +{{(option.value | AttributeValuePricePipe: product: productAttribute | async)?.netPrice$ | async}}          </small>        </div>      </ng-template>    </div>      <!--Checkbox-->    <select class="form-control" [class.form-control-sm]="small" *ngSwitchCase="\'boolean\'" [(ngModel)]="value" [class.custom-control-inline]="inline" (change)="propagateChange(value)">      <option [value]="true">Yes</option>      <option [value]="false">No</option>    </select>      <!--Multi select picklist-->    <ng-container *ngSwitchCase="\'multipicklist\'">      <div *ngFor="let option of field.picklistValues" class="custom-control custom-checkbox" [class.custom-checkbox-sm]="small" [class.custom-control-inline]="inline">        <input type="checkbox" class="custom-control-input" [checked]="value?.indexOf(option.value) > -1" [id]="option.value"               (change)="onMultiChange(option.value)">        <label class="custom-control-label" [for]="option.value">{{option.label}}</label>      </div>    </ng-container>      <!-- String -->    <input type="text" class="form-control" [class.form-control-sm]="small" [id]="value" [(ngModel)]="value" *ngSwitchCase="\'text\'" (change)="propagateChange(value)"/>      <input type="number" class="form-control" [class.form-control-sm]="small" [id]="value" [(ngModel)]="value" *ngSwitchCase="\'double\'" (change)="propagateChange(value)"/>      <div class="px-3" *ngSwitchCase="\'string\'">      <textarea [(ngModel)]="value" class="form-control" [class.form-control-sm]="small" (change)="propagateChange(value)"></textarea>    </div>  </div></div>'
+    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddToCartDialogComponent', 'selector': 'lib-add-to-cart-dialog'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CRAddToCartComponent', 'selector': 'apt-cr-add-to-cart'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRProductCardComponent', 'selector': 'apt-cr-product-card'},{'name': 'CRProductCarouselComponent', 'selector': 'apt-cr-product-carousel'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'InputFieldComponent'};
 </script>
@@ -1171,7 +1190,9 @@
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

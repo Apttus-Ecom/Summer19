@@ -22,53 +22,29 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_OrderModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="11.5,-70 11.5,-195 484.5,-195 484.5,-70 11.5,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="169,-70 169,-195 327,-195 327,-70 169,-70"/>
 </g>
 <g id="clust6" class="cluster">
 <title>cluster_OrderModule_providers</title>
-<polygon fill="none" stroke="#000000" points="19.5,-78 19.5,-130 476.5,-130 476.5,-78 19.5,-78"/>
+<polygon fill="none" stroke="#000000" points="177,-78 177,-130 319,-130 319,-78 177,-78"/>
 </g>
 <!-- OrderService -->
 <g id="node1" class="node">
 <title>OrderService</title>
-<ellipse fill="#fdb462" stroke="#000000" cx="405.5" cy="-104" rx="62.516" ry="18"/>
-<text text-anchor="middle" x="405.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">OrderService</text>
+<ellipse fill="#fdb462" stroke="#000000" cx="248" cy="-104" rx="62.516" ry="18"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">OrderService</text>
 </g>
 <!-- OrderModule -->
-<g id="node4" class="node">
+<g id="node2" class="node">
 <title>OrderModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="307.6924,-187 304.6924,-191 283.6924,-191 280.6924,-187 215.3076,-187 215.3076,-151 307.6924,-151 307.6924,-187"/>
-<text text-anchor="middle" x="261.5" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">OrderModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="294.1924,-187 291.1924,-191 270.1924,-191 267.1924,-187 201.8076,-187 201.8076,-151 294.1924,-151 294.1924,-187"/>
+<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">OrderModule</text>
 </g>
 <!-- OrderService&#45;&gt;OrderModule -->
 <g id="edge1" class="edge">
 <title>OrderService&#45;&gt;OrderModule</title>
-<path fill="none" stroke="#000000" d="M405.5,-122.1061C405.5,-141.3391 405.5,-169 405.5,-169 405.5,-169 317.8551,-169 317.8551,-169"/>
-<polygon fill="#000000" stroke="#000000" points="317.8552,-165.5001 307.8551,-169 317.8551,-172.5001 317.8552,-165.5001"/>
-</g>
-<!-- QuoteService -->
-<g id="node2" class="node">
-<title>QuoteService</title>
-<ellipse fill="#fdb462" stroke="#000000" cx="261.5" cy="-104" rx="63.6813" ry="18"/>
-<text text-anchor="middle" x="261.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">QuoteService</text>
-</g>
-<!-- QuoteService&#45;&gt;OrderModule -->
-<g id="edge2" class="edge">
-<title>QuoteService&#45;&gt;OrderModule</title>
-<path fill="none" stroke="#000000" d="M261.5,-122.1061C261.5,-122.1061 261.5,-140.991 261.5,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="258.0001,-140.9909 261.5,-150.991 265.0001,-140.991 258.0001,-140.9909"/>
-</g>
-<!-- TemplateService -->
-<g id="node3" class="node">
-<title>TemplateService</title>
-<ellipse fill="#fdb462" stroke="#000000" cx="103.5" cy="-104" rx="76.4188" ry="18"/>
-<text text-anchor="middle" x="103.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TemplateService</text>
-</g>
-<!-- TemplateService&#45;&gt;OrderModule -->
-<g id="edge3" class="edge">
-<title>TemplateService&#45;&gt;OrderModule</title>
-<path fill="none" stroke="#000000" d="M103.5,-122.1061C103.5,-141.3391 103.5,-169 103.5,-169 103.5,-169 205.3751,-169 205.3751,-169"/>
-<polygon fill="#000000" stroke="#000000" points="205.3752,-172.5001 215.3751,-169 205.3751,-165.5001 205.3752,-172.5001"/>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 </g>
 </svg>

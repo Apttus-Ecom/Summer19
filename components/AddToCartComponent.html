@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@apttus/ecommerce documentation</title>
+        <title>Apttus Ecommerce</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,15 +14,12 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">@apttus/ecommerce documentation</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -50,6 +47,9 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -59,7 +59,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/lib/modules/cart/components/add-to-cart/add-to-cart.component.ts</code>
+    <code>projects/apttus/ecommerce/src/lib/modules/cart/components/add-to-cart/add-to-cart.component.ts</code>
 </p>
 
     <p class="comment">
@@ -117,7 +117,7 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>add-to-cart.component.scss</code></td>
+                <td class="col-md-9"><code>./add-to-cart.component.scss</code></td>
             </tr>
 
 
@@ -126,6 +126,12 @@
                 <td class="col-md-3">templateUrl</td>
                 <td class="col-md-9"><code>./add-to-cart.component.html</code></td>
             </tr>
+
+
+
+
+
+
 
 
         </tbody>
@@ -203,6 +209,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#btnClass">btnClass</a>
+                            </li>
+                            <li>
                                 <a href="#configurationEnabled">configurationEnabled</a>
                             </li>
                             <li>
@@ -227,32 +236,15 @@
                                 <a href="#rollbackOnFail">rollbackOnFail</a>
                             </li>
                             <li>
-                                <a href="#showConfirmationDialog">showConfirmationDialog</a>
-                            </li>
-                            <li>
                                 <a href="#showQuantityControls">showQuantityControls</a>
                             </li>
                             <li>
-                                <a href="#showRecommendations">showRecommendations</a>
+                                <a href="#trigger">trigger</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Outputs</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#onAddToCart">onAddToCart</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
 
@@ -266,7 +258,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(cartService: <a href="../injectables/CartService.html">CartService</a>, priceService: <a href="../injectables/PriceService.html">PriceService</a>, constraintRuleService: <a href="../injectables/ConstraintRuleService.html">ConstraintRuleService</a>, modalService: BsModalService, productService: <a href="../injectables/ProductService.html">ProductService</a>, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, cdr: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(cartService: <a href="../injectables/CartService.html">CartService</a>, priceService: <a href="../injectables/PriceService.html">PriceService</a>, productService: <a href="../injectables/ProductService.html">ProductService</a>, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, cdr: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
 
@@ -315,38 +307,6 @@
                                                     
                                                         <td>
                                                                 <code><p>Instance of PriceService</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>constraintRuleService</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="../injectables/ConstraintRuleService.html" target="_self" >ConstraintRuleService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code><p>Instance of ConstraintRuleService</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>modalService</td>
-                                                  
-                                                        <td>
-                                                                    <code>BsModalService</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code><p>Instance of BsModalService</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -423,6 +383,25 @@
 
     <section>
     <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="btnClass"></a>
+                        <code>btnClass</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>&#x27;btn-primary&#x27;</code>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -570,25 +549,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-2">
-                        <a name="showConfirmationDialog"></a>
-                        <code>showConfirmationDialog</code>
-                    </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>true</code>
-                        </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-2">
                         <a name="showQuantityControls"></a>
                         <code>showQuantityControls</code>
                     </td>
@@ -608,8 +568,8 @@
             <tbody>
                 <tr>
                     <td class="col-md-2">
-                        <a name="showRecommendations"></a>
-                        <code>showRecommendations</code>
+                        <a name="trigger"></a>
+                        <code>trigger</code>
                     </td>
                     <td class="col-md-10">
                             <p>
@@ -624,23 +584,7 @@
             </tbody>
         </table>
 </section>
-    <section>
-    <h3 id="outputs">Outputs</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-2">
-                        <a name="onAddToCart"></a>
-                        <code>onAddToCart</code>
-                    </td>
-                    <td class="col-md-10">
-                        <em><code>$event</code> Type:</em>    <code><a href="../interfaces/ProductQuantityMap.html" target="_self" >EventEmitter&lt;ProductQuantityMap&gt;</a></code>
 
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
 
     <section>
@@ -818,7 +762,11 @@ Opens up the cart page for a checkout.</p>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Decorators : </i><code>ViewChild</code>
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;completeDialog&#x27;)<br />
+                            </code>
                         </td>
                     </tr>
 
@@ -1028,7 +976,7 @@ Opens up the cart page for a checkout.</p>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;product&quot;&gt;
-  &lt;button class&#x3D;&quot;btn btn-block btn-primary px-4 btn-sm&quot; type&#x3D;&quot;button&quot; [disabled]&#x3D;&quot;disabled&quot; *ngIf&#x3D;&quot;configurationEnabled &amp;&amp; complex(); else simple&quot;
+  &lt;button [ngClass]&#x3D;&quot;&#x27;btn btn-block px-4 btn-sm &#x27; + btnClass&quot; type&#x3D;&quot;button&quot; [disabled]&#x3D;&quot;disabled&quot; *ngIf&#x3D;&quot;configurationEnabled &amp;&amp; complex(); else simple&quot;
     [routerLink]&#x3D;&quot;[configurationRoute, product[identifier]]&quot;&gt;Configure&lt;/button&gt;
   
   &lt;ng-template #simple&gt;
@@ -1042,84 +990,29 @@ Opens up the cart page for a checkout.</p>
       &lt;/div&gt;
     &lt;/form&gt; --&gt;
     &lt;form&gt;
-      &lt;div class&#x3D;&quot;input-group input-group-sm&quot;&gt;
+      &lt;div class&#x3D;&quot;input-group input-group-sm&quot; *ngIf&#x3D;&quot;showQuantityControls; else buttonOnly&quot;&gt;
         &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control mr-2&quot; [(ngModel)]&#x3D;&quot;quantity&quot; min&#x3D;&quot;1&quot; name&#x3D;&quot;quantity&quot; /&gt;
         &lt;div class&#x3D;&quot;input-group-append&quot;&gt;
-          &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;addToCart()&quot; [ladda]&#x3D;&quot;loading&quot; data-style&#x3D;&quot;zoom-in&quot; [disabled]&#x3D;&quot;disabled&quot;&gt;Add to Cart&lt;/button&gt;
+          &lt;!-- &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;addToCart()&quot; [ladda]&#x3D;&quot;loading&quot; data-style&#x3D;&quot;zoom-in&quot; [popover]&#x3D;&quot;popoverTemplate&quot; triggers&#x3D;&quot;mouseenter:mouseleave&quot; [disabled]&#x3D;&quot;disabled&quot;&gt;Add to Cart&lt;/button&gt; --&gt;
+          &lt;button [ngClass]&#x3D;&quot;&#x27;btn &#x27; + btnClass&quot; (click)&#x3D;&quot;addToCart()&quot; [ladda]&#x3D;&quot;loading&quot; data-style&#x3D;&quot;zoom-in&quot; [disabled]&#x3D;&quot;disabled&quot;&gt;Add to Cart&lt;/button&gt;
         &lt;/div&gt;
       &lt;/div&gt;
+      &lt;ng-template #buttonOnly&gt;
+        &lt;button [ngClass]&#x3D;&quot;&#x27;btn &#x27; + btnClass&quot; (click)&#x3D;&quot;addToCart()&quot; [ladda]&#x3D;&quot;loading&quot; data-style&#x3D;&quot;zoom-in&quot; [disabled]&#x3D;&quot;disabled&quot;&gt;Add to Cart&lt;/button&gt;
+      &lt;/ng-template&gt;
     &lt;/form&gt;
-  &lt;/ng-template&gt;
-  
-  &lt;ng-template #completeDialog&gt;
-    &lt;div class&#x3D;&quot;modal-header&quot;&gt;
-      &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;1 Product(s) added to cart&lt;/h5&gt;
-      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; (click)&#x3D;&quot;modalRef.hide()&quot; aria-label&#x3D;&quot;Close&quot;&gt;
-        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;modal-body&quot; *ngIf&#x3D;&quot;product&quot;&gt;
-      &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;div class&#x3D;&quot;col-12 col-md-7 bg-light&quot;&gt;
-          &lt;div class&#x3D;&quot;media&quot;&gt;
-            &lt;img class&#x3D;&quot;mr-3&quot; [src]&#x3D;&quot;product?.IconId | image&quot; width&#x3D;&quot;125&quot; height&#x3D;&quot;100&quot; alt&#x3D;&quot;Generic placeholder image&quot;&gt;
-            &lt;div class&#x3D;&quot;media-body&quot;&gt;
-              &lt;h5 class&#x3D;&quot;m-0&quot;&gt;{{product?.Name}}&lt;/h5&gt;
-              &lt;div&gt;{{product?.ProductCode}}&lt;/div&gt;
-              &lt;div class&#x3D;&quot;mt-2&quot;&gt;&lt;strong&gt;Qty:&lt;/strong&gt;&amp;nbsp;{{quantity}}&lt;/div&gt;
-              &lt;div class&#x3D;&quot;d-flex&quot;&gt;
-                &lt;strong&gt;Price:&amp;nbsp;&lt;/strong&gt;
-                {{(product | ProductPricePipe:quantity:productAttributes:productOptions | async)?.netPrice$ | async}}
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;col-12 col-md-5 px-2&quot;&gt;
-          &lt;div class&#x3D;&quot;card&quot;&gt;
-            &lt;div class&#x3D;&quot;card-header d-flex justify-content-between&quot;&gt;
-              &lt;strong&gt;Cart Total&lt;/strong&gt;
-              &lt;span class&#x3D;&quot;text-primary&quot;&gt;{{(cart$ | async | CartPricePipe | async)?.netPrice$ | async}}&lt;/span&gt;
-            &lt;/div&gt;
-            &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
-              &lt;button class&#x3D;&quot;btn btn-lg btn-block btn-primary px-3&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;goToCart()&quot;&gt;Proceed to Checkout&lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;ng-container *ngIf&#x3D;&quot;(productRecommendations$ | async)?.length &gt; 0&quot;&gt;
-        &lt;div class&#x3D;&quot;d-flex align-items-center my-3&quot;&gt;
-          &lt;span&gt;You may also like&lt;/span&gt;
-          &lt;div class&#x3D;&quot;border-top mt-4 border-gray flex-grow-1 ml-3&quot;&gt;&amp;nbsp;&lt;/div&gt;
-        &lt;/div&gt;
-  
-        &lt;ul class&#x3D;&quot;list-unstyled&quot;&gt;
-          &lt;li class&#x3D;&quot;media bg-light my-2 p-2&quot; *ngFor&#x3D;&quot;let product of (productRecommendations$ | async)&quot;&gt;
-            &lt;img class&#x3D;&quot;mr-3&quot; [src]&#x3D;&quot;product.IconId | image&quot; width&#x3D;&quot;50&quot; height&#x3D;&quot;50&quot; alt&#x3D;&quot;Generic placeholder image&quot;&gt;
-            &lt;div class&#x3D;&quot;media-body d-flex flex-wrap justify-content-between&quot;&gt;
-              &lt;div&gt;
-                &lt;h6 class&#x3D;&quot;m-0&quot;&gt;{{product?.Name}}&lt;/h6&gt;
-                &lt;small&gt;&lt;strong&gt;Product Code:&lt;/strong&gt;&amp;nbsp;{{product.ProductCode}}&lt;/small&gt;
-              &lt;/div&gt;
-              &lt;span&gt;
-                &lt;strong&gt;Qty:&lt;/strong&gt;&amp;nbsp;1
-              &lt;/span&gt;
-              &lt;span class&#x3D;&quot;w-25&quot;&gt;
-                &lt;strong&gt;Price:&lt;/strong&gt;
-                &amp;nbsp;{{(product | ProductPricePipe | async)?.netPrice$ | async}}
-              &lt;/span&gt;
-              &lt;button class&#x3D;&quot;btn btn-outline-primary&quot;&gt;Add to Cart&lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/ng-container&gt;
-    &lt;/div&gt;
   &lt;/ng-template&gt;
 &lt;/ng-container&gt;
 
-      
-
 
 </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./add-to-cart.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1147,8 +1040,8 @@ Opens up the cart page for a checkout.</p>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="product">  <button class="btn btn-block btn-primary px-4 btn-sm" type="button" [disabled]="disabled" *ngIf="configurationEnabled && complex(); else simple"    [routerLink]="[configurationRoute, product[identifier]]">Configure</button>    <ng-template #simple>    <!-- <form class="row">      <div class="col-6" *ngIf="showQuantityControls">        <input type="number" [(ngModel)]="quantity" min="1" name="quantity"/>      </div>      <div [class.col-12]="!showQuantityControls" [class.col-6]="showQuantityControls">        <button class="btn btn-block btn-primary btn-sm" (click)="addToCart()" [ladda]="loading" data-style="zoom-in" [disabled]="disabled">Add          to Cart</button>      </div>    </form> -->    <form>      <div class="input-group input-group-sm">        <input type="number" class="form-control mr-2" [(ngModel)]="quantity" min="1" name="quantity" />        <div class="input-group-append">          <button class="btn btn-primary" (click)="addToCart()" [ladda]="loading" data-style="zoom-in" [disabled]="disabled">Add to Cart</button>        </div>      </div>    </form>  </ng-template>    <ng-template #completeDialog>    <div class="modal-header">      <h5 class="modal-title">1 Product(s) added to cart</h5>      <button type="button" class="close" (click)="modalRef.hide()" aria-label="Close">        <span aria-hidden="true">&times;</span>      </button>    </div>    <div class="modal-body" *ngIf="product">      <div class="row">        <div class="col-12 col-md-7 bg-light">          <div class="media">            <img class="mr-3" [src]="product?.IconId | image" width="125" height="100" alt="Generic placeholder image">            <div class="media-body">              <h5 class="m-0">{{product?.Name}}</h5>              <div>{{product?.ProductCode}}</div>              <div class="mt-2"><strong>Qty:</strong>&nbsp;{{quantity}}</div>              <div class="d-flex">                <strong>Price:&nbsp;</strong>                {{(product | ProductPricePipe:quantity:productAttributes:productOptions | async)?.netPrice$ | async}}              </div>            </div>          </div>        </div>        <div class="col-12 col-md-5 px-2">          <div class="card">            <div class="card-header d-flex justify-content-between">              <strong>Cart Total</strong>              <span class="text-primary">{{(cart$ | async | CartPricePipe | async)?.netPrice$ | async}}</span>            </div>            <div class="card-body text-center">              <button class="btn btn-lg btn-block btn-primary px-3" type="button" (click)="goToCart()">Proceed to Checkout</button>            </div>          </div>        </div>      </div>      <ng-container *ngIf="(productRecommendations$ | async)?.length > 0">        <div class="d-flex align-items-center my-3">          <span>You may also like</span>          <div class="border-top mt-4 border-gray flex-grow-1 ml-3">&nbsp;</div>        </div>          <ul class="list-unstyled">          <li class="media bg-light my-2 p-2" *ngFor="let product of (productRecommendations$ | async)">            <img class="mr-3" [src]="product.IconId | image" width="50" height="50" alt="Generic placeholder image">            <div class="media-body d-flex flex-wrap justify-content-between">              <div>                <h6 class="m-0">{{product?.Name}}</h6>                <small><strong>Product Code:</strong>&nbsp;{{product.ProductCode}}</small>              </div>              <span>                <strong>Qty:</strong>&nbsp;1              </span>              <span class="w-25">                <strong>Price:</strong>                &nbsp;{{(product | ProductPricePipe | async)?.netPrice$ | async}}              </span>              <button class="btn btn-outline-primary">Add to Cart</button>            </div>          </li>        </ul>      </ng-container>    </div>  </ng-template></ng-container>      </div>'
-    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="product">  <button [ngClass]="\'btn btn-block px-4 btn-sm \' + btnClass" type="button" [disabled]="disabled" *ngIf="configurationEnabled && complex(); else simple"    [routerLink]="[configurationRoute, product[identifier]]">Configure</button>    <ng-template #simple>    <!-- <form class="row">      <div class="col-6" *ngIf="showQuantityControls">        <input type="number" [(ngModel)]="quantity" min="1" name="quantity"/>      </div>      <div [class.col-12]="!showQuantityControls" [class.col-6]="showQuantityControls">        <button class="btn btn-block btn-primary btn-sm" (click)="addToCart()" [ladda]="loading" data-style="zoom-in" [disabled]="disabled">Add          to Cart</button>      </div>    </form> -->    <form>      <div class="input-group input-group-sm" *ngIf="showQuantityControls; else buttonOnly">        <input type="number" class="form-control mr-2" [(ngModel)]="quantity" min="1" name="quantity" />        <div class="input-group-append">          <!-- <button class="btn btn-primary" (click)="addToCart()" [ladda]="loading" data-style="zoom-in" [popover]="popoverTemplate" triggers="mouseenter:mouseleave" [disabled]="disabled">Add to Cart</button> -->          <button [ngClass]="\'btn \' + btnClass" (click)="addToCart()" [ladda]="loading" data-style="zoom-in" [disabled]="disabled">Add to Cart</button>        </div>      </div>      <ng-template #buttonOnly>        <button [ngClass]="\'btn \' + btnClass" (click)="addToCart()" [ladda]="loading" data-style="zoom-in" [disabled]="disabled">Add to Cart</button>      </ng-template>    </form>  </ng-template></ng-container></div>'
+    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddToCartDialogComponent', 'selector': 'lib-add-to-cart-dialog'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CRAddToCartComponent', 'selector': 'apt-cr-add-to-cart'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRProductCardComponent', 'selector': 'apt-cr-product-card'},{'name': 'CRProductCarouselComponent', 'selector': 'apt-cr-product-carousel'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AddToCartComponent'};
 </script>
@@ -1189,7 +1082,9 @@ Opens up the cart page for a checkout.</p>
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

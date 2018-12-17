@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@apttus/ecommerce documentation</title>
+        <title>Apttus Ecommerce</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,15 +14,12 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">@apttus/ecommerce documentation</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -47,6 +44,9 @@
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -56,7 +56,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/lib/modules/catalog/components/product-carousel/product-carousel.component.ts</code>
+    <code>projects/apttus/ecommerce/src/lib/modules/catalog/components/product-carousel/product-carousel.component.ts</code>
 </p>
 
     <p class="comment">
@@ -139,6 +139,12 @@
 
 
 
+
+
+
+
+
+
         </tbody>
     </table>
 </section>
@@ -156,6 +162,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#slideConfig">slideConfig</a>
                             </li>
                         </ul>
@@ -537,6 +544,7 @@
                         <a name="slideConfig"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Public</span>
                             slideConfig
                             </b>
                             <a href="#slideConfig"><span class="icon ion-ios-link"></span></a>
@@ -545,7 +553,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>slideConfig:     <code></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>slideConfig:     <code></code>
 </code>
                     </td>
                 </tr>
@@ -559,6 +567,23 @@
 
 
 
+
+    <div class="tab-pane fade " id="c-styleData">
+            <pre class="line-numbers"><code class="language-scss">
+    :host{
+      display : block;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    img{
+      height: 5rem;
+    }
+    .card{
+      height: 250px;
+    }
+  
+</code></pre>
+    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -586,7 +611,7 @@
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div *ngIf="productList && productList.length > 0">  <ngx-slick class="carousel card-deck" [config]="slideConfig" [class.left-align-slick]="leftAlign">    <div ngxSlickItem *ngFor="let product of productList">      <apt-product-card [product]="product" class="d-block mb-2" *ngIf="product?.Id"></apt-product-card>    </div>  </ngx-slick></div></div>'
-    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
+    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddToCartDialogComponent', 'selector': 'lib-add-to-cart-dialog'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CRAddToCartComponent', 'selector': 'apt-cr-add-to-cart'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRProductCardComponent', 'selector': 'apt-cr-product-card'},{'name': 'CRProductCarouselComponent', 'selector': 'apt-cr-product-carousel'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ProductCarouselComponent'};
 </script>
@@ -627,7 +652,9 @@
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

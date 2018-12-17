@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@apttus/ecommerce documentation</title>
+        <title>Apttus Ecommerce</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,15 +14,12 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">@apttus/ecommerce documentation</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -56,7 +53,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/lib/modules/store/components/dependent-picklist/dependent-picklist.component.ts</code>
+    <code>projects/apttus/ecommerce/src/lib/modules/store/components/dependent-picklist/dependent-picklist.component.ts</code>
 </p>
 
     <p class="comment">
@@ -139,6 +136,12 @@
 &lt;/div&gt;
 </code></pre></td>
             </tr>
+
+
+
+
+
+
 
 
 
@@ -414,7 +417,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>childChange(evt: )</code>
+<code>childChange(evt)</code>
                     </td>
                 </tr>
 
@@ -480,7 +483,7 @@ Sets the state inforamtion selected by the user from dropdown.</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>parentChange(evt: )</code>
+<code>parentChange(evt)</code>
                     </td>
                 </tr>
 
@@ -546,7 +549,7 @@ Sets the country and corresponding state inforamtion selected by the user from d
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>registerOnChange(fn: )</code>
+<code>registerOnChange(fn)</code>
                     </td>
                 </tr>
 
@@ -606,7 +609,7 @@ Sets the country and corresponding state inforamtion selected by the user from d
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>registerOnTouched(fn: )</code>
+<code>registerOnTouched(fn)</code>
                     </td>
                 </tr>
 
@@ -924,6 +927,7 @@ Sets the value property to the option selected in the dropdown.</p>
 
 
 
+
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
@@ -950,7 +954,7 @@ Sets the value property to the option selected in the dropdown.</p>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div [class.d-flex]="inline">  <div *ngIf="parentFieldDescribe" class="form-group" [class.mr-3]="inline">    <label for="parentField">{{parentFieldDescribe?.label}}</label>    <select class="custom-select" [class.custom-select-sm]="size === \'sm\'" [(ngModel)]="_value._parent" name="parentValue" (ngModelChange)="parentChange($event)" [class.custom-select-lg]="size === \'lg\'" id="parentField" required="" name="parentField" [disabled]="parentFieldDescribe?.updateable === false">      <option [value]="" *ngIf="parentFieldDescribe?.nillable">Choose...</option>      <option *ngFor="let picklist of parentFieldDescribe?.picklistValues" [value]="picklist.value" [hidden]="!picklist.active">{{picklist.label}}</option>    </select>  </div>  <div *ngIf="fieldDescribe" class="form-group">    <label for="parentField">{{fieldDescribe?.label}}</label>    <select class="custom-select" [class.custom-select-sm]="size === \'sm\'" [(ngModel)]="_value._child" name="value" (ngModelChange)="childChange($event)" [class.custom-select-lg]="size === \'lg\'" id="parentField" required="" name="parentField" [disabled]="fieldDescribe?.updateable === false || !childOptions">      <option [value]="" *ngIf="fieldDescribe?.nillable">Choose...</option>      <option *ngFor="let picklist of childOptions" [value]="picklist.value" [hidden]="!picklist.active">{{picklist.label}}</option>    </select>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
+    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddToCartDialogComponent', 'selector': 'lib-add-to-cart-dialog'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CRAddToCartComponent', 'selector': 'apt-cr-add-to-cart'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRProductCardComponent', 'selector': 'apt-cr-product-card'},{'name': 'CRProductCarouselComponent', 'selector': 'apt-cr-product-carousel'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DependentPicklistComponent'};
 </script>
@@ -991,7 +995,9 @@ Sets the value property to the option selected in the dropdown.</p>
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

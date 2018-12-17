@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@apttus/ecommerce documentation</title>
+        <title>Apttus Ecommerce</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,15 +14,12 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">@apttus/ecommerce documentation</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -50,6 +47,9 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -59,7 +59,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/lib/modules/store/components/mini-profile/mini-profile.component.ts</code>
+    <code>projects/apttus/ecommerce/src/lib/modules/store/components/mini-profile/mini-profile.component.ts</code>
 </p>
 
     <p class="comment">
@@ -111,7 +111,7 @@ If the user has forgotten the password there is an option to reset password.</p>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>mini-profile.component.scss</code></td>
+                <td class="col-md-9"><code>./mini-profile.component.scss</code></td>
             </tr>
 
 
@@ -120,6 +120,12 @@ If the user has forgotten the password there is an option to reset password.</p>
                 <td class="col-md-3">templateUrl</td>
                 <td class="col-md-9"><code>./mini-profile.component.html</code></td>
             </tr>
+
+
+
+
+
+
 
 
         </tbody>
@@ -584,7 +590,11 @@ If the user has forgotten the password there is an option to reset password.</p>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Decorators : </i><code>ViewChild</code>
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;authModal&#x27;)<br />
+                            </code>
                         </td>
                     </tr>
 
@@ -901,7 +911,11 @@ If the user has forgotten the password there is an option to reset password.</p>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Decorators : </i><code>ViewChild</code>
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;template&#x27;)<br />
+                            </code>
                         </td>
                     </tr>
 
@@ -1013,7 +1027,7 @@ If the user has forgotten the password there is an option to reset password.</p>
     &lt;form *ngIf&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;REGISTER&#x27;&quot; (ngSubmit)&#x3D;&quot;doRegister()&quot;&gt;
         &lt;div class&#x3D;&quot;modal-header&quot;&gt;
             &lt;h5 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;loginModalLabel&quot;&gt;Register&lt;/h5&gt;
-            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;modalRef.hide()&quot;&gt;
                 &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
             &lt;/button&gt;
         &lt;/div&gt;
@@ -1085,6 +1099,23 @@ If the user has forgotten the password there is an option to reset password.</p>
 &lt;/ng-template&gt;</code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./mini-profile.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host{
+    display: flex;
+    align-items: center;
+}
+.dropdown-menu{
+    z-index: 1040;
+}
+    
+a .oi{
+    margin-right: 5px;
+}</code></pre>
+    </div>
+
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
@@ -1110,8 +1141,8 @@ If the user has forgotten the password there is an option to reset password.</p>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Modal --><ng-template #template>    <form *ngIf="loginState === \'LOGIN\'" (ngSubmit)="doLogin()">        <div class="modal-header">            <h5 class="modal-title" id="loginModalLabel">Login</h5>            <button type="button" class="close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <div class="form-group">                <label for="email">Username</label>                <input type="email" class="form-control" id="username" name="username" placeholder="Enter Username" [(ngModel)]="username">            </div>            <div class="form-group">                <label for="password">Password</label>                <input type="password" class="form-control" id="password" name="password" placeholder="Password" [(ngModel)]="password">            </div>            <div class="form-group form-check">                <input type="checkbox" class="form-check-input" id="exampleCheck1">                <label class="form-check-label" for="exampleCheck1">Remember Me</label>            </div>            <small class="text-danger animated fadeIn" *ngIf="loginMessage">{{loginMessage}}</small>        </div>        <div class="modal-footer d-flex justify-content-start">            <button class="btn btn-link" type="button" (click)="loginState = \'REGISTER\'">Register</button>            |            <button class="btn btn-link" type="button" (click)="loginState = \'RESET-PASSWORD\'">Forgot Password</button>            <button type="submit" class="btn btn-primary ml-auto" [ladda]="loading">Submit</button>        </div>    </form>    <form *ngIf="loginState === \'REGISTER\'" (ngSubmit)="doRegister()">        <div class="modal-header">            <h5 class="modal-title" id="loginModalLabel">Register</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <div class="form-group">                <label for="exampleInputEmail1">Email address</label>                <input type="email" [(ngModel)]="user.Email" class="form-control" name="email" placeholder="Enter email">                <small id="emailHelp" class="form-text text-muted">We\'ll never share your email with anyone else.</small>            </div>            <div class="form-group">                <label for="firstName">First Name</label>                <input type="text" class="form-control" id="firstName" [(ngModel)]="user.FirstName" name="firstName" placeholder="First Name">            </div>            <div class="form-group">                <label for="lastName">Last Name</label>                <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="user.LastName" name="lastName" id="lastName">            </div>            <small class="text-danger animated fadeIn" *ngIf="registerMessage">{{registerMessage}}</small>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">Go Back</button>            <button type="submit" class="btn btn-primary" [ladda]="loading">Submit</button>        </div>    </form>    <form *ngIf="loginState === \'RESET-PASSWORD\'" (ngSubmit)="doResetPassword()">        <div class="modal-header">            <h5 class="modal-title">Reset Password</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <p>Having trouble logging in?</p>            <ul>                <li>Usernames are in the form of an email address.</li>                <li>Passwords are case sensitive.</li>            </ul>            <p>To reset your password, enter your username.</p>            <div class="form-group">                <label for="resetUsername">Username</label>                <input type="email" [(ngModel)]="resetUsername" class="form-control" name="resetUsername" placeholder="Username">                <small id="emailHelp" class="form-text text-muted">To reset your password, enter your username.</small>            </div>            <small class="text-danger animated fadeIn" *ngIf="resetMessage">{{resetMessage}}</small>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">Go Back</button>            <button type="submit" class="btn btn-primary" type="submit" [ladda]="loading">Submit</button>        </div>    </form>    <div *ngIf="loginState === \'RESET-CONFIRM\'">        <div class="modal-header">            <h5 class="modal-title">Password Reset</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <p>We’ve sent you an email with a link to finish resetting your password.</p>            <p>Can’t find the email? Try checking your spam folder.</p>            <p>If you still can’t log in, try again or contact your Salesforce administrator.</p>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">Go Back</button>        </div>    </div></ng-template></div>'
-    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
+        var COMPONENT_TEMPLATE = '<div><!-- Modal --><ng-template #template>    <form *ngIf="loginState === \'LOGIN\'" (ngSubmit)="doLogin()">        <div class="modal-header">            <h5 class="modal-title" id="loginModalLabel">Login</h5>            <button type="button" class="close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <div class="form-group">                <label for="email">Username</label>                <input type="email" class="form-control" id="username" name="username" placeholder="Enter Username" [(ngModel)]="username">            </div>            <div class="form-group">                <label for="password">Password</label>                <input type="password" class="form-control" id="password" name="password" placeholder="Password" [(ngModel)]="password">            </div>            <div class="form-group form-check">                <input type="checkbox" class="form-check-input" id="exampleCheck1">                <label class="form-check-label" for="exampleCheck1">Remember Me</label>            </div>            <small class="text-danger animated fadeIn" *ngIf="loginMessage">{{loginMessage}}</small>        </div>        <div class="modal-footer d-flex justify-content-start">            <button class="btn btn-link" type="button" (click)="loginState = \'REGISTER\'">Register</button>            |            <button class="btn btn-link" type="button" (click)="loginState = \'RESET-PASSWORD\'">Forgot Password</button>            <button type="submit" class="btn btn-primary ml-auto" [ladda]="loading">Submit</button>        </div>    </form>    <form *ngIf="loginState === \'REGISTER\'" (ngSubmit)="doRegister()">        <div class="modal-header">            <h5 class="modal-title" id="loginModalLabel">Register</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <div class="form-group">                <label for="exampleInputEmail1">Email address</label>                <input type="email" [(ngModel)]="user.Email" class="form-control" name="email" placeholder="Enter email">                <small id="emailHelp" class="form-text text-muted">We\'ll never share your email with anyone else.</small>            </div>            <div class="form-group">                <label for="firstName">First Name</label>                <input type="text" class="form-control" id="firstName" [(ngModel)]="user.FirstName" name="firstName" placeholder="First Name">            </div>            <div class="form-group">                <label for="lastName">Last Name</label>                <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="user.LastName" name="lastName" id="lastName">            </div>            <small class="text-danger animated fadeIn" *ngIf="registerMessage">{{registerMessage}}</small>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">Go Back</button>            <button type="submit" class="btn btn-primary" [ladda]="loading">Submit</button>        </div>    </form>    <form *ngIf="loginState === \'RESET-PASSWORD\'" (ngSubmit)="doResetPassword()">        <div class="modal-header">            <h5 class="modal-title">Reset Password</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <p>Having trouble logging in?</p>            <ul>                <li>Usernames are in the form of an email address.</li>                <li>Passwords are case sensitive.</li>            </ul>            <p>To reset your password, enter your username.</p>            <div class="form-group">                <label for="resetUsername">Username</label>                <input type="email" [(ngModel)]="resetUsername" class="form-control" name="resetUsername" placeholder="Username">                <small id="emailHelp" class="form-text text-muted">To reset your password, enter your username.</small>            </div>            <small class="text-danger animated fadeIn" *ngIf="resetMessage">{{resetMessage}}</small>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">Go Back</button>            <button type="submit" class="btn btn-primary" type="submit" [ladda]="loading">Submit</button>        </div>    </form>    <div *ngIf="loginState === \'RESET-CONFIRM\'">        <div class="modal-header">            <h5 class="modal-title">Password Reset</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <p>We’ve sent you an email with a link to finish resetting your password.</p>            <p>Can’t find the email? Try checking your spam folder.</p>            <p>If you still can’t log in, try again or contact your Salesforce administrator.</p>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">Go Back</button>        </div>    </div></ng-template></div>'
+    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddToCartDialogComponent', 'selector': 'lib-add-to-cart-dialog'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CRAddToCartComponent', 'selector': 'apt-cr-add-to-cart'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRProductCardComponent', 'selector': 'apt-cr-product-card'},{'name': 'CRProductCarouselComponent', 'selector': 'apt-cr-product-carousel'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MiniProfileComponent'};
 </script>
@@ -1152,7 +1183,9 @@ If the user has forgotten the password there is an option to reset password.</p>
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

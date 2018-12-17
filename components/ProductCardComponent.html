@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@apttus/ecommerce documentation</title>
+        <title>Apttus Ecommerce</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,15 +14,12 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">@apttus/ecommerce documentation</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -50,6 +47,9 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -59,7 +59,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/lib/modules/catalog/components/product-card/product-card.component.ts</code>
+    <code>projects/apttus/ecommerce/src/lib/modules/catalog/components/product-card/product-card.component.ts</code>
 </p>
 
     <p class="comment">
@@ -113,7 +113,7 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>product-card.component.scss</code></td>
+                <td class="col-md-9"><code>./product-card.component.scss</code></td>
             </tr>
 
 
@@ -122,6 +122,12 @@
                 <td class="col-md-3">templateUrl</td>
                 <td class="col-md-9"><code>./product-card.component.html</code></td>
             </tr>
+
+
+
+
+
+
 
 
         </tbody>
@@ -187,20 +193,6 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Outputs</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#onAddToCart">onAddToCart</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
 
@@ -385,23 +377,7 @@
             </tbody>
         </table>
 </section>
-    <section>
-    <h3 id="outputs">Outputs</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-2">
-                        <a name="onAddToCart"></a>
-                        <code>onAddToCart</code>
-                    </td>
-                    <td class="col-md-10">
-                        <em><code>$event</code> Type:</em>    <code><a href="../interfaces/ProductQuantityMap.html" target="_self" >EventEmitter&lt;ProductQuantityMap&gt;</a></code>
 
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
 
 
@@ -552,10 +528,58 @@
       &lt;strong class&#x3D;&quot;mb-auto align-self-end&quot; *ngIf&#x3D;&quot;showPrice&quot;&gt;
           &lt;apt-price [record]&#x3D;&quot;product&quot;&gt;&lt;/apt-price&gt;
       &lt;/strong&gt;
-      &lt;apt-add-to-cart [product]&#x3D;&quot;product&quot; *ngIf&#x3D;&quot;canAddToCart&quot; (onAddToCart)&#x3D;&quot;onAddToCart.emit($event)&quot;&gt;&lt;/apt-add-to-cart&gt;
+      &lt;apt-add-to-cart [product]&#x3D;&quot;product&quot; *ngIf&#x3D;&quot;canAddToCart&quot;&gt;&lt;/apt-add-to-cart&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/ng-container&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./product-card.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.card-title{
+    height: 52px;
+    overflow-y: hidden;
+}
+:host{
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+img{
+    max-height: 8rem;
+    max-width: 100%;
+}
+.img-container{
+    height: 8rem;
+}
+star-rating{
+    margin-left: -7px;
+    margin-top: -3px;
+}
+
+.split-items&gt;*{
+    border-radius: 0;
+    border-right: 1px solid #000;
+    padding-right: 7px;
+    margin-right: 7px;
+    padding-bottom: 0;
+    line-height: 15px;
+    &amp;:last-child{
+        border-right: none;
+    }
+}
+.product-code{
+    white-space: nowrap;
+}
+.product-category{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -583,8 +607,8 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="product && product[identifier]">  <div class="card" *ngIf="type == \'card\'">    <a href="javascript:void(0)" [routerLink]="[\'/product\', product[identifier]]" class="pt-3">      <div class="img-container">        <img class="card-img-top w-50 m-auto d-flex align-self-center" [src]="product.IconId | image" [alt]="product.Name" *ngIf="thumbnail">      </div>      <div class="card-body">        <h5 class="card-title mb-0">{{product.Name}}</h5>        <div class="d-flex mb-3 align-items-center split-items">          <small class="text-muted product-code" *ngIf="showCode">{{product.ProductCode}}</small>          <small class="text-muted product-category" *ngIf="showCategory && product.Categories?.length > 0">{{product.Categories[0]?.Classification?.Name}}</small>        </div>        <p class="card-text font-weight-bold" *ngIf="showPrice"><apt-price [record]="product"></apt-price></p>      </div>    </a>    <div class="card-footer" *ngIf="canAddToCart">      <apt-add-to-cart [product]="product"></apt-add-to-cart>    </div>  </div>  <div *ngIf="type == \'media\'" class="media">    <a href="javascript:void(0)" [routerLink]="[\'/product\', product[identifier]]" class="d-flex justify-content-center w-25">      <img class="mr-3" [src]="product.IconId | image" [alt]="product.Name">    </a>    <div class="media-body px-3">      <h5 class="m-0">        <a href="javascript:void(0)" [routerLink]="[\'/product\', product[identifier]]">          {{product.Name}}        </a>      </h5>      <div class="d-flex mb-3 align-items-center split-items">        <div class="text-muted" *ngIf="showCode">{{product.ProductCode}}</div>        <div class="text-muted" *ngIf="showCategory && product.Categories?.length > 0">{{product.Categories[0]?.Classification?.Name}}</div>      </div>      {{product.Description}}    </div>    <div class="pl-4 align-self-stretch d-flex align-items-start flex-column justify-content-end">      <strong class="mb-auto align-self-end" *ngIf="showPrice">          <apt-price [record]="product"></apt-price>      </strong>      <apt-add-to-cart [product]="product" *ngIf="canAddToCart" (onAddToCart)="onAddToCart.emit($event)"></apt-add-to-cart>    </div>  </div></ng-container></div>'
-    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="product && product[identifier]">  <div class="card" *ngIf="type == \'card\'">    <a href="javascript:void(0)" [routerLink]="[\'/product\', product[identifier]]" class="pt-3">      <div class="img-container">        <img class="card-img-top w-50 m-auto d-flex align-self-center" [src]="product.IconId | image" [alt]="product.Name" *ngIf="thumbnail">      </div>      <div class="card-body">        <h5 class="card-title mb-0">{{product.Name}}</h5>        <div class="d-flex mb-3 align-items-center split-items">          <small class="text-muted product-code" *ngIf="showCode">{{product.ProductCode}}</small>          <small class="text-muted product-category" *ngIf="showCategory && product.Categories?.length > 0">{{product.Categories[0]?.Classification?.Name}}</small>        </div>        <p class="card-text font-weight-bold" *ngIf="showPrice"><apt-price [record]="product"></apt-price></p>      </div>    </a>    <div class="card-footer" *ngIf="canAddToCart">      <apt-add-to-cart [product]="product"></apt-add-to-cart>    </div>  </div>  <div *ngIf="type == \'media\'" class="media">    <a href="javascript:void(0)" [routerLink]="[\'/product\', product[identifier]]" class="d-flex justify-content-center w-25">      <img class="mr-3" [src]="product.IconId | image" [alt]="product.Name">    </a>    <div class="media-body px-3">      <h5 class="m-0">        <a href="javascript:void(0)" [routerLink]="[\'/product\', product[identifier]]">          {{product.Name}}        </a>      </h5>      <div class="d-flex mb-3 align-items-center split-items">        <div class="text-muted" *ngIf="showCode">{{product.ProductCode}}</div>        <div class="text-muted" *ngIf="showCategory && product.Categories?.length > 0">{{product.Categories[0]?.Classification?.Name}}</div>      </div>      {{product.Description}}    </div>    <div class="pl-4 align-self-stretch d-flex align-items-start flex-column justify-content-end">      <strong class="mb-auto align-self-end" *ngIf="showPrice">          <apt-price [record]="product"></apt-price>      </strong>      <apt-add-to-cart [product]="product" *ngIf="canAddToCart"></apt-add-to-cart>    </div>  </div></ng-container></div>'
+    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddToCartDialogComponent', 'selector': 'lib-add-to-cart-dialog'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CRAddToCartComponent', 'selector': 'apt-cr-add-to-cart'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRProductCardComponent', 'selector': 'apt-cr-product-card'},{'name': 'CRProductCarouselComponent', 'selector': 'apt-cr-product-carousel'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ProductCardComponent'};
 </script>
@@ -625,7 +649,9 @@
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

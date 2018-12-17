@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@apttus/ecommerce documentation</title>
+        <title>Apttus Ecommerce</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,15 +14,12 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">@apttus/ecommerce documentation</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -50,6 +47,9 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -59,7 +59,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/lib/modules/store/components/input-quantity/input-quantity.component.ts</code>
+    <code>projects/apttus/ecommerce/src/lib/modules/store/components/input-quantity/input-quantity.component.ts</code>
 </p>
 
     <p class="comment">
@@ -122,7 +122,7 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>input-quantity.component.scss</code></td>
+                <td class="col-md-9"><code>./input-quantity.component.scss</code></td>
             </tr>
 
 
@@ -131,6 +131,12 @@
                 <td class="col-md-3">templateUrl</td>
                 <td class="col-md-9"><code>./input-quantity.component.html</code></td>
             </tr>
+
+
+
+
+
+
 
 
         </tbody>
@@ -354,7 +360,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>decrease(evt: )</code>
+<code>decrease(evt)</code>
                     </td>
                 </tr>
 
@@ -421,7 +427,7 @@ Propagates the event associated wit the user action in the event chain.</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>increase(evt: )</code>
+<code>increase(evt)</code>
                     </td>
                 </tr>
 
@@ -552,7 +558,7 @@ Propagates the event associated wit the user action in the event chain.</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>registerOnTouched(fn: )</code>
+<code>registerOnTouched(fn)</code>
                     </td>
                 </tr>
 
@@ -765,6 +771,22 @@ Updates the quantity every time user changes the input controller. The quantity 
 &lt;/div&gt;</code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./input-quantity.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+input[type&#x3D;number]::-webkit-inner-spin-button, 
+input[type&#x3D;number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  appearance: none;
+  margin: 0; 
+}
+input[type&#x3D;number]{
+  width: 34px;
+}</code></pre>
+    </div>
+
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
@@ -791,7 +813,7 @@ Updates the quantity every time user changes the input controller. The quantity 
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="input-group input-group-sm quantity-controls flex-nowrap">  <div class="input-group-prepend">    <button class="btn btn-outline-secondary btn-icon" type="button" (click)="decrease($event)" [disabled]="disabled">      <span class="oi oi-minus"></span>    </button>  </div>  <input type="number" class="form-control text-center quantity" min="1" placeholder="Quantity" [(ngModel)]="quantity" name="quantity"    aria-label="" aria-describedby="basic-addon1" (click)="$event.stopPropagation()" [disabled]="disabled" [min]="min" [max]="max" (change)="propagateChange(quantity)">  <div class="input-group-append">    <button class="btn btn-outline-secondary btn-icon" type="button" (click)="increase($event)" [disabled]="disabled">      <span class="oi oi-plus"></span>    </button>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
+    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddToCartDialogComponent', 'selector': 'lib-add-to-cart-dialog'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CRAddToCartComponent', 'selector': 'apt-cr-add-to-cart'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRProductCardComponent', 'selector': 'apt-cr-product-card'},{'name': 'CRProductCarouselComponent', 'selector': 'apt-cr-product-carousel'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'InputQuantityComponent'};
 </script>
@@ -832,7 +854,9 @@ Updates the quantity every time user changes the input controller. The quantity 
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

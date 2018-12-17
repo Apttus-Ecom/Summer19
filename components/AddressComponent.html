@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@apttus/ecommerce documentation</title>
+        <title>Apttus Ecommerce</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,15 +14,12 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">@apttus/ecommerce documentation</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -59,7 +56,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/lib/modules/store/components/address/address.component.ts</code>
+    <code>projects/apttus/ecommerce/src/lib/modules/store/components/address/address.component.ts</code>
 </p>
 
     <p class="comment">
@@ -136,6 +133,12 @@ When a user tries to add a new address or update an existing address associated 
                     </code>
                 </td>
             </tr>
+
+
+
+
+
+
 
         </tbody>
     </table>
@@ -419,7 +422,7 @@ When a user tries to add a new address or update an existing address associated 
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>countryStateChange(evt: )</code>
+<code>countryStateChange(evt)</code>
                     </td>
                 </tr>
 
@@ -555,7 +558,7 @@ Sets the country and state inforamtion selected by th user.</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>registerOnChange(fn: )</code>
+<code>registerOnChange(fn)</code>
                     </td>
                 </tr>
 
@@ -615,7 +618,7 @@ Sets the country and state inforamtion selected by th user.</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>registerOnTouched(fn: )</code>
+<code>registerOnTouched(fn)</code>
                     </td>
                 </tr>
 
@@ -1025,6 +1028,7 @@ Sets the country and state inforamtion selected by th user.</p>
 </code></pre>
     </div>
 
+
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
@@ -1051,7 +1055,7 @@ Sets the country and state inforamtion selected by th user.</p>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div *ngIf="record">  <ng-container *ngIf="!readonly; else read">    <div class="mb-3">      <label [for]="getId(\'street\')">Address</label>      <input type="text" class="form-control" [id]="getId(\'street\')" placeholder="1234 Main St" required [(ngModel)]="record[street]"        name="street" #address="ngModel" [ngClass]="{ \'is-invalid\': address.invalid && (address.touched || address.dirty || form.submitted) }">      <div class="invalid-feedback">        Please enter your shipping address.      </div>    </div>        <div class="mb-3">      <label [for]="getId(\'city\')">City</label>      <input type="text" class="form-control" [id]="getId(\'city\')" placeholder="City" required [(ngModel)]="record[city]"        name="city" #cityTemplate="ngModel" [ngClass]="{ \'is-invalid\': cityTemplate.invalid && (cityTemplate.touched || cityTemplate.dirty || form.submitted) }">      <div class="invalid-feedback">        Please enter your city.      </div>    </div>        <div class="row">      <div class="col-md-9 mb-3">        <apt-dependent-picklist name="dependentPicklist" [fieldMethod]="fieldService" [field]="stateCode" [parentField]="countryCode" [(ngModel)]="countryState" (ngModelChange)="countryStateChange($event)"></apt-dependent-picklist>      </div>      <div class="col-md-3 mb-3">        <label [for]="getId(\'zip\')">Zip</label>        <input type="text" class="form-control" [id]="getId(\'zip\')" required [(ngModel)]="record[postalCode]"          name="postal-code" #zipcode="ngModel" [ngClass]="{ \'is-invalid\': zipcode.invalid && (zipcode.touched || zipcode.dirty || form.submitted) }">        <div class="invalid-feedback">          Zip code required.        </div>      </div>    </div>  </ng-container>  <ng-template #read>    <address>      {{record[street]}}      <br> {{record[city]}}, {{record[state]}} {{record[postalCode]}}      <br> {{record[country]}}    </address>  </ng-template></div></div>'
-    var COMPONENTS = [{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
+    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddToCartDialogComponent', 'selector': 'lib-add-to-cart-dialog'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CRAddToCartComponent', 'selector': 'apt-cr-add-to-cart'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRProductCardComponent', 'selector': 'apt-cr-product-card'},{'name': 'CRProductCarouselComponent', 'selector': 'apt-cr-product-carousel'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AddressComponent'};
 </script>
@@ -1092,7 +1096,9 @@ Sets the country and state inforamtion selected by th user.</p>
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
