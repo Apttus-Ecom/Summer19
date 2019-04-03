@@ -54,7 +54,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>projects/apttus/ecommerce/src/lib/modules/crm/services/user.service.ts</code>
+            <code>projects/apttus/ecommerce/src/lib/modules/crm/services/user/user.service.ts</code>
         </p>
 
             <p class="comment">
@@ -80,22 +80,11 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#aicUserService">aicUserService</a>
+                                <a href="#onLogin">onLogin</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#cacheService">cacheService</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#config">config</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#sfUserService">sfUserService</a>
-                            </li>
-                            <li>
-                                <a href="#type">type</a>
+                                <a href="#onLogout">onLogout</a>
                             </li>
                         </ul>
                     </td>
@@ -115,11 +104,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#initializeGuestUser">initializeGuestUser</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#isGuest">isGuest</a>
+                                <a href="#getCurrentUser">getCurrentUser</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -139,23 +124,11 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#me">me</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#register">register</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#sendPasswordResetEmail">sendPasswordResetEmail</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#setCurrency">setCurrency</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#setLocale">setLocale</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -173,85 +146,6 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(aicUserService: <a href="../injectables/UserService.html">AicUserService</a>, sfUserService: <a href="../injectables/UserService.html">SfUserService</a>, cacheService: CacheService, config: Configuration)</code>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>aicUserService</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="../injectables/UserService.html" target="_self" >AicUserService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>sfUserService</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="../injectables/UserService.html" target="_self" >SfUserService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>cacheService</td>
-                                                  
-                                                        <td>
-                                                                    <code>CacheService</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>config</td>
-                                                  
-                                                        <td>
-                                                                    <code>Configuration</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
             <section>
     
@@ -325,7 +219,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -339,20 +233,20 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="initializeGuestUser"></a>
+                        <a name="getCurrentUser"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            initializeGuestUser
+                            getCurrentUser
                             </b>
-                            <a href="#initializeGuestUser"><span class="icon ion-ios-link"></span></a>
+                            <a href="#getCurrentUser"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>initializeGuestUser()</code>
+                        <code>getCurrentUser()</code>
                     </td>
                 </tr>
 
@@ -361,62 +255,11 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Method is used to create a guest user record prior to registration. Will set the defaults on the record to browser defaults.</p>
-</div>
 
-                            <div>
-                            </div>
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
 
                             </div>
-                                <div class="io-description">
-                                    <p>a user record containing the browser defaults (will not be committed to db).</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="isGuest"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            isGuest
-                            </b>
-                            <a href="#isGuest"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>isGuest()</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Used for determining if the current user is a guest user.</p>
-</div>
-
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>a boolean observable. Will be true if the user is a guest user.</p>
-
-                                </div>
                     </td>
                 </tr>
             </tbody>
@@ -691,49 +534,6 @@ NOTE: You must implement the redirect / callback process and set the returned ac
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="me"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            me
-                            </b>
-                            <a href="#me"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>me()</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Primary method for retrieving the current user record</p>
-</div>
-
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable of type User</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="register"></a>
                         <span class="name">
                             <b>
@@ -867,200 +667,11 @@ Will associate an account and a profile with the user record based on the commun
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="setCurrency"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            setCurrency
-                            </b>
-                            <a href="#setCurrency"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>setCurrency(currencyIsoCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, commit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method sets the currency for the current user</p>
-</div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>currencyIsoCode</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>the iso code of the currency to set (i.e. &#39;USD&#39;)</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>commit</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>false</code>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>set to true to commit the change to the db</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
                                 <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
 
                             </div>
                                 <div class="io-description">
                                     
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="setLocale"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            setLocale
-                            </b>
-                            <a href="#setLocale"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>setLocale(locale: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, commit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method sets the locale for the current user.</p>
-</div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>locale</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
-
-                                                        <td>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>commit</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>false</code>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>(Optional) Set to true to commit the locale to the user record</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable of type User</p>
-
                                 </div>
                     </td>
                 </tr>
@@ -1150,26 +761,31 @@ Will associate an account and a profile with the user record based on the commun
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="aicUserService"></a>
+                        <a name="onLogin"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            aicUserService
+                            onLogin
                             </b>
-                            <a href="#aicUserService"><span class="icon ion-ios-link"></span></a>
+                            <a href="#onLogin"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>aicUserService:     <code><a href="../injectables/UserService.html" target="_self" >AicUserService</a></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>onLogin:     <code>EventEmitter&lt;void&gt;</code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../injectables/UserService.html" target="_self" >AicUserService</a></code>
+                            <i>Type : </i>    <code>EventEmitter&lt;void&gt;</code>
 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new EventEmitter&lt;void&gt;()</code>
                         </td>
                     </tr>
 
@@ -1180,123 +796,31 @@ Will associate an account and a profile with the user record based on the commun
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="cacheService"></a>
+                        <a name="onLogout"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            cacheService
+                            onLogout
                             </b>
-                            <a href="#cacheService"><span class="icon ion-ios-link"></span></a>
+                            <a href="#onLogout"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>cacheService:     <code>CacheService</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>onLogout:     <code>EventEmitter&lt;void&gt;</code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code>CacheService</code>
-
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="config"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            config
-                            </b>
-                            <a href="#config"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>config:     <code>Configuration</code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>Configuration</code>
+                            <i>Type : </i>    <code>EventEmitter&lt;void&gt;</code>
 
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <b>Decorators : </b>
-                            <br />
-                            <code>
-                                @Inject(&#x27;configuration&#x27;)<br />
-                            </code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="sfUserService"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            sfUserService
-                            </b>
-                            <a href="#sfUserService"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>sfUserService:     <code><a href="../injectables/UserService.html" target="_self" >SfUserService</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../injectables/UserService.html" target="_self" >SfUserService</a></code>
-
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="type"></a>
-                        <span class="name">
-                            <b>
-                            type
-                            </b>
-                            <a href="#type"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>User</code>
+                            <i>Default value : </i><code>new EventEmitter&lt;void&gt;()</code>
                         </td>
                     </tr>
 

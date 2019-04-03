@@ -1,0 +1,1226 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Apttus Ecommerce</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ProductConfigurationSummaryComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/apttus/elements/src/lib/product-configuration-summary/product-configuration-summary.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Product configuration summary component is used to show the hierarchical view of the selected configurations for a given cart/order line item in a modal window.
+The view is a tree like structure containing selected attributes and values within attribute groups, selected options/attributes within option groups, nested at different levels in the hierarchy.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>apt-product-configuration-summary</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./product-configuration-summary.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./product-configuration-summary.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addLoading">addLoading</a>
+                            </li>
+                            <li>
+                                <a href="#attributeList">attributeList</a>
+                            </li>
+                            <li>
+                                <a href="#attributeValue">attributeValue</a>
+                            </li>
+                            <li>
+                                <a href="#groupOptions">groupOptions</a>
+                            </li>
+                            <li>
+                                <a href="#identifier">identifier</a>
+                            </li>
+                            <li>
+                                <a href="#optionFormList">optionFormList</a>
+                            </li>
+                            <li>
+                                <a href="#optionList">optionList</a>
+                            </li>
+                            <li>
+                                <a href="#orderItem">orderItem</a>
+                            </li>
+                            <li>
+                                <a href="#product">product</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addToCart">addToCart</a>
+                            </li>
+                            <li>
+                                <a href="#getAllComponents">getAllComponents</a>
+                            </li>
+                            <li>
+                                <a href="#getOptionDefaults">getOptionDefaults</a>
+                            </li>
+                            <li>
+                                <a href="#isLineItem">isLineItem</a>
+                            </li>
+                            <li>
+                                <a href="#keys">keys</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#item">item</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onNavigate">onNavigate</a>
+                            </li>
+                            <li>
+                                <a href="#onProductAdd">onProductAdd</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(productOptionService: <a href="../injectables/ProductOptionService.html">ProductOptionService</a>, productAttributeGroupService: <a href="../injectables/ProductAttributeGroupService.html">ProductAttributeGroupService</a>, productAttributeService: <a href="../injectables/ProductAttributeService.html">ProductAttributeService</a>, configurationService: ConfigurationService, cartService: <a href="../injectables/CartService.html">CartService</a>, cdr: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>productOptionService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ProductOptionService.html" target="_self" >ProductOptionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>productAttributeGroupService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ProductAttributeGroupService.html" target="_self" >ProductAttributeGroupService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>productAttributeService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ProductAttributeService.html" target="_self" >ProductAttributeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>configurationService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfigurationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cartService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/CartService.html" target="_self" >CartService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cdr</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="item"></a>
+                        <code>item</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Instance of Cart or Order line item or Product to represent the data displayed on this component.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="../classes/Product.html" target="_self" >CartItem | OrderLineItem | Product</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="onNavigate"></a>
+                        <code>onNavigate</code>
+                    </td>
+                    <td class="col-md-10">
+                        <em><code>$event</code> Type:</em>    <code>EventEmitter&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="onProductAdd"></a>
+                        <code>onProductAdd</code>
+                    </td>
+                    <td class="col-md-10">
+                        <em><code>$event</code> Type:</em>    <code>EventEmitter&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addToCart"></a>
+                        <span class="name">
+                            <b>
+                            addToCart
+                            </b>
+                            <a href="#addToCart"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>addToCart()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getAllComponents"></a>
+                        <span class="name">
+                            <b>
+                            getAllComponents
+                            </b>
+                            <a href="#getAllComponents"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getAllComponents(optionGroupList: <a href="../classes/ProductOptionGroup.html">Array<ProductOptionGroup></a>, defaults: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Default value</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>optionGroupList</td>
+                                                        <td>
+                                                                    <code><a href="../classes/ProductOptionGroup.html" target="_self" >Array&lt;ProductOptionGroup&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>this.optionList</code>
+                                                        </td>
+
+                                                </tr>
+                                                <tr>
+                                                        <td>defaults</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>false</code>
+                                                        </td>
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/ProductOptionComponent.html" target="_self" >Array&lt;ProductOptionComponent&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getOptionDefaults"></a>
+                        <span class="name">
+                            <b>
+                            getOptionDefaults
+                            </b>
+                            <a href="#getOptionDefaults"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getOptionDefaults()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../interfaces/ProductOptionForm.html" target="_self" >Array&lt;ProductOptionForm&gt;</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLineItem"></a>
+                        <span class="name">
+                            <b>
+                            isLineItem
+                            </b>
+                            <a href="#isLineItem"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>isLineItem()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="keys"></a>
+                        <span class="name">
+                            <b>
+                            keys
+                            </b>
+                            <a href="#keys"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>keys(object: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>This method returns an array of given object&#39;s own property names.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>object</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>an array of string representing all properties of the object.</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addLoading"></a>
+                        <span class="name">
+                            <b>
+                            addLoading
+                            </b>
+                            <a href="#addLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>addLoading:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="attributeList"></a>
+                        <span class="name">
+                            <b>
+                            attributeList
+                            </b>
+                            <a href="#attributeList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>attributeList:     <code><a href="../classes/ProductAttributeGroup.html" target="_self" >Array&lt;ProductAttributeGroup&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/ProductAttributeGroup.html" target="_self" >Array&lt;ProductAttributeGroup&gt;</a></code>
+
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Array of product attribute forms containing attribute information of the line item.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="attributeValue"></a>
+                        <span class="name">
+                            <b>
+                            attributeValue
+                            </b>
+                            <a href="#attributeValue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>attributeValue:     <code><a href="../classes/ProductAttributeValue.html" target="_self" >ProductAttributeValue</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/ProductAttributeValue.html" target="_self" >ProductAttributeValue</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new ProductAttributeValue()</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="groupOptions"></a>
+                        <span class="name">
+                            <b>
+                            groupOptions
+                            </b>
+                            <a href="#groupOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>groupOptions:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
+
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Object containing attribute and option level details of selected options on the line item.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="identifier"></a>
+                        <span class="name">
+                            <b>
+                            identifier
+                            </b>
+                            <a href="#identifier"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>identifier:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.configurationService.get(&#x27;productIdentifier&#x27;)</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A string representing product identifier defined in the configuration model. The value can be Product Id or Product Code.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="optionFormList"></a>
+                        <span class="name">
+                            <b>
+                            optionFormList
+                            </b>
+                            <a href="#optionFormList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>optionFormList:     <code><a href="../interfaces/ProductOptionForm.html" target="_self" >Array&lt;ProductOptionForm&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/ProductOptionForm.html" target="_self" >Array&lt;ProductOptionForm&gt;</a></code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="optionList"></a>
+                        <span class="name">
+                            <b>
+                            optionList
+                            </b>
+                            <a href="#optionList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>optionList:     <code><a href="../classes/ProductOptionGroup.html" target="_self" >Array&lt;ProductOptionGroup&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/ProductOptionGroup.html" target="_self" >Array&lt;ProductOptionGroup&gt;</a></code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="orderItem"></a>
+                        <span class="name">
+                            <b>
+                            orderItem
+                            </b>
+                            <a href="#orderItem"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>orderItem:     <code><a href="../classes/OrderLineItem.html" target="_self" >OrderLineItem</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/OrderLineItem.html" target="_self" >OrderLineItem</a></code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="product"></a>
+                        <span class="name">
+                            <b>
+                            product
+                            </b>
+                            <a href="#product"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>product:     <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;bg-light d-flex justify-content-between p-3&quot;&gt;
+  &lt;div class&#x3D;&quot;flex-grow-1&quot;&gt;
+    &lt;h4&gt;{{product?.Name}}&lt;/h4&gt;
+    &lt;div class&#x3D;&quot;text-muted&quot;&gt;Product ID: {{product?.ProductCode}}&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;border-left border-secondary d-flex align-items-center&quot;&gt;
+    &lt;div class&#x3D;&quot;px-4&quot;&gt;
+      &lt;div class&#x3D;&quot;text-muted mb-2&quot;&gt;
+        Net Price
+      &lt;/div&gt;
+      &lt;h5 class&#x3D;&quot;m-0&quot;&gt;&lt;apt-price [record]&#x3D;&quot;item&quot; [quantity]&#x3D;&quot;1&quot; [options]&#x3D;&quot;optionFormList&quot; type&#x3D;&quot;net&quot;&gt;&lt;/apt-price&gt;&lt;/h5&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div *ngIf&#x3D;&quot;!orderItem&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-outline-primary ml-2&quot; [routerLink]&#x3D;&quot;[&#x27;/product&#x27;, product[identifier], item.Id]&quot; *ngIf&#x3D;&quot;isLineItem(); else productTemplate&quot;&gt;Change Configuration&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;ng-template #productTemplate&gt;
+        &lt;div class&#x3D;&quot;btn-group&quot;&gt;
+          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-primary&quot; (click)&#x3D;&quot;addToCart()&quot; [ladda]&#x3D;&quot;addLoading&quot; data-spinner-color&#x3D;&quot;black&quot; data-style&#x3D;&quot;zoom-in&quot;&gt;Add to Cart&lt;/button&gt;
+          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-primary dropdown-toggle dropdown-toggle-split&quot; data-toggle&#x3D;&quot;dropdown&quot; data-reference&#x3D;&quot;parent&quot;
+            aria-haspopup&#x3D;&quot;true&quot; aria-expanded&#x3D;&quot;false&quot;&gt;
+            &lt;i class&#x3D;&quot;fa fa-caret-down&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+          &lt;div class&#x3D;&quot;dropdown-menu&quot;&gt;
+            &lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/product&#x27;, product[identifier]]&quot; (click)&#x3D;&quot;onNavigate.emit()&quot;&gt;Edit Configuration&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/ng-template&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;accordion mt-3&quot; id&#x3D;&quot;accordion&quot; *ngIf&#x3D;&quot;groupOptions || attributeList?.length &gt; 0; else loading&quot;&gt;
+
+  &lt;ng-container *ngFor&#x3D;&quot;let attributeGroup of attributeList; let x &#x3D; index; let xf &#x3D; first;&quot;&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;attributeGroup?.ProductAttributes?.length &gt; 0&quot;&gt;
+      &lt;div class&#x3D;&quot;bg-light border-top border-secondary&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-link chevron&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; [attr.data-target]&#x3D;&quot;&#x27;#attrSection&#x27; + x&quot;
+          [attr.aria-expanded]&#x3D;&quot;xf&quot;&gt;
+          &lt;strong class&#x3D;&quot;ml-2&quot;&gt;{{attributeGroup?.Name}}&lt;/strong&gt;
+        &lt;/button&gt;
+      
+      &lt;/div&gt;
+      
+      &lt;div [id]&#x3D;&quot;&#x27;attrSection&#x27; + x&quot; class&#x3D;&quot;collapse&quot; [class.show]&#x3D;&quot;xf&quot; data-parent&#x3D;&quot;#accordion&quot;&gt;
+        &lt;ng-container *ngFor&#x3D;&quot;let attribute of attributeGroup?.ProductAttributes; let l &#x3D; last&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;attributeValue[attribute.Field] &amp;&amp; attribute?._describe?.label&quot; class&#x3D;&quot;py-2 px-3&quot;
+            [class.border-bottom]&#x3D;&quot;!l&quot; [class.border-secondary]&#x3D;&quot;!l&quot;&gt;
+            &lt;small&gt;
+              &lt;i class&#x3D;&quot;d-block&quot;&gt;{{attribute?._describe?.label}}&lt;/i&gt;
+              &lt;strong class&#x3D;&quot;d-block&quot;&gt;{{attributeValue[attribute.Field]}}&lt;/strong&gt;
+            &lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/ng-container&gt;
+      &lt;/div&gt;
+    &lt;/ng-container&gt;
+  &lt;/ng-container&gt;
+
+  &lt;ng-container  *ngFor&#x3D;&quot;let key of keys(groupOptions); let f &#x3D; first; let i &#x3D; index&quot;&gt;
+    &lt;div class&#x3D;&quot;bg-light border-top border-secondary&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn-link chevron&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; [attr.data-target]&#x3D;&quot;&#x27;#optionSection&#x27; + i&quot;
+        [attr.aria-expanded]&#x3D;&quot;i + attributeList?.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
+        &lt;strong class&#x3D;&quot;ml-2&quot;&gt;{{key}}&lt;/strong&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div [id]&#x3D;&quot;&#x27;optionSection&#x27; + i&quot; class&#x3D;&quot;collapse&quot; [class.show]&#x3D;&quot;i + attributeList?.length &#x3D;&#x3D;&#x3D; 0&quot; aria-labelledby&#x3D;&quot;headingOne&quot; data-parent&#x3D;&quot;#accordion&quot;&gt;
+      &lt;div class&#x3D;&quot;card-body&quot; id&#x3D;&quot;childAccordion&quot;&gt;
+        &lt;div *ngFor&#x3D;&quot;let option of groupOptions[key]; let childFirst &#x3D; first&quot; class&#x3D;&quot;mb-3&quot;&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between border-bottom border-secondary&quot;&gt;
+            &lt;button class&#x3D;&quot;btn btn-link p-0 minus w-75 text-left&quot; data-toggle&#x3D;&quot;collapse&quot;
+              [attr.data-target]&#x3D;&quot;&#x27;#&#x27; + option?.productOptionComponent?.Id&quot; [attr.aria-expanded]&#x3D;&quot;childFirst&quot; *ngIf&#x3D;&quot;keys(option?._metadata?.childGroups).length &gt; 0 || option?.attributeForm?.length &gt; 0; else read&quot;&gt;
+              {{option?.productOptionComponent?.ComponentProduct?.Name}}
+            &lt;/button&gt;
+            &lt;ng-template #read&gt;
+              &lt;div class&#x3D;&quot;w-75 text-left&quot;&gt;
+                {{option?.productOptionComponent?.ComponentProduct?.Name}}
+              &lt;/div&gt;
+            &lt;/ng-template&gt;
+            &lt;span&gt;
+              Qty: {{option.quantity}}
+            &lt;/span&gt;
+            &lt;span&gt;
+              &lt;apt-price [record]&#x3D;&quot;option.productOptionComponent&quot; [quantity]&#x3D;&quot;option.quantity&quot;&gt;&lt;/apt-price&gt;
+            &lt;/span&gt;
+          &lt;/div&gt;
+          
+          &lt;div [id]&#x3D;&quot;option?.productOptionComponent?.Id&quot; data-parent&#x3D;&quot;#childAccordion&quot; class&#x3D;&quot;collapse&quot; [class.show]&#x3D;&quot;childFirst&quot;&gt;
+            &lt;ng-template [ngTemplateOutlet]&#x3D;&quot;optionTemplate&quot; [ngTemplateOutletContext]&#x3D;&quot;{option: option}&quot;&gt;&lt;/ng-template&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+  
+  &lt;ng-template #optionTemplate let-option&#x3D;&quot;option&quot;&gt;
+    &lt;div class&#x3D;&quot;pl-4 configuration accordion&quot; [id]&#x3D;&quot;&#x27;accordion-&#x27; + option?.productOptionComponent?.Id&quot;&gt;
+      &lt;div *ngFor&#x3D;&quot;let attributeGroupMember of option?.productOptionComponent?.ComponentProduct?.AttributeGroups; let aIndex &#x3D; index; let aFirst &#x3D; first;&quot; class&#x3D;&quot;mt-3&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-link p-0 minus&quot; data-toggle&#x3D;&quot;collapse&quot;
+          [attr.data-target]&#x3D;&quot;&#x27;#section-&#x27; + option?.productOptionComponent?.Id&quot; [attr.aria-expanded]&#x3D;&quot;true&quot;&gt;
+          &lt;i&gt;{{attributeGroupMember?.AttributeGroup?.Name}}&lt;/i&gt;
+        &lt;/button&gt;
+        
+        &lt;div [id]&#x3D;&quot;&#x27;section-&#x27; + option?.productOptionComponent?.Id&quot; class&#x3D;&quot;collapse&quot; [class.show]&#x3D;&quot;true&quot;&gt;
+          &lt;div *ngFor&#x3D;&quot;let attribute of attributeGroupMember?.AttributeGroup?.ProductAttributes; let l &#x3D; last&quot;&gt;
+            &lt;div *ngIf&#x3D;&quot;option?.attributeValue[attribute.Field]&quot; class&#x3D;&quot;py-2 px-3&quot;
+              [class.border-bottom]&#x3D;&quot;!l&quot; [class.border-secondary]&#x3D;&quot;!l&quot;&gt;
+              &lt;i class&#x3D;&quot;d-block&quot;&gt;{{attribute?._describe?.label}}&lt;/i&gt;
+              &lt;strong class&#x3D;&quot;d-block&quot;&gt;{{option?.attributeValue[attribute.Field]}}&lt;/strong&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div *ngFor&#x3D;&quot;let optionGroup of keys(option?._metadata?.childGroups); let oFirst &#x3D; first; let oIndex &#x3D; index;&quot; class&#x3D;&quot;mt-3&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-link p-0 minus&quot; data-toggle&#x3D;&quot;collapse&quot;
+          [attr.data-target]&#x3D;&quot;&#x27;#section-&#x27; + option?.productOptionComponent?.Id + oIndex&quot; [attr.aria-expanded]&#x3D;&quot;true&quot;&gt;
+          &lt;i&gt;{{optionGroup}}&lt;/i&gt;
+        &lt;/button&gt;
+
+        &lt;div [id]&#x3D;&quot;&#x27;section-&#x27; + option?.productOptionComponent?.Id + oIndex&quot; class&#x3D;&quot;collapse&quot; [class.show]&#x3D;&quot;true&quot;&gt;
+          &lt;ng-container  *ngFor&#x3D;&quot;let component of option?._metadata?.childGroups[optionGroup]&quot;&gt;
+            &lt;div class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
+              &lt;span class&#x3D;&quot;ml-3&quot;&gt;{{component.productOptionComponent?.ComponentProduct?.Name}}&lt;/span&gt;
+              &lt;span&gt;
+                &lt;apt-price [record]&#x3D;&quot;component.productOptionComponent&quot; [quantity]&#x3D;&quot;component.quantity&quot;&gt;&lt;/apt-price&gt;
+              &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;ng-template [ngTemplateOutlet]&#x3D;&quot;optionTemplate&quot; [ngTemplateOutletContext]&#x3D;&quot;{option: component}&quot;&gt;&lt;/ng-template&gt;
+          &lt;/ng-container&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+&lt;/div&gt;
+
+&lt;ng-template #loading&gt;
+  &lt;div class&#x3D;&quot;d-flex justify-content-center py-5&quot;&gt;
+    &lt;apt-md-dots&gt;&lt;/apt-md-dots&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./product-configuration-summary.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+button.chevron[aria-expanded&#x3D;&quot;true&quot;]:before{
+    font-family: &quot;FontAwesome&quot;;
+    content: &quot;\f0d7&quot;;
+   
+}
+button.chevron[aria-expanded&#x3D;&quot;false&quot;]:before{
+    font-family: &quot;FontAwesome&quot;;
+    content: &quot;\f0da&quot;;   
+}
+button.minus[aria-expanded&#x3D;&quot;true&quot;]:before{
+    font-family: &quot;FontAwesome&quot;;
+    content: &quot;\f068&quot;;
+    font-size: smaller;
+    margin-right: 5px;
+}
+button.minus[aria-expanded&#x3D;&quot;false&quot;]:before{
+    font-family: &quot;FontAwesome&quot;;
+    content: &quot;\f067&quot;;   
+    font-size: smaller;
+    margin-right: 5px;
+}
+.configuration{
+    font-size: small;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="bg-light d-flex justify-content-between p-3">  <div class="flex-grow-1">    <h4>{{product?.Name}}</h4>    <div class="text-muted">Product ID: {{product?.ProductCode}}</div>  </div>  <div class="border-left border-secondary d-flex align-items-center">    <div class="px-4">      <div class="text-muted mb-2">        Net Price      </div>      <h5 class="m-0"><apt-price [record]="item" [quantity]="1" [options]="optionFormList" type="net"></apt-price></h5>    </div>    <div>      <div *ngIf="!orderItem">        <button class="btn btn-outline-primary ml-2" [routerLink]="[\'/product\', product[identifier], item.Id]" *ngIf="isLineItem(); else productTemplate">Change Configuration</button>      </div>      <ng-template #productTemplate>        <div class="btn-group">          <button type="button" class="btn btn-outline-primary" (click)="addToCart()" [ladda]="addLoading" data-spinner-color="black" data-style="zoom-in">Add to Cart</button>          <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-reference="parent"            aria-haspopup="true" aria-expanded="false">            <i class="fa fa-caret-down"></i>          </button>          <div class="dropdown-menu">            <a class="dropdown-item" href="javascript:void(0)" [routerLink]="[\'/product\', product[identifier]]" (click)="onNavigate.emit()">Edit Configuration</a>          </div>        </div>      </ng-template>    </div>  </div></div><div class="accordion mt-3" id="accordion" *ngIf="groupOptions || attributeList?.length > 0; else loading">  <ng-container *ngFor="let attributeGroup of attributeList; let x = index; let xf = first;">    <ng-container *ngIf="attributeGroup?.ProductAttributes?.length > 0">      <div class="bg-light border-top border-secondary">        <button class="btn btn-link chevron" type="button" data-toggle="collapse" [attr.data-target]="\'#attrSection\' + x"          [attr.aria-expanded]="xf">          <strong class="ml-2">{{attributeGroup?.Name}}</strong>        </button>            </div>            <div [id]="\'attrSection\' + x" class="collapse" [class.show]="xf" data-parent="#accordion">        <ng-container *ngFor="let attribute of attributeGroup?.ProductAttributes; let l = last">          <div *ngIf="attributeValue[attribute.Field] && attribute?._describe?.label" class="py-2 px-3"            [class.border-bottom]="!l" [class.border-secondary]="!l">            <small>              <i class="d-block">{{attribute?._describe?.label}}</i>              <strong class="d-block">{{attributeValue[attribute.Field]}}</strong>            </small>          </div>        </ng-container>      </div>    </ng-container>  </ng-container>  <ng-container  *ngFor="let key of keys(groupOptions); let f = first; let i = index">    <div class="bg-light border-top border-secondary">      <button class="btn btn-link chevron" type="button" data-toggle="collapse" [attr.data-target]="\'#optionSection\' + i"        [attr.aria-expanded]="i + attributeList?.length === 0">        <strong class="ml-2">{{key}}</strong>      </button>    </div>    <div [id]="\'optionSection\' + i" class="collapse" [class.show]="i + attributeList?.length === 0" aria-labelledby="headingOne" data-parent="#accordion">      <div class="card-body" id="childAccordion">        <div *ngFor="let option of groupOptions[key]; let childFirst = first" class="mb-3">          <div class="d-flex justify-content-between border-bottom border-secondary">            <button class="btn btn-link p-0 minus w-75 text-left" data-toggle="collapse"              [attr.data-target]="\'#\' + option?.productOptionComponent?.Id" [attr.aria-expanded]="childFirst" *ngIf="keys(option?._metadata?.childGroups).length > 0 || option?.attributeForm?.length > 0; else read">              {{option?.productOptionComponent?.ComponentProduct?.Name}}            </button>            <ng-template #read>              <div class="w-75 text-left">                {{option?.productOptionComponent?.ComponentProduct?.Name}}              </div>            </ng-template>            <span>              Qty: {{option.quantity}}            </span>            <span>              <apt-price [record]="option.productOptionComponent" [quantity]="option.quantity"></apt-price>            </span>          </div>                    <div [id]="option?.productOptionComponent?.Id" data-parent="#childAccordion" class="collapse" [class.show]="childFirst">            <ng-template [ngTemplateOutlet]="optionTemplate" [ngTemplateOutletContext]="{option: option}"></ng-template>          </div>        </div>      </div>    </div>  </ng-container>    <ng-template #optionTemplate let-option="option">    <div class="pl-4 configuration accordion" [id]="\'accordion-\' + option?.productOptionComponent?.Id">      <div *ngFor="let attributeGroupMember of option?.productOptionComponent?.ComponentProduct?.AttributeGroups; let aIndex = index; let aFirst = first;" class="mt-3">        <button class="btn btn-link p-0 minus" data-toggle="collapse"          [attr.data-target]="\'#section-\' + option?.productOptionComponent?.Id" [attr.aria-expanded]="true">          <i>{{attributeGroupMember?.AttributeGroup?.Name}}</i>        </button>                <div [id]="\'section-\' + option?.productOptionComponent?.Id" class="collapse" [class.show]="true">          <div *ngFor="let attribute of attributeGroupMember?.AttributeGroup?.ProductAttributes; let l = last">            <div *ngIf="option?.attributeValue[attribute.Field]" class="py-2 px-3"              [class.border-bottom]="!l" [class.border-secondary]="!l">              <i class="d-block">{{attribute?._describe?.label}}</i>              <strong class="d-block">{{option?.attributeValue[attribute.Field]}}</strong>            </div>          </div>        </div>      </div>      <div *ngFor="let optionGroup of keys(option?._metadata?.childGroups); let oFirst = first; let oIndex = index;" class="mt-3">        <button class="btn btn-link p-0 minus" data-toggle="collapse"          [attr.data-target]="\'#section-\' + option?.productOptionComponent?.Id + oIndex" [attr.aria-expanded]="true">          <i>{{optionGroup}}</i>        </button>        <div [id]="\'section-\' + option?.productOptionComponent?.Id + oIndex" class="collapse" [class.show]="true">          <ng-container  *ngFor="let component of option?._metadata?.childGroups[optionGroup]">            <div class="d-flex justify-content-between">              <span class="ml-3">{{component.productOptionComponent?.ComponentProduct?.Name}}</span>              <span>                <apt-price [record]="component.productOptionComponent" [quantity]="component.quantity"></apt-price>              </span>            </div>            <ng-template [ngTemplateOutlet]="optionTemplate" [ngTemplateOutletContext]="{option: component}"></ng-template>          </ng-container>        </div>      </div>    </div>  </ng-template></div><ng-template #loading>  <div class="d-flex justify-content-center py-5">    <apt-md-dots></apt-md-dots>  </div></ng-template></div>'
+    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AssetAccordionComponent', 'selector': 'apt-asset-accordion'},{'name': 'AssetAccordionGroupComponent', 'selector': 'apt-asset-accordion-group'},{'name': 'AssetAccordionItemComponent', 'selector': 'apt-asset-accordion-item'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'AssetListHeaderComponent', 'selector': 'apt-asset-list-header'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CompareTableComponent', 'selector': 'apt-compare-table'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'FieldFilterComponent', 'selector': 'apt-field-filter'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdDotsComponent', 'selector': 'apt-md-dots'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceTierFilterComponent', 'selector': 'apt-price-tier'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionAppliedtoLineitemComponent', 'selector': 'apt-pr-lineitem'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'SuperChevronComponent', 'selector': 'apt-super-chevron'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProductConfigurationSummaryComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProductConfigurationSummaryComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

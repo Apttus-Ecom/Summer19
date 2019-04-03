@@ -54,7 +54,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>projects/apttus/ecommerce/src/lib/modules/catalog/services/product.service.ts</code>
+            <code>projects/apttus/ecommerce/src/lib/modules/catalog/services/product/product.service.ts</code>
         </p>
 
             <p class="comment">
@@ -70,20 +70,6 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#type">type</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -156,7 +142,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getAggregatesForCategory(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, categoryFilter: <a href="../classes/Category.html">Array<Category></a>, priceTier: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlFilters: Array<string>)</code>
+                        <code>getAggregatesForCategory(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, categoryFilter: <a href="../classes/Category.html">Array<Category></a>, priceTier: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlConditions: Array<ACondition>)</code>
                     </td>
                 </tr>
 
@@ -167,21 +153,21 @@
                     <td class="col-md-4">
                             <div class="io-description"><p>Method is similar to getProductsByCategory, however it returns the aggregate data (i.e. total records) instead of the sobject results.</p>
 <h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { ProductService, Product } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+<div><pre class="line-numbers"><code class="language-typescript">        import { ProductService, Product } from &#39;&#64;apttus/ecommerce&#39;;
+        import { Observable } from &#39;rxjs/Observable&#39;;
 
-      export class MyComponent implements OnInit{
-           aggregateData: any;
-           aggregateData$: Observable&lt;any&gt;;
+        export class MyComponent implements OnInit{
+            aggregateData: any;
+            aggregateData$: Observable&lt;any&gt;;
 
-           constructor(private productService: ProductService){}
+            constructor(private productService: ProductService){}
 
-           getAggregateDataForCategory(categoryId: string){
+            getAggregateDataForCategory(categoryId: string){
                 this.productService.getAggregatesForCategory(categoryId).subscribe(p =&gt; this.aggregateData = p);
                 // or
                 this.aggregateData$ = this.productService.getAggregatesForCategory(categoryId);
-           }
-      }</code></pre></div></div>
+            }
+        }</code></pre></div></div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -244,9 +230,9 @@
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>adtlFilters</td>
+                                                        <td>adtlConditions</td>
                                                         <td>
-                                                                    <code>Array&lt;string&gt;</code>
+                                                                    <code>Array&lt;ACondition&gt;</code>
                                                         </td>
                                                     
                                                     <td>
@@ -255,7 +241,7 @@
                                                     
 
                                                         <td>
-                                                                <code><p>an array of strings that will be used in the where clause (i.e. [&#39;ProductFamily = x&#39;, &#39;Active = TRUE&#39;])</p>
+                                                                <code><p>an array of ACondition records that will be used in the where clause (i.e. [new ACondition(Product, &#39;ProductFamily&#39;, &#39;Equals&#39;, &#39;Robots&#39;)])</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -292,7 +278,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getAggregatesForProductList(productIdList: Array<string>, categoryFilter?: <a href="../classes/Category.html">Array<Category></a>, priceTier?: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlFilters?: Array<string>)</code>
+                        <code>getAggregatesForProductList(productIdList: Array<string>, categoryFilter?: <a href="../classes/Category.html">Array<Category></a>, priceTier?: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlConditions?: Array<ACondition>)</code>
                     </td>
                 </tr>
 
@@ -380,9 +366,9 @@
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>adtlFilters</td>
+                                                        <td>adtlConditions</td>
                                                         <td>
-                                                                    <code>Array&lt;string&gt;</code>
+                                                                    <code>Array&lt;ACondition&gt;</code>
                                                         </td>
                                                     
                                                     <td>
@@ -391,7 +377,7 @@
                                                     
 
                                                         <td>
-                                                                <code><p>an array of strings that will be used in the where clause (i.e. [&#39;ProductFamily = x&#39;, &#39;Active = TRUE&#39;])</p>
+                                                                <code><p>an array of ACondition records that will be used in the where clause (i.e. [new ACondition(Product, &#39;ProductFamily&#39;, &#39;Equals&#39;, &#39;Robots&#39;)])</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -613,6 +599,8 @@
                                                         </td>
 
                                                         <td>
+                                                                <code><p>an array of ACondition records that will be used in the where clause (i.e. [new ACondition(Product, &#39;ProductFamily&#39;, &#39;Equals&#39;, &#39;Robots&#39;)])</p>
+</code>
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -883,40 +871,6 @@ This allows for conditions that include joins on other tables to be included on 
         </table>
 </section>
 
-            <section>
-    
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="type"></a>
-                        <span class="name">
-                            <b>
-                            type
-                            </b>
-                            <a href="#type"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>Product</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-</section>
 
     </div>
 

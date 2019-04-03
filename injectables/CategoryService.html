@@ -54,7 +54,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>projects/apttus/ecommerce/src/lib/modules/catalog/services/category.service.ts</code>
+            <code>projects/apttus/ecommerce/src/lib/modules/catalog/services/category/category.service.ts</code>
         </p>
 
             <p class="comment">
@@ -70,20 +70,6 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#type">type</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -94,35 +80,39 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#getCategories">getCategories</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#getCategoryBranch">getCategoryBranch</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
+                                <a href="#getCategoryBranchChildren">getCategoryBranchChildren</a>
+                            </li>
+                            <li>
                                 <a href="#getCategoryBranchForProduct">getCategoryBranchForProduct</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
+                                <a href="#getCategoryByName">getCategoryByName</a>
+                            </li>
+                            <li>
                                 <a href="#getCategoryTree">getCategoryTree</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
+                                <a href="#getOptionCategories">getOptionCategories</a>
+                            </li>
+                            <li>
                                 <a href="#getRelatedCategories">getRelatedCategories</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
+                                <a href="#getRootCategories">getRootCategories</a>
+                            </li>
+                            <li>
                                 <a href="#getSubcategories">getSubcategories</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#globalFilter">globalFilter</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#globalJoin">globalJoin</a>
                             </li>
                         </ul>
@@ -150,7 +140,6 @@
                         <a name="getCategories"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
                             getCategories
                             </b>
                             <a href="#getCategories"><span class="icon ion-ios-link"></span></a>
@@ -159,8 +148,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getCategories(limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>getCategories(limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, hierarchyIdList?: Array<string>)</code>
                     </td>
                 </tr>
 
@@ -171,21 +159,21 @@
                     <td class="col-md-4">
                             <div class="io-description"><p>Returns all the categories available to the user. Will translate the categories based on the user locale.</p>
 <h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+<div><pre class="line-numbers"><code class="language-typescript">     import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+     import { Observable } from &#39;rxjs/Observable&#39;;
 
-      export class MyComponent implements OnInit{
-           categoryList: Array&lt;Category&gt;;
-           categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+     export class MyComponent implements OnInit{
+          categoryList: Array&lt;Category&gt;;
+          categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
 
-           constructor(private categoryService: CategoryService){}
+          constructor(private categoryService: CategoryService){}
 
-           ngOnInit(){
-               this.categoryList$ = this.categoryService.getCategories();
-               // or
-               this.categoryService.getCategories().subscribe(c =&gt; this.categoryList = c);
-           }
-      }</code></pre></div></div>
+          ngOnInit(){
+              this.categoryList$ = this.categoryService.getCategories();
+              // or
+              this.categoryService.getCategories().subscribe(c =&gt; this.categoryList = c);
+          }
+     }</code></pre></div></div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -219,6 +207,22 @@
 </code>
                                                         </td>
                                                 </tr>
+                                                <tr>
+                                                        <td>hierarchyIdList</td>
+                                                        <td>
+                                                                    <code>Array&lt;string&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                        <td>
+                                                        </td>
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -243,7 +247,6 @@
                         <a name="getCategoryBranch"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
                             getCategoryBranch
                             </b>
                             <a href="#getCategoryBranch"><span class="icon ion-ios-link"></span></a>
@@ -252,8 +255,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getCategoryBranch(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>getCategoryBranch(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                     </td>
                 </tr>
 
@@ -330,10 +332,92 @@ The first element in the array is the root and the last is the category specifie
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="getCategoryBranchChildren"></a>
+                        <span class="name">
+                            <b>
+                            getCategoryBranchChildren
+                            </b>
+                            <a href="#getCategoryBranchChildren"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getCategoryBranchChildren(categoryIdList: Array<string>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>getCategoryBranchChildren takes a single category id and returns an array containing the category and all of its children down to the leaves.
+Note: does not maitain relationships with ancestor / child categories using _children property. This simply is a list of all categories under a given category.</p>
+<h3 id="example-">Example:</h3>
+<div><pre class="line-numbers"><code class="language-typescript">      import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;
+
+      export class MyComponent implements OnInit{
+           categoryList: Array&lt;Category&gt;;
+           categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+
+           constructor(private categoryService: CategoryService){}
+
+           ngOnInit(){
+               this.categoryList$ = this.categoryService.getCategoryBranchChildren();
+               // or
+               this.categoryService.getCategoryBranchChildren().subscribe(c =&gt; this.categoryList = c);
+           }
+      }</code></pre></div></div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>categoryIdList</td>
+                                                        <td>
+                                                                    <code>Array&lt;string&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Category.html" target="_self" >Observable&lt;Array&lt;Category&gt;&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>a single dimensional array containing the category and its decendants down to the leaves</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="getCategoryBranchForProduct"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
                             getCategoryBranchForProduct
                             </b>
                             <a href="#getCategoryBranchForProduct"><span class="icon ion-ios-link"></span></a>
@@ -342,8 +426,7 @@ The first element in the array is the root and the last is the category specifie
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getCategoryBranchForProduct(product: <a href="../classes/Product.html">Product</a>)</code>
+<code>getCategoryBranchForProduct(product: <a href="../classes/Product.html">Product</a>)</code>
                     </td>
                 </tr>
 
@@ -424,10 +507,96 @@ The first element in the array is the root and the last is the category specifie
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="getCategoryByName"></a>
+                        <span class="name">
+                            <b>
+                            getCategoryByName
+                            </b>
+                            <a href="#getCategoryByName"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getCategoryByName(categoryName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Returns a category matching the given category name.</p>
+<h3 id="example-">Example:</h3>
+<div><pre class="line-numbers"><code class="language-typescript">     import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+     import { Observable } from &#39;rxjs/Observable&#39;;
+
+     export class MyComponent implements OnInit{
+          category: Category;
+          category$: Observable&lt;Category&gt;;
+
+          constructor(private categoryService: CategoryService){}
+
+          ngOnInit(){
+              this.category$ = this.categoryService.getCategoryByName();
+              // or
+              this.categoryService.getCategoryByName().subscribe(c =&gt; this.category = c);
+          }
+     }</code></pre></div></div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>categoryName</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>the name of category to return.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Category.html" target="_self" >Observable&lt;Category&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>a category in an observable.</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="getCategoryTree"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
                             getCategoryTree
                             </b>
                             <a href="#getCategoryTree"><span class="icon ion-ios-link"></span></a>
@@ -436,8 +605,7 @@ The first element in the array is the root and the last is the category specifie
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getCategoryTree(categoryNames?: Array<string>)</code>
+<code>getCategoryTree(categoryNames?: Array<string>, hierarchyIdList?: Array<string>)</code>
                     </td>
                 </tr>
 
@@ -493,6 +661,20 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
 </code>
                                                         </td>
                                                 </tr>
+                                                <tr>
+                                                        <td>hierarchyIdList</td>
+                                                        <td>
+                                                                    <code>Array&lt;string&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                        </td>
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -514,10 +696,73 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="getOptionCategories"></a>
+                        <span class="name">
+                            <b>
+                            getOptionCategories
+                            </b>
+                            <a href="#getOptionCategories"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getOptionCategories(productOptionGroups: <a href="../classes/ProductOptionGroup.html">Array<ProductOptionGroup></a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>productOptionGroups</td>
+                                                        <td>
+                                                                    <code><a href="../classes/ProductOptionGroup.html" target="_self" >Array&lt;ProductOptionGroup&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Category.html" target="_self" >Observable&lt;Array&lt;Category&gt;&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="getRelatedCategories"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
                             getRelatedCategories
                             </b>
                             <a href="#getRelatedCategories"><span class="icon ion-ios-link"></span></a>
@@ -526,8 +771,7 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getRelatedCategories(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>getRelatedCategories(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
 
@@ -565,7 +809,6 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Default value</td>
                                                     <td>Description</td>
                                             </tr>
                                         </thead>
@@ -580,8 +823,6 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                        </td>
 
                                                         <td>
                                                                 <code><p>the category id to get related categories for</p>
@@ -598,9 +839,6 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                                <code>1000</code>
-                                                        </td>
 
                                                         <td>
                                                         </td>
@@ -626,10 +864,65 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="getRootCategories"></a>
+                        <span class="name">
+                            <b>
+                            getRootCategories
+                            </b>
+                            <a href="#getRootCategories"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getRootCategories()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Returns all categories which do not have a parent cateogry.</p>
+<h3 id="example-">Example:</h3>
+<div><pre class="line-numbers"><code class="language-typescript">     import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+     import { Observable } from &#39;rxjs/Observable&#39;;
+
+     export class MyComponent implements OnInit{
+          categoryList: Array&lt;Category&gt;;
+          categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+
+          constructor(private categoryService: CategoryService){}
+
+          ngOnInit(){
+              this.categoryList$ = this.categoryService.getRootCategories();
+              // or
+              this.categoryService.getRootCategories().subscribe(c =&gt; this.categoryList = c);
+          }
+     }</code></pre></div></div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Category.html" target="_self" >Observable&lt;Array&lt;Category&gt;&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>an array of categories in an observable.</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="getSubcategories"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
                             getSubcategories
                             </b>
                             <a href="#getSubcategories"><span class="icon ion-ios-link"></span></a>
@@ -638,8 +931,7 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getSubcategories(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>getSubcategories(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
 
@@ -677,7 +969,6 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Default value</td>
                                                     <td>Description</td>
                                             </tr>
                                         </thead>
@@ -692,8 +983,6 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                        </td>
 
                                                         <td>
                                                                 <code><p>the id of the parent category</p>
@@ -707,12 +996,9 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                                                         </td>
                                                     
                                                     <td>
-                                                            No
+                                                            Yes
                                                     </td>
                                                     
-                                                        <td>
-                                                                <code>1000</code>
-                                                        </td>
 
                                                         <td>
                                                         </td>
@@ -741,7 +1027,6 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                         <a name="globalFilter"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
                             globalFilter
                             </b>
                             <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
@@ -750,8 +1035,7 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>globalFilter()</code>
+<code>globalFilter()</code>
                     </td>
                 </tr>
 
@@ -785,7 +1069,6 @@ The default filter is to return category that are not hidden and whose ancestor 
                         <a name="globalJoin"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
                             globalJoin
                             </b>
                             <a href="#globalJoin"><span class="icon ion-ios-link"></span></a>
@@ -794,8 +1077,7 @@ The default filter is to return category that are not hidden and whose ancestor 
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>globalJoin()</code>
+<code>globalJoin()</code>
                     </td>
                 </tr>
 
@@ -824,40 +1106,6 @@ This allows for conditions that include joins on other tables to be included on 
         </table>
 </section>
 
-            <section>
-    
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="type"></a>
-                        <span class="name">
-                            <b>
-                            type
-                            </b>
-                            <a href="#type"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>Category</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-</section>
 
     </div>
 

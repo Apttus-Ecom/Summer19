@@ -48,21 +48,30 @@
 <h3 id="apttus-ecommerce-permission-set">Apttus Ecommerce Permission Set</h3>
 <p>The E-Commerce package comes with a basic permission set for providing the necessary access to users. The permission set is named &#39;Apttus Ecommerce&#39; and should be assigned to users access the e-commerce storefront. If you would like to make any changes to the permissions, you may clone the permission set and make any changes necessary. </p>
 <h2 id="angular-library-installation">Angular Library Installation</h2>
-<p>In order to install the apttus ecommerce library, you must first be granted access. Please reach out to Apttus support for obtaining access to this library.</p>
-<p>To install this library, run:</p>
-<div><pre class="line-numbers"><code class="language-bash">npm install &#64;apttus/ecommerce --save</code></pre></div><p>During installation, you will be asked for a number of things to connect the application to your salesforce org (will be skipped if you already installed ng-salesforce).</p>
-<p>and then from your Angular <code>AppModule</code>:</p>
+<p>In order to install the apttus ecommerce libraries, you must first be granted access. Please reach out to Apttus support for obtaining access to this libraries.</p>
+<p>To install all required libraries, run:</p>
+<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;apttus/core &#64;apttus/ecommerce &#64;apttus/constraint-rules &#64;apttus/promotion &#64;apttus/abo &#64;apttus/elements</code></pre></div><p>During installation, you will be asked for a number of things to connect the application to your salesforce org (will be skipped if you already installed @apttus/core.</p>
+<p>AppModule.ts</p>
 <div><pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#64;angular/platform-browser&#39;;
 import { NgModule } from &#39;&#64;angular/core&#39;;
 
 import { AppComponent } from &#39;./app.component&#39;;
 
-// Import your library
-import { SalesforceModule } from &#39;ng-salesforce&#39;;
+// Import Apttus libraries.
+import { ApttusModule } from &#39;&#64;apttus/core&#39;;
 import { CommerceModule } from &#39;&#64;apttus/ecommerce&#39;;
+import { ConstraintRulesModule } from &#39;&#64;apttus/constraint-rules&#39;;
+import { PromotionModule } from &#39;&#64;apttus/promotion&#39;;
+import { AboModule } from &#39;&#64;apttus/abo&#39;;
 
-// salesforce.config.ts will be created during installation and saved at src/app/salesforce.config.ts
-import { Configuration } from &#39;./salesforce.config&#39;;
+// Import the following modules and components for library specific elements.
+import { ProductDrawerModule, ApttusModalModule, RenewModalComponent, TerminateModalComponent } from &#39;&#64;apttus/elements&#39;;
+
+// Import environment configuration file.
+import { environment } from &#39;../environments/environment&#39;;
+
+// If using additional locales, register the locale data here
+registerLocaleData(localeMx, &#39;es-MX&#39;, localeMxExtra);
 
 &#64;NgModule({
   declarations: [
@@ -70,56 +79,68 @@ import { Configuration } from &#39;./salesforce.config&#39;;
   ],
   imports: [
     BrowserModule,
-
-    // Specify your ng-salesforce as an import
-    SalesforceModule.forRoot(Configuration),
-
-    // Specify the Ecommerce Module as in import
-    // The only parameter is the string name of the APTSMD_Store__c record you want to use.
-    CommerceModule.forRoot(&#39;My Store&#39;)
+    // Pass environment file to ApttusModule.
+    ApttusModule.forRoot(environment),
+    // Pass the string name of the APTSMD_Store__c record you want to use to the CommerceModule.
+    CommerceModule.forRoot(&#39;My Store&#39;),
+    ConstraintRulesModule,
+    PromotionModule,
+    AboModule,
+    ProductDrawerModule,
+    ApttusModalModule
   ],
   providers: [],
+  // Note: RenewModalComponent and TerminateModalComponent must be added to entryComponents if using renew and terminate actions within your application.
+  entryComponents: [RenewModalComponent, TerminateModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }</code></pre></div><p>Once your library is imported, you can use its components, directives and pipes in your Angular application:</p>
 <h2 id="defining-a-model">Defining a model</h2>
 <p>Proper state management is crucial to a successful Angular PWA. To that end, accessing data within Salesforce requires you to define your model
-within a Typescript class. Behind the scenes, ng-salesforce is managing how your components access and interact with that data to avoid uncessary
+within a Typescript class. Behind the scenes, @apttus/core is managing how your components access and interact with that data to avoid uncessary
 operations and maintain synchronicity. </p>
 <p>Here&#39;s an example that defines the account and contact relationship for a component.</p>
-<div><pre class="line-numbers"><code class="language-typescript">import { ATable, SObject, ChildRecord } from &#39;ng-salesforce&#39;;
+<div><pre class="line-numbers"><code class="language-typescript">import { AObject, ATable, AField } from &#39;&#64;apttus/core&#39;;
 
-// We use the decorator ATable to tell ng-salesforce this class maps to the &#39;Account&#39; object
-// In order to access standard sObject fields, our Account class must extend &#39;SObject&#39;
-// The class name can be anything, but the name property in the ATable decorator must map to an object API name
-&#64;ATable({name : &#39;Account&#39;})             
-export class Account extends SObject{         
+// We use the decorator ATable to tell &#64;apttus/core this class maps to the &#39;Account&#39; object.
+// In order to access standard sObject fields, our Account class must extend &#39;AObject&#39; (a subclass of &#39;SObject).
+// The class name can be anything, but the sobjectName and aqlName properties in the ATable decorator must map
+// to an object API name within Salesforce or AIC respectively.
+&#64;ATable({
+  sobjectName : &#39;Account&#39;,
+  aqlName: &#39;crm_Account&#39;
+})
+export class Account extends AObject {
 
-  // Define the fields you would like in your object. The name of the field must map to a field API name in salesforce
-  public Name: string = null;                 
-  public IsCustomerPortal: boolean = null;
-  public My_Custom_Field__c: number = null;
+  // Similar to how the ATable decorator is used on model objects the AField decorator is used for fields within the model.
+  // The soql and aql properties must map to a field API name in Salesforce or AIC respectively.
+  &#64;AField({
+    soql: &#39;Name&#39;,
+    aql: &#39;Name&#39;
+  })
+  public Name: string = null;
+
+  &#64;AField({
+    soql: &#39;BillingStreet&#39;,
+    aql: &#39;BillingStreet&#39;
+  })
+  BillingStreet: string = null;
+
+  &#64;AField({
+    soql: &#39;My_Custom_Field__c&#39;
+  })
+  public MyCustomField: number = null;
 
   //Related Lists
-  public Opportunities: ChildRecord = new ChildRecord(new Opportunity())
-}
-
-&#64;ATable({name : &#39;Opportunity&#39;})
-export class Oppoortunity extends SObject{
-  public Name: string = null;
-  public AccountId: string = null;
-}
-
-&#64;SobjectModel({name : &#39;Contact&#39;})
-export class Contact extends SObject{
-  public Name: string = null;
-
-  //Lookup
-  public Account: Account = new Account();
+  &#64;AField({
+    soql: &#39;PriceListId__r&#39;,
+    aql: &#39;DefaultPriceListId&#39;
+  })
+  PriceList: PriceList = new PriceList();
 }</code></pre></div><h2 id="defining-a-service">Defining a Service</h2>
-<p>After defining your model, you can access the data by creating a service for the models. The SObjectService class contains many of the standard DML and query operations to access the data, however you may add
+<p>After defining your model, you can access the data by creating a service for the models. The AObjectService class contains many of the standard DML and query operations to access the data, however you may add
 any convenience methods you want to your service. The core service methods are usually very simple.</p>
-<div><pre class="line-numbers"><code class="language-typescript">import { SObjectService } from &#39;ng-salesforce&#39;;
+<div><pre class="line-numbers"><code class="language-typescript">import { AObjectService } from &#39;&#64;apttus/core&#39;;
 import { Injectable } from &#39;&#64;angular/core&#39;;
 import { Account } from &#39;./account.model.ts&#39;  // This is a reference to the account model created in the previous section
 
@@ -127,7 +148,7 @@ import { Account } from &#39;./account.model.ts&#39;  // This is a reference to 
 &#64;Injectable({
     providedIn : &#39;root&#39;
 })
-export class AccountService extends SObjectService{
+export class AccountService extends AObjectService{
   //Add service methods here
   type = Account;
 }</code></pre></div><h2 id="access-the-data-in-your-component">Access the data in your component</h2>
@@ -148,33 +169,25 @@ export class AccountComponent implements OnInit{
 
   // Always perform service methods in the ngOnInit method
   ngOnInit(){
-    this.accountService.where(`Id &lt;&gt; NULL LIMIT 1`).subscribe(res =&gt; {
+    this.accountService.where([new ACondition(this.accountService.type, &#39;Id&#39;, &#39;NotNull&#39;, null)], &#39;AND&#39;, null, null, new APageInfo(1, 1)).subscribe(res =&gt; {
       /*
-      res === [
-        {
-          Name : &#39;Account A&#39;,
-          IsCustomerPortal : false,
-          My_Custom_Field__c : 1,
-          Id : &#39;xxx&#39;,
-          ...
-          Opportunities : {
-            totalSize : 1,
-            records : [
-              Name : &#39;Opportunity A&#39;,
-              AccountId : &#39;xxx&#39;,
-              Id : &#39;xxx&#39;,
+        res === [
+          {
+            Name: &#39;Account A&#39;,
+            BillingStreet: &#39;1234 Main Street&#39;,
+            MyCustomField: 44,
+            PriceList: {
               ...
-            ]
+            }
           }
-        }
-      ]
+        ]
       */
     });
-    this.accountService.describe(&#39;My_Custom_Field__c&#39;, false).subscribe(res =&gt; {
+    this.accountService.describe(Account, &#39;MyCustomField&#39;, false).subscribe(res =&gt; {
       // Describe information for My_Custom_Field__c
     });
 
-    this.accountService.search(`FIND &#39;map*&#39; IN ALL FIELDS RETURNING Account (Id, Name)`).subscribe(res =&gt; {
+    this.accountService.search(&#39;Main street&#39;).subscribe(res =&gt; {
       // SOSL Search Results
       // Note : search does not follow the model pattern and will return results specified in the query
     });
@@ -183,7 +196,7 @@ export class AccountComponent implements OnInit{
       // Returns an array of account records
     })
 
-    this.accountService.aggregate(`ID &lt;&gt; NULL`).subscribe(res =&gt; {
+    this.accountService.aggregate([new ACondition(this.accountService.type, &#39;Id&#39;, &#39;NotNull&#39;, null)]).subscribe(res =&gt; {
       // Returns aggregates for the specified clause. (i.e. total records as well as max/min values for all 
       // fields specified in the model)
     })
@@ -202,20 +215,6 @@ export class AccountComponent implements OnInit{
 
     this.accountService.delete([new Account()]).subscribe(res =&gt; {
       // Returns list of boolean values for accounts that were successfully deleted
-    }) 
-
-    /**
-     *  Low level method to build a structured query
-     *  &#64;Param where clause
-     *  &#64;Param limit (optional)
-     *  &#64;Param offset (optional)
-     *  &#64;Param sort by (optional)
-     *  &#64;Param sort direction (optional)
-     *  &#64;Param ignore cache (optional default false)
-     *  &#64;Param ignore constraints (optional default false)
-     */
-    this.accountService.queryBuilder(&#39;ID &lt;&gt; NULL&#39;, 5, 2, &#39;Name&#39;, &#39;ASC&#39;, false, false).subscribe(res =&gt; {
-      // Returns query results
     })
   }
 }
@@ -253,41 +252,6 @@ i ｢wdm｣: Failed to compile.</code></pre></div><h4 id="fix-add-path">Fix: Add
   exports: [RouterModule]
 })
 export class AppRoutingModule { }</code></pre></div><br/>
-
-<h2 id="no-access-control-allow-origin-header-is-present-on-the-requested-resource">No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource</h2>
-<p>Even if you enabled CORS during setup, Salesforce only supports it for certain APIs. This won&#39;t be an issue when you deploy to production.
-However, during development you will see this error for calls to the SOAP API. To bypass this, you must setup a proxy in @angular/cli. </p>
-<h4 id="fix-setup-angular-cli-proxy">Fix: Setup @angular/cli proxy</h4>
-<p>First, create a file called &#39;proxy.conf.json&#39; in your root directory. This json file will look like the following:</p>
-<div><pre class="line-numbers"><code class="language-json">{
-  &quot;/services/Soap/*&quot;: {
-    &quot;target&quot;: &quot;https://my.community.url.force.com&quot;,
-    &quot;secure&quot;: false,
-    &quot;logLevel&quot;: &quot;debug&quot;,
-    &quot;changeOrigin&quot;: true
-  }
-}
-</code></pre></div><p>Make sure you set the target to be the community url you are using.</p>
-<p>Secondly, point your angular.json configuration to this newly created proxy configuration.</p>
-<div><pre class="line-numbers"><code class="language-json">{
-  ...
-  &quot;projects&quot; : {
-    ...
-    &quot;myProject&quot; : {
-      ...
-      &quot;architect&quot; : {
-        ...
-        &quot;serve&quot; : {
-          ...
-          &quot;options&quot; : {
-            ...
-            &quot;proxyConfig&quot;: &quot;./proxy.conf.json&quot;
-          }
-        }
-      }
-    }
-  }
-}</code></pre></div><br/>
 
 <h2 id="-angular-cli-6-0-0-uncaught-referenceerror-global-is-not-defined">@Angular/cli 6.0.0 Uncaught ReferenceError: global is not defined</h2>
 <p>If you&#39;ve upgraded to @angular/cli 6, and you&#39;re seeing the following error</p>
