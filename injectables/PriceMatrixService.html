@@ -66,13 +66,6 @@ service to retrieve the data for those matrixes.</p>
 
             </p>
 
-            <p class="comment">
-                <h3>Extends</h3>
-            </p>
-            <p class="comment">
-                    <code>AObjectService</code>
-            </p>
-
 
             <section>
     <h3 id="index">Index</h3>
@@ -124,190 +117,191 @@ service to retrieve the data for those matrixes.</p>
 
             <section>
     
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getPriceMatrixData"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getPriceMatrixData"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             getPriceMatrixData
-                        </b>
-                        <a href="#getPriceMatrixData"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getPriceMatrixData(priceListItemList: Array<PriceListItem>, attributeGroupName?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#getPriceMatrixData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getPriceMatrixData(priceListItemList: <a href="../classes/PriceListItem.html">Array<PriceListItem></a>, attributeGroupName?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Method returns the price matrix data for a given array of price list items.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Method returns the price matrix data for a given array of price list items.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>priceListItemList</td>
-                                    <td>
-                                            <code>Array&lt;PriceListItem&gt;</code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>priceListItemList</td>
+                                                        <td>
+                                                                    <code><a href="../classes/PriceListItem.html" target="_self" >Array&lt;PriceListItem&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        No
-                                    </td>
+                                                        <td>
+                                                                <code><p>The array of price list items to return price matrix data for.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>attributeGroupName</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
 
+                                                        <td>
+                                                                <code><p>An optional parameter of definining the specific attribute group to retrieve matrix data for</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/PriceMatrix.html" target="_self" >Observable&lt;Array&lt;PriceMatrix&gt;&gt;</a></code>
 
-                                    <td>
-                                        <p>The array of price list items to return price matrix data for.</p>
+                            </div>
+                                <div class="io-description">
+                                    <p>A hot observable containing an array of price matrix data for the given price list items.</p>
 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>attributeGroupName</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-
-                                    <td>
-                                        <p>An optional parameter of definining the specific attribute group to retrieve matrix data for</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;Array&lt;PriceMatrix&gt;&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>A hot observable containing an array of price matrix data for the given price list items.</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getPriceMatrixDataByCode"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getPriceMatrixDataByCode"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             getPriceMatrixDataByCode
-                        </b>
-                        <a href="#getPriceMatrixDataByCode"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getPriceMatrixDataByCode(productCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, attributeGroupName?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#getPriceMatrixDataByCode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getPriceMatrixDataByCode(productCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, attributeGroupName?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Method gets all the price matrix data for a specific product.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Method gets all the price matrix data for a specific product.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>productCode</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>productCode</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        No
-                                    </td>
+                                                        <td>
+                                                                <code><p>the code of the product to retrieve the price matrix data for.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>attributeGroupName</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
 
+                                                        <td>
+                                                                <code><p>An optional parameter of definining the specific attribute group to retrieve matrix data for</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/PriceMatrix.html" target="_self" >Observable&lt;Array&lt;PriceMatrix&gt;&gt;</a></code>
 
-                                    <td>
-                                        <p>the code of the product to retrieve the price matrix data for.</p>
+                            </div>
+                                <div class="io-description">
+                                    <p>A hot observable containing an array of price matrix data for the given product.</p>
 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>attributeGroupName</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-
-                                    <td>
-                                        <p>An optional parameter of definining the specific attribute group to retrieve matrix data for</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;Array&lt;PriceMatrix&gt;&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>A hot observable containing an array of price matrix data for the given product.</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </section>
+
             <section>
     
         <h3 id="inputs">
@@ -320,9 +314,16 @@ service to retrieve the data for those matrixes.</p>
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type</b>
+                            type
+                            </b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>type:     <code></code>
+</code>
                     </td>
                 </tr>
                     <tr>

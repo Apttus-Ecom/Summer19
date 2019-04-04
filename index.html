@@ -50,27 +50,30 @@
 <h2 id="angular-library-installation">Angular Library Installation</h2>
 <p>In order to install the apttus ecommerce libraries, you must first be granted access. Please reach out to Apttus support for obtaining access to this libraries.</p>
 <p>To install all required libraries, run:</p>
-<p><code>bash
-npm install --save @apttus/core @apttus/ecommerce @apttus/constraint-rules @apttus/promotion @apttus/abo @apttus/elements</code></p>
-<p>During installation, you will be asked for a number of things to connect the application to your salesforce org (will be skipped if you already installed @apttus/core.</p>
+<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;apttus/core &#64;apttus/ecommerce &#64;apttus/constraint-rules &#64;apttus/promotion &#64;apttus/abo &#64;apttus/elements</code></pre></div><p>During installation, you will be asked for a number of things to connect the application to your salesforce org (will be skipped if you already installed @apttus/core.</p>
 <p>AppModule.ts</p>
-<p>```typescript
-import { BrowserModule } from &#39;@angular/platform-browser&#39;;
-import { NgModule } from &#39;@angular/core&#39;;</p>
-<p>import { AppComponent } from &#39;./app.component&#39;;</p>
-<p>// Import Apttus libraries.
-import { ApttusModule } from &#39;@apttus/core&#39;;
-import { CommerceModule } from &#39;@apttus/ecommerce&#39;;
-import { ConstraintRulesModule } from &#39;@apttus/constraint-rules&#39;;
-import { PromotionModule } from &#39;@apttus/promotion&#39;;
-import { AboModule } from &#39;@apttus/abo&#39;;</p>
-<p>// Import the following modules and components for library specific elements.
-import { ProductDrawerModule, ApttusModalModule, RenewModalComponent, TerminateModalComponent } from &#39;@apttus/elements&#39;;</p>
-<p>// Import environment configuration file.
-import { environment } from &#39;../environments/environment&#39;;</p>
-<p>// If using additional locales, register the locale data here
-registerLocaleData(localeMx, &#39;es-MX&#39;, localeMxExtra);</p>
-<p>@NgModule({
+<div><pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#64;angular/platform-browser&#39;;
+import { NgModule } from &#39;&#64;angular/core&#39;;
+
+import { AppComponent } from &#39;./app.component&#39;;
+
+// Import Apttus libraries.
+import { ApttusModule } from &#39;&#64;apttus/core&#39;;
+import { CommerceModule } from &#39;&#64;apttus/ecommerce&#39;;
+import { ConstraintRulesModule } from &#39;&#64;apttus/constraint-rules&#39;;
+import { PromotionModule } from &#39;&#64;apttus/promotion&#39;;
+import { AboModule } from &#39;&#64;apttus/abo&#39;;
+
+// Import the following modules and components for library specific elements.
+import { ProductDrawerModule, ApttusModalModule, RenewModalComponent, TerminateModalComponent } from &#39;&#64;apttus/elements&#39;;
+
+// Import environment configuration file.
+import { environment } from &#39;../environments/environment&#39;;
+
+// If using additional locales, register the locale data here
+registerLocaleData(localeMx, &#39;es-MX&#39;, localeMxExtra);
+
+&#64;NgModule({
   declarations: [
     AppComponent
   ],
@@ -91,78 +94,80 @@ registerLocaleData(localeMx, &#39;es-MX&#39;, localeMxExtra);</p>
   entryComponents: [RenewModalComponent, TerminateModalComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
-```</p>
-<p>Once your library is imported, you can use its components, directives and pipes in your Angular application:</p>
+export class AppModule { }</code></pre></div><p>Once your library is imported, you can use its components, directives and pipes in your Angular application:</p>
 <h2 id="defining-a-model">Defining a model</h2>
 <p>Proper state management is crucial to a successful Angular PWA. To that end, accessing data within Salesforce requires you to define your model
 within a Typescript class. Behind the scenes, @apttus/core is managing how your components access and interact with that data to avoid uncessary
 operations and maintain synchronicity. </p>
 <p>Here&#39;s an example that defines the account and contact relationship for a component.</p>
-<p>```typescript
-import { AObject, ATable, AField } from &#39;@apttus/core&#39;;</p>
-<p>// We use the decorator ATable to tell @apttus/core this class maps to the &#39;Account&#39; object.
+<div><pre class="line-numbers"><code class="language-typescript">import { AObject, ATable, AField } from &#39;&#64;apttus/core&#39;;
+
+// We use the decorator ATable to tell &#64;apttus/core this class maps to the &#39;Account&#39; object.
 // In order to access standard sObject fields, our Account class must extend &#39;AObject&#39; (a subclass of &#39;SObject).
 // The class name can be anything, but the sobjectName and aqlName properties in the ATable decorator must map
 // to an object API name within Salesforce or AIC respectively.
-@ATable({
+&#64;ATable({
   sobjectName : &#39;Account&#39;,
   aqlName: &#39;crm_Account&#39;
 })
-export class Account extends AObject {</p>
-<p>  // Similar to how the ATable decorator is used on model objects the AField decorator is used for fields within the model.
+export class Account extends AObject {
+
+  // Similar to how the ATable decorator is used on model objects the AField decorator is used for fields within the model.
   // The soql and aql properties must map to a field API name in Salesforce or AIC respectively.
-  @AField({
+  &#64;AField({
     soql: &#39;Name&#39;,
     aql: &#39;Name&#39;
   })
-  public Name: string = null;</p>
-<p>  @AField({
+  public Name: string = null;
+
+  &#64;AField({
     soql: &#39;BillingStreet&#39;,
     aql: &#39;BillingStreet&#39;
   })
-  BillingStreet: string = null;</p>
-<p>  @AField({
+  BillingStreet: string = null;
+
+  &#64;AField({
     soql: &#39;My_Custom_Field__c&#39;
   })
-  public MyCustomField: number = null;</p>
-<p>  //Related Lists
-  @AField({
+  public MyCustomField: number = null;
+
+  //Related Lists
+  &#64;AField({
     soql: &#39;PriceListId__r&#39;,
     aql: &#39;DefaultPriceListId&#39;
   })
   PriceList: PriceList = new PriceList();
-}
-```</p>
-<h2 id="defining-a-service">Defining a Service</h2>
+}</code></pre></div><h2 id="defining-a-service">Defining a Service</h2>
 <p>After defining your model, you can access the data by creating a service for the models. The AObjectService class contains many of the standard DML and query operations to access the data, however you may add
 any convenience methods you want to your service. The core service methods are usually very simple.</p>
-<p>```typescript
-import { AObjectService } from &#39;@apttus/core&#39;;
-import { Injectable } from &#39;@angular/core&#39;;
-import { Account } from &#39;./account.model.ts&#39;  // This is a reference to the account model created in the previous section</p>
-<p>@Injectable({
+<div><pre class="line-numbers"><code class="language-typescript">import { AObjectService } from &#39;&#64;apttus/core&#39;;
+import { Injectable } from &#39;&#64;angular/core&#39;;
+import { Account } from &#39;./account.model.ts&#39;  // This is a reference to the account model created in the previous section
+
+
+&#64;Injectable({
     providedIn : &#39;root&#39;
 })
 export class AccountService extends AObjectService{
   //Add service methods here
   type = Account;
-}
-```</p>
-<h2 id="access-the-data-in-your-component">Access the data in your component</h2>
-<p>```typescript
-import { Component, OnOnit } from &#39;@angular/core&#39;;
+}</code></pre></div><h2 id="access-the-data-in-your-component">Access the data in your component</h2>
+<div><pre class="line-numbers"><code class="language-typescript">import { Component, OnOnit } from &#39;&#64;angular/core&#39;;
 import { AccountService } from &#39;./account.service.ts&#39;;
-import { Account } from &#39;./account.model.ts&#39;;</p>
-<p>@Component({
+import { Account } from &#39;./account.model.ts&#39;;
+
+&#64;Component({
   selector : &#39;app-account&#39;,
-  template : `</p>
-<p>  `,
+  template : `
+
+  `,
   styles : [``]
 })
-export class AccountComponent implements OnInit{</p>
-<p>  constructor(private accountService: AccountService){}</p>
-<p>  // Always perform service methods in the ngOnInit method
+export class AccountComponent implements OnInit{
+
+  constructor(private accountService: AccountService){}
+
+  // Always perform service methods in the ngOnInit method
   ngOnInit(){
     this.accountService.where([new ACondition(this.accountService.type, &#39;Id&#39;, &#39;NotNull&#39;, null)], &#39;AND&#39;, null, null, new APageInfo(1, 1)).subscribe(res =&gt; {
       /*
@@ -180,86 +185,77 @@ export class AccountComponent implements OnInit{</p>
     });
     this.accountService.describe(Account, &#39;MyCustomField&#39;, false).subscribe(res =&gt; {
       // Describe information for My_Custom_Field__c
-    });</p>
-<div><pre class="line-numbers"><code class="language-none">this.accountService.search(&#39;Main street&#39;).subscribe(res =&gt; {
-  // SOSL Search Results
-  // Note : search does not follow the model pattern and will return results specified in the query
-});
+    });
 
-this.accountService.get([&#39;00Fxxxxxxx&#39;, &#39;00Fxxxxxxx&#39;]).subscribe(res =&gt; {
-  // Returns an array of account records
-})
+    this.accountService.search(&#39;Main street&#39;).subscribe(res =&gt; {
+      // SOSL Search Results
+      // Note : search does not follow the model pattern and will return results specified in the query
+    });
 
-this.accountService.aggregate([new ACondition(this.accountService.type, &#39;Id&#39;, &#39;NotNull&#39;, null)]).subscribe(res =&gt; {
-  // Returns aggregates for the specified clause. (i.e. total records as well as max/min values for all 
-  // fields specified in the model)
-})
+    this.accountService.get([&#39;00Fxxxxxxx&#39;, &#39;00Fxxxxxxx&#39;]).subscribe(res =&gt; {
+      // Returns an array of account records
+    })
 
-this.accountService.create([new Account()]).subscribe(res =&gt; {
-  // Returns list of id&#39;s created
-})
+    this.accountService.aggregate([new ACondition(this.accountService.type, &#39;Id&#39;, &#39;NotNull&#39;, null)]).subscribe(res =&gt; {
+      // Returns aggregates for the specified clause. (i.e. total records as well as max/min values for all 
+      // fields specified in the model)
+    })
 
-this.accountService.update([new Account()]).subscribe(res =&gt; {
-  // Returns list of id&#39;s updated
-})  
+    this.accountService.create([new Account()]).subscribe(res =&gt; {
+      // Returns list of id&#39;s created
+    })
 
-this.accountService.upsert([new Account()]).subscribe(res =&gt; {
-  // Returns list of objects upserted
-}) 
+    this.accountService.update([new Account()]).subscribe(res =&gt; {
+      // Returns list of id&#39;s updated
+    })  
 
-this.accountService.delete([new Account()]).subscribe(res =&gt; {
-  // Returns list of boolean values for accounts that were successfully deleted
-})</code></pre></div><p>  }
-}</p>
-<p>```</p>
-<h2 id="deploy">deploy</h2>
+    this.accountService.upsert([new Account()]).subscribe(res =&gt; {
+      // Returns list of objects upserted
+    }) 
+
+    this.accountService.delete([new Account()]).subscribe(res =&gt; {
+      // Returns list of boolean values for accounts that were successfully deleted
+    })
+  }
+}
+</code></pre></div><h2 id="deploy">deploy</h2>
 <p>To lint all <code>*.ts</code> files:</p>
-<p><code>bash
-$ npm run lint</code></p>
-<p>To deploy your code to your salesforce org
-<code>bash
-$ npm run deploy</code>
-<br/></p>
-<h1 id="known-issues">Known Issues</h1>
+<div><pre class="line-numbers"><code class="language-bash">$ npm run lint</code></pre></div><p>To deploy your code to your salesforce org</p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm run deploy</code></pre></div><br/>
+# Known Issues
 <br/>
 
-<h2 id="angularcli-600-cant-resolve-stream">@Angular/cli 6.0.0 Can&#39;t Resolve Stream</h2>
-<p>If you&#39;ve upgraded to @angular/cli 6, and you&#39;re seeing the following error
-```bash
-WARNING in C:/Workspace/ngs-workspace/node_modules/xml2js/node_modules/sax/lib/sax.js
-Module not found: Error: Can&#39;t resolve &#39;stream&#39; in &#39;C:\Workspace\ngs-workspace\node_modules\xml2js\node_modules\sax\lib&#39;</p>
-<p>ERROR in C:/Workspace/ngs-workspace/node_modules/csv-parse/lib/index.js
+<h2 id="-angular-cli-6-0-0-can-t-resolve-stream">@Angular/cli 6.0.0 Can&#39;t Resolve Stream</h2>
+<p>If you&#39;ve upgraded to @angular/cli 6, and you&#39;re seeing the following error</p>
+<div><pre class="line-numbers"><code class="language-bash">WARNING in C:/Workspace/ngs-workspace/node_modules/xml2js/node_modules/sax/lib/sax.js
+Module not found: Error: Can&#39;t resolve &#39;stream&#39; in &#39;C:\Workspace\ngs-workspace\node_modules\xml2js\node_modules\sax\lib&#39;
+
+ERROR in C:/Workspace/ngs-workspace/node_modules/csv-parse/lib/index.js
 Module not found: Error: Can&#39;t resolve &#39;stream&#39; in &#39;C:\Workspace\ngs-workspace\node_modules\csv-parse\lib&#39;
 ERROR in C:/Workspace/ngs-workspace/node_modules/csv-stringify/lib/index.js
 Module not found: Error: Can&#39;t resolve &#39;stream&#39; in &#39;C:\Workspace\ngs-workspace\node_modules\csv-stringify\lib&#39;
 ERROR in C:/Workspace/ngs-workspace/node_modules/xml2js/lib/parser.js
 Module not found: Error: Can&#39;t resolve &#39;timers&#39; in &#39;C:\Workspace\ngs-workspace\node_modules\xml2js\lib&#39;
-i ｢wdm｣: Failed to compile.
-```</p>
-<h4 id="fix-add-path">Fix: Add path</h4>
+i ｢wdm｣: Failed to compile.</code></pre></div><h4 id="fix-add-path">Fix: Add path</h4>
 <p>Add the following to your tsconfig.app.json file under &#39;compilerOptions&#39;:</p>
-<p><code>json
-&quot;paths&quot; : {
+<div><pre class="line-numbers"><code class="language-json">&quot;paths&quot; : {
   &quot;jsforce&quot; : [&quot;./node_modules/jsforce/build/jsforce.min.js&quot;]
   ...
-}</code>
-<br/></p>
-<h2 id="uncaught-error-no-base-href-set-please-provide-a-value-for-the-app_base_href-token-or-add-a-base-element-to-the-document">Uncaught Error: No base href set. Please provide a value for the APP_BASE_HREF token or add a base element to the document.</h2>
+}</code></pre></div><br/>
+
+<h2 id="uncaught-error-no-base-href-set-please-provide-a-value-for-the-app_base_href-token-or-add-a-base-element-to-the-document-">Uncaught Error: No base href set. Please provide a value for the APP_BASE_HREF token or add a base element to the document.</h2>
 <p>In order to work on a visualforce page, your app needs to be setup to use the hash routing location strategy instead of the default</p>
-<h4 id="fix-set-the-usehash-flag-in-your-app-routingmodulets-file">Fix: Set the useHash flag in your app-routing.module.ts file</h4>
+<h4 id="fix-set-the-usehash-flag-in-your-app-routing-module-ts-file">Fix: Set the useHash flag in your app-routing.module.ts file</h4>
 <p>In your app-routing.module.ts file, set the useHash flag in the RouterModule.forRoot(...) call</p>
-<p><code>typescript
-@NgModule({
+<div><pre class="line-numbers"><code class="language-typescript">&#64;NgModule({
   imports: [RouterModule.forRoot(appRoutes,  { useHash: true })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }</code></p>
-<br/>
+export class AppRoutingModule { }</code></pre></div><br/>
 
-<h2 id="angularcli-600-uncaught-referenceerror-global-is-not-defined">@Angular/cli 6.0.0 Uncaught ReferenceError: global is not defined</h2>
-<p>If you&#39;ve upgraded to @angular/cli 6, and you&#39;re seeing the following error
-<code>bash
-Uncaught ReferenceError: global is not defined
+<h2 id="-angular-cli-6-0-0-uncaught-referenceerror-global-is-not-defined">@Angular/cli 6.0.0 Uncaught ReferenceError: global is not defined</h2>
+<p>If you&#39;ve upgraded to @angular/cli 6, and you&#39;re seeing the following error</p>
+<div><pre class="line-numbers"><code class="language-bash">Uncaught ReferenceError: global is not defined
     at Object.../../node_modules/lodash.support/index.js (index.js:30)
     at __webpack_require__ (bootstrap:81)
     at Object.../../node_modules/lodash._basecreatecallback/index.js (index.js:12)
@@ -268,13 +264,10 @@ Uncaught ReferenceError: global is not defined
     at __webpack_require__ (bootstrap:81)
     at Object.../../node_modules/convert-units/lib/index.js (index.js:3)
     at __webpack_require__ (bootstrap:81)
-    at Object.../../dist/@apttus/ecommerce/fesm5/apttus-ecommerce.js (main.js:98)
-    at __webpack_require__ (bootstrap:81)</code></p>
-<h4 id="fix-add-the-global-polyfill">Fix: Add the global polyfill</h4>
+    at Object.../../dist/&#64;apttus/ecommerce/fesm5/apttus-ecommerce.js (main.js:98)
+    at __webpack_require__ (bootstrap:81)</code></pre></div><h4 id="fix-add-the-global-polyfill">Fix: Add the global polyfill</h4>
 <p>Add the following to your polyfills.ts file:</p>
-<p><code>typescript
-(window as any).global = window;</code></p>
-
+<div><pre class="line-numbers"><code class="language-typescript">(window as any).global = window;</code></pre></div>
 
 
 

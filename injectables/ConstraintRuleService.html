@@ -66,13 +66,6 @@ The Constraint Rule Service has methods that both apply constraint rules and ret
 
             </p>
 
-            <p class="comment">
-                <h3>Extends</h3>
-            </p>
-            <p class="comment">
-                        <code><a href="../injectables/ConstraintRuleService.html" target="_self" >ConstraintRuleServiceCore</a></code>
-            </p>
-
 
             <section>
     <h3 id="index">Index</h3>
@@ -145,909 +138,910 @@ The Constraint Rule Service has methods that both apply constraint rules and ret
 
             <section>
     
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="applyConstraintRules"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="applyConstraintRules"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             applyConstraintRules
-                        </b>
-                        <a href="#applyConstraintRules"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>applyConstraintRules(finalize: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#applyConstraintRules"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>applyConstraintRules(finalize: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Applies constraint rules to the given cart.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Applies constraint rules to the given cart.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Default value</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>finalize</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Default value</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>finalize</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>false</code>
+                                                        </td>
 
-                                    <td>
-                                        No
-                                    </td>
+                                                        <td>
+                                                                <code><p>If set to true will only apply rules marked as check on finalization.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>cart</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
 
-                                    <td>
-                                        <code>false</code>
-                                    </td>
+                                                        <td>
+                                                                <code><p>The cart on which to apply the constraint rules. If left blank, will use the current cart.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
 
-                                    <td>
-                                        <p>If set to true will only apply rules marked as check on finalization.</p>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>cart</td>
-                                    <td>
-                                                <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
-                                    </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-                                    <td>
-                                    </td>
-
-                                    <td>
-                                        <p>The cart on which to apply the constraint rules. If left blank, will use the current cart.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="associateAndApplyRules"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="associateAndApplyRules"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             associateAndApplyRules
-                        </b>
-                        <a href="#associateAndApplyRules"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>associateAndApplyRules(finalize: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#associateAndApplyRules"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>associateAndApplyRules(finalize: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Applies constraint rules on the given cart.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Applies constraint rules on the given cart.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Default value</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>finalize</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Default value</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>finalize</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>false</code>
+                                                        </td>
 
-                                    <td>
-                                        No
-                                    </td>
+                                                        <td>
+                                                                <code><p>If this is set to true, runs rules that are marked as check on finalization.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>cart</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
 
-                                    <td>
-                                        <code>false</code>
-                                    </td>
+                                                        <td>
+                                                                <code><p>Optional parameter of the cart to use for execution. If left blank, the current cart will be used.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/AppliedRuleActionInfo.html" target="_self" >Observable&lt;Array&lt;AppliedRuleActionInfo&gt;&gt;</a></code>
 
-                                    <td>
-                                        <p>If this is set to true, runs rules that are marked as check on finalization.</p>
+                            </div>
+                                <div class="io-description">
+                                    <p>An observable array of the constraint rule action info.</p>
 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>cart</td>
-                                    <td>
-                                                <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
-                                    </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-                                    <td>
-                                    </td>
-
-                                    <td>
-                                        <p>Optional parameter of the cart to use for execution. If left blank, the current cart will be used.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/AppliedRuleActionInfo.html" target="_self" >Observable&lt;Array&lt;AppliedRuleActionInfo&gt;&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>An observable array of the constraint rule action info.</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="associateConstraintRules"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="associateConstraintRules"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             associateConstraintRules
-                        </b>
-                        <a href="#associateConstraintRules"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>associateConstraintRules(cart?: <a href="../classes/Cart.html">Cart</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#associateConstraintRules"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>associateConstraintRules(cart?: <a href="../classes/Cart.html">Cart</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Associates constraint rules with the given cart.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Associates constraint rules with the given cart.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>cart</td>
-                                    <td>
-                                                <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cart</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        Yes
-                                    </td>
+                                                        <td>
+                                                                <code><p>The cart to associate constraint rules. If left blank, will use the current cart.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
 
-
-                                    <td>
-                                        <p>The cart to associate constraint rules. If left blank, will use the current cart.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getConstraintRulesForProducts"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getConstraintRulesForProducts"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             getConstraintRulesForProducts
-                        </b>
-                        <a href="#getConstraintRulesForProducts"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getConstraintRulesForProducts(productList: <a href="../classes/Product.html">Array<string> | Array<Product></a>, pricing: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, matchInPrimaryLines: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, matchInOptions: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#getConstraintRulesForProducts"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getConstraintRulesForProducts(productList: <a href="../classes/Product.html">Array<string> | Array<Product></a>, pricing: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, matchInPrimaryLines: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, matchInOptions: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Gets the constraint rules for the given products.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Gets the constraint rules for the given products.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Default value</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>productList</td>
-                                    <td>
-                                                <code><a href="../classes/Product.html" target="_self" >Array&lt;string&gt; | Array&lt;Product&gt;</a></code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Default value</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>productList</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Product.html" target="_self" >Array&lt;string&gt; | Array&lt;Product&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
 
-                                    <td>
-                                        No
-                                    </td>
+                                                        <td>
+                                                                <code><p>Array of products to get constraint rules for.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>pricing</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>true</code>
+                                                        </td>
 
-                                    <td>
-                                    </td>
+                                                        <td>
+                                                                <code><p>If set true will include the pricelists for the products.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>matchInPrimaryLines</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>true</code>
+                                                        </td>
 
-                                    <td>
-                                        <p>Array of products to get constraint rules for.</p>
+                                                        <td>
+                                                                <code><p>If set to true will only return constraint rules for primary line conditions</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>matchInOptions</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>false</code>
+                                                        </td>
 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>pricing</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                    </td>
+                                                        <td>
+                                                                <code><p>If set to true, will only return constraint rules for option conditions</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/ConstraintRule.html" target="_self" >Observable&lt;Array&lt;ConstraintRule&gt;&gt;</a></code>
 
-                                    <td>
-                                        No
-                                    </td>
+                            </div>
+                                <div class="io-description">
+                                    <p>Observable array of constraint rules for the given products.</p>
 
-                                    <td>
-                                        <code>true</code>
-                                    </td>
-
-                                    <td>
-                                        <p>If set true will include the pricelists for the products.</p>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>matchInPrimaryLines</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-                                    <td>
-                                        <code>true</code>
-                                    </td>
-
-                                    <td>
-                                        <p>If set to true will only return constraint rules for primary line conditions</p>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>matchInOptions</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-                                    <td>
-                                        <code>false</code>
-                                    </td>
-
-                                    <td>
-                                        <p>If set to true, will only return constraint rules for option conditions</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/ConstraintRule.html" target="_self" >Observable&lt;Array&lt;ConstraintRule&gt;&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Observable array of constraint rules for the given products.</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getExclusionProductActionsForCart"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getExclusionProductActionsForCart"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             getExclusionProductActionsForCart
-                        </b>
-                        <a href="#getExclusionProductActionsForCart"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getExclusionProductActionsForCart(cart: <a href="../classes/Cart.html">Cart</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#getExclusionProductActionsForCart"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getExclusionProductActionsForCart(cart: <a href="../classes/Cart.html">Cart</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Gets a list of constraint rule actions that are excluded based on the items in the provided cart.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Gets a list of constraint rule actions that are excluded based on the items in the provided cart.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>cart</td>
-                                    <td>
-                                                <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cart</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        No
-                                    </td>
+                                                        <td>
+                                                                <code><p>The cart on which to get excluded products. If left blank, will use the current cart.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/AppliedRuleActionInfo.html" target="_self" >Observable&lt;Array&lt;AppliedRuleActionInfo&gt;&gt;</a></code>
 
+                            </div>
+                                <div class="io-description">
+                                    <p>Observable array of constraint rule information.</p>
 
-                                    <td>
-                                        <p>The cart on which to get excluded products. If left blank, will use the current cart.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/AppliedRuleActionInfo.html" target="_self" >Observable&lt;Array&lt;AppliedRuleActionInfo&gt;&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Observable array of constraint rule information.</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getPendingActionsForCart"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getPendingActionsForCart"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             getPendingActionsForCart
-                        </b>
-                        <a href="#getPendingActionsForCart"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getPendingActionsForCart(cart?: <a href="../classes/Cart.html">Cart</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#getPendingActionsForCart"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getPendingActionsForCart(cart?: <a href="../classes/Cart.html">Cart</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Gets a list of constraint rule actions that are pending based on the items in the provided cart.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Gets a list of constraint rule actions that are pending based on the items in the provided cart.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>cart</td>
-                                    <td>
-                                                <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cart</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        Yes
-                                    </td>
+                                                        <td>
+                                                                <code><p>The cart on which to get pending actions. If left blank, will use the current cart.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/AppliedRuleActionInfo.html" target="_self" >Observable&lt;Array&lt;AppliedRuleActionInfo&gt;&gt;</a></code>
 
+                            </div>
+                                <div class="io-description">
+                                    <p>Observable array of constraint rule information.</p>
 
-                                    <td>
-                                        <p>The cart on which to get pending actions. If left blank, will use the current cart.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/AppliedRuleActionInfo.html" target="_self" >Observable&lt;Array&lt;AppliedRuleActionInfo&gt;&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Observable array of constraint rule information.</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getRecommendationsForCart"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getRecommendationsForCart"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             getRecommendationsForCart
-                        </b>
-                        <a href="#getRecommendationsForCart"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getRecommendationsForCart(cart?: <a href="../classes/Cart.html">Cart</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#getRecommendationsForCart"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getRecommendationsForCart(cart?: <a href="../classes/Cart.html">Cart</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Gets a list of products that are recommended based on the products in the provided cart.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Gets a list of products that are recommended based on the products in the provided cart.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>cart</td>
-                                    <td>
-                                                <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cart</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        Yes
-                                    </td>
+                                                        <td>
+                                                                <code><p>Cart on which to retrieve recommendations for. If left blank, will use the current cart.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Product.html" target="_self" >Observable&lt;Array&lt;Product&gt;&gt;</a></code>
 
+                            </div>
+                                <div class="io-description">
+                                    <p>Observable array of products.</p>
 
-                                    <td>
-                                        <p>Cart on which to retrieve recommendations for. If left blank, will use the current cart.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Product.html" target="_self" >Observable&lt;Array&lt;Product&gt;&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Observable array of products.</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getRecommendationsForProducts"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getRecommendationsForProducts"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             getRecommendationsForProducts
-                        </b>
-                        <a href="#getRecommendationsForProducts"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getRecommendationsForProducts(productList: <a href="../classes/Product.html">Array<Product></a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#getRecommendationsForProducts"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getRecommendationsForProducts(productList: <a href="../classes/Product.html">Array<Product></a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Gets a list of products that are recommended based on the provided list of products.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Gets a list of products that are recommended based on the provided list of products.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>productList</td>
-                                    <td>
-                                                <code><a href="../classes/Product.html" target="_self" >Array&lt;Product&gt;</a></code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>productList</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Product.html" target="_self" >Array&lt;Product&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        No
-                                    </td>
+                                                        <td>
+                                                                <code><p>Array of products to get recommendations for.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Product.html" target="_self" >Observable&lt;Array&lt;Product&gt;&gt;</a></code>
 
+                            </div>
+                                <div class="io-description">
+                                    <p>Observable array of products.</p>
 
-                                    <td>
-                                        <p>Array of products to get recommendations for.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Product.html" target="_self" >Observable&lt;Array&lt;Product&gt;&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Observable array of products.</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="globalFilter"></a>
-                    <span class="name">
-                        <b>
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="globalFilter"></a>
+                        <span class="name">
+                            <b>
                             globalFilter
-                        </b>
-                        <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
+                            </b>
+                            <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
 <code>globalFilter()</code>
-                </td>
-            </tr>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>The global filter for constraint rules returned by the constraint-rule service. Returns only constraint rules between the effective date
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>The global filter for constraint rules returned by the constraint-rule service. Returns only constraint rules between the effective date
 and the expiration date that are active.</p>
 </div>
 
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;AFilter[]&gt;</code>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;AFilter[]&gt;</code>
 
-                    </div>
-                    <div class="io-description">
-                        <p>AFilter array observable with the query filter</p>
+                            </div>
+                                <div class="io-description">
+                                    <p>AFilter array observable with the query filter</p>
 
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="hasPendingErrors"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hasPendingErrors"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             hasPendingErrors
-                        </b>
-                        <a href="#hasPendingErrors"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>hasPendingErrors(cart?: <a href="../classes/Cart.html">Cart</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#hasPendingErrors"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>hasPendingErrors(cart?: <a href="../classes/Cart.html">Cart</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Checks if there are pending errors on the provided cart.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Checks if there are pending errors on the provided cart.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>cart</td>
-                                    <td>
-                                                <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cart</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        Yes
-                                    </td>
+                                                        <td>
+                                                                <code><p>The cart on which to check for pending errors. If left blank, will use the current cart.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
 
+                            </div>
+                                <div class="io-description">
+                                    <p>Observable boolean if true there are pending errors.</p>
 
-                                    <td>
-                                        <p>The cart on which to check for pending errors. If left blank, will use the current cart.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Observable boolean if true there are pending errors.</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="removeConstraintRules"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="removeConstraintRules"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             removeConstraintRules
-                        </b>
-                        <a href="#removeConstraintRules"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>removeConstraintRules(productIdList: Array<String>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#removeConstraintRules"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>removeConstraintRules(productIdList: Array<String>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Removes constraint rules based on the provided product Ids for the given cart.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Removes constraint rules based on the provided product Ids for the given cart.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>productIdList</td>
-                                    <td>
-                                            <code>Array&lt;String&gt;</code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>productIdList</td>
+                                                        <td>
+                                                                    <code>Array&lt;String&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        No
-                                    </td>
+                                                        <td>
+                                                                <code><p>Array of product Ids.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>cart</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
 
+                                                        <td>
+                                                                <code><p>The cart to remove constraint rules from. If left blank, will use the current cart.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
 
-                                    <td>
-                                        <p>Array of product Ids.</p>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>cart</td>
-                                    <td>
-                                                <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
-                                    </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-
-                                    <td>
-                                        <p>The cart to remove constraint rules from. If left blank, will use the current cart.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </section>
+
 
     </div>
 

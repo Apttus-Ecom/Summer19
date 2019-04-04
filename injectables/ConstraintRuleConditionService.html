@@ -65,13 +65,6 @@
 
             </p>
 
-            <p class="comment">
-                <h3>Extends</h3>
-            </p>
-            <p class="comment">
-                    <code>AObjectService</code>
-            </p>
-
 
             <section>
     <h3 id="index">Index</h3>
@@ -119,101 +112,101 @@
 
             <section>
     
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getConstraintRuleConditionsForProduct"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getConstraintRuleConditionsForProduct"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             getConstraintRuleConditionsForProduct
-                        </b>
-                        <a href="#getConstraintRuleConditionsForProduct"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getConstraintRuleConditionsForProduct(product: <a href="../classes/Product.html">Product</a>)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#getConstraintRuleConditionsForProduct"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getConstraintRuleConditionsForProduct(product: <a href="../classes/Product.html">Product</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>getConstraintRuleConditionsForProduct method returns all the constraint conditions matching a given product</p>
-<h3 id="example">Example:</h3>
-<p>```typescript
-      import { ConstraintRuleConditionService, Product } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       constraintRuleConditions: Array&lt;ConstraintRuleCondition&gt;;
-       constraintRuleConditions$: Observable&lt;Array&lt;ConstraintRuleCondition&gt;&gt;;
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>getConstraintRuleConditionsForProduct method returns all the constraint conditions matching a given product</p>
+<h3 id="example-">Example:</h3>
+<div><pre class="line-numbers"><code class="language-typescript">      import { ConstraintRuleConditionService, Product } from &#39;&#64;apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private constraintRuleConditionService: ConstraintRuleConditionService){}
+      export class MyComponent implements OnInit{
+           constraintRuleConditions: Array&lt;ConstraintRuleCondition&gt;;
+           constraintRuleConditions$: Observable&lt;Array&lt;ConstraintRuleCondition&gt;&gt;;
 
-       getConstraintRuleConditionsForProduct(product: Product){
-           this.constraintRuleConditionService.getConstraintRuleConditionsForProduct(product)
-                .subscribe(conditions =&gt; this.constraintRuleConditions = conditions);
-            // or
-            this.constraintRuleConditions$ = this.constraintRuleConditionService.getConstraintRuleConditionsForProduct(product);
-       }
-  }
- ```</code></pre></div></div>
+           constructor(private constraintRuleConditionService: ConstraintRuleConditionService){}
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>product</td>
-                                    <td>
-                                                <code><a href="../classes/Product.html" target="_self" >Product</a></code>
-                                    </td>
+           getConstraintRuleConditionsForProduct(product: Product){
+               this.constraintRuleConditionService.getConstraintRuleConditionsForProduct(product)
+                    .subscribe(conditions =&gt; this.constraintRuleConditions = conditions);
+                // or
+                this.constraintRuleConditions$ = this.constraintRuleConditionService.getConstraintRuleConditionsForProduct(product);
+           }
+      }</code></pre></div></div>
 
-                                    <td>
-                                        No
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>product</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
 
+                                                        <td>
+                                                                <code><p>the instance of the product to get the constraint rules for</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/ConstraintRuleCondition.html" target="_self" >Observable&lt;Array&lt;ConstraintRuleCondition&gt;&gt;</a></code>
 
-                                    <td>
-                                        <p>the instance of the product to get the constraint rules for</p>
+                            </div>
+                                <div class="io-description">
+                                    <p>an array of constraint rule conditions in an observable matching the given product</p>
 
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;Array&lt;ConstraintRuleCondition&gt;&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>an array of constraint rule conditions in an observable matching the given product</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </section>
+
             <section>
     
         <h3 id="inputs">
@@ -226,9 +219,16 @@
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type</b>
+                            type
+                            </b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>type:     <code></code>
+</code>
                     </td>
                 </tr>
                     <tr>

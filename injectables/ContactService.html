@@ -65,13 +65,6 @@
 
             </p>
 
-            <p class="comment">
-                <h3>Extends</h3>
-            </p>
-            <p class="comment">
-                        <code><a href="../injectables/ContactService.html" target="_self" >ContactServiceCore</a></code>
-            </p>
-
 
             <section>
     <h3 id="index">Index</h3>
@@ -109,128 +102,127 @@
 
             <section>
     
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getContactForUser"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getContactForUser"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             getContactForUser
-                        </b>
-                        <a href="#getContactForUser"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getContactForUser()</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#getContactForUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getContactForUser()</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Gets the contact record for the current user. If the user is not logged in.</p>
-<h3 id="example">Example:</h3>
-<p>```typescript
-      import { ContactService, Contact } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       contact: Contact;
-       contact$: Observable&lt;Contact&gt;;
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Gets the contact record for the current user. If the user is not logged in.</p>
+<h3 id="example-">Example:</h3>
+<div><pre class="line-numbers"><code class="language-typescript">      import { ContactService, Contact } from &#39;&#64;apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private contactService: ContactService){}
+      export class MyComponent implements OnInit{
+           contact: Contact;
+           contact$: Observable&lt;Contact&gt;;
 
-       ngOnInit(){
-           this.contactService.getContactForUser().subscribe(c =&gt; this.contact = c);
-           // or
-           this.contact$ = this.contactService.getContactForUser();
-       }
-  }
- ```</code></pre></div></div>
+           constructor(private contactService: ContactService){}
 
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Contact.html" target="_self" >Observable&lt;Contact&gt;</a></code>
+           ngOnInit(){
+               this.contactService.getContactForUser().subscribe(c =&gt; this.contact = c);
+               // or
+               this.contact$ = this.contactService.getContactForUser();
+           }
+      }</code></pre></div></div>
 
-                    </div>
-                    <div class="io-description">
-                        <p>an Observable containing the current contact record</p>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Contact.html" target="_self" >Observable&lt;Contact&gt;</a></code>
 
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getMyContact"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
+                            </div>
+                                <div class="io-description">
+                                    <p>an Observable containing the current contact record</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getMyContact"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
                             getMyContact
-                        </b>
-                        <a href="#getMyContact"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getMyContact()</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#getMyContact"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getMyContact()</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Gets the contact record for the current user. If the user is not logged in, it will return a new contact instance.</p>
-<h3 id="example">Example:</h3>
-<p>```typescript
-      import { ContactService, Contact } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       contact: Contact;
-       contact$: Observable&lt;Contact&gt;;
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Gets the contact record for the current user. If the user is not logged in, it will return a new contact instance.</p>
+<h3 id="example-">Example:</h3>
+<div><pre class="line-numbers"><code class="language-typescript">      import { ContactService, Contact } from &#39;&#64;apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private contactService: ContactService){}
+      export class MyComponent implements OnInit{
+           contact: Contact;
+           contact$: Observable&lt;Contact&gt;;
 
-       ngOnInit(){
-           this.contactService.getMyContact().subscribe(c =&gt; this.contact = c);
-           // or
-           this.contact$ = this.contactService.getMyContact();
-       }
-  }
- ```</code></pre></div></div>
+           constructor(private contactService: ContactService){}
 
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Contact.html" target="_self" >Observable&lt;Contact&gt;</a></code>
+           ngOnInit(){
+               this.contactService.getMyContact().subscribe(c =&gt; this.contact = c);
+               // or
+               this.contact$ = this.contactService.getMyContact();
+           }
+      }</code></pre></div></div>
 
-                    </div>
-                    <div class="io-description">
-                        <p>an Observable containing the current contact record</p>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Contact.html" target="_self" >Observable&lt;Contact&gt;</a></code>
 
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                            </div>
+                                <div class="io-description">
+                                    <p>an Observable containing the current contact record</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </section>
+
 
     </div>
 
