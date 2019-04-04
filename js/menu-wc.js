@@ -47,142 +47,6 @@ let tp = lithtml.html(`<nav>
             </ul>
         </li>
     <li class="chapter">
-        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#modules-links"' :
-            'data-target="#xs-modules-links"' }>
-            <span class="icon ion-ios-archive"></span>
-            <span>Modules</span>
-            <span class="icon ion-ios-arrow-down"></span>
-        </div>
-        <ul class="links collapse" ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
-                <li class="link">
-                    <a href="modules/AboModule.html" data-type="entity-link">AboModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/AddressModule.html" data-type="entity-link">AddressModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ApttusModalModule.html" data-type="entity-link">ApttusModalModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/AssetListModule.html" data-type="entity-link">AssetListModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/BatchActionsModule.html" data-type="entity-link">BatchActionsModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/BreadcrumbModule.html" data-type="entity-link">BreadcrumbModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ButtonModule.html" data-type="entity-link">ButtonModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/CartModule.html" data-type="entity-link">CartModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/CatalogModule.html" data-type="entity-link">CatalogModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ConstraintAlertModule.html" data-type="entity-link">ConstraintAlertModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ConstraintIconModule.html" data-type="entity-link">ConstraintIconModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ConstraintModalModule.html" data-type="entity-link">ConstraintModalModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ConstraintPopoverModule.html" data-type="entity-link">ConstraintPopoverModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ConstraintRulesModule.html" data-type="entity-link">ConstraintRulesModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ConstraintSideMenuModule.html" data-type="entity-link">ConstraintSideMenuModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/CrmModule.html" data-type="entity-link">CrmModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/DependentPicklistModule.html" data-type="entity-link">DependentPicklistModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/FilterModule.html" data-type="entity-link">FilterModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/InputDateModule.html" data-type="entity-link">InputDateModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/InputFieldModule.html" data-type="entity-link">InputFieldModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/InputQuantityModule.html" data-type="entity-link">InputQuantityModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/InputSelectModule.html" data-type="entity-link">InputSelectModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/JumbotronModule.html" data-type="entity-link">JumbotronModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/MdDotsModule.html" data-type="entity-link">MdDotsModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/MdSpinnerModule.html" data-type="entity-link">MdSpinnerModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/MiniCartModule.html" data-type="entity-link">MiniCartModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/MiniProfileModule.html" data-type="entity-link">MiniProfileModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/PriceModule.html" data-type="entity-link">PriceModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/PricingModule.html" data-type="entity-link">PricingModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ProductCardModule.html" data-type="entity-link">ProductCardModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ProductCarouselModule.html" data-type="entity-link">ProductCarouselModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ProductCompareModule.html" data-type="entity-link">ProductCompareModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ProductConfigurationModule.html" data-type="entity-link">ProductConfigurationModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ProductConfigurationSummaryModule.html" data-type="entity-link">ProductConfigurationSummaryModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ProductDrawerModule.html" data-type="entity-link">ProductDrawerModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/ProductImagesModule.html" data-type="entity-link">ProductImagesModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/PromotionAppliedtoLineitemModule.html" data-type="entity-link">PromotionAppliedtoLineitemModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/PromotionModalModule.html" data-type="entity-link">PromotionModalModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/PromotionModule.html" data-type="entity-link">PromotionModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/PromotionModule-1.html" data-type="entity-link">PromotionModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/RecommendedProductsModule.html" data-type="entity-link">RecommendedProductsModule</a>
-                </li>
-                <li class="link">
-                    <a href="modules/StoreModule.html" data-type="entity-link">StoreModule</a>
-                </li>
-        </ul>
-    </li>
-    <li class="chapter">
         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links"' :
             'data-target="#xs-components-links"' }>
             <span class="icon ion-md-cog"></span>
@@ -194,25 +58,16 @@ let tp = lithtml.html(`<nav>
                         <a href="components/AddressComponent.html" data-type="entity-link">AddressComponent</a>
                     </li>
                     <li class="link">
+                        <a href="components/AppComponent.html" data-type="entity-link">AppComponent</a>
+                    </li>
+                    <li class="link">
                         <a href="components/RenewModalComponent.html" data-type="entity-link">RenewModalComponent</a>
                     </li>
                     <li class="link">
                         <a href="components/TerminateModalComponent.html" data-type="entity-link">TerminateModalComponent</a>
                     </li>
                     <li class="link">
-                        <a href="components/AssetAccordionComponent.html" data-type="entity-link">AssetAccordionComponent</a>
-                    </li>
-                    <li class="link">
-                        <a href="components/AssetAccordionGroupComponent.html" data-type="entity-link">AssetAccordionGroupComponent</a>
-                    </li>
-                    <li class="link">
-                        <a href="components/AssetAccordionItemComponent.html" data-type="entity-link">AssetAccordionItemComponent</a>
-                    </li>
-                    <li class="link">
                         <a href="components/AssetListComponent.html" data-type="entity-link">AssetListComponent</a>
-                    </li>
-                    <li class="link">
-                        <a href="components/AssetListHeaderComponent.html" data-type="entity-link">AssetListHeaderComponent</a>
                     </li>
                     <li class="link">
                         <a href="components/BatchActionComponent.html" data-type="entity-link">BatchActionComponent</a>
@@ -228,6 +83,33 @@ let tp = lithtml.html(`<nav>
                     </li>
                     <li class="link">
                         <a href="components/InstalledProductsComponent.html" data-type="entity-link">InstalledProductsComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/CardFormComponent.html" data-type="entity-link">CardFormComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/CartComponent.html" data-type="entity-link">CartComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/CybersourceComponent.html" data-type="entity-link">CybersourceComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/SummaryComponent.html" data-type="entity-link">SummaryComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/ChangePasswordLayoutComponent.html" data-type="entity-link">ChangePasswordLayoutComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/CompareLayoutComponent.html" data-type="entity-link">CompareLayoutComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/FooterComponent.html" data-type="entity-link">FooterComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/HeaderComponent.html" data-type="entity-link">HeaderComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/NavAccountComponent.html" data-type="entity-link">NavAccountComponent</a>
                     </li>
                     <li class="link">
                         <a href="components/CRConstraintAlertComponent.html" data-type="entity-link">CRConstraintAlertComponent</a>
@@ -251,13 +133,10 @@ let tp = lithtml.html(`<nav>
                         <a href="components/CategoryFilterComponent.html" data-type="entity-link">CategoryFilterComponent</a>
                     </li>
                     <li class="link">
-                        <a href="components/FieldFilterComponent.html" data-type="entity-link">FieldFilterComponent</a>
-                    </li>
-                    <li class="link">
-                        <a href="components/PriceTierFilterComponent.html" data-type="entity-link">PriceTierFilterComponent</a>
-                    </li>
-                    <li class="link">
                         <a href="components/ProductTypeFilterComponent.html" data-type="entity-link">ProductTypeFilterComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/HomeComponent.html" data-type="entity-link">HomeComponent</a>
                     </li>
                     <li class="link">
                         <a href="components/InputDateComponent.html" data-type="entity-link">InputDateComponent</a>
@@ -272,10 +151,28 @@ let tp = lithtml.html(`<nav>
                         <a href="components/InputSelectComponent.html" data-type="entity-link">InputSelectComponent</a>
                     </li>
                     <li class="link">
+                        <a href="components/InstalledProductsLayoutComponent.html" data-type="entity-link">InstalledProductsLayoutComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/PriceTypeFilterComponent.html" data-type="entity-link">PriceTypeFilterComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/RenewalFilterComponent.html" data-type="entity-link">RenewalFilterComponent</a>
+                    </li>
+                    <li class="link">
                         <a href="components/JumbotronComponent.html" data-type="entity-link">JumbotronComponent</a>
                     </li>
                     <li class="link">
-                        <a href="components/MdDotsComponent.html" data-type="entity-link">MdDotsComponent</a>
+                        <a href="components/LoginLayoutComponent.html" data-type="entity-link">LoginLayoutComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/CartSummaryComponent.html" data-type="entity-link">CartSummaryComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/CartTableComponent.html" data-type="entity-link">CartTableComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/ManageCartComponent.html" data-type="entity-link">ManageCartComponent</a>
                     </li>
                     <li class="link">
                         <a href="components/MdSpinnerComponent.html" data-type="entity-link">MdSpinnerComponent</a>
@@ -285,6 +182,36 @@ let tp = lithtml.html(`<nav>
                     </li>
                     <li class="link">
                         <a href="components/MiniProfileComponent.html" data-type="entity-link">MiniProfileComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/AddressBookComponent.html" data-type="entity-link">AddressBookComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/CartListComponent.html" data-type="entity-link">CartListComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/DashboardComponent.html" data-type="entity-link">DashboardComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/MyAccountLayoutComponent.html" data-type="entity-link">MyAccountLayoutComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/OrderDetailComponent.html" data-type="entity-link">OrderDetailComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/OrderListComponent.html" data-type="entity-link">OrderListComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/ProductCatalogComponent.html" data-type="entity-link">ProductCatalogComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/SettingsComponent.html" data-type="entity-link">SettingsComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/WishlistsComponent.html" data-type="entity-link">WishlistsComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/OrderHistoryLayoutComponent.html" data-type="entity-link">OrderHistoryLayoutComponent</a>
                     </li>
                     <li class="link">
                         <a href="components/PriceComponent.html" data-type="entity-link">PriceComponent</a>
@@ -302,9 +229,6 @@ let tp = lithtml.html(`<nav>
                         <a href="components/ProductCarouselComponent.html" data-type="entity-link">ProductCarouselComponent</a>
                     </li>
                     <li class="link">
-                        <a href="components/CompareTableComponent.html" data-type="entity-link">CompareTableComponent</a>
-                    </li>
-                    <li class="link">
                         <a href="components/ProductCompareComponent.html" data-type="entity-link">ProductCompareComponent</a>
                     </li>
                     <li class="link">
@@ -314,13 +238,25 @@ let tp = lithtml.html(`<nav>
                         <a href="components/ProductConfigurationSummaryComponent.html" data-type="entity-link">ProductConfigurationSummaryComponent</a>
                     </li>
                     <li class="link">
+                        <a href="components/ProductDetailsComponent.html" data-type="entity-link">ProductDetailsComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/TabAttachmentsComponent.html" data-type="entity-link">TabAttachmentsComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/TabFeaturesComponent.html" data-type="entity-link">TabFeaturesComponent</a>
+                    </li>
+                    <li class="link">
                         <a href="components/ProductDrawerComponent.html" data-type="entity-link">ProductDrawerComponent</a>
                     </li>
                     <li class="link">
-                        <a href="components/SuperChevronComponent.html" data-type="entity-link">SuperChevronComponent</a>
+                        <a href="components/ProductImagesComponent.html" data-type="entity-link">ProductImagesComponent</a>
                     </li>
                     <li class="link">
-                        <a href="components/ProductImagesComponent.html" data-type="entity-link">ProductImagesComponent</a>
+                        <a href="components/ProductListComponent.html" data-type="entity-link">ProductListComponent</a>
+                    </li>
+                    <li class="link">
+                        <a href="components/ResultsComponent.html" data-type="entity-link">ResultsComponent</a>
                     </li>
                     <li class="link">
                         <a href="components/PromotionAppliedtoLineitemComponent.html" data-type="entity-link">PromotionAppliedtoLineitemComponent</a>
@@ -387,6 +323,9 @@ let tp = lithtml.html(`<nav>
                 <a href="classes/BatchAction-1.html" data-type="entity-link">BatchAction</a>
             </li>
             <li class="link">
+                <a href="classes/BrowserWindowRef.html" data-type="entity-link">BrowserWindowRef</a>
+            </li>
+            <li class="link">
                 <a href="classes/Cart.html" data-type="entity-link">Cart</a>
             </li>
             <li class="link">
@@ -421,6 +360,12 @@ let tp = lithtml.html(`<nav>
             </li>
             <li class="link">
                 <a href="classes/CurrencyType.html" data-type="entity-link">CurrencyType</a>
+            </li>
+            <li class="link">
+                <a href="classes/CustomQuote.html" data-type="entity-link">CustomQuote</a>
+            </li>
+            <li class="link">
+                <a href="classes/CustomQuote-1.html" data-type="entity-link">CustomQuote</a>
             </li>
             <li class="link">
                 <a href="classes/DataManager.html" data-type="entity-link">DataManager</a>
@@ -546,6 +491,9 @@ let tp = lithtml.html(`<nav>
                 <a href="classes/Quote.html" data-type="entity-link">Quote</a>
             </li>
             <li class="link">
+                <a href="classes/QuoteActions.html" data-type="entity-link">QuoteActions</a>
+            </li>
+            <li class="link">
                 <a href="classes/QuoteLineItem.html" data-type="entity-link">QuoteLineItem</a>
             </li>
             <li class="link">
@@ -568,6 +516,9 @@ let tp = lithtml.html(`<nav>
             </li>
             <li class="link">
                 <a href="classes/UserBase.html" data-type="entity-link">UserBase</a>
+            </li>
+            <li class="link">
+                <a href="classes/WindowRef.html" data-type="entity-link">WindowRef</a>
             </li>
         </ul>
     </li>
@@ -706,6 +657,9 @@ let tp = lithtml.html(`<nav>
                 <a href="injectables/SearchService.html" data-type="entity-link">SearchService</a>
             </li>
             <li class="link">
+                <a href="injectables/ServiceWorkerService.html" data-type="entity-link">ServiceWorkerService</a>
+            </li>
+            <li class="link">
                 <a href="injectables/StorefrontService.html" data-type="entity-link">StorefrontService</a>
             </li>
             <li class="link">
@@ -732,9 +686,6 @@ let tp = lithtml.html(`<nav>
                     </li>
                     <li class="link">
                         <a href="pipes/CartPricePipe.html" data-type="entity-link">CartPricePipe</a>
-                    </li>
-                    <li class="link">
-                        <a href="pipes/FormatCurrencyPipe.html" data-type="entity-link">FormatCurrencyPipe</a>
                     </li>
                     <li class="link">
                         <a href="pipes/LocalCurrencyPipe.html" data-type="entity-link">LocalCurrencyPipe</a>
@@ -764,6 +715,34 @@ let tp = lithtml.html(`<nav>
             <span class="icon ion-ios-arrow-down"></span>
         </div>
         <ul class="links collapse" ${ isNormalMode ? 'id="directives-links"' : 'id="xs-directives-links"' }>
+                    <li class="link">
+                        <a href="directives/AutoFocusDirective.html" data-type="entity-link">AutoFocusDirective</a>
+                    </li>
+        </ul>
+    </li>
+    <li class="chapter">
+        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#guards-links"' :
+            'data-target="#xs-guards-links"' }>
+            <span class="icon ion-ios-lock"></span>
+            <span>Guards</span>
+            <span class="icon ion-ios-arrow-down"></span>
+        </div>
+        <ul class="links collapse" ${ isNormalMode ? 'id="guards-links"' : 'id="xs-guards-links"' }>
+            <li class="link">
+                <a href="guards/AboGuard.html" data-type="entity-link">AboGuard</a>
+            </li>
+            <li class="link">
+                <a href="guards/AuthGuard.html" data-type="entity-link">AuthGuard</a>
+            </li>
+            <li class="link">
+                <a href="guards/ConfigureGuard.html" data-type="entity-link">ConfigureGuard</a>
+            </li>
+            <li class="link">
+                <a href="guards/ConstraintRuleGuard.html" data-type="entity-link">ConstraintRuleGuard</a>
+            </li>
+            <li class="link">
+                <a href="guards/RouteGuard.html" data-type="entity-link">RouteGuard</a>
+            </li>
         </ul>
     </li>
     <li class="chapter">
@@ -790,6 +769,9 @@ let tp = lithtml.html(`<nav>
                 <a href="interfaces/Attachment.html" data-type="entity-link">Attachment</a>
             </li>
             <li class="link">
+                <a href="interfaces/Card.html" data-type="entity-link">Card</a>
+            </li>
+            <li class="link">
                 <a href="interfaces/CartProductForm.html" data-type="entity-link">CartProductForm</a>
             </li>
             <li class="link">
@@ -800,6 +782,12 @@ let tp = lithtml.html(`<nav>
             </li>
             <li class="link">
                 <a href="interfaces/MailContent.html" data-type="entity-link">MailContent</a>
+            </li>
+            <li class="link">
+                <a href="interfaces/Params.html" data-type="entity-link">Params</a>
+            </li>
+            <li class="link">
+                <a href="interfaces/PasswordForm.html" data-type="entity-link">PasswordForm</a>
             </li>
             <li class="link">
                 <a href="interfaces/PicklistValue.html" data-type="entity-link">PicklistValue</a>
@@ -814,7 +802,13 @@ let tp = lithtml.html(`<nav>
                 <a href="interfaces/ProductAttributeFormOld.html" data-type="entity-link">ProductAttributeFormOld</a>
             </li>
             <li class="link">
+                <a href="interfaces/ProductDetailTab.html" data-type="entity-link">ProductDetailTab</a>
+            </li>
+            <li class="link">
                 <a href="interfaces/ProductOptionForm.html" data-type="entity-link">ProductOptionForm</a>
+            </li>
+            <li class="link">
+                <a href="interfaces/ProductQuantityMap.html" data-type="entity-link">ProductQuantityMap</a>
             </li>
             <li class="link">
                 <a href="interfaces/RenewForm.html" data-type="entity-link">RenewForm</a>
@@ -824,6 +818,12 @@ let tp = lithtml.html(`<nav>
             </li>
             <li class="link">
                 <a href="interfaces/SelectedOption.html" data-type="entity-link">SelectedOption</a>
+            </li>
+            <li class="link">
+                <a href="interfaces/SummaryState.html" data-type="entity-link">SummaryState</a>
+            </li>
+            <li class="link">
+                <a href="interfaces/SummaryState-1.html" data-type="entity-link">SummaryState</a>
             </li>
             <li class="link">
                 <a href="interfaces/TermOption.html" data-type="entity-link">TermOption</a>

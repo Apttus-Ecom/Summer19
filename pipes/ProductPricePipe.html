@@ -67,12 +67,14 @@
             <p class="comment">
                 <p>Provides pricing for a given product. Used as a pipe wrapper around PriceService.getProductPrice(...)
 NOTE: It is recommend you use the <a href="../components/PriceComponent.html">PriceComponent</a> component when rendering price as it has been optimized for change detection.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-html"> &lt;!-- The totalPrice attribute on the returned price instance will be the number value of the price (i.e. 9.99) --&gt;
- &lt;span&gt;{{(product | ProductPricePipe:1:productAttributeValueList:productOptionList | async)?.totalPrice}}&lt;span&gt;
+<h3 id="example">Example:</h3>
+<p>```html
+ <!-- The totalPrice attribute on the returned price instance will be the number value of the price (i.e. 9.99) -->
+ <span>{{(product | ProductPricePipe:1:productAttributeValueList:productOptionList | async)?.totalPrice}}<span></p>
+ <!-- To get the formatted price (i.e. $9.99), use netPrice$ instead of totalPrice property and pass it through the async pipe again -->
+<p> <span>{{(product | ProductPricePipe:1:productAttributeValueList:productOptionList | async)?.netPrice$ | async}}<span>
+ ```</p>
 
- &lt;!-- To get the formatted price (i.e. $9.99), use netPrice$ instead of totalPrice property and pass it through the async pipe again --&gt;
- &lt;span&gt;{{(product | ProductPricePipe:1:productAttributeValueList:productOptionList | async)?.netPrice$ | async}}&lt;span&gt;</code></pre></div>
             </p>
 
 
@@ -90,138 +92,137 @@ NOTE: It is recommend you use the <a href="../components/PriceComponent.html">Pr
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="transform"></a>
-                        <span class="name">
-                            <b>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transform"></a>
+                    <span class="name">
+                        <b>
                             transform
-                            </b>
-                            <a href="#transform"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>transform(value: <a href="../classes/Product.html">Product</a>, quantity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, attributes?: <a href="../classes/ProductAttributeValue.html">Array<ProductAttributeValue></a>, options?: <a href="../interfaces/ProductOptionForm.html">Array<ProductOptionForm></a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#transform"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>transform(value: <a href="../classes/Product.html">Product</a>, quantity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, attributes?: Array<ProductAttributeValue>, options?: <a href="../interfaces/ProductOptionForm.html">Array<ProductOptionForm></a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>value</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the product record to retrieve the price for</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>quantity</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>1</code>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the total number of products</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>attributes</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ProductAttributeValue.html" target="_self" >Array&lt;ProductAttributeValue&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>any associated attribute values to roll into the price</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>options</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/ProductOptionForm.html" target="_self" >Array&lt;ProductOptionForm&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                        <p>the product record to retrieve the price for</p>
 
-                                                        <td>
-                                                                <code><p>any associated options to roll into the price</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Price.html" target="_self" >Observable&lt;Price&gt;</a></code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>quantity</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>1</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the total number of products</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>attributes</td>
+                                    <td>
+                                            <code>Array&lt;ProductAttributeValue&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>any associated attribute values to roll into the price</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                                <code><a href="../interfaces/ProductOptionForm.html" target="_self" >Array&lt;ProductOptionForm&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>any associated options to roll into the price</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Price.html" target="_self" >Observable&lt;Price&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
 
     </div>
 

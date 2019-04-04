@@ -57,6 +57,20 @@
             <code>projects/apttus/ecommerce/src/lib/modules/catalog/services/product-attribute-group.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>ProductAttributeGroupService contains method to get the list of product attribute groups for the list of products/product Ids passed.</p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>AObjectService</code>
+            </p>
 
 
             <section>
@@ -108,79 +122,102 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getProductAttributeGroups"></a>
-                        <span class="name">
-                            <b>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductAttributeGroups"></a>
+                    <span class="name">
+                        <b>
                             getProductAttributeGroups
-                            </b>
-                            <a href="#getProductAttributeGroups"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#getProductAttributeGroups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>getProductAttributeGroups(productList: <a href="../classes/Product.html">Array<string | Product></a>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method returns an observable containing array of product attribute groups for the list of products/product Ids passed.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { ProductAttributeGroupService, Product, ProductAttributeGroup } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       attributeGroupList: Array&lt;ProductAttributeGroup&gt;;
+       attributeGroupList$: Observable&lt;Array&lt;ProductAttributeGroup&gt;&gt;;
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>productList</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Product.html" target="_self" >Array&lt;string | Product&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>[]</code>
-                                                        </td>
+       constructor(private productAttributeGroupService: ProductAttributeGroupService){}
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/ProductAttributeGroup.html" target="_self" >Observable&lt;Array&lt;ProductAttributeGroup&gt;&gt;</a></code>
+       getProductAttributeGroups(productList: Array&lt;string | Product&gt;){
+            this.productAttributeGroupService.getProductAttributeGroups(productList).subscribe(attributeGroups =&gt; this.attributeGroupList = attributeGroups);
+            // or
+            this.attributeGroupList$ = this.productAttributeGroupService.getProductAttributeGroups(productList);
+       }
+  }
+ ```</code></pre></div></div>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productList</td>
+                                    <td>
+                                                <code><a href="../classes/Product.html" target="_self" >Array&lt;string | Product&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>[]</code>
+                                    </td>
+
+                                    <td>
+                                        <p>An array of products or a string of product Ids for which the product attribute group information needs to be acquired.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;ProductAttributeGroup&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable containing array of product attribute groups.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -194,21 +231,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Protected</span>
-                            productAttributeService
-                            </b>
+                            productAttributeService</b>
                             <a href="#productAttributeService"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>productAttributeService:     <code><a href="../injectables/ProductAttributeService.html" target="_self" >ProductAttributeService</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../injectables/ProductAttributeService.html" target="_self" >ProductAttributeService</a></code>
+                            <i>Type : </i>        <code><a href="../injectables/ProductAttributeService.html" target="_self" >ProductAttributeService</a></code>
 
                         </td>
                     </tr>
@@ -228,16 +258,9 @@
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type
-                            </b>
+                            type</b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>

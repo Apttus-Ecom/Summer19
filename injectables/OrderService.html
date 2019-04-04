@@ -65,6 +65,13 @@
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../injectables/OrderService.html" target="_self" >OrderServiceCore</a></code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -117,647 +124,651 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="convertCartToOrder"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertCartToOrder"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             convertCartToOrder
-                            </b>
-                            <a href="#convertCartToOrder"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>convertCartToOrder(order: <a href="../classes/Order.html">Order</a>, primaryContact: <a href="../classes/Contact.html">Contact</a>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#convertCartToOrder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>convertCartToOrder(order: <a href="../classes/Order.html">Order</a>, primaryContact: <a href="../classes/Contact.html">Contact</a>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method converts the current cart into an order record. Will set the cart status to &#39;Finalized&#39;.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { OrderService, Order, Contact, Cart, ContactService } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method converts the current cart into an order record. Will set the cart status to &#39;Finalized&#39;.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { OrderService, Order, Contact, Cart, ContactService } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       order: Order;
 
-      export class MyComponent implements OnInit{
-           order: Order;
+       constructor(private orderService: OrderService, private contactService: ContactService){}
 
-           constructor(private orderService: OrderService, private contactService: ContactService){}
+       convertCartToOrder(){
+           // Use the contact record for the current user
+           this.contactService.getMyContact().take(1).subscribe(contact =&gt; {
+                const order: Order = new Order();
+                order.Name = &#39;Sample Order&#39;;
+                this.orderService.convertCartToOrder(order, contact).subscribe(o =&gt; this.order = order);
+           });
+       }
+  }
+ ```</code></pre></div></div>
 
-           convertCartToOrder(){
-               // Use the contact record for the current user
-               this.contactService.getMyContact().take(1).subscribe(contact =&gt; {
-                    const order: Order = new Order();
-                    order.Name = &#39;Sample Order&#39;;
-                    this.orderService.convertCartToOrder(order, contact).subscribe(o =&gt; this.order = order);
-               });
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>order</td>
+                                    <td>
+                                                <code><a href="../classes/Order.html" target="_self" >Order</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>order</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Order.html" target="_self" >Order</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>new Order()</code>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>an optional instance of an order to predefine values on the final order record that gets created</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>primaryContact</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                        <code>new Order()</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the primary contact to assign to the order</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>cart</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                        <p>an optional instance of an order to predefine values on the final order record that gets created</p>
 
-                                                        <td>
-                                                                <code><p>the cart record to convert. Will use the current active cart if left undefined.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Order.html" target="_self" >Observable&lt;Order&gt;</a></code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>primaryContact</td>
+                                    <td>
+                                                <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>An observable of the order instance that gets created</p>
+                                    <td>
+                                        No
+                                    </td>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="convertOrderToCart"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>the primary contact to assign to the order</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>cart</td>
+                                    <td>
+                                                <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>the cart record to convert. Will use the current active cart if left undefined.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Order.html" target="_self" >Observable&lt;Order&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of the order instance that gets created</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertOrderToCart"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             convertOrderToCart
-                            </b>
-                            <a href="#convertOrderToCart"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>convertOrderToCart(order: <a href="../classes/Order.html">Order</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#convertOrderToCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>convertOrderToCart(order: <a href="../classes/Order.html">Order</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Creates a cart from an order object.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { OrderService, Order, Cart } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates a cart from an order object.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { OrderService, Order, Cart } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       cart: Cart;
 
-      export class MyComponent implements OnInit{
-           cart: Cart;
+       constructor(private orderService: OrderService){}
 
-           constructor(private orderService: OrderService){}
+       convertOrderToCart(order: Order){
+           this.orderService.convertOrderToCart(order).subscribe(c =&gt; this.cart = c);
+       }
+  }
+ ```</code></pre></div></div>
 
-           convertOrderToCart(order: Order){
-               this.orderService.convertOrderToCart(order).subscribe(c =&gt; this.cart = c);
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>order</td>
+                                    <td>
+                                                <code><a href="../classes/Order.html" target="_self" >Order</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>order</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Order.html" target="_self" >Order</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the order object to convert to a cart</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Cart.html" target="_self" >Observable&lt;Cart&gt;</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable of type cart</p>
+                                    <td>
+                                        <p>the order object to convert to a cart</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getMyOrders"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Cart.html" target="_self" >Observable&lt;Cart&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable of type cart</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMyOrders"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getMyOrders
-                            </b>
-                            <a href="#getMyOrders"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getMyOrders(accountId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, days?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC")</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getMyOrders"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getMyOrders(accountId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, days?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC")</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>method returns a list of orders for the current user</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { OrderService, Order } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>method returns a list of orders for the current user</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { OrderService, Order } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       orderList: Array&lt;Order&gt;;
+       orderList$: Observable&lt;Array&lt;Order&gt;&gt;;
 
-      export class MyComponent implements OnInit{
-           orderList: Array&lt;Order&gt;;
-           orderList$: Observable&lt;Array&lt;Order&gt;&gt;;
+       constructor(private orderService: OrderService){}
 
-           constructor(private orderService: OrderService){}
+       ngOnInit(){
+            this.orderService.getMyOrders().subscribe(o =&gt; this.orderList = o);
+            // or
+            this.orderList$ = this.orderService.getMyOrders();
+       }
+  }
+ ```</code></pre></div></div>
 
-           ngOnInit(){
-                this.orderService.getMyOrders().subscribe(o =&gt; this.orderList = o);
-                // or
-                this.orderList$ = this.orderService.getMyOrders();
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>accountId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>accountId</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the account id to filter the order results by</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>days</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                        <code>null</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the number of days into the past with which to retrieve orders. If left empty, will retrieve all orders</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>limit</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>10</code>
-                                                        </td>
+                                    <td>
+                                        <p>the account id to filter the order results by</p>
 
-                                                        <td>
-                                                                <code><p>the total number of records to return</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>pageNumber</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>0</code>
-                                                        </td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>days</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
-                                                        <td>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>orderBy</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>&#x27;CreatedDate&#x27;</code>
-                                                        </td>
+                                    <td>
+                                        Yes
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the field by which to order the records</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>orderDirection</td>
-                                                        <td>
-                                                                    <code>&quot;ASC&quot; | &quot;DESC&quot;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>&#x27;DESC&#x27;</code>
-                                                        </td>
+                                    <td>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the direction in which to sort the records</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Order.html" target="_self" >Observable&lt;Array&lt;Order&gt;&gt;</a></code>
+                                    <td>
+                                        <p>the number of days into the past with which to retrieve orders. If left empty, will retrieve all orders</p>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable array of orders</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>limit</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getOrderByName"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>10</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the total number of records to return</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>pageNumber</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>0</code>
+                                    </td>
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>orderBy</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;CreatedDate&#x27;</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the field by which to order the records</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>orderDirection</td>
+                                    <td>
+                                            <code>&quot;ASC&quot; | &quot;DESC&quot;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;DESC&#x27;</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the direction in which to sort the records</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Order.html" target="_self" >Observable&lt;Array&lt;Order&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable array of orders</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOrderByName"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getOrderByName
-                            </b>
-                            <a href="#getOrderByName"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getOrderByName(orderName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getOrderByName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getOrderByName(orderName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method retrieves a specific order instance by a given name</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { OrderService, Order } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method retrieves a specific order instance by a given name</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { OrderService, Order } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       order: Order;
+       order$: Observable&lt;Order&gt;;
 
-      export class MyComponent implements OnInit{
-           order: Order;
-           order$: Observable&lt;Order&gt;;
+       constructor(private orderService: OrderService){}
 
-           constructor(private orderService: OrderService){}
+       getOrderByName(name: string){
+            this.orderService.getOrderByName(name).subscribe(o =&gt; this.order = o);
+            // or
+            this.order$ = this.orderService.getOrderByName(name);
+       }
+  }
+ ```</code></pre></div></div>
 
-           getOrderByName(name: string){
-                this.orderService.getOrderByName(name).subscribe(o =&gt; this.order = o);
-                // or
-                this.order$ = this.orderService.getOrderByName(name);
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>orderName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>orderName</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the name of the order to retrieve</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Order.html" target="_self" >Observable&lt;Order&gt;</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable of an order instance specified by the name argument</p>
+                                    <td>
+                                        <p>the name of the order to retrieve</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="globalFilter"></a>
-                        <span class="name">
-                            <b>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Order.html" target="_self" >Observable&lt;Order&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable of an order instance specified by the name argument</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="globalFilter"></a>
+                    <span class="name">
+                        <b>
                             globalFilter
-                            </b>
-                            <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>globalFilter()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>the global filter for orders returned by this service. Will only return orders that the current user owns.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>the global filter for orders returned by this service. Will only return orders that the current user owns.</p>
 </div>
 
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;Array&lt;AFilter&gt;&gt;</code>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;AFilter&gt;&gt;</code>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>a string observable with the filter query</p>
+                    </div>
+                    <div class="io-description">
+                        <p>a string observable with the filter query</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="mergeCartItems"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mergeCartItems"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             mergeCartItems
-                            </b>
-                            <a href="#mergeCartItems"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>mergeCartItems(orderItemList: <a href="../classes/OrderLineItem.html">Array<OrderLineItem></a>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#mergeCartItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mergeCartItems(orderItemList: Array<OrderLineItem>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method is used for adding an existing order to a cart (i.e. reorder). If the items already exist in the cart, it will increment the quantity.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { OrderService, Order, Cart } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method is used for adding an existing order to a cart (i.e. reorder). If the items already exist in the cart, it will increment the quantity.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { OrderService, Order, Cart } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       constructor(private orderService: OrderService){}
 
-      export class MyComponent implements OnInit{
-           constructor(private orderService: OrderService){}
+       addOrderItemsToCart(order: Order){
+           this.orderService.mergeCartItems(order.OrderLineItems)
+            .subscribe(
+                () =&gt; {...},
+                err =&gt; {...}
+            );
+       }
+  }
+ ```</code></pre></div></div>
 
-           addOrderItemsToCart(order: Order){
-               this.orderService.mergeCartItems(order.OrderLineItems)
-                .subscribe(
-                    () =&gt; {...},
-                    err =&gt; {...}
-                );
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>orderItemList</td>
+                                    <td>
+                                            <code>Array&lt;OrderLineItem&gt;</code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>orderItemList</td>
-                                                        <td>
-                                                                    <code><a href="../classes/OrderLineItem.html" target="_self" >Array&lt;OrderLineItem&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>a list of order items to merge</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>cart</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
 
-                                                        <td>
-                                                                <code><p>the cart record to add the items to. If left undefined or null, will use the current cart.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
+                                    <td>
+                                        <p>a list of order items to merge</p>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>a void observable when the operation completes</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>cart</td>
+                                    <td>
+                                                <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                    </td>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>the cart record to add the items to. If left undefined or null, will use the current cart.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>a void observable when the operation completes</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
 
     </div>
 

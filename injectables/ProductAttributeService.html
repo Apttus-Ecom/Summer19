@@ -65,6 +65,13 @@
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../injectables/ProductAttributeService.html" target="_self" >ProductAttributeServiceCore</a></code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -120,289 +127,291 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getAttributeValueDefaults"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAttributeValueDefaults"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getAttributeValueDefaults
-                            </b>
-                            <a href="#getAttributeValueDefaults"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getAttributeValueDefaults(productAttributeList: <a href="../classes/ProductAttribute.html">Array<ProductAttribute></a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getAttributeValueDefaults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAttributeValueDefaults(productAttributeList: Array<ProductAttribute>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method returns an array of product attribute forms with default attribute values for a given list of products.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { ProductAttributeService, ProductAttribute, Product } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method returns an array of product attribute forms with default attribute values for a given list of products.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { ProductAttributeService, ProductAttribute, Product } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       attributeFormList: Array&lt;ProductAttributeForm&gt;;
+       attributeFormList$: Observable&lt;Array&lt;ProductAttributeForm&gt;&gt;;
 
-      export class MyComponent implements OnInit{
-           attributeFormList: Array&lt;ProductAttributeForm&gt;;
-           attributeFormList$: Observable&lt;Array&lt;ProductAttributeForm&gt;&gt;;
+       constructor(private productAttributeService: ProductAttributeService){}
 
-           constructor(private productAttributeService: ProductAttributeService){}
+       getAttributesForProduct(product: Product){
+            this.productAttributeService.getProductAttributeDefaults(productList).subscribe(attributeForms =&gt; this.attributeFormList = attributeForms);
+            // or
+            this.attributeFormList$ = this.productAttributeService.getProductAttributeDefaults(productList);
+       }
+  }
+ ```</code></pre></div></div>
 
-           getAttributesForProduct(product: Product){
-                this.productAttributeService.getProductAttributeDefaults(productList).subscribe(attributeForms =&gt; this.attributeFormList = attributeForms);
-                // or
-                this.attributeFormList$ = this.productAttributeService.getProductAttributeDefaults(productList);
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productAttributeList</td>
+                                    <td>
+                                            <code>Array&lt;ProductAttribute&gt;</code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>productAttributeList</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ProductAttribute.html" target="_self" >Array&lt;ProductAttribute&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/ProductAttributeValue.html" target="_self" >ProductAttributeValue</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>An array of product attribute forms in an observable.</p>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ProductAttributeValue.html" target="_self" >ProductAttributeValue</a></code>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getProductAttributes"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                    </div>
+                    <div class="io-description">
+                        <p>An array of product attribute forms in an observable.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductAttributes"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getProductAttributes
-                            </b>
-                            <a href="#getProductAttributes"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getProductAttributes(product: <a href="../classes/Product.html">Product</a>, attributeGroupName?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getProductAttributes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getProductAttributes(product: <a href="../classes/Product.html">Product</a>, attributeGroupName?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method gets a list of product attributes for a given product. Can further filter the list by a group.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { ProductAttributeService, ProductAttribute, Product } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method gets a list of product attributes for a given product. Can further filter the list by a group.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { ProductAttributeService, ProductAttribute, Product } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       productAttributeList: Array&lt;ProductAttribute&gt;;
+       productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
 
-      export class MyComponent implements OnInit{
-           productAttributeList: Array&lt;ProductAttribute&gt;;
-           productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
+       constructor(private productAttributeService: ProductAttributeService){}
 
-           constructor(private productAttributeService: ProductAttributeService){}
+       getAttributesForProduct(product: Product){
+            this.productAttributeService.getProductAttributes(product).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
+            // or
+            this.productAttributeList$ = this.productAttributeService.getProductAttributes(product);
+       }
+  }
+ ```</code></pre></div></div>
 
-           getAttributesForProduct(product: Product){
-                this.productAttributeService.getProductAttributes(product).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
-                // or
-                this.productAttributeList$ = this.productAttributeService.getProductAttributes(product);
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>product</td>
+                                    <td>
+                                                <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>product</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the instance of the product for which to get the attributes for</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>attributeGroupName</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
 
-                                                        <td>
-                                                                <code><p>an optional argument of a specific group name with which to get attributes for</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/ProductAttribute.html" target="_self" >Observable&lt;Array&lt;ProductAttribute&gt;&gt;</a></code>
+                                    <td>
+                                        <p>the instance of the product for which to get the attributes for</p>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="setDescribeInformationOnProductAttributes"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>attributeGroupName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>an optional argument of a specific group name with which to get attributes for</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;ProductAttribute&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDescribeInformationOnProductAttributes"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             setDescribeInformationOnProductAttributes
-                            </b>
-                            <a href="#setDescribeInformationOnProductAttributes"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>setDescribeInformationOnProductAttributes(attributes: <a href="../classes/ProductAttribute.html">Array<ProductAttribute></a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#setDescribeInformationOnProductAttributes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setDescribeInformationOnProductAttributes(attributes: Array<ProductAttribute>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method returns an array of product attributes.
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method returns an array of product attributes.
 Adds an additional property to all attributes returned called &#39;_.describe&#39;. This property contains metadata information about the attribute.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { ProductAttributeService, ProductAttribute, Product } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { ProductAttributeService, ProductAttribute, Product } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       productAttributeList: Array&lt;ProductAttribute&gt;;
+       productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
 
-      export class MyComponent implements OnInit{
-           productAttributeList: Array&lt;ProductAttribute&gt;;
-           productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
+       constructor(private productAttributeService: ProductAttributeService){}
 
-           constructor(private productAttributeService: ProductAttributeService){}
+       setDescribeInformationOnProductAttributes(attributes: Array&lt;ProductAttribute&gt;){
+            this.productAttributeService.setDescribeInformationOnProductAttributes(attributes).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
+            // or
+            this.productAttributeList$ = this.productAttributeService.setDescribeInformationOnProductAttributes(attributes);
+       }
+  }
+ ```</code></pre></div></div>
 
-           setDescribeInformationOnProductAttributes(attributes: Array&lt;ProductAttribute&gt;){
-                this.productAttributeService.setDescribeInformationOnProductAttributes(attributes).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
-                // or
-                this.productAttributeList$ = this.productAttributeService.setDescribeInformationOnProductAttributes(attributes);
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>attributes</td>
+                                    <td>
+                                            <code>Array&lt;ProductAttribute&gt;</code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>attributes</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ProductAttribute.html" target="_self" >Array&lt;ProductAttribute&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>An array of products attributes for which &#39;_describe&#39; property with metadata information needs to be added.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/ProductAttribute.html" target="_self" >Observable&lt;Array&lt;ProductAttribute&gt;&gt;</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>An array of product attributes with metadata information for each attribute.</p>
+                                    <td>
+                                        <p>An array of products attributes for which &#39;_describe&#39; property with metadata information needs to be added.</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;ProductAttribute&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An array of product attributes with metadata information for each attribute.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -415,16 +424,9 @@ Adds an additional property to all attributes returned called &#39;_.describe&#3
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type
-                            </b>
+                            type</b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>

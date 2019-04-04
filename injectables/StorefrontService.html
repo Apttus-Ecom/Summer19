@@ -65,6 +65,13 @@
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>AObjectService</code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -112,69 +119,69 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getStorefront"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStorefront"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getStorefront
-                            </b>
-                            <a href="#getStorefront"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getStorefront()</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getStorefront"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getStorefront()</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Retrieves the storefront record</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { StorefrontService, Storefront } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the storefront record</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { StorefrontService, Storefront } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       storefront: Storefront;
+       storefront$: Observable&lt;Storefront&gt;;
 
-      export class MyComponent implements OnInit{
-           storefront: Storefront;
-           storefront$: Observable&lt;Storefront&gt;;
+       constructor(private storefrontService: StorefrontService){}
 
-           constructor(private storefrontService: StorefrontService){}
+       ngOnInit(){
+           this.storefrontService.getStorefront().subscribe(s =&gt; this.storefront = s);
+           // or
+           this.storefront$ = this.storefrontService.getStorefront();
+       }
+  }
+ ```</code></pre></div></div>
 
-           ngOnInit(){
-               this.storefrontService.getStorefront().subscribe(s =&gt; this.storefront = s);
-               // or
-               this.storefront$ = this.storefrontService.getStorefront();
-           }
-      }</code></pre></div></div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Storefront.html" target="_self" >Observable&lt;Storefront&gt;</a></code>
 
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Storefront.html" target="_self" >Observable&lt;Storefront&gt;</a></code>
+                    </div>
+                    <div class="io-description">
+                        <p>an Observable containing the storefront record</p>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an Observable containing the storefront record</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -187,16 +194,9 @@
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type
-                            </b>
+                            type</b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>

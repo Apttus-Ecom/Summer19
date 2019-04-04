@@ -65,6 +65,13 @@
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>AObjectService</code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -158,423 +165,497 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getProductOptionForms"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductOptionForms"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getProductOptionForms
-                            </b>
-                            <a href="#getProductOptionForms"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getProductOptionForms(item: <a href="../classes/OrderLineItem.html">CartItem | OrderLineItem</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getProductOptionForms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getProductOptionForms(item: CartItem | OrderLineItem)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method gets a list of product option forms for a given cart line item or order line item.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { ProductOptionService, ProductOptionForm } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       optionFormList: Array&lt;ProductOptionForm&gt;;
+       optionFormList$: Observable&lt;Array&lt;ProductOptionForm&gt;&gt;;
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>item</td>
-                                                        <td>
-                                                                    <code><a href="../classes/OrderLineItem.html" target="_self" >CartItem | OrderLineItem</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+       constructor(private productOptionService: ProductOptionService){}
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../interfaces/ProductOptionForm.html" target="_self" >Observable&lt;Array&lt;ProductOptionForm&gt;&gt;</a></code>
+       getProductOptionForms(item: CartItem | OrderLineItem){
+            this.productOptionService.getProductOptionForms(item).subscribe(o =&gt; this.optionFormList = o);
+            // or
+            this.optionFormList$ = this.productOptionService.getProductOptionForms(item);
+       }
+  }
+ ```</code></pre></div></div>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getProductOptions"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                            <code>CartItem | OrderLineItem</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>an instance of cart line item or order line item.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ProductOptionForm.html" target="_self" >Observable&lt;Array&lt;ProductOptionForm&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable array of product option form for the given line item.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductOptions"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getProductOptions
-                            </b>
-                            <a href="#getProductOptions"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getProductOptions(productId: string | Array<string>, groupName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, pricing: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getProductOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getProductOptions(productId: string | Array<string>, groupName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, pricing: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method gets a list of product option components for a given product</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { ProductOptionService, ProductOptionComponent } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method gets a list of product option components for a given product</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { ProductOptionService, ProductOptionComponent } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       optionComponentList: Array&lt;ProductOptionComponent&gt;;
+       optionComponentList$: Observable&lt;Array&lt;ProductOptionComponent&gt;&gt;;
 
-      export class MyComponent implements OnInit{
-           optionComponentList: Array&lt;ProductOptionComponent&gt;;
-           optionComponentList$: Observable&lt;Array&lt;ProductOptionComponent&gt;&gt;;
+       constructor(private productOptionService: ProductOptionService){}
 
-           constructor(private productOptionService: ProductOptionService){}
+       getProductOptions(productCode: string){
+            this.productOptionService.getProductOptions(productCode).subscribe(o =&gt; this.optionComponentList = o);
+            // or
+            this.optionComponentList$ = this.productOptionService.getProductOptions(productCode);
+       }
+  }
+ ```</code></pre></div></div>
 
-           getProductOptions(productCode: string){
-                this.productOptionService.getProductOptions(productCode).subscribe(o =&gt; this.optionComponentList = o);
-                // or
-                this.optionComponentList$ = this.productOptionService.getProductOptions(productCode);
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productId</td>
+                                    <td>
+                                            <code>string | Array&lt;string&gt;</code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>productId</td>
-                                                        <td>
-                                                                    <code>string | Array&lt;string&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the product id of the product with which to get the options for</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>groupName</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
+                                    <td>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the option group to filter the results by</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>pricing</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>false</code>
-                                                        </td>
+                                    <td>
+                                        <p>the product id of the product with which to get the options for</p>
 
-                                                        <td>
-                                                                <code><p>boolean option to return pricing with the options (performs an extra callout, so may be slightly slower).</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/ProductOptionComponent.html" target="_self" >Observable&lt;Array&lt;ProductOptionComponent&gt;&gt;</a></code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>groupName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable array of product options components for the given product.</p>
+                                    <td>
+                                        No
+                                    </td>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getProductOptionTree"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the option group to filter the results by</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>pricing</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>boolean option to return pricing with the options (performs an extra callout, so may be slightly slower).</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;ProductOptionComponent&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable array of product options components for the given product.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductOptionTree"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getProductOptionTree
-                            </b>
-                            <a href="#getProductOptionTree"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getProductOptionTree(productIdList: Array<string>, hideEmpty: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getProductOptionTree"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getProductOptionTree(productIdList: Array<string>, hideEmpty: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method gets a list of product option group for a given list of product Ids</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { ProductOptionService, ProductOptionGroup } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       optionGroupList: Array&lt;ProductOptionGroup&gt;;
+       optionGroupList$: Observable&lt;Array&lt;ProductOptionGroup&gt;&gt;;
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>productIdList</td>
-                                                        <td>
-                                                                    <code>Array&lt;string&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+       constructor(private productOptionService: ProductOptionService){}
 
-                                                </tr>
-                                                <tr>
-                                                        <td>hideEmpty</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>false</code>
-                                                        </td>
+       getProductOptionTree(productIdList: string, hideEmpty: boolean){
+            this.productOptionService.getProductOptionTree(productIdList,hideEmpty).subscribe(o =&gt; this.optionGroupList = o);
+            // or
+            this.optionGroupList$ = this.productOptionService.getProductOptionTree(productIdList,hideEmpty);
+       }
+  }
+ ```</code></pre></div></div>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/ProductOptionGroup.html" target="_self" >Observable&lt;Array&lt;ProductOptionGroup&gt;&gt;</a></code>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productIdList</td>
+                                    <td>
+                                            <code>Array&lt;string&gt;</code>
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="globalFilter"></a>
-                        <span class="name">
-                            <b>
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>list of string values representing the product Ids.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>hideEmpty</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>boolean value to show/hide empty attribute groups</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;ProductOptionGroup&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable array of product option group for the given list of products.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="globalFilter"></a>
+                    <span class="name">
+                        <b>
                             globalFilter
-                            </b>
-                            <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#globalFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>globalFilter()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;Array&lt;AFilter&gt;&gt;</code>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;AFilter&gt;&gt;</code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="globalJoin"></a>
-                        <span class="name">
-                            <b>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="globalJoin"></a>
+                    <span class="name">
+                        <b>
                             globalJoin
-                            </b>
-                            <a href="#globalJoin"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#globalJoin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>globalJoin()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;Array&lt;AJoin&gt;&gt;</code>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;AJoin&gt;&gt;</code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="groupFormItems"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupFormItems"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             groupFormItems
-                            </b>
-                            <a href="#groupFormItems"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>groupFormItems(items: <a href="../interfaces/ProductOptionForm.html">Array<ProductOptionForm></a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#groupFormItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>groupFormItems(items: <a href="../interfaces/ProductOptionForm.html">Array<ProductOptionForm></a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method groups the given list of product option forms based on the option groups they belong to.
+It creates an object with option group names as key with the list of option form components that belong to these groups.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { ProductOptionService, ProductOptionForm } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       groupedFormItems: Object;
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>items</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/ProductOptionForm.html" target="_self" >Array&lt;ProductOptionForm&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+       constructor(private productOptionService: ProductOptionService){}
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
+       groupFormItems(items: Array&lt;ProductOptionForm&gt;){
+            this.groupedFormItems = this.productOptionService.groupFormItems(items);
+       }
+  }
+ ```</code></pre></div></div>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>items</td>
+                                    <td>
+                                                <code><a href="../interfaces/ProductOptionForm.html" target="_self" >Array&lt;ProductOptionForm&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>list of product option forms to group by.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an Object with the list of product option forms grouped by respective option group names.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -588,21 +669,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Protected</span>
-                            attributeGroupService
-                            </b>
+                            attributeGroupService</b>
                             <a href="#attributeGroupService"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>attributeGroupService:     <code><a href="../injectables/ProductAttributeGroupService.html" target="_self" >ProductAttributeGroupService</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../injectables/ProductAttributeGroupService.html" target="_self" >ProductAttributeGroupService</a></code>
+                            <i>Type : </i>        <code><a href="../injectables/ProductAttributeGroupService.html" target="_self" >ProductAttributeGroupService</a></code>
 
                         </td>
                     </tr>
@@ -623,21 +697,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Protected</span>
-                            attributeService
-                            </b>
+                            attributeService</b>
                             <a href="#attributeService"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>attributeService:     <code><a href="../injectables/ProductAttributeService.html" target="_self" >ProductAttributeService</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../injectables/ProductAttributeService.html" target="_self" >ProductAttributeService</a></code>
+                            <i>Type : </i>        <code><a href="../injectables/ProductAttributeService.html" target="_self" >ProductAttributeService</a></code>
 
                         </td>
                     </tr>
@@ -658,21 +725,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Protected</span>
-                            cartItemService
-                            </b>
+                            cartItemService</b>
                             <a href="#cartItemService"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>cartItemService:     <code><a href="../injectables/CartItemService.html" target="_self" >CartItemService</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../injectables/CartItemService.html" target="_self" >CartItemService</a></code>
+                            <i>Type : </i>        <code><a href="../injectables/CartItemService.html" target="_self" >CartItemService</a></code>
 
                         </td>
                     </tr>
@@ -693,21 +753,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Protected</span>
-                            categoryService
-                            </b>
+                            categoryService</b>
                             <a href="#categoryService"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>categoryService:     <code><a href="../injectables/CategoryService.html" target="_self" >CategoryService</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../injectables/CategoryService.html" target="_self" >CategoryService</a></code>
+                            <i>Type : </i>        <code><a href="../injectables/CategoryService.html" target="_self" >CategoryService</a></code>
 
                         </td>
                     </tr>
@@ -728,21 +781,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Protected</span>
-                            orderLineItemService
-                            </b>
+                            orderLineItemService</b>
                             <a href="#orderLineItemService"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>orderLineItemService:     <code><a href="../injectables/OrderLineItemService.html" target="_self" >OrderLineItemService</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../injectables/OrderLineItemService.html" target="_self" >OrderLineItemService</a></code>
+                            <i>Type : </i>        <code><a href="../injectables/OrderLineItemService.html" target="_self" >OrderLineItemService</a></code>
 
                         </td>
                     </tr>
@@ -763,16 +809,9 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Protected</span>
-                            pliService
-                            </b>
+                            pliService</b>
                             <a href="#pliService"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>pliService:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -792,21 +831,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Protected</span>
-                            productService
-                            </b>
+                            productService</b>
                             <a href="#productService"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>productService:     <code><a href="../injectables/ProductService.html" target="_self" >ProductService</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../injectables/ProductService.html" target="_self" >ProductService</a></code>
+                            <i>Type : </i>        <code><a href="../injectables/ProductService.html" target="_self" >ProductService</a></code>
 
                         </td>
                     </tr>
@@ -826,16 +858,9 @@
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type
-                            </b>
+                            type</b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>

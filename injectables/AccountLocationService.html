@@ -65,6 +65,13 @@
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>AObjectService</code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -120,247 +127,249 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getAccountLocations"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAccountLocations"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getAccountLocations
-                            </b>
-                            <a href="#getAccountLocations"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getAccountLocations()</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getAccountLocations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAccountLocations()</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>gets all the account locations for the current account you have selected.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { AccountLocationService, AccountLocation } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>gets all the account locations for the current account you have selected.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { AccountLocationService, AccountLocation } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       accountLocationList: Array&lt;AccountLocation&gt;;
+       accountLocationList$: Observable&lt;Array&lt;AccountLocation&gt;&gt;;
 
-      export class MyComponent implements OnInit{
-           accountLocationList: Array&lt;AccountLocation&gt;;
-           accountLocationList$: Observable&lt;Array&lt;AccountLocation&gt;&gt;;
+       constructor(private accountLocationService: AccountLocationService){}
 
-           constructor(private accountLocationService: AccountLocationService){}
+       getProductOptions(productCode: string){
+            this.accountLocationService.getAccountLocations().subscribe(a =&gt; this.accountLocationList = a);
+            // or
+            this.accountLocationList$ + this.accountLocationService.getAccountLocations();
+       }
+  }
+ ```</code></pre></div></div>
 
-           getProductOptions(productCode: string){
-                this.accountLocationService.getAccountLocations().subscribe(a =&gt; this.accountLocationList = a);
-                // or
-                this.accountLocationList$ + this.accountLocationService.getAccountLocations();
-           }
-      }</code></pre></div></div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;AccountLocation&gt;&gt;</code>
 
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/AccountLocation.html" target="_self" >Observable&lt;Array&lt;AccountLocation&gt;&gt;</a></code>
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of an account location array</p>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>An observable of an account location array</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="saveLocationToAccount"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveLocationToAccount"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             saveLocationToAccount
-                            </b>
-                            <a href="#saveLocationToAccount"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>saveLocationToAccount(location: <a href="../classes/AccountLocation.html">AccountLocation</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#saveLocationToAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveLocationToAccount(location: <a href="../classes/AccountLocation.html">AccountLocation</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Saves the account location record to the current account.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { AccountLocationService, AccountLocation } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Saves the account location record to the current account.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { AccountLocationService, AccountLocation } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
 
-      export class MyComponent implements OnInit{
+       constructor(private accountLocationService: AccountLocationService){}
 
-           constructor(private accountLocationService: AccountLocationService){}
+       saveAccountLocation(accountLocation: AccountLocation){
+            this.accountLocationService.saveLocationToAccount(accountLocation)
+                .subscribe(
+                    locationId =&gt; {...},
+                    err =&gt; {...}
+                );
+       }
+  }
+ ```</code></pre></div></div>
 
-           saveAccountLocation(accountLocation: AccountLocation){
-                this.accountLocationService.saveLocationToAccount(accountLocation)
-                    .subscribe(
-                        locationId =&gt; {...},
-                        err =&gt; {...}
-                    );
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>location</td>
+                                    <td>
+                                                <code><a href="../classes/AccountLocation.html" target="_self" >AccountLocation</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>location</td>
-                                                        <td>
-                                                                    <code><a href="../classes/AccountLocation.html" target="_self" >AccountLocation</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>The AccountLocation record to save</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>An observable of an account location record id</p>
+                                    <td>
+                                        <p>The AccountLocation record to save</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="setLocationAsDefault"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of an account location record id</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setLocationAsDefault"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             setLocationAsDefault
-                            </b>
-                            <a href="#setLocationAsDefault"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>setLocationAsDefault(location: <a href="../classes/AccountLocation.html">AccountLocation</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#setLocationAsDefault"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setLocationAsDefault(location: <a href="../classes/AccountLocation.html">AccountLocation</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Sets the selected address as the default address.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { AccountLocationService, AccountLocation } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Sets the selected address as the default address.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { AccountLocationService, AccountLocation } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
 
-      export class MyComponent implements OnInit{
+       constructor(private accountLocationService: AccountLocationService){}
 
-           constructor(private accountLocationService: AccountLocationService){}
+       setLocationAsDefault(accountLocation: AccountLocation){
+            this.accountLocationService.setLocationAsDefault(accountLocation)
+                .subscribe(
+                    locationIdList =&gt; {...},
+                    err =&gt; {...}
+                );
+       }
+  }
+ ```</code></pre></div></div>
 
-           setLocationAsDefault(accountLocation: AccountLocation){
-                this.accountLocationService.setLocationAsDefault(accountLocation)
-                    .subscribe(
-                        locationIdList =&gt; {...},
-                        err =&gt; {...}
-                    );
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>location</td>
+                                    <td>
+                                                <code><a href="../classes/AccountLocation.html" target="_self" >AccountLocation</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>location</td>
-                                                        <td>
-                                                                    <code><a href="../classes/AccountLocation.html" target="_self" >AccountLocation</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>The AccountLocation record to set as default</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;string[]&gt;</code>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>A string array of records that were updated in the process</p>
+                                    <td>
+                                        <p>The AccountLocation record to set as default</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;string[]&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A string array of records that were updated in the process</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -373,16 +382,9 @@
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type
-                            </b>
+                            type</b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>

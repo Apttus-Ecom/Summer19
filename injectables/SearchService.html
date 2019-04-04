@@ -65,6 +65,13 @@
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../injectables/SearchService.html" target="_self" >SearchServiceCore</a></code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -106,614 +113,663 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getSearchResults"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSearchResults"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getSearchResults
-                            </b>
-                            <a href="#getSearchResults"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getSearchResults(query: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", categoryFilter: <a href="../classes/Category.html">Array<Category></a>, priceTier: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlConditions: Array<ACondition>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getSearchResults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSearchResults(query: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", categoryFilter: <a href="../classes/Category.html">Array<Category></a>, priceTier: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlConditions: Array<ACondition>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>The primary method that takes a search query string and returns a list of products. Uses standard Salesforce SOSL to retrieve results.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { SearchService, SearchResults } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The primary method that takes a search query string and returns a list of products. Uses standard Salesforce SOSL to retrieve results.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { SearchService, SearchResults } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       searchResults: SearchResults;
 
-      export class MyComponent implements OnInit{
-           searchResults: SearchResults;
+       constructor(private searchService: SearchService){}
 
-           constructor(private searchService: SearchService){}
+       getSearchResults(query: string){
+            this.searchService.getSearchResults(query).subscribe(
+                results =&gt; this.searchResults = results,
+                err =&gt; {...}
+            );
+       }
+  }
+ ```</code></pre></div></div>
 
-           getSearchResults(query: string){
-                this.searchService.getSearchResults(query).subscribe(
-                    results =&gt; this.searchResults = results,
-                    err =&gt; {...}
-                );
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>query</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>query</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the query string to find products by</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>limit</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>10</code>
-                                                        </td>
+                                    <td>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the limit of the number of products to return (defaults to 10)</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>pageNumber</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>0</code>
-                                                        </td>
+                                    <td>
+                                        <p>the query string to find products by</p>
 
-                                                        <td>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>orderBy</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>limit</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the product field with which to order the results by</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>orderDirection</td>
-                                                        <td>
-                                                                    <code>&quot;ASC&quot; | &quot;DESC&quot;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the direct to order the results (ASC or DESC)</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>categoryFilter</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Category.html" target="_self" >Array&lt;Category&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
+                                    <td>
+                                        <code>10</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>an array of category instances to further filter the results by</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>priceTier</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/PriceTier.html" target="_self" >PriceTier</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
+                                    <td>
+                                        <p>the limit of the number of products to return (defaults to 10)</p>
 
-                                                        <td>
-                                                                <code><p>a price tier instance specifying the price range for the results</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>adtlConditions</td>
-                                                        <td>
-                                                                    <code>Array&lt;ACondition&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>pageNumber</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>an array of conditions specifying additional conditions for the results</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../interfaces/SearchResults.html" target="_self" >Observable&lt;SearchResults&gt;</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable instance of SearchResults</p>
+                                    <td>
+                                        <code>0</code>
+                                    </td>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="searchProducts"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    <td>
+                                        <p>the offset of the products to return (i.e. for results 10-20, offset will be 10)</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>orderBy</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the product field with which to order the results by</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>orderDirection</td>
+                                    <td>
+                                            <code>&quot;ASC&quot; | &quot;DESC&quot;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the direct to order the results (ASC or DESC)</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>categoryFilter</td>
+                                    <td>
+                                                <code><a href="../classes/Category.html" target="_self" >Array&lt;Category&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                    <td>
+                                        <p>an array of category instances to further filter the results by</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>priceTier</td>
+                                    <td>
+                                                <code><a href="../interfaces/PriceTier.html" target="_self" >PriceTier</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                    <td>
+                                        <p>a price tier instance specifying the price range for the results</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>adtlConditions</td>
+                                    <td>
+                                            <code>Array&lt;ACondition&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                    <td>
+                                        <p>an array of conditions specifying additional conditions for the results</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/SearchResults.html" target="_self" >Observable&lt;SearchResults&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable instance of SearchResults</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchProducts"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             searchProducts
-                            </b>
-                            <a href="#searchProducts"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>searchProducts(searchString: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", conditions: Array<ACondition>, joins: Array<AJoin>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#searchProducts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>searchProducts(searchString: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", conditions: Array<ACondition>, joins: Array<AJoin>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method takes a search query string and returns a list of products matching the search criteria.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { SearchService, SearchResults } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       searchResults: SearchResults;
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>searchString</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+       constructor(private searchService: SearchService){}
 
-                                                </tr>
-                                                <tr>
-                                                        <td>limit</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>10</code>
-                                                        </td>
+       searchProducts(searchString: string){
+            this.searchService.searchProducts(searchString).subscribe(
+                results =&gt; this.searchResults = results,
+                err =&gt; {...}
+            );
+       }
+  }
+ ```</code></pre></div></div>
 
-                                                </tr>
-                                                <tr>
-                                                        <td>pageNumber</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>0</code>
-                                                        </td>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>searchString</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                                                </tr>
-                                                <tr>
-                                                        <td>orderBy</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                </tr>
-                                                <tr>
-                                                        <td>orderDirection</td>
-                                                        <td>
-                                                                    <code>&quot;ASC&quot; | &quot;DESC&quot;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
+                                    <td>
+                                    </td>
 
-                                                </tr>
-                                                <tr>
-                                                        <td>conditions</td>
-                                                        <td>
-                                                                    <code>Array&lt;ACondition&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
+                                    <td>
+                                        <p>the query string to find products by.</p>
 
-                                                </tr>
-                                                <tr>
-                                                        <td>joins</td>
-                                                        <td>
-                                                                    <code>Array&lt;AJoin&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>limit</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../interfaces/SearchResults.html" target="_self" >Observable&lt;SearchResults&gt;</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="searchProductsByCategory"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    <td>
+                                        <code>10</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the limit of the number of products to return (defaults to 10).</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>pageNumber</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>0</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the offset of the products to return (i.e. for results 10-20, offset will be 10).</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>orderBy</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the product field with which to order the results by.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>orderDirection</td>
+                                    <td>
+                                            <code>&quot;ASC&quot; | &quot;DESC&quot;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the direct to order the results (ASC or DESC).</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>conditions</td>
+                                    <td>
+                                            <code>Array&lt;ACondition&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>joins</td>
+                                    <td>
+                                            <code>Array&lt;AJoin&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>an array of join conditions for the results.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/SearchResults.html" target="_self" >Observable&lt;SearchResults&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable instance of SearchResults.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchProductsByCategory"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             searchProductsByCategory
-                            </b>
-                            <a href="#searchProductsByCategory"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>searchProductsByCategory(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, offset: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", categoryFilter?: <a href="../classes/Category.html">Array<Category></a>, priceTier?: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlConditions?: Array<ACondition>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#searchProductsByCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>searchProductsByCategory(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, offset: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC", categoryFilter?: <a href="../classes/Category.html">Array<Category></a>, priceTier?: <a href="../interfaces/PriceTier.html">PriceTier</a>, adtlConditions?: Array<ACondition>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>searchProductsByCategory will get a list of products for a given category</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { SearchService, SearchResults } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>searchProductsByCategory will get a list of products for a given category</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { SearchService, SearchResults } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       searchResults: SearchResults;
 
-      export class MyComponent implements OnInit{
-           searchResults: SearchResults;
+       constructor(private searchService: SearchService){}
 
-           constructor(private searchService: SearchService){}
+       getSearchResults(categoryId: string){
+            this.searchService.searchProductsByCategory(categoryId).subscribe(
+                results =&gt; this.searchResults = results,
+                err =&gt; {...}
+            );
+       }
+  }
+ ```</code></pre></div></div>
 
-           getSearchResults(categoryId: string){
-                this.searchService.searchProductsByCategory(categoryId).subscribe(
-                    results =&gt; this.searchResults = results,
-                    err =&gt; {...}
-                );
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>categoryId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>categoryId</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the category id with which to search by</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>limit</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>10</code>
-                                                        </td>
+                                    <td>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the limit of the number of items to return</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>offset</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>0</code>
-                                                        </td>
+                                    <td>
+                                        <p>the category id with which to search by</p>
 
-                                                        <td>
-                                                                <code><p>the offset of the products to return (i.e. for results 10-20, offset will be 10)</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>orderBy</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>&#x27;Name&#x27;</code>
-                                                        </td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>limit</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the product field with which to order the results by</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>orderDirection</td>
-                                                        <td>
-                                                                    <code>&quot;ASC&quot; | &quot;DESC&quot;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>&#x27;ASC&#x27;</code>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the direct to order the results (ASC or DESC)</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>categoryFilter</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Category.html" target="_self" >Array&lt;Category&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                        <code>10</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>an array of category instances to further filter the results by</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>priceTier</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/PriceTier.html" target="_self" >PriceTier</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                        <p>the limit of the number of items to return</p>
 
-                                                        <td>
-                                                                <code><p>a price tier instance specifying the price range for the results</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>adtlConditions</td>
-                                                        <td>
-                                                                    <code>Array&lt;ACondition&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>offset</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>an array of conditons specifying additional conditions for the results</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../interfaces/SearchResults.html" target="_self" >Observable&lt;SearchResults&gt;</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable instance of SearchResults</p>
+                                    <td>
+                                        <code>0</code>
+                                    </td>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    <td>
+                                        <p>the offset of the products to return (i.e. for results 10-20, offset will be 10)</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>orderBy</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;Name&#x27;</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the product field with which to order the results by</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>orderDirection</td>
+                                    <td>
+                                            <code>&quot;ASC&quot; | &quot;DESC&quot;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;ASC&#x27;</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the direct to order the results (ASC or DESC)</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>categoryFilter</td>
+                                    <td>
+                                                <code><a href="../classes/Category.html" target="_self" >Array&lt;Category&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>an array of category instances to further filter the results by</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>priceTier</td>
+                                    <td>
+                                                <code><a href="../interfaces/PriceTier.html" target="_self" >PriceTier</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>a price tier instance specifying the price range for the results</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>adtlConditions</td>
+                                    <td>
+                                            <code>Array&lt;ACondition&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>an array of conditons specifying additional conditions for the results</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/SearchResults.html" target="_self" >Observable&lt;SearchResults&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable instance of SearchResults</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
 
     </div>
 

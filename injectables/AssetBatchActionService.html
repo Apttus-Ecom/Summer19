@@ -66,11 +66,49 @@ This service contains methods for checking if given actions are disabled along w
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../injectables/BatchActionService.html" target="_self" >BatchActionService</a></code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#_assetBatchActions">_assetBatchActions</a>
+                            </li>
+                            <li>
+                                <a href="#_renew">_renew</a>
+                            </li>
+                            <li>
+                                <a href="#_terminate">_terminate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#actionMap">actionMap</a>
+                            </li>
+                            <li>
+                                <a href="#enabledActions">enabledActions</a>
+                            </li>
+                            <li>
+                                <a href="#identifier">identifier</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -91,6 +129,10 @@ This service contains methods for checking if given actions are disabled along w
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#isActionDisabled">isActionDisabled</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getBatchActions">getBatchActions</a>
                             </li>
                         </ul>
                     </td>
@@ -131,7 +173,7 @@ This service contains methods for checking if given actions are disabled along w
                                                         <td>assetSelectionService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/AssetSelectionService.html" target="_self" >AssetSelectionService</a></code>
+                                                                        <code><a href="../injectables/AssetSelectionService.html" target="_self" >AssetSelectionService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -155,7 +197,7 @@ This service contains methods for checking if given actions are disabled along w
                                                         <td>productSelectionService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/ProductSelectionService.html" target="_self" >ProductSelectionService</a></code>
+                                                                        <code><a href="../injectables/ProductSelectionService.html" target="_self" >ProductSelectionService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -167,7 +209,7 @@ This service contains methods for checking if given actions are disabled along w
                                                         <td>router</td>
                                                   
                                                         <td>
-                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -179,7 +221,7 @@ This service contains methods for checking if given actions are disabled along w
                                                         <td>cartService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/CartService.html" target="_self" >CartService</a></code>
+                                                                        <code><a href="../injectables/CartService.html" target="_self" >CartService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -191,7 +233,7 @@ This service contains methods for checking if given actions are disabled along w
                                                         <td>storefrontService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/StorefrontService.html" target="_self" >StorefrontService</a></code>
+                                                                        <code><a href="../injectables/StorefrontService.html" target="_self" >StorefrontService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -210,200 +252,434 @@ This service contains methods for checking if given actions are disabled along w
 
             <section>
     
-        <h3 id="methods">
-            Methods
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAssetBatchActions"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getAssetBatchActions
+                        </b>
+                        <a href="#getAssetBatchActions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAssetBatchActions()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the current asset batch actions observable.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;BatchAction&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Observable array of batch action objects.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTooltipForAction"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getTooltipForAction
+                        </b>
+                        <a href="#getTooltipForAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTooltipForAction(action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the tooltip text for a given action.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>action</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>String key of the represented action.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isActionDisabled"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            isActionDisabled
+                        </b>
+                        <a href="#isActionDisabled"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isActionDisabled(action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if a batch action is disabled based on the given action key.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>action</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>String key of the represented action.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBatchActions"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getBatchActions
+                        </b>
+                        <a href="#getBatchActions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBatchActions()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the current batch actions observable.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;BatchAction&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Observable array of batch action objects.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
         </h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="getAssetBatchActions"></a>
+                        <a name="_assetBatchActions"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
-                            getAssetBatchActions
-                            </b>
-                            <a href="#getAssetBatchActions"><span class="icon ion-ios-link"></span></a>
+                                <span class="modifier">Protected</span>
+                            _assetBatchActions</b>
+                            <a href="#_assetBatchActions"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getAssetBatchActions()</code>
-                    </td>
-                </tr>
-
-
-
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new BehaviorSubject&lt;Array&lt;BatchAction&gt;&gt;([])</code>
+                        </td>
+                    </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Gets the current asset batch actions observable.</p>
+                        <div class="io-description"><p>Array of asset batch actions to subscribe to.</p>
 </div>
-
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/BatchAction.html" target="_self" >Observable&lt;Array&lt;BatchAction&gt;&gt;</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>Observable array of batch action objects.</p>
-
-                                </div>
                     </td>
                 </tr>
+
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="getTooltipForAction"></a>
+                        <a name="_renew"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
-                            getTooltipForAction
-                            </b>
-                            <a href="#getTooltipForAction"><span class="icon ion-ios-link"></span></a>
+                            _renew</b>
+                            <a href="#_renew"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;Renew&#x27;</code>
+                        </td>
+                    </tr>
+
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getTooltipForAction(action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Gets the tooltip text for a given action.</p>
+                        <div class="io-description"><p>Constant values for batch actions</p>
 </div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>action</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                                <code><p>String key of the represented action.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
                     </td>
                 </tr>
+
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="isActionDisabled"></a>
+                        <a name="_terminate"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
-                            isActionDisabled
-                            </b>
-                            <a href="#isActionDisabled"><span class="icon ion-ios-link"></span></a>
+                            _terminate</b>
+                            <a href="#_terminate"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;Terminate&#x27;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>isActionDisabled(action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                        <a name="actionMap"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            actionMap</b>
+                            <a href="#actionMap"><span class="icon ion-ios-link"></span></a>
+                        </span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    [this._renew]: new BatchAction(this._renew, &#x27;loop-circular&#x27;, this.renew.bind(this, [this.router])),
+    [this._terminate]: new BatchAction(this._terminate, &#x27;circle-x&#x27;, this.terminate.bind(this, [this.router])),
+    &#x27;Compare&#x27;: new BatchAction(&#x27;Compare&#x27;, &#x27;transfer&#x27;, this.compare.bind(this, [this.router]))
+  }</code>
+                        </td>
+                    </tr>
 
 
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enabledActions"></a>
+                        <span class="name">
+                            <b>
+                            enabledActions</b>
+                            <a href="#enabledActions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Array&lt;string&gt;</code>
 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Checks if a batch action is disabled based on the given action key.</p>
+                        <div class="io-description"><p>Actions that are mapped to string representations of each batch action.</p>
 </div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>action</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                                <code><p>String key of the represented action.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
                     </td>
                 </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="identifier"></a>
+                        <span class="name">
+                            <b>
+                            identifier</b>
+                            <a href="#identifier"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;Id&#x27;</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The product identifier set in the configuration file.</p>
+</div>
+                    </td>
+                </tr>
+
             </tbody>
         </table>
 </section>
-
 
     </div>
 

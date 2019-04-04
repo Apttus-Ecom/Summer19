@@ -65,6 +65,13 @@
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>AObjectService</code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -120,238 +127,240 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getCurrentAccount"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCurrentAccount"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getCurrentAccount
-                            </b>
-                            <a href="#getCurrentAccount"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getCurrentAccount()</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getCurrentAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCurrentAccount()</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Retrieves the current active account (used for order-on-behalf functions)</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { AccountService, Account } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the current active account (used for order-on-behalf functions)</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { AccountService, Account } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+        account: Account;
+        account$: Observable&lt;Account&gt;;
 
-      export class MyComponent implements OnInit{
-            account: Account;
-            account$: Observable&lt;Account&gt;;
+       constructor(private accountService: AccountService){}
 
-           constructor(private accountService: AccountService){}
+       ngOnInit(){
+            this.accountService.getCurrentAccount().subscribe(a =&gt; this.account = a);
+            // or
+            this.account$ + this.accountService.getCurrentAccount();
+       }
+  }
+ ```</code></pre></div></div>
 
-           ngOnInit(){
-                this.accountService.getCurrentAccount().subscribe(a =&gt; this.account = a);
-                // or
-                this.account$ + this.accountService.getCurrentAccount();
-           }
-      }</code></pre></div></div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Account.html" target="_self" >Observable&lt;Account&gt;</a></code>
 
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Account.html" target="_self" >Observable&lt;Account&gt;</a></code>
+                    </div>
+                    <div class="io-description">
+                        <p>an observable containing the account record</p>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable containing the account record</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getMyAccount"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMyAccount"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getMyAccount
-                            </b>
-                            <a href="#getMyAccount"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getMyAccount()</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getMyAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getMyAccount()</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Retrieves the account associated with the current user</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { AccountService, Account } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the account associated with the current user</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { AccountService, Account } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+        account: Account;
+        account$: Observable&lt;Account&gt;;
 
-      export class MyComponent implements OnInit{
-            account: Account;
-            account$: Observable&lt;Account&gt;;
+       constructor(private accountService: AccountService){}
 
-           constructor(private accountService: AccountService){}
+       ngOnInit(){
+            this.accountService.getMyAccount().subscribe(a =&gt; this.account = a);
+            // or
+            this.account$ + this.accountService.getMyAccount();
+       }
+  }
+ ```</code></pre></div></div>
 
-           ngOnInit(){
-                this.accountService.getMyAccount().subscribe(a =&gt; this.account = a);
-                // or
-                this.account$ + this.accountService.getMyAccount();
-           }
-      }</code></pre></div></div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Account.html" target="_self" >Observable&lt;Account&gt;</a></code>
 
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Account.html" target="_self" >Observable&lt;Account&gt;</a></code>
+                    </div>
+                    <div class="io-description">
+                        <p>an observable containing the account record</p>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable containing the account record</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="setAccount"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setAccount"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             setAccount
-                            </b>
-                            <a href="#setAccount"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>setAccount(account: <a href="../classes/Account.html">Account</a>, localStorage: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#setAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setAccount(account: <a href="../classes/Account.html">Account</a>, localStorage: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Sets the selected account to be the current active account for order-on-behalf functions.
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Sets the selected account to be the current active account for order-on-behalf functions.
 Will store the selected account record in local storage</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { AccountService, Account } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { AccountService, Account } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       constructor(private accountService: AccountService){}
 
-      export class MyComponent implements OnInit{
-           constructor(private accountService: AccountService){}
+       setAccount(account: Account){
+            this.accountService.setAccount(account, true)
+                .subscribe(
+                    a =&gt; {...},
+                    err =&gt; {...}
+                );
+       }
+  }
+ ```</code></pre></div></div>
 
-           setAccount(account: Account){
-                this.accountService.setAccount(account, true)
-                    .subscribe(
-                        a =&gt; {...},
-                        err =&gt; {...}
-                    );
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>account</td>
+                                    <td>
+                                                <code><a href="../classes/Account.html" target="_self" >Account</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>account</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Account.html" target="_self" >Account</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the account record to set active</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>localStorage</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>false</code>
-                                                        </td>
+                                    <td>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>boolean flag to use to store the selected account in local storage</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Account.html" target="_self" >Observable&lt;Account&gt;</a></code>
+                                    <td>
+                                        <p>the account record to set active</p>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable containing the account record that was set to active</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>localStorage</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>boolean flag to use to store the selected account in local storage</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Account.html" target="_self" >Observable&lt;Account&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable containing the account record that was set to active</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -364,16 +373,9 @@ Will store the selected account record in local storage</p>
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type
-                            </b>
+                            type</b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>

@@ -57,6 +57,20 @@
             <code>projects/apttus/promotion/src/lib/services/promotion/promotion-lineitem.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Promotion Line Item Service is a way to get the promotion details for a line item.</p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>AObjectService</code>
+            </p>
 
 
             <section>
@@ -104,96 +118,96 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getPromoDetailsForLineItem"></a>
-                        <span class="name">
-                            <b>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPromoDetailsForLineItem"></a>
+                    <span class="name">
+                        <b>
                             getPromoDetailsForLineItem
-                            </b>
-                            <a href="#getPromoDetailsForLineItem"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#getPromoDetailsForLineItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>getPromoDetailsForLineItem(cartItemId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method returns an observable containing array of cart line items with adjustment line item details.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">    import { PromotionLineitemService } from &#39;&#64;apttus/promotion&#39;;
-    import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method returns an observable containing array of cart line items with adjustment line item details.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+    import { PromotionLineitemService } from &#39;@apttus/promotion&#39;;
+    import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">export class MyComponent implements OnInit{
+      cartItems$: Observable&lt;Array&lt;PRCartItem&gt;&gt;;
+      cartItems; Array&lt;PRCartItem&gt;;
+      constructor(private promotionLineitemService: PromotionLineitemService){}
 
-    export class MyComponent implements OnInit{
-          cartItems$: Observable&lt;Array&lt;PRCartItem&gt;&gt;;
-          cartItems; Array&lt;PRCartItem&gt;;
-          constructor(private promotionLineitemService: PromotionLineitemService){}
+      getPromoDetailsForLineItem(cartItemId: string){
+          this.promotionLineitemService.getPromoDetailsForLineItem(cartItemId).subscribe(res =&gt; this.cartItems = res);
+          or
+          this.cartItems$ = this.promotionLineitemService.getPromoDetailsForLineItem(cartItemId);
+}
+```</code></pre></div></div>
 
-          getPromoDetailsForLineItem(cartItemId: string){
-              this.promotionLineitemService.getPromoDetailsForLineItem(cartItemId).subscribe(res =&gt; this.cartItems = res);
-              or
-              this.cartItems$ = this.promotionLineitemService.getPromoDetailsForLineItem(cartItemId);
-    }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cartItemId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>cartItemId</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>a string value representing the cart line item.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/PRCartItem.html" target="_self" >Observable&lt;Array&lt;PRCartItem&gt;&gt;</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable containing array of cart line items with adjustment item details.</p>
+                                    <td>
+                                        <p>a string value representing the cart line item.</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;PRCartItem&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable containing array of cart line items with adjustment item details.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -206,16 +220,9 @@
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type
-                            </b>
+                            type</b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>
