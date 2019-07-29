@@ -22,41 +22,53 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_CartModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="128,-70 128,-195 368,-195 368,-70 128,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="24,-70 24,-195 472,-195 472,-70 24,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_CartModule_imports</title>
-<polygon fill="none" stroke="#000000" points="136,-78 136,-130 360,-130 360,-78 136,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_CartModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="32,-78 32,-130 464,-130 464,-78 32,-78"/>
 </g>
-<!-- PricingModule -->
+<!-- CardFormComponent -->
 <g id="node1" class="node">
-<title>PricingModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="351.9888,-122 348.9888,-126 327.9888,-126 324.9888,-122 252.0112,-122 252.0112,-86 351.9888,-86 351.9888,-122"/>
-<text text-anchor="middle" x="302" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PricingModule</text>
+<title>CardFormComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="456.3781,-122 317.6219,-122 317.6219,-86 456.3781,-86 456.3781,-122"/>
+<text text-anchor="middle" x="387" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CardFormComponent</text>
 </g>
 <!-- CartModule -->
-<g id="node3" class="node">
+<g id="node4" class="node">
 <title>CartModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="286.6529,-187 283.6529,-191 262.6529,-191 259.6529,-187 203.3471,-187 203.3471,-151 286.6529,-151 286.6529,-187"/>
-<text text-anchor="middle" x="245" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">CartModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="288.6529,-187 285.6529,-191 264.6529,-191 261.6529,-187 205.3471,-187 205.3471,-151 288.6529,-151 288.6529,-187"/>
+<text text-anchor="middle" x="247" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">CartModule</text>
 </g>
-<!-- PricingModule&#45;&gt;CartModule -->
+<!-- CardFormComponent&#45;&gt;CartModule -->
 <g id="edge1" class="edge">
-<title>PricingModule&#45;&gt;CartModule</title>
-<path fill="none" stroke="#000000" d="M269.4159,-122.1061C269.4159,-122.1061 269.4159,-140.991 269.4159,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="265.9159,-140.9909 269.4159,-150.991 272.9159,-140.991 265.9159,-140.9909"/>
+<title>CardFormComponent&#45;&gt;CartModule</title>
+<path fill="none" stroke="#000000" d="M387,-122.1061C387,-141.3391 387,-169 387,-169 387,-169 299.0046,-169 299.0046,-169"/>
+<polygon fill="#000000" stroke="#000000" points="299.0047,-165.5001 289.0046,-169 299.0046,-172.5001 299.0047,-165.5001"/>
 </g>
-<!-- StoreModule -->
+<!-- CartComponent -->
 <g id="node2" class="node">
-<title>StoreModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="233.5983,-122 230.5983,-126 209.5983,-126 206.5983,-122 144.4017,-122 144.4017,-86 233.5983,-86 233.5983,-122"/>
-<text text-anchor="middle" x="189" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">StoreModule</text>
+<title>CartComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="299.9357,-122 194.0643,-122 194.0643,-86 299.9357,-86 299.9357,-122"/>
+<text text-anchor="middle" x="247" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CartComponent</text>
 </g>
-<!-- StoreModule&#45;&gt;CartModule -->
+<!-- CartComponent&#45;&gt;CartModule -->
 <g id="edge2" class="edge">
-<title>StoreModule&#45;&gt;CartModule</title>
-<path fill="none" stroke="#000000" d="M218.3615,-122.1061C218.3615,-122.1061 218.3615,-140.991 218.3615,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="214.8616,-140.9909 218.3615,-150.991 221.8616,-140.991 214.8616,-140.9909"/>
+<title>CartComponent&#45;&gt;CartModule</title>
+<path fill="none" stroke="#000000" d="M247,-122.1061C247,-122.1061 247,-140.991 247,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="243.5001,-140.9909 247,-150.991 250.5001,-140.991 243.5001,-140.9909"/>
+</g>
+<!-- SummaryComponent -->
+<g id="node3" class="node">
+<title>SummaryComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="175.7716,-122 40.2284,-122 40.2284,-86 175.7716,-86 175.7716,-122"/>
+<text text-anchor="middle" x="108" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">SummaryComponent</text>
+</g>
+<!-- SummaryComponent&#45;&gt;CartModule -->
+<g id="edge3" class="edge">
+<title>SummaryComponent&#45;&gt;CartModule</title>
+<path fill="none" stroke="#000000" d="M108,-122.1061C108,-141.3391 108,-169 108,-169 108,-169 195.2954,-169 195.2954,-169"/>
+<polygon fill="#000000" stroke="#000000" points="195.2955,-172.5001 205.2954,-169 195.2954,-165.5001 195.2955,-172.5001"/>
 </g>
 </g>
 </svg>

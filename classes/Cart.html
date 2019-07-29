@@ -84,20 +84,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#_priceListId">_priceListId</a>
-                            </li>
-                            <li>
-                                <a href="#_state">_state</a>
-                            </li>
-                            <li>
                                 <a href="#Account">Account</a>
                             </li>
                             <li>
                                 <a href="#AccountId">AccountId</a>
                             </li>
                             <li>
+                                <a href="#AppliedRuleActionInfo">AppliedRuleActionInfo</a>
+                            </li>
+                            <li>
+                                <a href="#AppliedRuleInfo">AppliedRuleInfo</a>
+                            </li>
+                            <li>
                                 <a href="#BillToAccount">BillToAccount</a>
+                            </li>
+                            <li>
+                                <a href="#BillToAccountId">BillToAccountId</a>
                             </li>
                             <li>
                                 <a href="#BusinessObjectId">BusinessObjectId</a>
@@ -187,160 +189,12 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(_priceListId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _effectivePriceListId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _accountId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _user?: <a href="../classes/User.html">User</a>)</code>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>_priceListId</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>_effectivePriceListId</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>_accountId</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>_user</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="../classes/User.html" target="_self" >User</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
             <section>
     
         <h3 id="inputs">
             Properties
         </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="_priceListId"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            _priceListId
-                            </b>
-                            <a href="#_priceListId"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>_priceListId:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>null</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="_state"></a>
-                        <span class="name">
-                            <b>
-                            _state
-                            </b>
-                            <a href="#_state"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>_state:     <code>&quot;pending&quot; | &quot;ready&quot; | &quot;error&quot;</code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>&quot;pending&quot; | &quot;ready&quot; | &quot;error&quot;</code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>&#x27;ready&#x27;</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -356,13 +210,19 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>Account:     <code></code>
+                        <code>Account:     <code>null</code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new Account()</code>
+                            <i>Type : </i>    <code>null</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -370,7 +230,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Apttus_Config2__AccountId__r&#x27;, aql: &#x27;AccountId&#x27;})<br />
+                                @AField({soql: &#x27;Apttus_Config2__AccountId__r&#x27;, aql: &#x27;AccountId&#x27;})<br />@Type(undefined)<br />
                             </code>
                         </td>
                     </tr>
@@ -405,7 +265,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>this._accountId</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -414,6 +274,92 @@
                             <br />
                             <code>
                                 @AField({soql: &#x27;Apttus_Config2__AccountId__c&#x27;, aql: &#x27;AccountId&#x27;})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="AppliedRuleActionInfo"></a>
+                        <span class="name">
+                            <b>
+                            AppliedRuleActionInfo
+                            </b>
+                            <a href="#AppliedRuleActionInfo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>AppliedRuleActionInfo:     <code><a href="../classes/AppliedRuleActionInfo.html" target="_self" >Array&lt;AppliedRuleActionInfo&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/AppliedRuleActionInfo.html" target="_self" >Array&lt;AppliedRuleActionInfo&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;Apttus_Config2__AppliedRuleActionInfos__r&#x27;, aql: &#x27;ConfigurationId&#x27;})<br />@Type(undefined)<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="AppliedRuleInfo"></a>
+                        <span class="name">
+                            <b>
+                            AppliedRuleInfo
+                            </b>
+                            <a href="#AppliedRuleInfo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>AppliedRuleInfo:     <code><a href="../classes/AppliedRuleInfo.html" target="_self" >Array&lt;AppliedRuleInfo&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/AppliedRuleInfo.html" target="_self" >Array&lt;AppliedRuleInfo&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;Apttus_Config2__Applied_Rule_Infos__r&#x27;, aql: &#x27;ConfigurationId&#x27;})<br />@Type(undefined)<br />
                             </code>
                         </td>
                     </tr>
@@ -448,7 +394,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new Account()</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -456,7 +402,50 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Apttus_Config2__BillToAccountId__r&#x27;, aql: &#x27;BillToAccountId&#x27;})<br />
+                                @AField({soql: &#x27;Apttus_Config2__BillToAccountId__r&#x27;, aql: &#x27;BillToAccountId&#x27;})<br />@Type(undefined)<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="BillToAccountId"></a>
+                        <span class="name">
+                            <b>
+                            BillToAccountId
+                            </b>
+                            <a href="#BillToAccountId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>BillToAccountId:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;Apttus_Config2__BillToAccountId__c&#x27;, aql: &#x27;BillToAccountId&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -792,7 +781,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new PriceList()</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -800,7 +789,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Apttus_Config2__EffectivePriceListId__r&#x27;, aql: &#x27;EffectivePriceListId&#x27;})<br />
+                                @AField({soql: &#x27;Apttus_Config2__EffectivePriceListId__r&#x27;, aql: &#x27;EffectivePriceListId&#x27;})<br />@Type(undefined)<br />
                             </code>
                         </td>
                     </tr>
@@ -835,7 +824,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>this._effectivePriceListId</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -878,7 +867,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>null</code>
+                            <i>Default value : </i><code>false</code>
                         </td>
                     </tr>
                     <tr>
@@ -921,7 +910,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>null</code>
+                            <i>Default value : </i><code>true</code>
                         </td>
                     </tr>
                     <tr>
@@ -964,7 +953,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>[new CartItem()]</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -972,7 +961,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Apttus_Config2__LineItems__r&#x27;, aql: &#x27;ConfigurationId&#x27;})<br />@Type(undefined)<br />
+                                @AField({soql: &#x27;Apttus_Config2__LineItems__r&#x27;, aql: &#x27;ConfigurationId&#x27;, expand: &#x27;deep&#x27;})<br />@Type(undefined)<br />
                             </code>
                         </td>
                     </tr>
@@ -1124,21 +1113,28 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>Owner:     <code><a href="../classes/User.html" target="_self" >User</a></code>
+                        <code>Owner:     <code><a href="../classes/UserBase.html" target="_self" >UserBase</a></code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/User.html" target="_self" >User</a></code>
+                            <i>Type : </i>    <code><a href="../classes/UserBase.html" target="_self" >UserBase</a></code>
 
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>{
-        Alias: null
-    } as User</code>
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;Owner&#x27;})<br />@Type(undefined)<br />
+                            </code>
                         </td>
                     </tr>
 
@@ -1215,7 +1211,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new PriceList()</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -1223,7 +1219,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Apttus_Config2__PriceListId__r&#x27;, aql: &#x27;PriceListId&#x27;})<br />
+                                @AField({soql: &#x27;Apttus_Config2__PriceListId__r&#x27;, aql: &#x27;PriceListId&#x27;})<br />@Type(undefined)<br />
                             </code>
                         </td>
                     </tr>
@@ -1258,7 +1254,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>this._priceListId</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -1301,7 +1297,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new Quote()</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -1309,7 +1305,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Apttus_QPConfig__Proposald__r&#x27;, aql: &#x27;QuoteId&#x27;})<br />
+                                @AField({soql: &#x27;Apttus_QPConfig__Proposald__r&#x27;, aql: &#x27;QuoteId&#x27;})<br />@Type(undefined)<br />
                             </code>
                         </td>
                     </tr>
@@ -1387,7 +1383,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new Account()</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -1395,7 +1391,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Apttus_Config2__ShipToAccountId__r&#x27;, aql: &#x27;ShipToAccountId&#x27;})<br />
+                                @AField({soql: &#x27;Apttus_Config2__ShipToAccountId__r&#x27;, aql: &#x27;ShipToAccountId&#x27;})<br />@Type(undefined)<br />
                             </code>
                         </td>
                     </tr>
@@ -1430,7 +1426,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>this._accountId</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -1516,7 +1512,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>[new SummaryGroup()]</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>

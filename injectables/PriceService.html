@@ -114,15 +114,19 @@ There are also pipes provided that wrap this service to provide pricing within a
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#getAssetLineItemPrice">getAssetLineItemPrice</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getAttributePriceForProduct">getAttributePriceForProduct</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getCartItemPrice">getCartItemPrice</a>
+                                <a href="#getCartPrice">getCartPrice</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getCartPrice">getCartPrice</a>
+                                <a href="#getLineItemPrice">getLineItemPrice</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -139,6 +143,14 @@ There are also pipes provided that wrap this service to provide pricing within a
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getProductPrice">getProductPrice</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getQuoteLineItemPrice">getQuoteLineItemPrice</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getQuotePrice">getQuotePrice</a>
                             </li>
                         </ul>
                     </td>
@@ -158,7 +170,7 @@ There are also pipes provided that wrap this service to provide pricing within a
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(priceListService: <a href="../injectables/PriceListService.html">PriceListService</a>, cartService: <a href="../injectables/CartService.html">CartService</a>, priceMatrixService: <a href="../injectables/PriceMatrixService.html">PriceMatrixService</a>, productOptionService: <a href="../injectables/ProductOptionService.html">ProductOptionService</a>, priceRuleService: <a href="../injectables/PriceRuleService.html">PriceRuleService</a>, cacheService: CacheService, localCurrencyPipe: LocalCurrencyPipe, metadataService: MetadataService)</code>
+<code>constructor(priceListService: <a href="../injectables/PriceListService.html">PriceListService</a>, cartService: <a href="../injectables/CartService.html">CartService</a>, priceMatrixService: <a href="../injectables/PriceMatrixService.html">PriceMatrixService</a>, cartItemService: <a href="../injectables/CartItemService.html">CartItemService</a>, taxService: <a href="../injectables/TaxService.html">TaxService</a>, proposalTaxService: <a href="../injectables/TaxService.html">ProposalTaxService</a>, orderTaxService: <a href="../injectables/TaxService.html">OrderTaxService</a>, metadataService: MetadataService, localCurrencyPipe: LocalCurrencyPipe, productAttributeValueService: <a href="../classes/ProductAttributeValue.html">ProductAttributeValueService</a>, storefrontService: <a href="../injectables/StorefrontService.html">StorefrontService</a>)</code>
                     </td>
                 </tr>
 
@@ -212,10 +224,10 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>productOptionService</td>
+                                                        <td>cartItemService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/ProductOptionService.html" target="_self" >ProductOptionService</a></code>
+                                                                    <code><a href="../injectables/CartItemService.html" target="_self" >CartItemService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -224,10 +236,10 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>priceRuleService</td>
+                                                        <td>taxService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/PriceRuleService.html" target="_self" >PriceRuleService</a></code>
+                                                                    <code><a href="../injectables/TaxService.html" target="_self" >TaxService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -236,10 +248,34 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>cacheService</td>
+                                                        <td>proposalTaxService</td>
                                                   
                                                         <td>
-                                                                    <code>CacheService</code>
+                                                                    <code><a href="../injectables/TaxService.html" target="_self" >ProposalTaxService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>orderTaxService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/TaxService.html" target="_self" >OrderTaxService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>metadataService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MetadataService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -260,10 +296,22 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>metadataService</td>
+                                                        <td>productAttributeValueService</td>
                                                   
                                                         <td>
-                                                                    <code>MetadataService</code>
+                                                                    <code><a href="../classes/ProductAttributeValue.html" target="_self" >ProductAttributeValueService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>storefrontService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/StorefrontService.html" target="_self" >StorefrontService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -395,6 +443,78 @@ There are also pipes provided that wrap this service to provide pricing within a
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="getAssetLineItemPrice"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getAssetLineItemPrice
+                            </b>
+                            <a href="#getAssetLineItemPrice"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getAssetLineItemPrice(assetLineItem: <a href="../classes/AssetLineItem.html">AssetLineItem</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>assetLineItem</td>
+                                                        <td>
+                                                                    <code><a href="../classes/AssetLineItem.html" target="_self" >AssetLineItem</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>the instance of the asset line item to return the price for</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Price.html" target="_self" >Observable&lt;Price&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>a hot observable containing the price of the asset line item</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="getAttributePriceForProduct"></a>
                         <span class="name">
                             <b>
@@ -501,94 +621,6 @@ There are also pipes provided that wrap this service to provide pricing within a
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="getCartItemPrice"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            getCartItemPrice
-                            </b>
-                            <a href="#getCartItemPrice"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getCartItemPrice(cartItem: <a href="../classes/CartItem.html">CartItem</a>, cart?: <a href="../classes/Cart.html">Cart</a>)</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method returns a price instance for a given cart item. If the price for the item has already been calculated, it will not do client side calculation.</p>
-</div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>cartItem</td>
-                                                        <td>
-                                                                    <code><a href="../classes/CartItem.html" target="_self" >CartItem</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                                <code><p>The instance of the cart item to return a price for.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>cart</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Price.html" target="_self" >Observable&lt;Price&gt;</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>A hot observable containing the price of the given cart item.</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="getCartPrice"></a>
                         <span class="name">
                             <b>
@@ -602,7 +634,7 @@ There are also pipes provided that wrap this service to provide pricing within a
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getCartPrice(cart$: <a href="../classes/Cart.html">Observable<Cart> | Cart</a>)</code>
+                        <code>getCartPrice(cart$?: <a href="../classes/Cart.html">Observable<Cart> | Cart</a>)</code>
                     </td>
                 </tr>
 
@@ -622,7 +654,6 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Default value</td>
                                                     <td>Description</td>
                                             </tr>
                                         </thead>
@@ -634,12 +665,9 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                         </td>
                                                     
                                                     <td>
-                                                            No
+                                                            Yes
                                                     </td>
                                                     
-                                                        <td>
-                                                                <code>this.cartService.getMyCart(false)</code>
-                                                        </td>
 
                                                         <td>
                                                                 <code><p>An optional parameter of the cart to calculate the price for. Can be an observable or a Cart instance. If left blank, will return the price for the current cart.</p>
@@ -657,6 +685,75 @@ There are also pipes provided that wrap this service to provide pricing within a
                             </div>
                                 <div class="io-description">
                                     <p>A hot observable containing the price of the given cart</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getLineItemPrice"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getLineItemPrice
+                            </b>
+                            <a href="#getLineItemPrice"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getLineItemPrice(itemList: <a href="../classes/QuoteLineItem.html">Array<CartItem | AssetLineItem | OrderLineItem | QuoteLineItem> | CartItem | AssetLineItem | QuoteLineItem | OrderLineItem</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Method returns a price instance for a given cart item. If the price for the item has already been calculated, it will not do client side calculation.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>itemList</td>
+                                                        <td>
+                                                                    <code><a href="../classes/QuoteLineItem.html" target="_self" >Array&lt;CartItem | AssetLineItem | OrderLineItem | QuoteLineItem&gt; | CartItem | AssetLineItem | QuoteLineItem | OrderLineItem</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Price.html" target="_self" >Observable&lt;Price&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>A hot observable containing the price of the given cart item.</p>
 
                                 </div>
                     </td>
@@ -785,7 +882,7 @@ There are also pipes provided that wrap this service to provide pricing within a
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Method returns a NetPrice for a given OrderLineItem instance.</p>
+                            <div class="io-description"><p>Method returns price for a given OrderLineItem instance.</p>
 </div>
 
                             <div class="io-description">
@@ -919,7 +1016,7 @@ There are also pipes provided that wrap this service to provide pricing within a
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getProductPrice(product: <a href="../classes/Product.html">Product</a>, quantity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, attributes?: <a href="../classes/ProductAttributeValue.html">Array<ProductAttributeValue></a>, options?: <a href="../interfaces/ProductOptionForm.html">Array<ProductOptionForm></a>, priceListItemOverride?: <a href="../classes/PriceListItem.html">PriceListItem</a>, context?: <a href="../classes/OrderLineItem.html">CartItem | OrderLineItem</a>, term: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                        <code>getProductPrice(product: <a href="../classes/Product.html">Product</a>, quantity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, term: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, attributeValue?: <a href="../classes/ProductAttributeValue.html">ProductAttributeValue</a>, bundle: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, chargeType?: <a href="../undefineds/ChargeType.html">ChargeType</a>)</code>
                     </td>
                 </tr>
 
@@ -982,74 +1079,6 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>attributes</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ProductAttributeValue.html" target="_self" >Array&lt;ProductAttributeValue&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>An optional array of attributes for a given product to calculate the price for</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>options</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/ProductOptionForm.html" target="_self" >Array&lt;ProductOptionForm&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>An optional array of options for a given product to calculate the price for</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>priceListItemOverride</td>
-                                                        <td>
-                                                                    <code><a href="../classes/PriceListItem.html" target="_self" >PriceListItem</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
-
-                                                        <td>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>context</td>
-                                                        <td>
-                                                                    <code><a href="../classes/OrderLineItem.html" target="_self" >CartItem | OrderLineItem</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
-
-                                                        <td>
-                                                        </td>
-                                                </tr>
-                                                <tr>
                                                         <td>term</td>
                                                         <td>
                                                                     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
@@ -1066,6 +1095,55 @@ There are also pipes provided that wrap this service to provide pricing within a
                                                         <td>
                                                         </td>
                                                 </tr>
+                                                <tr>
+                                                        <td>attributeValue</td>
+                                                        <td>
+                                                                    <code><a href="../classes/ProductAttributeValue.html" target="_self" >ProductAttributeValue</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>bundle</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>false</code>
+                                                        </td>
+
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>chargeType</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/enumerations.html#ChargeType" target="_self" >ChargeType</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                        <td>
+                                                        </td>
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -1077,6 +1155,149 @@ There are also pipes provided that wrap this service to provide pricing within a
                             </div>
                                 <div class="io-description">
                                     <p>a hot observable containing the price instance for the given product</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getQuoteLineItemPrice"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getQuoteLineItemPrice
+                            </b>
+                            <a href="#getQuoteLineItemPrice"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getQuoteLineItemPrice(quoteLI: <a href="../classes/QuoteLineItem.html">QuoteLineItem</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Method returns a NetPrice for a given QuoteLineItem instance.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>quoteLI</td>
+                                                        <td>
+                                                                    <code><a href="../classes/QuoteLineItem.html" target="_self" >QuoteLineItem</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Price.html" target="_self" >Observable&lt;Price&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>a hot observable containing the price of the QuoteLineItem</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getQuotePrice"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getQuotePrice
+                            </b>
+                            <a href="#getQuotePrice"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getQuotePrice(quote: <a href="../classes/Quote.html">Quote</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Method returns a price for a given Quote instance.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>quote</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Quote.html" target="_self" >Quote</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>the instance of the Quote to return a price for</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Price.html" target="_self" >Observable&lt;Price&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>a hot observable containing the price of the Quote</p>
 
                                 </div>
                     </td>

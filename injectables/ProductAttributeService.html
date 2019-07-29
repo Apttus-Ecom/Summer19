@@ -95,6 +95,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#getAttributeGroupIdsForFields">getAttributeGroupIdsForFields</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getAttributeValueDefaults">getAttributeValueDefaults</a>
                             </li>
                             <li>
@@ -123,6 +127,95 @@
         <h3 id="methods">
             Methods
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getAttributeGroupIdsForFields"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getAttributeGroupIdsForFields
+                            </b>
+                            <a href="#getAttributeGroupIdsForFields"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getAttributeGroupIdsForFields(attributes: <a href="../classes/ProductAttribute.html">Array<ProductAttribute></a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Method returns an array of product attributes.</p>
+<h3 id="example-">Example:</h3>
+<div><pre class="line-numbers"><code class="language-typescript">     import { ProductAttributeService, ProductAttribute, Product } from &#39;&#64;apttus/ecommerce&#39;;
+     import { Observable } from &#39;rxjs/Observable&#39;;
+
+     export class MyComponent implements OnInit{
+          productAttributeList: Array&lt;ProductAttribute&gt;;
+          productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
+
+          constructor(private productAttributeService: ProductAttributeService){}
+
+          getAttributeGroupIdsForFields(attributes: Array&lt;ProductAttribute&gt;){
+               this.productAttributeService.getAttributeGroupIdsForFields(attributes).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
+               // or
+               this.productAttributeList$ = this.productAttributeService.getAttributeGroupIdsForFields(attributes);
+          }
+     }</code></pre></div></div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>attributes</td>
+                                                        <td>
+                                                                    <code><a href="../classes/ProductAttribute.html" target="_self" >Array&lt;ProductAttribute&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>An array of products attributes.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/ProductAttribute.html" target="_self" >Observable&lt;Array&lt;ProductAttribute&gt;&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>An array of product attribute in an observable.</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -340,21 +433,21 @@
                             <div class="io-description"><p>Method returns an array of product attributes.
 Adds an additional property to all attributes returned called &#39;_.describe&#39;. This property contains metadata information about the attribute.</p>
 <h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { ProductAttributeService, ProductAttribute, Product } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+<div><pre class="line-numbers"><code class="language-typescript">     import { ProductAttributeService, ProductAttribute, Product } from &#39;&#64;apttus/ecommerce&#39;;
+     import { Observable } from &#39;rxjs/Observable&#39;;
 
-      export class MyComponent implements OnInit{
-           productAttributeList: Array&lt;ProductAttribute&gt;;
-           productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
+     export class MyComponent implements OnInit{
+          productAttributeList: Array&lt;ProductAttribute&gt;;
+          productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
 
-           constructor(private productAttributeService: ProductAttributeService){}
+          constructor(private productAttributeService: ProductAttributeService){}
 
-           setDescribeInformationOnProductAttributes(attributes: Array&lt;ProductAttribute&gt;){
-                this.productAttributeService.setDescribeInformationOnProductAttributes(attributes).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
-                // or
-                this.productAttributeList$ = this.productAttributeService.setDescribeInformationOnProductAttributes(attributes);
-           }
-      }</code></pre></div></div>
+          setDescribeInformationOnProductAttributes(attributes: Array&lt;ProductAttribute&gt;){
+               this.productAttributeService.setDescribeInformationOnProductAttributes(attributes).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
+               // or
+               this.productAttributeList$ = this.productAttributeService.setDescribeInformationOnProductAttributes(attributes);
+          }
+     }</code></pre></div></div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>

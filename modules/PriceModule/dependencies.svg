@@ -22,15 +22,11 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_PriceModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="115,-70 115,-268 381,-268 381,-70 115,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="175,-70 175,-268 321,-268 321,-70 175,-70"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_PriceModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="247,-78 247,-130 373,-130 373,-78 247,-78"/>
-</g>
-<g id="clust4" class="cluster">
-<title>cluster_PriceModule_imports</title>
-<polygon fill="none" stroke="#000000" points="123,-78 123,-130 239,-130 239,-78 123,-78"/>
+<polygon fill="none" stroke="#000000" points="185,-78 185,-130 311,-130 311,-78 185,-78"/>
 </g>
 <g id="clust5" class="cluster">
 <title>cluster_PriceModule_exports</title>
@@ -39,8 +35,8 @@
 <!-- PriceComponent -->
 <g id="node1" class="node">
 <title>PriceComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="365.0954,-122 254.9046,-122 254.9046,-86 365.0954,-86 365.0954,-122"/>
-<text text-anchor="middle" x="310" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PriceComponent</text>
+<polygon fill="#ffffb3" stroke="#000000" points="303.0954,-122 192.9046,-122 192.9046,-86 303.0954,-86 303.0954,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PriceComponent</text>
 </g>
 <!-- PriceModule -->
 <g id="node2" class="node">
@@ -51,32 +47,20 @@
 <!-- PriceComponent&#45;&gt;PriceModule -->
 <g id="edge1" class="edge">
 <title>PriceComponent&#45;&gt;PriceModule</title>
-<path fill="none" stroke="#000000" d="M273.5544,-122.1061C273.5544,-122.1061 273.5544,-140.991 273.5544,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="270.0544,-140.9909 273.5544,-150.991 277.0544,-140.991 270.0544,-140.9909"/>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 <!-- PriceComponent  -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>PriceComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="304.5961,-252 191.4039,-252 191.4039,-216 304.5961,-216 304.5961,-252"/>
 <text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">PriceComponent </text>
 </g>
 <!-- PriceModule&#45;&gt;PriceComponent  -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>PriceModule&#45;&gt;PriceComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
-</g>
-<!-- PricingModule -->
-<g id="node3" class="node">
-<title>PricingModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="230.9888,-122 227.9888,-126 206.9888,-126 203.9888,-122 131.0112,-122 131.0112,-86 230.9888,-86 230.9888,-122"/>
-<text text-anchor="middle" x="181" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PricingModule</text>
-</g>
-<!-- PricingModule&#45;&gt;PriceModule -->
-<g id="edge2" class="edge">
-<title>PricingModule&#45;&gt;PriceModule</title>
-<path fill="none" stroke="#000000" d="M217.419,-122.1061C217.419,-122.1061 217.419,-140.991 217.419,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="213.9191,-140.9909 217.419,-150.991 220.9191,-140.991 213.9191,-140.9909"/>
 </g>
 </g>
 </svg>

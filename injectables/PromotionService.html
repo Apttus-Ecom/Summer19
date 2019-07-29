@@ -54,7 +54,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>projects/apttus/promotion/src/lib/services/promotion/promotion.service.ts</code>
+            <code>projects/apttus/ecommerce/src/lib/modules/promotion/services/promotion.service.ts</code>
         </p>
 
             <p class="comment">
@@ -112,6 +112,9 @@
                                 <a href="#getAppliedPromotionForCart">getAppliedPromotionForCart</a>
                             </li>
                             <li>
+                                <a href="#onInit">onInit</a>
+                            </li>
+                            <li>
                                 <a href="#removeAppliedPromotion">removeAppliedPromotion</a>
                             </li>
                         </ul>
@@ -158,7 +161,7 @@
                     <td class="col-md-4">
                             <div class="io-description"><p>Method applies promotion to the current cart based on the promo code passed.</p>
 <h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { PromotionService } from &#39;&#64;apttus/promotion&#39;;
+<div><pre class="line-numbers"><code class="language-typescript">      import { PromotionService } from &#39;&#64;apttus/ecommerce&#39;;
       import { Observable } from &#39;rxjs/Observable&#39;;
 
       export class MyComponent implements OnInit{
@@ -203,7 +206,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
+                                <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
                             </div>
                                 <div class="io-description">
@@ -229,7 +232,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>getAppliedPromotionForCart()</code>
+<code>getAppliedPromotionForCart(incentiveCode?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                     </td>
                 </tr>
 
@@ -241,26 +244,90 @@
                             <div class="io-description"><p>Method returns an observable containing an array of adjustment line items for the current cart.</p>
 <h3 id="example-">Example:</h3>
 <p><code>`</code>typescript
-      import { PromotionService } from &#39;@apttus/promotion&#39;;
-      import { AdjustmentItem } from &#39;@apttus/promotion&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       adjustmentLineItems$: Observable&lt;Array&lt;AdjustmentLineItem&gt;&gt;;
-       adjustmentLineItems; Array&lt;AdjustmentLineItem&gt;;
-       constructor(private promotionService: PromotionService){}
+     import { PromotionService } from &#39;@apttus/ecommerce&#39;;
+     import { AdjustmentItem } from &#39;@apttus/ecommerce&#39;;
+     import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
+      adjustmentLineItems$: Observable&lt;Array&lt;AdjustmentLineItem&gt;&gt;;
+      adjustmentLineItems; Array&lt;AdjustmentLineItem&gt;;
+      constructor(private promotionService: PromotionService){}
 
-       getAppliedPromotionForCart(){
-            this.promotionService.getAppliedPromotionForCart().subscribe(res =&gt; this.adjustmentLineItems = res);
-            or
-            this.adjustmentLineItems$ = this.promotionService.getAppliedPromotionForCart();
-       }
-  }
- ``
- * &#64;returns an observable containing an array of adjustment line items for the current cart.</code></pre></div><p>   *</p>
+      getAppliedPromotionForCart(){
+           this.promotionService.getAppliedPromotionForCart().subscribe(res =&gt; this.adjustmentLineItems = res);
+           or
+           this.adjustmentLineItems$ = this.promotionService.getAppliedPromotionForCart();
+      }
+ }
+``
+* &#64;returns an observable containing an array of adjustment line items for the current cart.</code></pre></div><p>  *</p>
 </div>
 
                             <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>incentiveCode</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
                                 <b>Returns : </b>    <code><a href="../classes/AdjustmentItem.html" target="_self" >Observable&lt;Array&lt;AdjustmentItem&gt;&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onInit"></a>
+                        <span class="name">
+                            <b>
+                            onInit
+                            </b>
+                            <a href="#onInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onInit()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                     </td>
@@ -282,7 +349,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>removeAppliedPromotion(promoCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, msg: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, incentiveName?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, item?: <a href="../classes/AdjustmentItem.html">Array<AdjustmentItem></a>)</code>
+<code>removeAppliedPromotion(incentive: <a href="../classes/Incentive.html">Incentive</a>)</code>
                     </td>
                 </tr>
 
@@ -293,13 +360,13 @@
                     <td class="col-md-4">
                             <div class="io-description"><p>Method removes the promotion from the current cart if it is already applied.</p>
 <h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { PromotionService } from &#39;&#64;apttus/promotion&#39;;
+<div><pre class="line-numbers"><code class="language-typescript">      import { PromotionService } from &#39;&#64;apttus/ecommerce&#39;;
       import { Observable } from &#39;rxjs/Observable&#39;;
 
       export class MyComponent implements OnInit{
            constructor(private promotionService: PromotionService){}
 
-           removeAppliedPromotion(promocode: string, msg: string = &#39;valid&#39;, incentiveName?: string, item?: Array&lt;AdjustmentItem&gt;){
+           removeAppliedPromotion(promocode: string, msg: string = &#39;valid&#39;, incentiveName?: string){
                 this.promotionService.removeAppliedPromotion(promocode).subscribe({...});
            }
       }</code></pre></div></div>
@@ -312,65 +379,19 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Default value</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>promoCode</td>
+                                                        <td>incentive</td>
                                                         <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                                    <code><a href="../classes/Incentive.html" target="_self" >Incentive</a></code>
                                                         </td>
                                                     
                                                     <td>
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                        </td>
-
-                                                </tr>
-                                                <tr>
-                                                        <td>msg</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>&#x27;valid&#x27;</code>
-                                                        </td>
-
-                                                </tr>
-                                                <tr>
-                                                        <td>incentiveName</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
-
-                                                </tr>
-                                                <tr>
-                                                        <td>item</td>
-                                                        <td>
-                                                                    <code><a href="../classes/AdjustmentItem.html" target="_self" >Array&lt;AdjustmentItem&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
 
                                                 </tr>
                                         </tbody>
@@ -379,7 +400,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
+                                <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
                             </div>
                                 <div class="io-description">

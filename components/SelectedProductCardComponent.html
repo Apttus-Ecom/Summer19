@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Apttus Ecommerce</title>
+        <title>Apttus Ecommerce Summer &#x27;19</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce Summer &#x27;19</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -62,15 +62,39 @@
     <code>projects/apttus/elements/src/lib/product-card/selected-product-card/selected-product-card.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Selected product card is used to show selected products in the product drawer component carousel.</p>
+<h3>Preview</h3>
+<img class="jumbotron" src="../res/selectedProductCard.png" style="max-width: 100%">
+<h3>Usage</h3>
+
+<div><pre class="line-numbers"><code class="language-typescript">import { ProductCardModule } from &#39;&#64;apttus/elements&#39;;
+
+&#64;NgModule({
+  imports: [ProductCardModule, ...]
+})
+export class AppModule {}</code></pre></div>
+    </p>
 
     <p class="comment">
         <h3>Extends</h3>
     </p>
     <p class="comment">
-            <code><a href="../classes/Product.html" target="_self" >ProductCardComponent</a></code>
+                <code><a href="../interfaces/Card.html" target="_self" >ProductCardComponent</a></code>
     </p>
 
 
+    <p class="comment">
+        <h3>Example</h3>
+    </p>
+    <div class="io-description">
+                <div>
+                    <pre class="line-numbers"><code class="language-html">&lt;apt-selected-product-card [product]=&quot;product&quot;&gt;&lt;/apt-selected-product-card&gt;</code></pre>
+                </div>
+    </div>
 
 <section>
     <h3>Metadata</h3>
@@ -186,9 +210,6 @@
                                 <a href="#canAddToCart">canAddToCart</a>
                             </li>
                             <li>
-                                <a href="#constraintRuleList">constraintRuleList</a>
-                            </li>
-                            <li>
                                 <a href="#product">product</a>
                             </li>
                             <li>
@@ -223,18 +244,26 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="canAddToCart"></a>
-                        <code>canAddToCart</code>
+                        <b>canAddToCart</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>true</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to show the add to cart button on the card.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -242,31 +271,21 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
-                        <a name="constraintRuleList"></a>
-                        <code>constraintRuleList</code>
-                    </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="../classes/ConstraintRule.html" target="_self" >Array&lt;ConstraintRule&gt;</a></code>
-
-                            </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="product"></a>
-                        <code>product</code>
+                        <b>product</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="../classes/Product.html" target="_self" >AssetProduct | string</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Product | string</code>
 
-                            </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The product associated with this component.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -274,18 +293,26 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="showCategory"></a>
-                        <code>showCategory</code>
+                        <b>showCategory</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>true</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to show the category of the product.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -293,18 +320,26 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="showCode"></a>
-                        <code>showCode</code>
+                        <b>showCode</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>true</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to show the code of the product.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -312,18 +347,26 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="showPrice"></a>
-                        <code>showPrice</code>
+                        <b>showPrice</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>true</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to show the price of the product.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -331,18 +374,26 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="thumbnail"></a>
-                        <code>thumbnail</code>
+                        <b>thumbnail</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>true</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to show the thumbnail image on the product card.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -350,18 +401,26 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="type"></a>
-                        <code>type</code>
+                        <b>type</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code>&quot;card&quot; | &quot;media&quot;</code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;card&quot; | &quot;media&quot;</code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>&#x27;card&#x27;</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;card&#x27;</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Display type of the product card.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -372,139 +431,138 @@
 
     <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="removeProduct"></a>
-                        <span class="name">
-                            <b>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeProduct"></a>
+                    <span class="name">
+                        <b>
                             removeProduct
-                            </b>
-                            <a href="#removeProduct"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#removeProduct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>removeProduct()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>The product identifier set in the configuration file.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The product identifier set in the configuration file.</p>
 </div>
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="handleCheckbox"></a>
-                        <span class="name">
-                            <b>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleCheckbox"></a>
+                    <span class="name">
+                        <b>
                             handleCheckbox
-                            </b>
-                            <a href="#handleCheckbox"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#handleCheckbox"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>handleCheckbox(e)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>e</td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="onProduct"></a>
-                        <span class="name">
-                            <b>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onProduct"></a>
+                    <span class="name">
+                        <b>
                             onProduct
-                            </b>
-                            <a href="#onProduct"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#onProduct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>onProduct()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
     <section>
     
         <h3 id="inputs">
@@ -517,21 +575,14 @@
                         <a name="_product"></a>
                         <span class="name">
                             <b>
-                            _product
-                            </b>
+                            _product</b>
                             <a href="#_product"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>_product:     <code><a href="../classes/Product.html" target="_self" >AssetProduct</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/Product.html" target="_self" >AssetProduct</a></code>
+                            <i>Type : </i>    <code>Product</code>
 
                         </td>
                     </tr>
@@ -546,21 +597,14 @@
                         <a name="aboEnabled"></a>
                         <span class="name">
                             <b>
-                            aboEnabled
-                            </b>
+                            aboEnabled</b>
                             <a href="#aboEnabled"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>aboEnabled:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                         </td>
                     </tr>
@@ -575,16 +619,9 @@
                         <a name="enabledActions"></a>
                         <span class="name">
                             <b>
-                            enabledActions
-                            </b>
+                            enabledActions</b>
                             <a href="#enabledActions"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>enabledActions:     <code>Array&lt;string&gt;</code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -615,21 +652,14 @@
                         <a name="identifier"></a>
                         <span class="name">
                             <b>
-                            identifier
-                            </b>
+                            identifier</b>
                             <a href="#identifier"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>identifier:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </td>
                     </tr>
@@ -649,16 +679,9 @@
                         <a name="isLoggedIn$"></a>
                         <span class="name">
                             <b>
-                            isLoggedIn$
-                            </b>
+                            isLoggedIn$</b>
                             <a href="#isLoggedIn$"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>isLoggedIn$:     <code>Observable&lt;boolean&gt;</code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -684,21 +707,14 @@
                         <a name="loading"></a>
                         <span class="name">
                             <b>
-                            loading
-                            </b>
+                            loading</b>
                             <a href="#loading"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>loading:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                         </td>
                     </tr>
@@ -714,27 +730,15 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            selected$
-                            </b>
+                            selected$</b>
                             <a href="#selected$"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>selected$:     <code>Observable&lt;boolean&gt;</code>
-</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
                             <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>Observable.of(false)</code>
                         </td>
                     </tr>
 
@@ -843,8 +847,8 @@ img {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="card">  <button type="button" class="close remove-button" aria-label="Close" (click)="removeProduct()">    <span aria-hidden="true">&times;</span>  </button>  <a href="javascript.void(0)" [routerLink]="[\'product\', _product[identifier]]">    <div class="card-body p-2 d-flex">      <small [title]="_product.Name" class="card-title">{{_product.Name}}</small>      <div class="img-container my-md-2">        <img class="m-auto" [src]="_product.IconId | image" [alt]="_product.Name">      </div>      <small class="align-self-end">        <apt-price [record]="_product"></apt-price>      </small>    </div>  </a></div></div>'
-    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionAppliedtoLineitemComponent', 'selector': 'apt-pr-lineitem'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'}];
-    var DIRECTIVES = [];
+    var COMPONENTS = [{'name': 'AddressBookComponent', 'selector': 'app-address-book'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'AttachmentComponent', 'selector': 'app-attachment'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'BuyMoreModalComponent', 'selector': 'apt-buy-more-modal'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartListComponent', 'selector': 'app-cart-list'},{'name': 'CartSummaryComponent', 'selector': 'app-cart-summary'},{'name': 'CartTableComponent', 'selector': 'app-cart-table'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChangeConfigurationModalComponent', 'selector': 'apt-change-configuration-modal'},{'name': 'ChangePasswordLayoutComponent', 'selector': 'app-change-password-layout'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CompareLayoutComponent', 'selector': 'app-compare-layout'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CreateQuoteComponent', 'selector': 'app-create-quote'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'DetailSectionComponent', 'selector': 'apt-detail-section'},{'name': 'DetailsLayoutComponent', 'selector': 'apt-detail'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'InstalledProductsLayoutComponent', 'selector': 'app-installed-products-layout'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'ManageCartComponent', 'selector': 'app-manage-cart'},{'name': 'MdDotsComponent', 'selector': 'apt-md-dots'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'MyAccountLayoutComponent', 'selector': 'app-my-account-layout'},{'name': 'NavAccountComponent', 'selector': 'nav-account'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderDetailsComponent', 'selector': 'app-order-details'},{'name': 'OrderHistoryLayoutComponent', 'selector': 'app-order-history-layout'},{'name': 'OrderListComponent', 'selector': 'app-order-list'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PaymentMethodComponent', 'selector': 'apt-payment-method'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'PriceTypeFilterComponent', 'selector': 'app-price-type-filter'},{'name': 'ProductAttributeComponent', 'selector': 'apt-product-attribute'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDetailsComponent', 'selector': 'app-product-details'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'QuoteDetailsComponent', 'selector': 'app-quote-details'},{'name': 'RenewalFilterComponent', 'selector': 'app-renewal-filter'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'RequestQuoteFormComponent', 'selector': 'app-request-quote-form'},{'name': 'ResultsComponent', 'selector': 'pl-results'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SummaryComponent', 'selector': 'cart-summary'},{'name': 'TabAttachmentsComponent', 'selector': 'pdp-tab-attachments'},{'name': 'TabFeaturesComponent', 'selector': 'pdp-tab-features'},{'name': 'TableRowSubItemComponent', 'selector': 'apt-table-row-sub-item'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'},{'name': 'WishlistsComponent', 'selector': 'app-wishlists'}];
+    var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[appAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'SelectedProductCardComponent'};
 </script>
 <script src="../js/tree.js"></script>
@@ -858,6 +862,7 @@ img {
 
 
 
+                   
 
 
 

@@ -58,10 +58,19 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#AssetError" title="projects/apttus/abo/src/lib/classes/asset-error.enum.ts"><b>AssetError</b>&nbsp;&nbsp;&nbsp;(projects/.../asset-error.enum.ts)</a>
+                            <a href="#AssetError" title="projects/apttus/ecommerce/src/lib/modules/abo/classes/asset-error.enum.ts"><b>AssetError</b>&nbsp;&nbsp;&nbsp;(projects/.../asset-error.enum.ts)</a>
                         </li>
                         <li>
-                            <a href="#CartError" title="projects/apttus/ecommerce/src/lib/modules/cart/cart-error.enum.ts"><b>CartError</b>&nbsp;&nbsp;&nbsp;(projects/.../cart-error.enum.ts)</a>
+                            <a href="#CartError" title="projects/apttus/ecommerce/src/lib/modules/cart/enums/cart-error.enum.ts"><b>CartError</b>&nbsp;&nbsp;&nbsp;(projects/.../cart-error.enum.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ChargeType" title="projects/apttus/ecommerce/src/lib/modules/pricing/enums/charge-type.enum.ts"><b>ChargeType</b>&nbsp;&nbsp;&nbsp;(projects/.../charge-type.enum.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IncrementLineAction" title="projects/apttus/ecommerce/src/lib/modules/abo/classes/increment-asset-do.ts"><b>IncrementLineAction</b>&nbsp;&nbsp;&nbsp;(projects/.../increment-asset-do.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LineStatus" title="projects/apttus/ecommerce/src/lib/modules/cart/enums/line-status.enum.ts"><b>LineStatus</b>&nbsp;&nbsp;&nbsp;(projects/.../line-status.enum.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -70,7 +79,7 @@
     </table>
 </section>
 
-    <h3>projects/apttus/abo/src/lib/classes/asset-error.enum.ts</h3>
+    <h3>projects/apttus/ecommerce/src/lib/modules/abo/classes/asset-error.enum.ts</h3>
     <section>
         <table class="table table-sm table-bordered">
             <tbody>
@@ -93,7 +102,7 @@
             </tbody>
         </table>
 </section>
-    <h3>projects/apttus/ecommerce/src/lib/modules/cart/cart-error.enum.ts</h3>
+    <h3>projects/apttus/ecommerce/src/lib/modules/cart/enums/cart-error.enum.ts</h3>
     <section>
         <table class="table table-sm table-bordered">
             <tbody>
@@ -131,6 +140,225 @@
                         <tr>
                             <td class="col-md-4">
                                 <i>Value : </i><code>CART.CLIENT_PRICE_INVALID</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>projects/apttus/ecommerce/src/lib/modules/pricing/enums/charge-type.enum.ts</h3>
+    <section>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ChargeType"></a>
+                        <span class="name"><b>ChargeType</b><a href="#ChargeType"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;StandardPrice
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Standard Price</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;License
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>License Fee</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Subscription
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Subscription Fee</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Implementation
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Implementation Fee</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Installation
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Installation Fee</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Maintenance
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Maintenance Fee</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Adjustment
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Adjustment</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;SalesTax
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Sales Tax</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;ShippingHandling
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Shipping &amp; Handling</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>projects/apttus/ecommerce/src/lib/modules/abo/classes/increment-asset-do.ts</h3>
+    <section>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="IncrementLineAction"></a>
+                        <span class="name"><b>IncrementLineAction</b><a href="#IncrementLineAction"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;INCREMENT_AND_MERGE
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Increment and Merge</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;INCREMENT
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Increment</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>projects/apttus/ecommerce/src/lib/modules/cart/enums/line-status.enum.ts</h3>
+    <section>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="LineStatus"></a>
+                        <span class="name"><b>LineStatus</b><a href="#LineStatus"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;New
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>New</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Existing
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Existing</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Renew
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Renewed</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Cancel
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Cancelled</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Increment
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Incremented</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Amend
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Amended</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Upgrade
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>Upgraded</code>
                             </td>
                         </tr>
             </tbody>

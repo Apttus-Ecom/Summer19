@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Apttus Ecommerce</title>
+        <title>Apttus Ecommerce Summer &#x27;19</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce Summer &#x27;19</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -66,9 +66,17 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>Constraint Rule Popover Component.</p>
-<p>Creates a popover on an element based on the constraint rule list and product passed to it.</p>
+        <p>The constraint rule popover component creates a popover on an element based on the constraint rule list and product passed to it.</p>
+<h3>Preview</h3>
+<img class="jumbotron" src="../res/constraintPopover.png" style="max-width: 100%">
+<h3>Usage</h3>
 
+<div><pre class="line-numbers"><code class="language-typescript">import { ConstraintPopoverModule } from &#39;&#64;apttus/elements&#39;;
+
+&#64;NgModule({
+  imports: [ConstraintPopoverModule, ...]
+})
+export class AppModule {}</code></pre></div>
     </p>
 
 
@@ -76,7 +84,8 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
     <p class="comment">
@@ -84,7 +93,7 @@
     </p>
     <div class="io-description">
                 <div>
-                    <pre class="line-numbers"><code class="language-html">&lt;button[popover]=&quot;popTemplate&quot;container=&quot;body&quot;[outsideClick]=&quot;true&quot;containerClass=&quot;CRPopover&quot;triggers=&quot;mouseenter:mouseleave focus:blur&quot;&gt;Add to Cart&lt;/button&gt;&lt;ng-template #popTemplate&gt;&lt;apt-cr-popover [ruleList]=&quot;constraintRuleList&quot; [product]=&quot;product&quot;&gt;&lt;/apt-cr-popover&gt;&lt;/ng-template&gt;</code></pre>
+                    <pre class="line-numbers"><code class="language-html">&lt;button[popover]=&quot;popTemplate&quot;container=&quot;body&quot;[outsideClick]=&quot;true&quot;containerClass=&quot;CRPopover&quot;triggers=&quot;mouseenter:mouseleave focus:blur&quot;&gt;Add to Cart&lt;/button&gt;&lt;ng-template #popTemplate&gt;&lt;apt-cr-popover   [ruleList]=&quot;constraintRuleList&quot;   [product]=&quot;product&quot;   [message]=&quot;popoverMessage&quot;   [optionRules]=&quot;hasOptionRules&quot;   [triggers]=&quot;popoverTriggers&quot;   [outsideClick]=&quot;closeOnOutsideClick&quot;   [containerClass]=&quot;popoverWrapperClass&quot;&gt;&lt;/apt-cr-popover&gt;&lt;/ng-template&gt;</code></pre>
                 </div>
     </div>
 
@@ -264,6 +273,9 @@
                                 <a href="#containerClass">containerClass</a>
                             </li>
                             <li>
+                                <a href="#items">items</a>
+                            </li>
+                            <li>
                                 <a href="#message">message</a>
                             </li>
                             <li>
@@ -277,9 +289,6 @@
                             </li>
                             <li>
                                 <a href="#ruleList">ruleList</a>
-                            </li>
-                            <li>
-                                <a href="#storefront">storefront</a>
                             </li>
                             <li>
                                 <a href="#triggers">triggers</a>
@@ -301,7 +310,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(productService: <a href="../injectables/ProductService.html">ProductService</a>, crService: <a href="../injectables/ConstraintRuleService.html">ConstraintRuleService</a>, changeDetectorRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, elRef: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, sideMenuService: <a href="../injectables/ConstraintSideMenuService.html">ConstraintSideMenuService</a>, productConfigurationService: <a href="../injectables/ProductConfigurationService.html">ProductConfigurationService</a>)</code>
+<code>constructor(productService: ProductService, elRef: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, sideMenuService: <a href="../injectables/ConstraintSideMenuService.html">ConstraintSideMenuService</a>, constraintRuleService: ConstraintRuleService, cdr: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
                     </td>
                 </tr>
 
@@ -322,31 +331,7 @@
                                                         <td>productService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/ProductService.html" target="_self" >ProductService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>crService</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="../injectables/ConstraintRuleService.html" target="_self" >ConstraintRuleService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>changeDetectorRef</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                                    <code>ProductService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -358,7 +343,7 @@
                                                         <td>elRef</td>
                                                   
                                                         <td>
-                                                                    <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                                        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -370,7 +355,7 @@
                                                         <td>sideMenuService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/ConstraintSideMenuService.html" target="_self" >ConstraintSideMenuService</a></code>
+                                                                        <code><a href="../injectables/ConstraintSideMenuService.html" target="_self" >ConstraintSideMenuService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -379,10 +364,22 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>productConfigurationService</td>
+                                                        <td>constraintRuleService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/ProductConfigurationService.html" target="_self" >ProductConfigurationService</a></code>
+                                                                    <code>ConstraintRuleService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cdr</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -404,18 +401,26 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="containerClass"></a>
-                        <code>containerClass</code>
+                        <b>containerClass</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>&#x27;CRPopover&#x27;</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;CRPopover&#x27;</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Class to be applied to the parent of the popover.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -423,15 +428,37 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
+                        <a name="items"></a>
+                        <b>items</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Array&lt;CartItem&gt;</code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="message"></a>
-                        <code>message</code>
+                        <b>message</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                            </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An added message to show on the popover.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -439,18 +466,26 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="optionRules"></a>
-                        <code>optionRules</code>
+                        <b>optionRules</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>false</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to check if there are option rules.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -458,18 +493,26 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="outsideClick"></a>
-                        <code>outsideClick</code>
+                        <b>outsideClick</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>true</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Closes the popover if there is mouse click outside the popover.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -477,15 +520,21 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="product"></a>
-                        <code>product</code>
+                        <b>product</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Product</code>
 
-                            </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The product associated with the constraint rule.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -493,15 +542,15 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="ruleList"></a>
-                        <code>ruleList</code>
+                        <b>ruleList</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="../classes/ConstraintRule.html" target="_self" >Array&lt;ConstraintRule&gt;</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Array&lt;ConstraintRule&gt;</code>
 
-                            </p>
                     </td>
                 </tr>
             </tbody>
@@ -509,34 +558,26 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
-                        <a name="storefront"></a>
-                        <code>storefront</code>
-                    </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="../classes/Storefront.html" target="_self" >Storefront</a></code>
-
-                            </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="triggers"></a>
-                        <code>triggers</code>
+                        <b>triggers</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>&#x27;mouseenter:mouseleave focus:blur&#x27;</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;mouseenter:mouseleave focus:blur&#x27;</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Special string for ngx-bootstrap to configuring events that trigger show/hide of the popover.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -547,606 +588,605 @@
 
     <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="checkRule"></a>
-                        <span class="name">
-                            <b>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkRule"></a>
+                    <span class="name">
+                        <b>
                             checkRule
-                            </b>
-                            <a href="#checkRule"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#checkRule"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>checkRule(ruleList)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>ruleList</td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ruleList</td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getOptionValue"></a>
-                        <span class="name">
-                            <b>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOptionValue"></a>
+                    <span class="name">
+                        <b>
                             getOptionValue
-                            </b>
-                            <a href="#getOptionValue"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>getOptionValue(product: <a href="../classes/Product.html">Product</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getOptionValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getOptionValue(product: Product)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>product</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>product</td>
+                                    <td>
+                                            <code>Product</code>
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="isProductSelected"></a>
-                        <span class="name">
-                            <b>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isProductSelected"></a>
+                    <span class="name">
+                        <b>
                             isProductSelected
-                            </b>
-                            <a href="#isProductSelected"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>isProductSelected(product: <a href="../classes/Product.html">Product</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#isProductSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isProductSelected(product: Product)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>product</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>product</td>
+                                    <td>
+                                            <code>Product</code>
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="onDone"></a>
-                        <span class="name">
-                            <b>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDone"></a>
+                    <span class="name">
+                        <b>
                             onDone
-                            </b>
-                            <a href="#onDone"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#onDone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>onDone()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="onPrompt"></a>
-                        <span class="name">
-                            <b>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPrompt"></a>
+                    <span class="name">
+                        <b>
                             onPrompt
-                            </b>
-                            <a href="#onPrompt"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>onPrompt(add?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, product?: <a href="../classes/Product.html">Product</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#onPrompt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPrompt(add?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, product?: Product)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>add</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>add</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
 
-                                                </tr>
-                                                <tr>
-                                                        <td>product</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
+                                    <td>
+                                        Yes
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="onShown"></a>
-                        <span class="name">
-                            <b>
+                                </tr>
+                                <tr>
+                                    <td>product</td>
+                                    <td>
+                                            <code>Product</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onShown"></a>
+                    <span class="name">
+                        <b>
                             onShown
-                            </b>
-                            <a href="#onShown"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#onShown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>onShown()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="popoverClose"></a>
-                        <span class="name">
-                            <b>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="popoverClose"></a>
+                    <span class="name">
+                        <b>
                             popoverClose
-                            </b>
-                            <a href="#popoverClose"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#popoverClose"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>popoverClose()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="popoverOpen"></a>
-                        <span class="name">
-                            <b>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="popoverOpen"></a>
+                    <span class="name">
+                        <b>
                             popoverOpen
-                            </b>
-                            <a href="#popoverOpen"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#popoverOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>popoverOpen(pop)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>pop</td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pop</td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="selectPromptOption"></a>
-                        <span class="name">
-                            <b>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectPromptOption"></a>
+                    <span class="name">
+                        <b>
                             selectPromptOption
-                            </b>
-                            <a href="#selectPromptOption"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>selectPromptOption(product: <a href="../classes/Product.html">Product</a>, addOption: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, condition?: <a href="../classes/ConstraintRuleCondition.html">Array<ConstraintRuleCondition></a>, action?: <a href="../classes/ConstraintRuleAction.html">Array<ConstraintRuleAction></a>, actionType?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#selectPromptOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectPromptOption(product: Product, addOption: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, condition?: Array<ConstraintRuleCondition>, action?: Array<ConstraintRuleAction>, actionType?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>product</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>product</td>
+                                    <td>
+                                            <code>Product</code>
+                                    </td>
 
-                                                </tr>
-                                                <tr>
-                                                        <td>addOption</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                </tr>
-                                                <tr>
-                                                        <td>condition</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ConstraintRuleCondition.html" target="_self" >Array&lt;ConstraintRuleCondition&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
 
-                                                </tr>
-                                                <tr>
-                                                        <td>action</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
+                                </tr>
+                                <tr>
+                                    <td>addOption</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
 
-                                                </tr>
-                                                <tr>
-                                                        <td>actionType</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="showRuleForProduct"></a>
-                        <span class="name">
-                            <b>
+                                </tr>
+                                <tr>
+                                    <td>condition</td>
+                                    <td>
+                                            <code>Array&lt;ConstraintRuleCondition&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>action</td>
+                                    <td>
+                                            <code>Array&lt;ConstraintRuleAction&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>actionType</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showRuleForProduct"></a>
+                    <span class="name">
+                        <b>
                             showRuleForProduct
-                            </b>
-                            <a href="#showRuleForProduct"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#showRuleForProduct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>showRuleForProduct(rules)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>rules</td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>rules</td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
     <section>
     
         <h3 id="inputs">
@@ -1160,21 +1200,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            autoInclusionRules
-                            </b>
+                            autoInclusionRules</b>
                             <a href="#autoInclusionRules"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>autoInclusionRules:     <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
+                            <i>Type : </i>    <code>Array&lt;ConstraintRuleAction&gt;</code>
 
                         </td>
                     </tr>
@@ -1195,21 +1228,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            autoRulesCond
-                            </b>
+                            autoRulesCond</b>
                             <a href="#autoRulesCond"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>autoRulesCond:     <code><a href="../classes/ConstraintRuleCondition.html" target="_self" >Array&lt;ConstraintRuleCondition&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ConstraintRuleCondition.html" target="_self" >Array&lt;ConstraintRuleCondition&gt;</a></code>
+                            <i>Type : </i>    <code>Array&lt;ConstraintRuleCondition&gt;</code>
 
                         </td>
                     </tr>
@@ -1229,21 +1255,14 @@
                         <a name="identifier"></a>
                         <span class="name">
                             <b>
-                            identifier
-                            </b>
+                            identifier</b>
                             <a href="#identifier"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>identifier:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </td>
                     </tr>
@@ -1270,21 +1289,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            inclusionValid
-                            </b>
+                            inclusionValid</b>
                             <a href="#inclusionValid"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>inclusionValid:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                         </td>
                     </tr>
@@ -1305,21 +1317,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            openPopover
-                            </b>
+                            openPopover</b>
                             <a href="#openPopover"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>openPopover:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                         </td>
                     </tr>
@@ -1339,21 +1344,14 @@
                         <a name="otherRules"></a>
                         <span class="name">
                             <b>
-                            otherRules
-                            </b>
+                            otherRules</b>
                             <a href="#otherRules"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>otherRules:     <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
+                            <i>Type : </i>    <code>Array&lt;ConstraintRuleAction&gt;</code>
 
                         </td>
                     </tr>
@@ -1373,21 +1371,14 @@
                         <a name="popover"></a>
                         <span class="name">
                             <b>
-                            popover
-                            </b>
+                            popover</b>
                             <a href="#popover"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>popover:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </td>
                     </tr>
@@ -1402,21 +1393,14 @@
                         <a name="productExclusionRules"></a>
                         <span class="name">
                             <b>
-                            productExclusionRules
-                            </b>
+                            productExclusionRules</b>
                             <a href="#productExclusionRules"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>productExclusionRules:     <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
+                            <i>Type : </i>    <code>Array&lt;ConstraintRuleAction&gt;</code>
 
                         </td>
                     </tr>
@@ -1431,21 +1415,14 @@
                         <a name="productInclusionRules"></a>
                         <span class="name">
                             <b>
-                            productInclusionRules
-                            </b>
+                            productInclusionRules</b>
                             <a href="#productInclusionRules"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>productInclusionRules:     <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
+                            <i>Type : </i>    <code>Array&lt;ConstraintRuleAction&gt;</code>
 
                         </td>
                     </tr>
@@ -1461,21 +1438,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            productList
-                            </b>
+                            productList</b>
                             <a href="#productList"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>productList:     <code><a href="../classes/Product.html" target="_self" >Array&lt;Product&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/Product.html" target="_self" >Array&lt;Product&gt;</a></code>
+                            <i>Type : </i>    <code>Array&lt;Product&gt;</code>
 
                         </td>
                     </tr>
@@ -1496,21 +1466,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            productService
-                            </b>
+                            productService</b>
                             <a href="#productService"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>productService:     <code><a href="../injectables/ProductService.html" target="_self" >ProductService</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../injectables/ProductService.html" target="_self" >ProductService</a></code>
+                            <i>Type : </i>    <code>ProductService</code>
 
                         </td>
                     </tr>
@@ -1526,21 +1489,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            promptExclusionRules
-                            </b>
+                            promptExclusionRules</b>
                             <a href="#promptExclusionRules"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>promptExclusionRules:     <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
+                            <i>Type : </i>    <code>Array&lt;ConstraintRuleAction&gt;</code>
 
                         </td>
                     </tr>
@@ -1561,21 +1517,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            promptInclusionRules
-                            </b>
+                            promptInclusionRules</b>
                             <a href="#promptInclusionRules"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>promptInclusionRules:     <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
+                            <i>Type : </i>    <code>Array&lt;ConstraintRuleAction&gt;</code>
 
                         </td>
                     </tr>
@@ -1596,21 +1545,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            promptRulesCond
-                            </b>
+                            promptRulesCond</b>
                             <a href="#promptRulesCond"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>promptRulesCond:     <code><a href="../classes/ConstraintRuleCondition.html" target="_self" >Array&lt;ConstraintRuleCondition&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ConstraintRuleCondition.html" target="_self" >Array&lt;ConstraintRuleCondition&gt;</a></code>
+                            <i>Type : </i>    <code>Array&lt;ConstraintRuleCondition&gt;</code>
 
                         </td>
                     </tr>
@@ -1631,21 +1573,14 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            showmsgRules
-                            </b>
+                            showmsgRules</b>
                             <a href="#showmsgRules"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>showmsgRules:     <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ConstraintRuleAction.html" target="_self" >Array&lt;ConstraintRuleAction&gt;</a></code>
+                            <i>Type : </i>    <code>Array&lt;ConstraintRuleAction&gt;</code>
 
                         </td>
                     </tr>
@@ -1666,16 +1601,9 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            state
-                            </b>
+                            state</b>
                             <a href="#state"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>state:     <code>&quot;READ&quot; | &quot;WRITE&quot; | &quot;OTHERS&quot; | &quot;LOADING&quot;</code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -1700,8 +1628,8 @@
 
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div [popover]&#x3D;&quot;(ruleList?.length &gt; 0 || message) ? popTemplate : null&quot; container&#x3D;&quot;body&quot; [containerClass]&#x3D;&quot;containerClass&quot; 
-  [outsideClick]&#x3D;&quot;outsideClick&quot; [triggers]&#x3D;&quot;triggers&quot; [placement]&#x3D;&quot;onShown()&quot; (click)&#x3D;&quot;popoverOpen(pop)&quot; #pop&#x3D;&quot;bs-popover&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div [popover]&#x3D;&quot;(ruleList?.length &gt; 0 || message?.length &gt; 0) ? popTemplate : null&quot; [containerClass]&#x3D;&quot;containerClass&quot; 
+  [outsideClick]&#x3D;&quot;outsideClick&quot; [triggers]&#x3D;&quot;triggers&quot; [placement]&#x3D;&quot;onShown()&quot; (click)&#x3D;&quot;popoverOpen(pop)&quot; #pop&#x3D;&quot;bs-popover&quot; [attr.data-popover]&#x3D;&quot;(ruleList?.length &gt; 0 || message)&quot;&gt;
   &lt;ng-content&gt;&lt;/ng-content&gt;
 &lt;/div&gt;
 
@@ -1714,7 +1642,7 @@
 &lt;ng-template #popTemplate&gt;
   &lt;div class&#x3D;&quot;p-2&quot; *ngIf&#x3D;&quot;!optionRules; else constraintOptionTemplate&quot;&gt;
     &lt;div class&#x3D;&quot;popoverHeader mb-3&quot;&gt;
-      &lt;h5&gt;Product(s) Included / Excluded&lt;/h5&gt;
+      &lt;h5&gt;{{&#x27;CONSTRAINT_POPOVER.PRODUCTS_INCLUDED_EXCLUDED_HEADING&#x27; | translate}}&lt;/h5&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;popoverBody&quot;&gt;
       &lt;div *ngIf&#x3D;&quot;message&quot;&gt;
@@ -1722,10 +1650,7 @@
       &lt;/div&gt;
 
       &lt;div *ngIf&#x3D;&quot;productInclusionRules?.length &gt; 0&quot;&gt;
-        &lt;p&gt;
-          &lt;strong&gt;The following products &lt;/strong&gt; are included with the product
-          &lt;strong&gt; {{product.Name}}&lt;/strong&gt;.
-        &lt;/p&gt;
+        &lt;p [innerHTML]&#x3D;&quot;&#x27;CONSTRAINT_POPOVER.PRODUCTS_INCLUSION&#x27; | translate: {productName: product.Name}&quot;&gt;&lt;/p&gt;
         &lt;div class&#x3D;&quot;border-top pt-3&quot;&gt;
           &lt;div *ngFor&#x3D;&quot;let rule of productInclusionRules&quot; class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
             &lt;ng-container *ngIf&#x3D;&quot;rule.ProductScope &#x3D;&#x3D;&#x3D; &#x27;Product&#x27;&quot;&gt;
@@ -1739,9 +1664,8 @@
       &lt;/div&gt;
 
       &lt;div *ngIf&#x3D;&quot;productExclusionRules?.length &gt; 0&quot;&gt;
-        &lt;p [ngClass]&#x3D;&quot;(productExclusionRules?.length &gt; 0) ? &#x27;border-top pt-3 mt-3&#x27; : &#x27;&#x27;&quot;&gt;
-          &lt;strong&gt;The following products &lt;/strong&gt; are excluded with the product
-          &lt;strong&gt; {{product.Name}}&lt;/strong&gt;.
+        &lt;p [ngClass]&#x3D;&quot;(productExclusionRules?.length &gt; 0) ? &#x27;border-top pt-3 mt-3&#x27; : &#x27;&#x27;&quot;
+          [innerHTML]&#x3D;&quot;&#x27;CONSTRAINT_POPOVER.PRODUCTS_EXCLUSION&#x27; | translate: {productName: product.Name}&quot;&gt;
         &lt;/p&gt;
         &lt;div class&#x3D;&quot;border-top pt-3&quot;&gt;
           &lt;div *ngFor&#x3D;&quot;let rule of productExclusionRules&quot; class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
@@ -1756,16 +1680,10 @@
       &lt;div *ngIf&#x3D;&quot;otherRules?.length &gt; 0&quot;&gt;
         &lt;div *ngFor&#x3D;&quot;let rule of otherRules&quot;&gt;
           &lt;ng-container *ngIf&#x3D;&quot;rule.ProductScope &#x3D;&#x3D;&#x3D; &#x27;Product Group&#x27;&quot;&gt;
-            &lt;p class&#x3D;&quot;pt-3 mt-3&quot;&gt;
-              Product group
-              &lt;strong&gt;{{rule?.ProductGroup?.Name}}&lt;/strong&gt;
-            &lt;/p&gt;
+            &lt;p class&#x3D;&quot;pt-3 mt-3&quot; [innerHTML]&#x3D;&quot;&#x27;COMMON.PRODUCT_GROUP&#x27; | translate: {productGroupName: rule?.ProductGroup?.Name}&quot;&gt;&lt;/p&gt;
           &lt;/ng-container&gt;
           &lt;ng-container *ngIf&#x3D;&quot;rule.ProductScope &#x3D;&#x3D;&#x3D; &#x27;Product Family&#x27;&quot;&gt;
-            &lt;p class&#x3D;&quot;pt-3 mt-3&quot;&gt;
-              Product family
-              &lt;strong&gt;{{rule?.ProductFamily}}&lt;/strong&gt;
-            &lt;/p&gt;
+            &lt;p class&#x3D;&quot;pt-3 mt-3&quot; [innerHTML]&#x3D;&quot;&#x27;COMMON.PRODUCT_FAMILY&#x27; | translate: {productFamily: rule?.ProductFamily}&quot;&gt;&lt;/p&gt;
           &lt;/ng-container&gt;
           &lt;div class&#x3D;&quot;border-top pt-3&quot;&gt;
             &lt;p [innerHTML]&#x3D;&quot;rule.Message&quot;&gt;&lt;/p&gt;
@@ -1787,7 +1705,7 @@
       &lt;div *ngSwitchCase&#x3D;&quot;&#x27;READ&#x27;&quot;&gt;
         &lt;div class&#x3D;&quot;p-2&quot; *ngIf&#x3D;&quot;autoInclusionRules.length &gt; 0&quot;&gt;
           &lt;div class&#x3D;&quot;d-flex justify-content-between border-bottom mb-3&quot;&gt;
-            &lt;h5&gt;Auto Included Options&lt;/h5&gt;
+            &lt;h5&gt;{{&#x27;CONSTRAINT_POPOVER.AUTO_INCLUDED_OPTIONS&#x27; | translate}}&lt;/h5&gt;
             &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close closeButton&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;popoverClose()&quot;&gt;
               &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
             &lt;/button&gt; 
@@ -1798,9 +1716,7 @@
             &lt;/div&gt;
 
             &lt;div&gt;
-              &lt;p&gt;
-                Below option(s) are auto included with option
-                &lt;strong&gt; {{product.Name}}&lt;/strong&gt;.&lt;/p&gt;
+              &lt;p [innerHTML]&#x3D;&quot;&#x27;CONSTRAINT_POPOVER.AUTO_INCLUSION_OF_OPTIONS&#x27; | translate: {productName: product.Name}&quot;&gt;&lt;/p&gt;
 
               &lt;div class&#x3D;&quot;border-top pt-3&quot;&gt;
                 &lt;div *ngFor&#x3D;&quot;let rule of autoInclusionRules&quot; class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
@@ -1820,14 +1736,14 @@
                       &lt;/div&gt;
                       &lt;form class&#x3D;&quot;border-left ml-auto row price-details small&quot;&gt;
                         &lt;div class&#x3D;&quot;form-group col&quot;&gt;
-                          &lt;label&gt;Price&lt;/label&gt;
+                          &lt;label&gt;{{&#x27;COMMON.PRICE&#x27; | translate}}&lt;/label&gt;
                           &lt;div class&#x3D;&quot;pt-1&quot;&gt;
                             &lt;apt-price [record]&#x3D;&quot;rule.Product&quot; quantity&#x3D;&quot;1&quot;&gt;&lt;/apt-price&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
 
                         &lt;div class&#x3D;&quot;form-group col&quot;&gt;
-                          &lt;label for&#x3D;&quot;qty&quot;&gt;Qty&lt;/label&gt;
+                          &lt;label for&#x3D;&quot;qty&quot;&gt;{{&#x27;COMMON.QTY2&#x27; | translate}}&lt;/label&gt;
                            &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control form-control-sm text-center&quot; id&#x3D;&quot;qty&quot; placeholder&#x3D;&quot;1&quot; name&#x3D;&quot;quantity&quot; readonly value&#x3D;&quot;1&quot;/&gt; &lt;!--[(ngModel)]&#x3D;&quot;getOptionValue(rule)._metadata.quantity&quot; --&gt;
                         &lt;/div&gt;
                       &lt;/form&gt;
@@ -1842,7 +1758,7 @@
       &lt;div *ngSwitchCase&#x3D;&quot;&#x27;WRITE&#x27;&quot;&gt;
         &lt;div class&#x3D;&quot;p-2&quot; *ngIf&#x3D;&quot;promptInclusionRules.length &gt; 0&quot;&gt;
           &lt;div class&#x3D;&quot;d-flex justify-content-between border-bottom mb-3&quot;&gt;
-            &lt;h5&gt;Included Options&lt;/h5&gt;
+            &lt;h5&gt;{{&#x27;CONSTRAINT_POPOVER.INCLUDED_OPTIONS_HEADING&#x27; | translate}}&lt;/h5&gt;
             &lt;!-- &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close closeButton&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;popoverClose()&quot;&gt;
               &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
             &lt;/button&gt; --&gt;
@@ -1854,9 +1770,9 @@
 
             &lt;div&gt;
               &lt;p&gt;
-                &lt;span *ngIf&#x3D;&quot;promptRulesCond[0].ProductScope !&#x3D;&#x3D; &#x27;Product&#x27;&quot;&gt;At least {{promptRulesCond[0].MatchMinProducts}} &lt;/span&gt;
-                Option
-                &lt;span *ngIf&#x3D;&quot;promptRulesCond[0].ProductScope !&#x3D;&#x3D; &#x27;Product&#x27;&quot;&gt;{{promptRulesCond[0].MatchMinProducts &gt; 1 ? &#x27;(s)&#x27; : &#x27;&#x27;}}&lt;/span&gt; from below must be included with
+                &lt;span *ngIf&#x3D;&quot;promptRulesCond[0].ProductScope !&#x3D;&#x3D; &#x27;Product&#x27;&quot;&gt;{{&#x27;CONSTRAINT_POPOVER.AT_LEAST&#x27; | translate}} {{promptRulesCond[0].MatchMinProducts}} &lt;/span&gt;
+                {{&#x27;CONSTRAINT_POPOVER.OPTION&#x27; | translate}}
+                &lt;span *ngIf&#x3D;&quot;promptRulesCond[0].ProductScope !&#x3D;&#x3D; &#x27;Product&#x27;&quot;&gt;{{promptRulesCond[0].MatchMinProducts &gt; 1 ? &#x27;(s)&#x27; : &#x27;&#x27;}}&lt;/span&gt; {{&#x27;CONSTRAINT_POPOVER.OPTION_MUST_BE_INCLUDED&#x27; | translate}}
                 &lt;strong&gt; {{product.Name}}&lt;/strong&gt;.&lt;/p&gt;
 
               &lt;div class&#x3D;&quot;border-top pt-3&quot;&gt;
@@ -1877,19 +1793,19 @@
                       &lt;/div&gt;
                       &lt;form class&#x3D;&quot;border-left ml-auto row price-details small&quot;&gt;
                         &lt;div class&#x3D;&quot;form-group col&quot;&gt;
-                          &lt;label&gt;Price&lt;/label&gt;
+                          &lt;label&gt;{{&#x27;COMMON.PRICE&#x27; | translate}}&lt;/label&gt;
                           &lt;div class&#x3D;&quot;pt-1&quot;&gt;
                             &lt;apt-price [record]&#x3D;&quot;rule.Product&quot; quantity&#x3D;&quot;1&quot;&gt;&lt;/apt-price&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
 
                         &lt;div class&#x3D;&quot;form-group col&quot;&gt;
-                          &lt;label for&#x3D;&quot;qty&quot;&gt;Qty&lt;/label&gt;
+                          &lt;label for&#x3D;&quot;qty&quot;&gt;{{&#x27;COMMON.QTY2&#x27; | translate}}&lt;/label&gt;
                           &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control form-control-sm text-center&quot; id&#x3D;&quot;qty&quot; placeholder&#x3D;&quot;1&quot; name&#x3D;&quot;quantity&quot; [(ngModel)]&#x3D;&quot;getOptionValue(rule?.Product)._metadata.quantity&quot;
                           /&gt;
                         &lt;/div&gt;
                         &lt;div class&#x3D;&quot;form-group col m-0 pl-0&quot;&gt;
-                          &lt;button class&#x3D;&quot;btn btn-sm btn-primary mt-4&quot; (click)&#x3D;&quot;selectPromptOption(rule?.Product, true, promptRulesCond, promptInclusionRules, &#x27;Inclusion&#x27;)&quot;&gt;Add To Bundle&lt;/button&gt;
+                          &lt;button class&#x3D;&quot;btn btn-sm btn-primary mt-4&quot; (click)&#x3D;&quot;selectPromptOption(rule?.Product, true, promptRulesCond, promptInclusionRules, &#x27;Inclusion&#x27;)&quot;&gt;{{&#x27;CONSTRAINT_POPOVER.ADD_TO_BUNDLE&#x27; | translate}}&lt;/button&gt;
                         &lt;/div&gt;
                       &lt;/form&gt;
                     &lt;/div&gt;
@@ -1900,12 +1816,12 @@
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;border-top d-flex justify-content-end mt-3 pt-3&quot;&gt;
              &lt;!-- &lt;button class&#x3D;&quot;btn btn-seconday mr-2&quot; (click)&#x3D;&quot;onCancel()&quot;&gt;Cancel&lt;/button&gt;  --&gt;
-            &lt;button class&#x3D;&quot;btn btn-primary&quot; [disabled]&#x3D;&quot;!inclusionValid&quot; (click)&#x3D;&quot;onDone()&quot;&gt;Done&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-primary&quot; [disabled]&#x3D;&quot;!inclusionValid&quot; (click)&#x3D;&quot;onDone()&quot;&gt;{{&#x27;CONSTRAINT_POPOVER.DONE&#x27; | translate}}&lt;/button&gt;
           &lt;/div&gt; 
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;p-2&quot; *ngIf&#x3D;&quot;promptExclusionRules.length &gt; 0&quot;&gt;
           &lt;div class&#x3D;&quot;d-flex justify-content-between border-bottom mb-3&quot;&gt;
-            &lt;h5&gt;Exclusion Options&lt;/h5&gt;
+            &lt;h5&gt;{{&#x27;CONSTRAINT_POPOVER.EXCLUSION_OPTIONS_HEADING&#x27; | translate}}&lt;/h5&gt;
             &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close closeButton&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;popoverClose()&quot;&gt;
                 &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
             &lt;/button&gt; 
@@ -1916,9 +1832,8 @@
             &lt;/div&gt;
 
             &lt;div&gt;
-              &lt;p&gt;
-                Option(s) from below must be excluded with
-                &lt;strong&gt; {{product.Name}}&lt;/strong&gt;.&lt;/p&gt;
+              &lt;p [innerHTML]&#x3D;&quot;&#x27;CONSTRAINT_POPOVER.OPTIONS_MUST_BE_EXCLUDED&#x27; | translate: {productName: product.Name}&quot;&gt;
+              &lt;/p&gt;
 
               &lt;div class&#x3D;&quot;border-top pt-3&quot;&gt;
                 &lt;div *ngFor&#x3D;&quot;let rule of promptExclusionRules&quot; class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
@@ -1932,13 +1847,13 @@
                       &lt;/div&gt;
                       &lt;form class&#x3D;&quot;border-left ml-auto row price-details small&quot;&gt;
                           &lt;div class&#x3D;&quot;form-group col&quot;&gt;
-                            &lt;label&gt;Price&lt;/label&gt;
+                            &lt;label&gt;{{&#x27;COMMON.PRICE&#x27; | translate}}&lt;/label&gt;
                             &lt;div class&#x3D;&quot;pt-1&quot;&gt;
                               &lt;apt-price [record]&#x3D;&quot;product&quot; quantity&#x3D;&quot;1&quot;&gt;&lt;/apt-price&gt;
                             &lt;/div&gt;
                           &lt;/div&gt;
                             &lt;div class&#x3D;&quot;form-group col m-0 pl-0&quot;&gt;
-                              &lt;button class&#x3D;&quot;btn btn-sm btn-primary mt-4&quot; (click)&#x3D;&quot;selectPromptOption(rule?.Product, false, promptRulesCond, promptExclusionRules, &#x27;Exclusion&#x27;)&quot;&gt;Remove From Bundle&lt;/button&gt;
+                              &lt;button class&#x3D;&quot;btn btn-sm btn-primary mt-4&quot; (click)&#x3D;&quot;selectPromptOption(rule?.Product, false, promptRulesCond, promptExclusionRules, &#x27;Exclusion&#x27;)&quot;&gt;{{&#x27;CONSTRAINT_POPOVER.REMOVE_FROM_BUNDLE&#x27; | translate}}&lt;/button&gt;
                             &lt;/div&gt;
                         &lt;/form&gt;
                     &lt;/div&gt;
@@ -1952,23 +1867,16 @@
       &lt;div *ngSwitchCase&#x3D;&quot;&#x27;OTHERS&#x27;&quot;&gt;
         &lt;div *ngIf&#x3D;&quot;otherRules?.length &gt; 0&quot;&gt;
           &lt;div *ngFor&#x3D;&quot;let rule of otherRules&quot;&gt;
-            &lt;h5&gt;Included/Excluded Options&lt;/h5&gt;
+            &lt;h5&gt;{{&#x27;CONSTRAINT_POPOVER.INCLUDED_EXCLUDED_OPTIONS_HEADING&#x27; | translate}}&lt;/h5&gt;
             &lt;div class&#x3D;&quot;border-top pt-3&quot;&gt;
-              &lt;p *ngIf&#x3D;&quot;rule.ProductScope &#x3D;&#x3D;&#x3D; &#x27;Product Group&#x27;&quot;&gt;
-                 Product group &lt;strong&gt;{{rule?.ProductGroup?.Name}}&lt;/strong&gt; option(s)
-                &lt;span&gt;{{rule?.Message}}&lt;/span&gt;
-                &lt;strong&gt;{{product?.Name}}&lt;/strong&gt;
+              &lt;p *ngIf&#x3D;&quot;rule.ProductScope &#x3D;&#x3D;&#x3D; &#x27;Product Group&#x27;&quot;
+                [innerHTML]&#x3D;&quot;&#x27;CONSTRAINT_POPOVER.PRODUCT_GROUP_MESSAGE&#x27; | translate: {productGroupName: rule?.ProductGroup?.Name, message: rule?.Message, productName: product?.Name}&quot;&gt;
               &lt;/p&gt;
-              &lt;p *ngIf&#x3D;&quot;rule.ProductScope &#x3D;&#x3D;&#x3D; &#x27;Product Family&#x27;&quot;&gt;
-                Product family &lt;strong&gt; {{rule?.ProductFamily}}&lt;/strong&gt; option(s)
-                &lt;span&gt;{{rule?.Message}}&lt;/span&gt;
-                &lt;strong&gt;{{product?.Name}}&lt;/strong&gt;
+              &lt;p *ngIf&#x3D;&quot;rule.ProductScope &#x3D;&#x3D;&#x3D; &#x27;Product Family&#x27;&quot;
+                [innerHTML]&#x3D;&quot;&#x27;CONSTRAINT_POPOVER.PRODUCT_FAMILY_MESSAGE&#x27; | translate: {productFamily: rule?.ProductFamily, message: rule?.Message, productName: product?.Name}&quot;&gt;
               &lt;/p&gt;
-              &lt;p *ngIf&#x3D;&quot;rule.ProductScope &#x3D;&#x3D;&#x3D; &#x27;Product Option Group&#x27;&quot;&gt;
-                Product Option Group &lt;strong&gt;&lt;/strong&gt; option(s)
-                &lt;span&gt;{{rule?.Message}}&lt;/span&gt;
-                &lt;strong&gt;{{product?.Name}}&lt;/strong&gt;
-
+              &lt;p *ngIf&#x3D;&quot;rule.ProductScope &#x3D;&#x3D;&#x3D; &#x27;Product Option Group&#x27;&quot;
+                [innerHTML]&#x3D;&quot;&#x27;CONSTRAINT_POPOVER.PRODUCT_OPTION_GROUP_MESSAGE&#x27; | translate: {message: rule?.Message, productName: product?.Name}&quot;&gt;
               &lt;/p&gt;
             &lt;/div&gt;
             &lt;div class&#x3D;&quot;border-top pt-3&quot;&gt;
@@ -1982,21 +1890,21 @@
                       &lt;/div&gt;
                       &lt;form class&#x3D;&quot;border-left ml-auto row price-details small&quot;&gt;
                         &lt;div class&#x3D;&quot;form-group col&quot;&gt;
-                          &lt;label&gt;Price&lt;/label&gt;
+                          &lt;label&gt;{{&#x27;COMMON.PRICE&#x27; | translate}}&lt;/label&gt;
                           &lt;div class&#x3D;&quot;pt-1&quot;&gt;
                             &lt;apt-price [record]&#x3D;&quot;product&quot; quantity&#x3D;&quot;1&quot;&gt;&lt;/apt-price&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
                           &lt;div class&#x3D;&quot;form-group col&quot; *ngIf&#x3D;&quot;rule.ActionType &#x3D;&#x3D;&#x3D; &#x27;Inclusion&#x27;&quot;&gt;    
-                            &lt;label for&#x3D;&quot;qty&quot;&gt;Qty&lt;/label&gt;
+                            &lt;label for&#x3D;&quot;qty&quot;&gt;{{&#x27;COMMON.QTY2&#x27; | translate}}&lt;/label&gt;
                             &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control form-control-sm text-center&quot; id&#x3D;&quot;qty&quot; placeholder&#x3D;&quot;1&quot; name&#x3D;&quot;quantity&quot; [(ngModel)]&#x3D;&quot;getOptionValue(product)._metadata.quantity&quot;
                             /&gt;
                           &lt;/div&gt;
                           &lt;div class&#x3D;&quot;form-group col m-0 pl-0&quot; *ngIf&#x3D;&quot;rule.ActionType &#x3D;&#x3D;&#x3D; &#x27;Inclusion&#x27;&quot;&gt;
-                            &lt;button class&#x3D;&quot;btn btn-sm btn-primary mt-4&quot; [disabled]&#x3D;&quot;isProductSelected(product)&quot; (click)&#x3D;&quot;selectPromptOption(product, true, promptRulesCond, otherRules, &#x27;Inclusion&#x27;)&quot;&gt;Add To Bundle&lt;/button&gt;
+                            &lt;button class&#x3D;&quot;btn btn-sm btn-primary mt-4&quot; [disabled]&#x3D;&quot;isProductSelected(product)&quot; (click)&#x3D;&quot;selectPromptOption(product, true, promptRulesCond, otherRules, &#x27;Inclusion&#x27;)&quot;&gt;{{&#x27;CONSTRAINT_POPOVER.ADD_TO_BUNDLE&#x27; | translate}}&lt;/button&gt;
                           &lt;/div&gt;
                           &lt;div class&#x3D;&quot;form-group col m-0 pl-0&quot; *ngIf&#x3D;&quot;rule.ActionType &#x3D;&#x3D;&#x3D; &#x27;Exclusion&#x27;&quot;&gt;
-                            &lt;button class&#x3D;&quot;btn btn-sm btn-primary mt-4&quot; [disabled]&#x3D;&quot;!isProductSelected(product)&quot; (click)&#x3D;&quot;selectPromptOption(product, true, promptRulesCond, otherRules, &#x27;Exclusion&#x27;)&quot;&gt;Remove From Bundle&lt;/button&gt;
+                            &lt;button class&#x3D;&quot;btn btn-sm btn-primary mt-4&quot; [disabled]&#x3D;&quot;!isProductSelected(product)&quot; (click)&#x3D;&quot;selectPromptOption(product, true, promptRulesCond, otherRules, &#x27;Exclusion&#x27;)&quot;&gt;{{&#x27;CONSTRAINT_POPOVER.REMOVE_FROM_BUNDLE&#x27; | translate}}&lt;/button&gt;
                           &lt;/div&gt;
                       &lt;/form&gt;
                     &lt;/div&gt;
@@ -2004,7 +1912,7 @@
             &lt;/div&gt;
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;border-top d-flex justify-content-end mt-3 pt-3&quot;&gt;
-              &lt;button class&#x3D;&quot;btn btn-primary&quot; [disabled]&#x3D;&quot;!inclusionValid&quot; (click)&#x3D;&quot;onDone()&quot;&gt;Done&lt;/button&gt;
+              &lt;button class&#x3D;&quot;btn btn-primary&quot; [disabled]&#x3D;&quot;!inclusionValid&quot; (click)&#x3D;&quot;onDone()&quot;&gt;{{&#x27;CONSTRAINT_POPOVER.DONE&#x27; | translate}}&lt;/button&gt;
             &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -2017,7 +1925,9 @@
                 <p class="comment">
                     <code>./constraint-popover.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">:host{
+    display: block;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -2045,9 +1955,9 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div [popover]="(ruleList?.length > 0 || message) ? popTemplate : null" container="body" [containerClass]="containerClass"   [outsideClick]="outsideClick" [triggers]="triggers" [placement]="onShown()" (click)="popoverOpen(pop)" #pop="bs-popover">  <ng-content></ng-content></div><!-- <div  [popover]="optionRules && (ruleList?.length > 0 || message) ? constraintOptionTemplate : null" container="body"  [outsideClick]="outsideClick" containerClass="CRPopover optionPopover" triggers="" (click)="popoverOpen(pop)"  #pop="bs-popover" >  <ng-content></ng-content></div> --><ng-template #popTemplate>  <div class="p-2" *ngIf="!optionRules; else constraintOptionTemplate">    <div class="popoverHeader mb-3">      <h5>Product(s) Included / Excluded</h5>    </div>    <div class="popoverBody">      <div *ngIf="message">        <p [innerHTML]="message"></p>      </div>      <div *ngIf="productInclusionRules?.length > 0">        <p>          <strong>The following products </strong> are included with the product          <strong> {{product.Name}}</strong>.        </p>        <div class="border-top pt-3">          <div *ngFor="let rule of productInclusionRules" class="d-flex justify-content-between">            <ng-container *ngIf="rule.ProductScope === \'Product\'">              <a [routerLink]="[\'/product\', rule.Product[identifier]]" *ngIf="rule?.Product?.Id" href="javascript:void(0)">{{rule?.Product?.Name}}</a>              <small>                <apt-price [record]="rule.Product" quantity="1"></apt-price>              </small>            </ng-container>          </div>        </div>      </div>      <div *ngIf="productExclusionRules?.length > 0">        <p [ngClass]="(productExclusionRules?.length > 0) ? \'border-top pt-3 mt-3\' : \'\'">          <strong>The following products </strong> are excluded with the product          <strong> {{product.Name}}</strong>.        </p>        <div class="border-top pt-3">          <div *ngFor="let rule of productExclusionRules" class="d-flex justify-content-between">            <a [routerLink]="[\'/product\', rule.Product[identifier]]" *ngIf="rule?.Product?.Id" href="javascript:void(0)">{{rule?.Product?.Name}}</a>            <small>              <apt-price [record]="rule.Product"></apt-price>            </small>          </div>        </div>      </div>      <div *ngIf="otherRules?.length > 0">        <div *ngFor="let rule of otherRules">          <ng-container *ngIf="rule.ProductScope === \'Product Group\'">            <p class="pt-3 mt-3">              Product group              <strong>{{rule?.ProductGroup?.Name}}</strong>            </p>          </ng-container>          <ng-container *ngIf="rule.ProductScope === \'Product Family\'">            <p class="pt-3 mt-3">              Product family              <strong>{{rule?.ProductFamily}}</strong>            </p>          </ng-container>          <div class="border-top pt-3">            <p [innerHTML]="rule.Message"></p>            <strong> {{product?.Name}}</strong>          </div>        </div>      </div>    </div>  </div> </ng-template> <!--  Product Details --> <ng-template #constraintOptionTemplate>    <div [ngSwitch]="state">      <div *ngSwitchCase="\'LOADING\'">        <div class="modal-body d-flex p-5 align-items-center justify-content-center">          <apt-md-spinner class="m-5"></apt-md-spinner>        </div>      </div>      <div *ngSwitchCase="\'READ\'">        <div class="p-2" *ngIf="autoInclusionRules.length > 0">          <div class="d-flex justify-content-between border-bottom mb-3">            <h5>Auto Included Options</h5>            <button type="button" class="close closeButton" aria-label="Close" (click)="popoverClose()">              <span aria-hidden="true">&times;</span>            </button>           </div>          <div class="popoverBody">            <div *ngIf="message">              <p [innerHTML]="message"></p>            </div>            <div>              <p>                Below option(s) are auto included with option                <strong> {{product.Name}}</strong>.</p>              <div class="border-top pt-3">                <div *ngFor="let rule of autoInclusionRules" class="d-flex justify-content-between">                  <!-- <p>Option group 1: 2</p> -->                  <ng-container *ngIf="rule.ProductScope === \'Product\'">                    <div class="d-flex justify-content-between">                      <div class="d-flex flex-grow-1 option-details pr-5 w-75">                        <div class="custom-control custom-checkbox">                          <input type="checkbox" class="custom-control-input" [id]="product.Id" disabled checked >                          <label class="custom-control-label" [for]="product.Id">&nbsp;</label>                        </div>                        <div>                          <p class="mt-0 mb-1">{{rule.Product.Name}}</p>                          <small>{{rule.Product.Name?.Description}}</small>                        </div>                      </div>                      <form class="border-left ml-auto row price-details small">                        <div class="form-group col">                          <label>Price</label>                          <div class="pt-1">                            <apt-price [record]="rule.Product" quantity="1"></apt-price>                          </div>                        </div>                        <div class="form-group col">                          <label for="qty">Qty</label>                           <input type="number" class="form-control form-control-sm text-center" id="qty" placeholder="1" name="quantity" readonly value="1"/> <!--[(ngModel)]="getOptionValue(rule)._metadata.quantity" -->                        </div>                      </form>                    </div>                  </ng-container>                </div>              </div>            </div>          </div>        </div>      </div>      <div *ngSwitchCase="\'WRITE\'">        <div class="p-2" *ngIf="promptInclusionRules.length > 0">          <div class="d-flex justify-content-between border-bottom mb-3">            <h5>Included Options</h5>            <!-- <button type="button" class="close closeButton" aria-label="Close" (click)="popoverClose()">              <span aria-hidden="true">&times;</span>            </button> -->          </div>          <div class="popoverBody">            <div *ngIf="message">              <p [innerHTML]="message"></p>            </div>            <div>              <p>                <span *ngIf="promptRulesCond[0].ProductScope !== \'Product\'">At least {{promptRulesCond[0].MatchMinProducts}} </span>                Option                <span *ngIf="promptRulesCond[0].ProductScope !== \'Product\'">{{promptRulesCond[0].MatchMinProducts > 1 ? \'(s)\' : \'\'}}</span> from below must be included with                <strong> {{product.Name}}</strong>.</p>              <div class="border-top pt-3">                <div *ngFor="let rule of promptInclusionRules" class="d-flex justify-content-between">                  <!-- <p>Option group 1: 2</p> -->                  <ng-container *ngIf="rule.ProductScope === \'Product\'">                    <div class="d-flex justify-content-between">                      <div class="d-flex flex-grow-1 option-details pr-5 w-75">                        <!-- <div class="custom-control custom-checkbox">                          <input type="checkbox" class="custom-control-input" [id]="product.Id" (change)="selectPromptOption(rule, false, $event)">                          <label class="custom-control-label" [for]="product.Id">&nbsp;</label>                        </div> -->                        <div>                          <p class="mt-0 mb-1">{{rule.Product.Name}}</p>                          <small>{{rule.Product?.Description}}</small>                        </div>                      </div>                      <form class="border-left ml-auto row price-details small">                        <div class="form-group col">                          <label>Price</label>                          <div class="pt-1">                            <apt-price [record]="rule.Product" quantity="1"></apt-price>                          </div>                        </div>                        <div class="form-group col">                          <label for="qty">Qty</label>                          <input type="number" class="form-control form-control-sm text-center" id="qty" placeholder="1" name="quantity" [(ngModel)]="getOptionValue(rule?.Product)._metadata.quantity"                          />                        </div>                        <div class="form-group col m-0 pl-0">                          <button class="btn btn-sm btn-primary mt-4" (click)="selectPromptOption(rule?.Product, true, promptRulesCond, promptInclusionRules, \'Inclusion\')">Add To Bundle</button>                        </div>                      </form>                    </div>                  </ng-container>                </div>              </div>            </div>          </div>          <div class="border-top d-flex justify-content-end mt-3 pt-3">             <!-- <button class="btn btn-seconday mr-2" (click)="onCancel()">Cancel</button>  -->            <button class="btn btn-primary" [disabled]="!inclusionValid" (click)="onDone()">Done</button>          </div>         </div>        <div class="p-2" *ngIf="promptExclusionRules.length > 0">          <div class="d-flex justify-content-between border-bottom mb-3">            <h5>Exclusion Options</h5>            <button type="button" class="close closeButton" aria-label="Close" (click)="popoverClose()">                <span aria-hidden="true">&times;</span>            </button>           </div>          <div class="popoverBody">            <div *ngIf="message">              <p [innerHTML]="message"></p>            </div>            <div>              <p>                Option(s) from below must be excluded with                <strong> {{product.Name}}</strong>.</p>              <div class="border-top pt-3">                <div *ngFor="let rule of promptExclusionRules" class="d-flex justify-content-between">                  <ng-container *ngIf="rule.ProductScope === \'Product\'">                    <div class="d-flex justify-content-between">                      <div class="d-flex flex-grow-1 option-details pr-2 w-50">                        <div>                          <p class="mt-0 mb-1">{{rule?.Product?.Name}}</p>                          <small>{{rule?.Product?.Description}}</small>                        </div>                      </div>                      <form class="border-left ml-auto row price-details small">                          <div class="form-group col">                            <label>Price</label>                            <div class="pt-1">                              <apt-price [record]="product" quantity="1"></apt-price>                            </div>                          </div>                            <div class="form-group col m-0 pl-0">                              <button class="btn btn-sm btn-primary mt-4" (click)="selectPromptOption(rule?.Product, false, promptRulesCond, promptExclusionRules, \'Exclusion\')">Remove From Bundle</button>                            </div>                        </form>                    </div>                  </ng-container>                </div>              </div>            </div>          </div>        </div>      </div>      <div *ngSwitchCase="\'OTHERS\'">        <div *ngIf="otherRules?.length > 0">          <div *ngFor="let rule of otherRules">            <h5>Included/Excluded Options</h5>            <div class="border-top pt-3">              <p *ngIf="rule.ProductScope === \'Product Group\'">                 Product group <strong>{{rule?.ProductGroup?.Name}}</strong> option(s)                <span>{{rule?.Message}}</span>                <strong>{{product?.Name}}</strong>              </p>              <p *ngIf="rule.ProductScope === \'Product Family\'">                Product family <strong> {{rule?.ProductFamily}}</strong> option(s)                <span>{{rule?.Message}}</span>                <strong>{{product?.Name}}</strong>              </p>              <p *ngIf="rule.ProductScope === \'Product Option Group\'">                Product Option Group <strong></strong> option(s)                <span>{{rule?.Message}}</span>                <strong>{{product?.Name}}</strong>              </p>            </div>            <div class="border-top pt-3">              <div *ngFor="let product of rule?._metadata?.actionList">                  <div class="d-flex justify-content-between">                      <div class="d-flex flex-grow-1 option-details pr-2 w-50">                        <div>                          <p class="mt-0 mb-1">{{product?.Name}}</p>                          <small>{{product?.Description}}</small>                        </div>                      </div>                      <form class="border-left ml-auto row price-details small">                        <div class="form-group col">                          <label>Price</label>                          <div class="pt-1">                            <apt-price [record]="product" quantity="1"></apt-price>                          </div>                        </div>                          <div class="form-group col" *ngIf="rule.ActionType === \'Inclusion\'">                                <label for="qty">Qty</label>                            <input type="number" class="form-control form-control-sm text-center" id="qty" placeholder="1" name="quantity" [(ngModel)]="getOptionValue(product)._metadata.quantity"                            />                          </div>                          <div class="form-group col m-0 pl-0" *ngIf="rule.ActionType === \'Inclusion\'">                            <button class="btn btn-sm btn-primary mt-4" [disabled]="isProductSelected(product)" (click)="selectPromptOption(product, true, promptRulesCond, otherRules, \'Inclusion\')">Add To Bundle</button>                          </div>                          <div class="form-group col m-0 pl-0" *ngIf="rule.ActionType === \'Exclusion\'">                            <button class="btn btn-sm btn-primary mt-4" [disabled]="!isProductSelected(product)" (click)="selectPromptOption(product, true, promptRulesCond, otherRules, \'Exclusion\')">Remove From Bundle</button>                          </div>                      </form>                    </div>              </div>            </div>          </div>          <div class="border-top d-flex justify-content-end mt-3 pt-3">              <button class="btn btn-primary" [disabled]="!inclusionValid" (click)="onDone()">Done</button>            </div>        </div>      </div>    </div>  </ng-template></div>'
-    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionAppliedtoLineitemComponent', 'selector': 'apt-pr-lineitem'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><div [popover]="(ruleList?.length > 0 || message?.length > 0) ? popTemplate : null" [containerClass]="containerClass"   [outsideClick]="outsideClick" [triggers]="triggers" [placement]="onShown()" (click)="popoverOpen(pop)" #pop="bs-popover" [attr.data-popover]="(ruleList?.length > 0 || message)">  <ng-content></ng-content></div><!-- <div  [popover]="optionRules && (ruleList?.length > 0 || message) ? constraintOptionTemplate : null" container="body"  [outsideClick]="outsideClick" containerClass="CRPopover optionPopover" triggers="" (click)="popoverOpen(pop)"  #pop="bs-popover" >  <ng-content></ng-content></div> --><ng-template #popTemplate>  <div class="p-2" *ngIf="!optionRules; else constraintOptionTemplate">    <div class="popoverHeader mb-3">      <h5>{{\'CONSTRAINT_POPOVER.PRODUCTS_INCLUDED_EXCLUDED_HEADING\' | translate}}</h5>    </div>    <div class="popoverBody">      <div *ngIf="message">        <p [innerHTML]="message"></p>      </div>      <div *ngIf="productInclusionRules?.length > 0">        <p [innerHTML]="\'CONSTRAINT_POPOVER.PRODUCTS_INCLUSION\' | translate: {productName: product.Name}"></p>        <div class="border-top pt-3">          <div *ngFor="let rule of productInclusionRules" class="d-flex justify-content-between">            <ng-container *ngIf="rule.ProductScope === \'Product\'">              <a [routerLink]="[\'/product\', rule.Product[identifier]]" *ngIf="rule?.Product?.Id" href="javascript:void(0)">{{rule?.Product?.Name}}</a>              <small>                <apt-price [record]="rule.Product" quantity="1"></apt-price>              </small>            </ng-container>          </div>        </div>      </div>      <div *ngIf="productExclusionRules?.length > 0">        <p [ngClass]="(productExclusionRules?.length > 0) ? \'border-top pt-3 mt-3\' : \'\'"          [innerHTML]="\'CONSTRAINT_POPOVER.PRODUCTS_EXCLUSION\' | translate: {productName: product.Name}">        </p>        <div class="border-top pt-3">          <div *ngFor="let rule of productExclusionRules" class="d-flex justify-content-between">            <a [routerLink]="[\'/product\', rule.Product[identifier]]" *ngIf="rule?.Product?.Id" href="javascript:void(0)">{{rule?.Product?.Name}}</a>            <small>              <apt-price [record]="rule.Product"></apt-price>            </small>          </div>        </div>      </div>      <div *ngIf="otherRules?.length > 0">        <div *ngFor="let rule of otherRules">          <ng-container *ngIf="rule.ProductScope === \'Product Group\'">            <p class="pt-3 mt-3" [innerHTML]="\'COMMON.PRODUCT_GROUP\' | translate: {productGroupName: rule?.ProductGroup?.Name}"></p>          </ng-container>          <ng-container *ngIf="rule.ProductScope === \'Product Family\'">            <p class="pt-3 mt-3" [innerHTML]="\'COMMON.PRODUCT_FAMILY\' | translate: {productFamily: rule?.ProductFamily}"></p>          </ng-container>          <div class="border-top pt-3">            <p [innerHTML]="rule.Message"></p>            <strong> {{product?.Name}}</strong>          </div>        </div>      </div>    </div>  </div> </ng-template> <!--  Product Details --> <ng-template #constraintOptionTemplate>    <div [ngSwitch]="state">      <div *ngSwitchCase="\'LOADING\'">        <div class="modal-body d-flex p-5 align-items-center justify-content-center">          <apt-md-spinner class="m-5"></apt-md-spinner>        </div>      </div>      <div *ngSwitchCase="\'READ\'">        <div class="p-2" *ngIf="autoInclusionRules.length > 0">          <div class="d-flex justify-content-between border-bottom mb-3">            <h5>{{\'CONSTRAINT_POPOVER.AUTO_INCLUDED_OPTIONS\' | translate}}</h5>            <button type="button" class="close closeButton" aria-label="Close" (click)="popoverClose()">              <span aria-hidden="true">&times;</span>            </button>           </div>          <div class="popoverBody">            <div *ngIf="message">              <p [innerHTML]="message"></p>            </div>            <div>              <p [innerHTML]="\'CONSTRAINT_POPOVER.AUTO_INCLUSION_OF_OPTIONS\' | translate: {productName: product.Name}"></p>              <div class="border-top pt-3">                <div *ngFor="let rule of autoInclusionRules" class="d-flex justify-content-between">                  <!-- <p>Option group 1: 2</p> -->                  <ng-container *ngIf="rule.ProductScope === \'Product\'">                    <div class="d-flex justify-content-between">                      <div class="d-flex flex-grow-1 option-details pr-5 w-75">                        <div class="custom-control custom-checkbox">                          <input type="checkbox" class="custom-control-input" [id]="product.Id" disabled checked >                          <label class="custom-control-label" [for]="product.Id">&nbsp;</label>                        </div>                        <div>                          <p class="mt-0 mb-1">{{rule.Product.Name}}</p>                          <small>{{rule.Product.Name?.Description}}</small>                        </div>                      </div>                      <form class="border-left ml-auto row price-details small">                        <div class="form-group col">                          <label>{{\'COMMON.PRICE\' | translate}}</label>                          <div class="pt-1">                            <apt-price [record]="rule.Product" quantity="1"></apt-price>                          </div>                        </div>                        <div class="form-group col">                          <label for="qty">{{\'COMMON.QTY2\' | translate}}</label>                           <input type="number" class="form-control form-control-sm text-center" id="qty" placeholder="1" name="quantity" readonly value="1"/> <!--[(ngModel)]="getOptionValue(rule)._metadata.quantity" -->                        </div>                      </form>                    </div>                  </ng-container>                </div>              </div>            </div>          </div>        </div>      </div>      <div *ngSwitchCase="\'WRITE\'">        <div class="p-2" *ngIf="promptInclusionRules.length > 0">          <div class="d-flex justify-content-between border-bottom mb-3">            <h5>{{\'CONSTRAINT_POPOVER.INCLUDED_OPTIONS_HEADING\' | translate}}</h5>            <!-- <button type="button" class="close closeButton" aria-label="Close" (click)="popoverClose()">              <span aria-hidden="true">&times;</span>            </button> -->          </div>          <div class="popoverBody">            <div *ngIf="message">              <p [innerHTML]="message"></p>            </div>            <div>              <p>                <span *ngIf="promptRulesCond[0].ProductScope !== \'Product\'">{{\'CONSTRAINT_POPOVER.AT_LEAST\' | translate}} {{promptRulesCond[0].MatchMinProducts}} </span>                {{\'CONSTRAINT_POPOVER.OPTION\' | translate}}                <span *ngIf="promptRulesCond[0].ProductScope !== \'Product\'">{{promptRulesCond[0].MatchMinProducts > 1 ? \'(s)\' : \'\'}}</span> {{\'CONSTRAINT_POPOVER.OPTION_MUST_BE_INCLUDED\' | translate}}                <strong> {{product.Name}}</strong>.</p>              <div class="border-top pt-3">                <div *ngFor="let rule of promptInclusionRules" class="d-flex justify-content-between">                  <!-- <p>Option group 1: 2</p> -->                  <ng-container *ngIf="rule.ProductScope === \'Product\'">                    <div class="d-flex justify-content-between">                      <div class="d-flex flex-grow-1 option-details pr-5 w-75">                        <!-- <div class="custom-control custom-checkbox">                          <input type="checkbox" class="custom-control-input" [id]="product.Id" (change)="selectPromptOption(rule, false, $event)">                          <label class="custom-control-label" [for]="product.Id">&nbsp;</label>                        </div> -->                        <div>                          <p class="mt-0 mb-1">{{rule.Product.Name}}</p>                          <small>{{rule.Product?.Description}}</small>                        </div>                      </div>                      <form class="border-left ml-auto row price-details small">                        <div class="form-group col">                          <label>{{\'COMMON.PRICE\' | translate}}</label>                          <div class="pt-1">                            <apt-price [record]="rule.Product" quantity="1"></apt-price>                          </div>                        </div>                        <div class="form-group col">                          <label for="qty">{{\'COMMON.QTY2\' | translate}}</label>                          <input type="number" class="form-control form-control-sm text-center" id="qty" placeholder="1" name="quantity" [(ngModel)]="getOptionValue(rule?.Product)._metadata.quantity"                          />                        </div>                        <div class="form-group col m-0 pl-0">                          <button class="btn btn-sm btn-primary mt-4" (click)="selectPromptOption(rule?.Product, true, promptRulesCond, promptInclusionRules, \'Inclusion\')">{{\'CONSTRAINT_POPOVER.ADD_TO_BUNDLE\' | translate}}</button>                        </div>                      </form>                    </div>                  </ng-container>                </div>              </div>            </div>          </div>          <div class="border-top d-flex justify-content-end mt-3 pt-3">             <!-- <button class="btn btn-seconday mr-2" (click)="onCancel()">Cancel</button>  -->            <button class="btn btn-primary" [disabled]="!inclusionValid" (click)="onDone()">{{\'CONSTRAINT_POPOVER.DONE\' | translate}}</button>          </div>         </div>        <div class="p-2" *ngIf="promptExclusionRules.length > 0">          <div class="d-flex justify-content-between border-bottom mb-3">            <h5>{{\'CONSTRAINT_POPOVER.EXCLUSION_OPTIONS_HEADING\' | translate}}</h5>            <button type="button" class="close closeButton" aria-label="Close" (click)="popoverClose()">                <span aria-hidden="true">&times;</span>            </button>           </div>          <div class="popoverBody">            <div *ngIf="message">              <p [innerHTML]="message"></p>            </div>            <div>              <p [innerHTML]="\'CONSTRAINT_POPOVER.OPTIONS_MUST_BE_EXCLUDED\' | translate: {productName: product.Name}">              </p>              <div class="border-top pt-3">                <div *ngFor="let rule of promptExclusionRules" class="d-flex justify-content-between">                  <ng-container *ngIf="rule.ProductScope === \'Product\'">                    <div class="d-flex justify-content-between">                      <div class="d-flex flex-grow-1 option-details pr-2 w-50">                        <div>                          <p class="mt-0 mb-1">{{rule?.Product?.Name}}</p>                          <small>{{rule?.Product?.Description}}</small>                        </div>                      </div>                      <form class="border-left ml-auto row price-details small">                          <div class="form-group col">                            <label>{{\'COMMON.PRICE\' | translate}}</label>                            <div class="pt-1">                              <apt-price [record]="product" quantity="1"></apt-price>                            </div>                          </div>                            <div class="form-group col m-0 pl-0">                              <button class="btn btn-sm btn-primary mt-4" (click)="selectPromptOption(rule?.Product, false, promptRulesCond, promptExclusionRules, \'Exclusion\')">{{\'CONSTRAINT_POPOVER.REMOVE_FROM_BUNDLE\' | translate}}</button>                            </div>                        </form>                    </div>                  </ng-container>                </div>              </div>            </div>          </div>        </div>      </div>      <div *ngSwitchCase="\'OTHERS\'">        <div *ngIf="otherRules?.length > 0">          <div *ngFor="let rule of otherRules">            <h5>{{\'CONSTRAINT_POPOVER.INCLUDED_EXCLUDED_OPTIONS_HEADING\' | translate}}</h5>            <div class="border-top pt-3">              <p *ngIf="rule.ProductScope === \'Product Group\'"                [innerHTML]="\'CONSTRAINT_POPOVER.PRODUCT_GROUP_MESSAGE\' | translate: {productGroupName: rule?.ProductGroup?.Name, message: rule?.Message, productName: product?.Name}">              </p>              <p *ngIf="rule.ProductScope === \'Product Family\'"                [innerHTML]="\'CONSTRAINT_POPOVER.PRODUCT_FAMILY_MESSAGE\' | translate: {productFamily: rule?.ProductFamily, message: rule?.Message, productName: product?.Name}">              </p>              <p *ngIf="rule.ProductScope === \'Product Option Group\'"                [innerHTML]="\'CONSTRAINT_POPOVER.PRODUCT_OPTION_GROUP_MESSAGE\' | translate: {message: rule?.Message, productName: product?.Name}">              </p>            </div>            <div class="border-top pt-3">              <div *ngFor="let product of rule?._metadata?.actionList">                  <div class="d-flex justify-content-between">                      <div class="d-flex flex-grow-1 option-details pr-2 w-50">                        <div>                          <p class="mt-0 mb-1">{{product?.Name}}</p>                          <small>{{product?.Description}}</small>                        </div>                      </div>                      <form class="border-left ml-auto row price-details small">                        <div class="form-group col">                          <label>{{\'COMMON.PRICE\' | translate}}</label>                          <div class="pt-1">                            <apt-price [record]="product" quantity="1"></apt-price>                          </div>                        </div>                          <div class="form-group col" *ngIf="rule.ActionType === \'Inclusion\'">                                <label for="qty">{{\'COMMON.QTY2\' | translate}}</label>                            <input type="number" class="form-control form-control-sm text-center" id="qty" placeholder="1" name="quantity" [(ngModel)]="getOptionValue(product)._metadata.quantity"                            />                          </div>                          <div class="form-group col m-0 pl-0" *ngIf="rule.ActionType === \'Inclusion\'">                            <button class="btn btn-sm btn-primary mt-4" [disabled]="isProductSelected(product)" (click)="selectPromptOption(product, true, promptRulesCond, otherRules, \'Inclusion\')">{{\'CONSTRAINT_POPOVER.ADD_TO_BUNDLE\' | translate}}</button>                          </div>                          <div class="form-group col m-0 pl-0" *ngIf="rule.ActionType === \'Exclusion\'">                            <button class="btn btn-sm btn-primary mt-4" [disabled]="!isProductSelected(product)" (click)="selectPromptOption(product, true, promptRulesCond, otherRules, \'Exclusion\')">{{\'CONSTRAINT_POPOVER.REMOVE_FROM_BUNDLE\' | translate}}</button>                          </div>                      </form>                    </div>              </div>            </div>          </div>          <div class="border-top d-flex justify-content-end mt-3 pt-3">              <button class="btn btn-primary" [disabled]="!inclusionValid" (click)="onDone()">{{\'CONSTRAINT_POPOVER.DONE\' | translate}}</button>            </div>        </div>      </div>    </div>  </ng-template></div>'
+    var COMPONENTS = [{'name': 'AddressBookComponent', 'selector': 'app-address-book'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'AttachmentComponent', 'selector': 'app-attachment'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'BuyMoreModalComponent', 'selector': 'apt-buy-more-modal'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartListComponent', 'selector': 'app-cart-list'},{'name': 'CartSummaryComponent', 'selector': 'app-cart-summary'},{'name': 'CartTableComponent', 'selector': 'app-cart-table'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChangeConfigurationModalComponent', 'selector': 'apt-change-configuration-modal'},{'name': 'ChangePasswordLayoutComponent', 'selector': 'app-change-password-layout'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CompareLayoutComponent', 'selector': 'app-compare-layout'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CreateQuoteComponent', 'selector': 'app-create-quote'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'DetailSectionComponent', 'selector': 'apt-detail-section'},{'name': 'DetailsLayoutComponent', 'selector': 'apt-detail'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'InstalledProductsLayoutComponent', 'selector': 'app-installed-products-layout'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'ManageCartComponent', 'selector': 'app-manage-cart'},{'name': 'MdDotsComponent', 'selector': 'apt-md-dots'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'MyAccountLayoutComponent', 'selector': 'app-my-account-layout'},{'name': 'NavAccountComponent', 'selector': 'nav-account'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderDetailsComponent', 'selector': 'app-order-details'},{'name': 'OrderHistoryLayoutComponent', 'selector': 'app-order-history-layout'},{'name': 'OrderListComponent', 'selector': 'app-order-list'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PaymentMethodComponent', 'selector': 'apt-payment-method'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'PriceTypeFilterComponent', 'selector': 'app-price-type-filter'},{'name': 'ProductAttributeComponent', 'selector': 'apt-product-attribute'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDetailsComponent', 'selector': 'app-product-details'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'QuoteDetailsComponent', 'selector': 'app-quote-details'},{'name': 'RenewalFilterComponent', 'selector': 'app-renewal-filter'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'RequestQuoteFormComponent', 'selector': 'app-request-quote-form'},{'name': 'ResultsComponent', 'selector': 'pl-results'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SummaryComponent', 'selector': 'cart-summary'},{'name': 'TabAttachmentsComponent', 'selector': 'pdp-tab-attachments'},{'name': 'TabFeaturesComponent', 'selector': 'pdp-tab-features'},{'name': 'TableRowSubItemComponent', 'selector': 'apt-table-row-sub-item'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'},{'name': 'WishlistsComponent', 'selector': 'app-wishlists'}];
+    var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[appAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'CRPopoverComponent'};
 </script>
 <script src="../js/tree.js"></script>
@@ -2061,6 +1971,7 @@
 
 
 
+                   
 
 
 

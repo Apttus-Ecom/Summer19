@@ -1,0 +1,2021 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Apttus Ecommerce Summer &#x27;19</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Apttus Ecommerce Summer &#x27;19</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>OutputFieldComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/apttus/elements/src/lib/output-field/output-field.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Output field component is used to create a label value paired output that can be displayed as an editable field with an optional popover that shows related information about the field.</p>
+<h3>Usage</h3>
+
+<div><pre class="line-numbers"><code class="language-typescript">import { OutputFieldModule } from &#39;&#64;apttus/elements&#39;;
+
+&#64;ngModule({
+  imports: [OutputFieldModule, ...]
+})</code></pre></div>
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+    <p class="comment">
+        <h3>Example</h3>
+    </p>
+    <div class="io-description">
+                <div>
+                    <pre class="line-numbers"><code class="language-html">&lt;apt-output-field[record]=&quot;quote&quot;[field]=&quot;CreatedDate&quot;layout=&quot;inline&quot;[editable]=&quot;false&quot;&gt;&lt;/apt-output-field&gt;</code></pre>
+                </div>
+    </div>
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>apt-output-field</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./output-field.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./output-field.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#expanded">expanded</a>
+                            </li>
+                            <li>
+                                <a href="#hideTimeout">hideTimeout</a>
+                            </li>
+                            <li>
+                                <a href="#hovering">hovering</a>
+                            </li>
+                            <li>
+                                <a href="#initialFieldValue">initialFieldValue</a>
+                            </li>
+                            <li>
+                                <a href="#loading">loading</a>
+                            </li>
+                            <li>
+                                <a href="#lookupPop">lookupPop</a>
+                            </li>
+                            <li>
+                                <a href="#metadata$">metadata$</a>
+                            </li>
+                            <li>
+                                <a href="#pop">pop</a>
+                            </li>
+                            <li>
+                                <a href="#showTimeout">showTimeout</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getDateFormat">getDateFormat</a>
+                            </li>
+                            <li>
+                                <a href="#getDetailPagePath">getDetailPagePath</a>
+                            </li>
+                            <li>
+                                <a href="#getFieldType">getFieldType</a>
+                            </li>
+                            <li>
+                                <a href="#getLookupFieldsObjectRef">getLookupFieldsObjectRef</a>
+                            </li>
+                            <li>
+                                <a href="#getLookupPopoverFields">getLookupPopoverFields</a>
+                            </li>
+                            <li>
+                                <a href="#getMetadata">getMetadata</a>
+                            </li>
+                            <li>
+                                <a href="#getValue">getValue</a>
+                            </li>
+                            <li>
+                                <a href="#handleHidePop">handleHidePop</a>
+                            </li>
+                            <li>
+                                <a href="#handleInputFieldClick">handleInputFieldClick</a>
+                            </li>
+                            <li>
+                                <a href="#handleLookupPopClick">handleLookupPopClick</a>
+                            </li>
+                            <li>
+                                <a href="#hidePopover">hidePopover</a>
+                            </li>
+                            <li>
+                                <a href="#onShown">onShown</a>
+                            </li>
+                            <li>
+                                <a href="#update">update</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dateFormat">dateFormat</a>
+                            </li>
+                            <li>
+                                <a href="#default">default</a>
+                            </li>
+                            <li>
+                                <a href="#displayValue">displayValue</a>
+                            </li>
+                            <li>
+                                <a href="#editable">editable</a>
+                            </li>
+                            <li>
+                                <a href="#field">field</a>
+                            </li>
+                            <li>
+                                <a href="#label">label</a>
+                            </li>
+                            <li>
+                                <a href="#labelClass">labelClass</a>
+                            </li>
+                            <li>
+                                <a href="#labelOnly">labelOnly</a>
+                            </li>
+                            <li>
+                                <a href="#layout">layout</a>
+                            </li>
+                            <li>
+                                <a href="#record">record</a>
+                            </li>
+                            <li>
+                                <a href="#showQuickView">showQuickView</a>
+                            </li>
+                            <li>
+                                <a href="#useBaseRecord">useBaseRecord</a>
+                            </li>
+                            <li>
+                                <a href="#valueClass">valueClass</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(aobjectService: AObjectService, el: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, elRef: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, metadataService: MetadataService)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>aobjectService</td>
+                                                  
+                                                        <td>
+                                                                    <code>AObjectService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>el</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>elRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>metadataService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MetadataService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dateFormat"></a>
+                        <b>dateFormat</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Format option passed into the date pipe used for date fields</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="default"></a>
+                        <b>default</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Use default value of value is undefined</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayValue"></a>
+                        <b>displayValue</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>the field property to use to render the value</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="editable"></a>
+                        <b>editable</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to set this field as editable.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="field"></a>
+                        <b>field</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>field property of the model class</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="label"></a>
+                        <b>label</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Label string override</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="labelClass"></a>
+                        <b>labelClass</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>String of bootstrap classes for additional styling on output field label</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="labelOnly"></a>
+                        <b>labelOnly</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to display only field label</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="layout"></a>
+                        <b>layout</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;stacked&quot; | &quot;inline&quot;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;stacked&#x27;</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The layout for the displayed label and value</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="record"></a>
+                        <b>record</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>AObject</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An instance of an object</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showQuickView"></a>
+                        <b>showQuickView</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to show the quick view lookup popover for this field.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="useBaseRecord"></a>
+                        <b>useBaseRecord</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to check if quickview popover should use the base record for populating the fields of the popover.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueClass"></a>
+                        <b>valueClass</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>String of bootstrap classes for additional styling on output field value</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDateFormat"></a>
+                    <span class="name">
+                        <b>
+                            getDateFormat
+                        </b>
+                        <a href="#getDateFormat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDateFormat(metadata)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns the date format based on the metadata of the field on this record.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>metadata</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The metadata for the field on this record.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDetailPagePath"></a>
+                    <span class="name">
+                        <b>
+                            getDetailPagePath
+                        </b>
+                        <a href="#getDetailPagePath"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDetailPagePath(lookupFieldsObjectRef: AObject)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns the path to the detail page for the given AObject type.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>lookupFieldsObjectRef</td>
+                                    <td>
+                                            <code>AObject</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>AObject reference to use to get path.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFieldType"></a>
+                    <span class="name">
+                        <b>
+                            getFieldType
+                        </b>
+                        <a href="#getFieldType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFieldType(fieldPath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns the proper constructor for the record at the given path.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fieldPath</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The path to the field for this record.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLookupFieldsObjectRef"></a>
+                    <span class="name">
+                        <b>
+                            getLookupFieldsObjectRef
+                        </b>
+                        <a href="#getLookupFieldsObjectRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getLookupFieldsObjectRef(metadata: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the AObject reference used for displaying the quick view popover fields.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>metadata</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The metadata object for the field on this record.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>AObject</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLookupPopoverFields"></a>
+                    <span class="name">
+                        <b>
+                            getLookupPopoverFields
+                        </b>
+                        <a href="#getLookupPopoverFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getLookupPopoverFields(lookupFieldsObjectRef: AObject)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns an array of fields that are set for compact view. This array of fields is used to display in the quick view popover.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>lookupFieldsObjectRef</td>
+                                    <td>
+                                            <code>AObject</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>AObject reference to use to get fields.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Array&lt;string&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMetadata"></a>
+                    <span class="name">
+                        <b>
+                            getMetadata
+                        </b>
+                        <a href="#getMetadata"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMetadata(fieldPath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns the metadata for the field on this record.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fieldPath</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The path to the field for this record.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getValue"></a>
+                    <span class="name">
+                        <b>
+                            getValue
+                        </b>
+                        <a href="#getValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getValue(metadata: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns the value of the field on this record.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>metadata</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleHidePop"></a>
+                    <span class="name">
+                        <b>
+                            handleHidePop
+                        </b>
+                        <a href="#handleHidePop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleHidePop()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Event handler for when the cancel button is pressed on the edit field popover.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleInputFieldClick"></a>
+                    <span class="name">
+                        <b>
+                            handleInputFieldClick
+                        </b>
+                        <a href="#handleInputFieldClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleInputFieldClick()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Prevents the popover from closing when user clicks on the input field within the popover.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleLookupPopClick"></a>
+                    <span class="name">
+                        <b>
+                            handleLookupPopClick
+                        </b>
+                        <a href="#handleLookupPopClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleLookupPopClick()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Event handler for when the target of the quickview lookup popover is clicked.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hidePopover"></a>
+                    <span class="name">
+                        <b>
+                            hidePopover
+                        </b>
+                        <a href="#hidePopover"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hidePopover()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Hides the quickview popover.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onShown"></a>
+                    <span class="name">
+                        <b>
+                            onShown
+                        </b>
+                        <a href="#onShown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onShown()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Sets the position of the quickview popover based on where the target is on the screen.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                        <b>
+                            update
+                        </b>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>update()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Event handler for when the update button is pressed on the edit field popover.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expanded"></a>
+                        <span class="name">
+                            <b>
+                            expanded</b>
+                            <a href="#expanded"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to set the popover to its expanded state.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hideTimeout"></a>
+                        <span class="name">
+                            <b>
+                            hideTimeout</b>
+                            <a href="#hideTimeout"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Stores the timeout key for the timeout associated with hiding the lookup popover.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hovering"></a>
+                        <span class="name">
+                            <b>
+                            hovering</b>
+                            <a href="#hovering"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to check if mouse is hovering over lookup popover expand button.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialFieldValue"></a>
+                        <span class="name">
+                            <b>
+                            initialFieldValue</b>
+                            <a href="#initialFieldValue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Used to store the initial value of this field for when users decide to cancel the update action.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading"></a>
+                        <span class="name">
+                            <b>
+                            loading</b>
+                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to check if the update is loading for the update button in the edit field popover.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lookupPop"></a>
+                        <span class="name">
+                            <b>
+                            lookupPop</b>
+                            <a href="#lookupPop"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;lookupPop&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The target for the lookup popover.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="metadata$"></a>
+                        <span class="name">
+                            <b>
+                            metadata$</b>
+                            <a href="#metadata$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Observable instance of the metadata for the field on this record.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pop"></a>
+                        <span class="name">
+                            <b>
+                            pop</b>
+                            <a href="#pop"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;pop&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The target for the inline edit popover.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showTimeout"></a>
+                        <span class="name">
+                            <b>
+                            showTimeout</b>
+                            <a href="#showTimeout"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Stores the timeout key for the timeout associated with showing the lookup popover.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;span class&#x3D;&quot;d-flex&quot; [class.mb-2]&#x3D;&quot;!labelOnly&quot; [class.align-items-baseline]&#x3D;&quot;layout &#x3D;&#x3D;&#x3D; &#x27;inline&#x27;&quot; [class.flex-column]&#x3D;&quot;layout &#x3D;&#x3D;&#x3D; &#x27;stacked&#x27;&quot; [class.inline]&#x3D;&quot;layout &#x3D;&#x3D;&#x3D; &#x27;inline&#x27;&quot; *ngIf&#x3D;&quot;metadata$ | async as metadata&quot;&gt;
+  &lt;ng-container *ngTemplateOutlet&#x3D;&quot;template; context: { ref: getLookupFieldsObjectRef(metadata) }&quot;&gt;&lt;/ng-container&gt;
+  &lt;ng-template let-lookupFieldsObjectRef&#x3D;&quot;ref&quot; #template&gt;
+    &lt;dt [ngClass]&#x3D;&quot;labelClass&quot;&gt;
+      {{label$ | async}}
+    &lt;/dt&gt;
+    &lt;dd *ngIf&#x3D;&quot;!labelOnly&quot; class&#x3D;&quot;m-0 position-relative&quot;  [class.px-1]&#x3D;&quot;layout &#x3D;&#x3D;&#x3D; &#x27;inline&#x27;&quot; [class.py-1]&#x3D;&quot;layout &#x3D;&#x3D;&#x3D; &#x27;stacked&#x27;&quot; [class.empty]&#x3D;&quot;!getValue(metadata)&quot; [ngClass]&#x3D;&quot;valueClass&quot; [ngSwitch]&#x3D;&quot;true&quot;&gt;
+      &lt;ng-container *ngSwitchCase&#x3D;&quot;metadata.type &#x3D;&#x3D;&#x3D; &#x27;date&#x27; || metadata.type &#x3D;&#x3D;&#x3D; &#x27;datetime&#x27;&quot;&gt;{{getValue(metadata) | date:getDateFormat(metadata)}}&lt;/ng-container&gt;
+  
+      &lt;ng-container *ngSwitchCase&#x3D;&quot;metadata.type &#x3D;&#x3D;&#x3D; &#x27;currency&#x27;&quot;&gt;{{getValue(metadata) | localCurrency | async}}&lt;/ng-container&gt;
+  
+      &lt;ng-container *ngSwitchCase&#x3D;&quot;metadata.type &#x3D;&#x3D;&#x3D; &#x27;address&#x27;&quot;&gt;
+        &lt;apt-address [value]&#x3D;&quot;getValue(metadata)&quot; [readonly]&#x3D;&quot;true&quot;&gt;&lt;/apt-address&gt;
+      &lt;/ng-container&gt;
+  
+      &lt;ng-container *ngSwitchCase&#x3D;&quot;metadata.type &#x3D;&#x3D;&#x3D; &#x27;double&#x27;&quot;&gt;
+        {{getValue(metadata) | number:&#x27;1.0-&#x27; + metadata.scale}}
+      &lt;/ng-container&gt;
+
+      &lt;ng-container *ngSwitchDefault&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;getDetailPagePath(lookupFieldsObjectRef) &amp;&amp; !showQuickView; else nonLink&quot;&gt;
+          &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;getDetailPagePath(lookupFieldsObjectRef)&quot; [innerHTML]&#x3D;&quot;getValue(metadata)&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;/a&gt;
+        &lt;/ng-container&gt;
+        &lt;ng-template #nonLink&gt;
+          &lt;span
+            [ngClass]&#x3D;&quot;showQuickView ? &#x27;btn-link popoverLink&#x27; : &#x27;&#x27;&quot;
+            #lookupPop&#x3D;&quot;bs-popover&quot;
+            [popover]&#x3D;&quot;lookupPopTemplate&quot;
+            (click)&#x3D;&quot;handleLookupPopClick()&quot;
+            triggers&#x3D;&quot;&quot;
+            container&#x3D;&quot;body&quot;
+            containerClass&#x3D;&quot;lookupPopover&quot;
+            [outsideClick]&#x3D;&quot;true&quot;
+            [placement]&#x3D;&quot;onShown()&quot;
+            [innerHTML]&#x3D;&quot;getValue(metadata)&quot;&gt;&lt;/span&gt;
+        &lt;/ng-template&gt;
+      &lt;/ng-container&gt;
+      &lt;i
+        *ngIf&#x3D;&quot;editable&quot;
+        #pop&#x3D;&quot;bs-popover&quot;
+        class&#x3D;&quot;fa fa-pencil edit-icon ml-3&quot;
+        [popover]&#x3D;&quot;editable ? popTemplate : null&quot;
+        container&#x3D;&quot;body&quot;
+        containerClass&#x3D;&quot;editPopover&quot;
+        [outsideClick]&#x3D;&quot;true&quot;
+        (onShown)&#x3D;&quot;hidePopover()&quot;
+      &gt;&lt;/i&gt;
+    &lt;/dd&gt;
+    &lt;ng-template #lookupPopTemplate&gt;
+      &lt;div class&#x3D;&quot;popHeader p-3 mb-1&quot; [ngClass]&#x3D;&quot;expanded ? &#x27;bg-dark text-white&#x27; : &#x27;bg-white text-dark&#x27;&quot;&gt;
+        &lt;div class&#x3D;&quot;titleSection pb-2 border-bottom d-flex justify-content-between align-items-baseline&quot;&gt;
+          &lt;ng-container *ngIf&#x3D;&quot;getDetailPagePath(lookupFieldsObjectRef); else noLinkPopoverTitle&quot;&gt;
+            &lt;a class&#x3D;&quot;h5 btn-link&quot; href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;getDetailPagePath(lookupFieldsObjectRef)&quot; [innerHTML]&#x3D;&quot;getValue(metadata)&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;/a&gt;
+          &lt;/ng-container&gt;
+          &lt;ng-template #noLinkPopoverTitle&gt;
+            &lt;h5 [innerHTML]&#x3D;&quot;getValue(metadata)&quot;&gt;&lt;/h5&gt;
+          &lt;/ng-template&gt;
+          &lt;button aria-label&#x3D;&quot;Close&quot; [ngClass]&#x3D;&quot;{&#x27;text-white&#x27;: expanded}&quot; class&#x3D;&quot;close&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;hidePopover()&quot;&gt;×&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;fieldSection container-fluid py-2&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div *ngFor&#x3D;&quot;let field of getLookupPopoverFields(lookupFieldsObjectRef) | slice:0:6&quot; class&#x3D;&quot;col-6 pl-0 d-flex flex-column&quot;&gt;
+              &lt;apt-output-field
+                [record]&#x3D;&quot;lookupFieldsObjectRef&quot;
+                [field]&#x3D;&quot;field&quot;
+                layout&#x3D;&quot;stacked&quot;
+                [editable]&#x3D;&quot;false&quot;
+                [showQuickView]&#x3D;&quot;false&quot;
+              &gt;&lt;/apt-output-field&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;!expanded&quot; class&#x3D;&quot;bottomBar bg-dark&quot;&gt;&lt;/div&gt;
+        &lt;div
+          *ngIf&#x3D;&quot;getLookupPopoverFields(lookupFieldsObjectRef).length &gt; 6&quot;
+          class&#x3D;&quot;toggleButton justify-content-center align-items-center border d-flex&quot;
+          [ngClass]&#x3D;&quot;hovering ? &#x27;bg-primary&#x27; : &#x27;bg-white&#x27;&quot;
+          (mouseover)&#x3D;&quot;hovering &#x3D; true&quot;
+          (mouseout)&#x3D;&quot;hovering &#x3D; false&quot;
+          (click)&#x3D;&quot;expanded &#x3D; !expanded&quot;
+        &gt;
+          &lt;i class&#x3D;&quot;fa&quot; [ngClass]&#x3D;&quot;{&#x27;fa-chevron-up&#x27;: expanded, &#x27;fa-chevron-down&#x27;: !expanded, &#x27;text-white&#x27;: hovering, &#x27;text-primary&#x27;: !hovering}&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div *ngIf&#x3D;&quot;expanded&quot; class&#x3D;&quot;expandSection p-3&quot;&gt;
+        &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div *ngFor&#x3D;&quot;let field of getLookupPopoverFields(lookupFieldsObjectRef) | slice:6&quot; class&#x3D;&quot;col-6 pl-0 d-flex flex-column&quot;&gt;
+              &lt;apt-output-field
+                [record]&#x3D;&quot;lookupFieldsObjectRef&quot;
+                [field]&#x3D;&quot;field&quot;
+                layout&#x3D;&quot;stacked&quot;
+                [editable]&#x3D;&quot;false&quot;
+                [showQuickView]&#x3D;&quot;false&quot;
+                [label]&#x3D;&quot;(field &#x3D;&#x3D;&#x3D; &#x27;OwnerId&#x27;) ? &#x27;Owner&#x27; : &#x27;&#x27;&quot;
+              &gt;&lt;/apt-output-field&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/ng-template&gt;
+  &lt;/ng-template&gt;
+&lt;/span&gt;
+
+
+&lt;ng-template #popTemplate&gt;
+  &lt;form class&#x3D;&quot;p-3&quot; (ngSubmit)&#x3D;&quot;update()&quot;&gt;
+    &lt;apt-input-field (click)&#x3D;&quot;handleInputFieldClick()&quot; [(ngModel)]&#x3D;&quot;model[fieldName]&quot; [field]&#x3D;&quot;fieldName&quot; [entity]&#x3D;&quot;entity&quot; [name]&#x3D;&quot;field&quot;&gt;&lt;/apt-input-field&gt;
+    &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
+      &lt;button class&#x3D;&quot;btn-link btn&quot; (click)&#x3D;&quot;handleHidePop()&quot;&gt;Cancel&lt;/button&gt;
+      &lt;button class&#x3D;&quot;btn btn-primary&quot; type&#x3D;&quot;submit&quot; [ladda]&#x3D;&quot;loading&quot;&gt;Update&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/ng-template&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./output-field.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">apt-output-field{
+    .edit-icon{
+        display: inline-block;
+        cursor: pointer;
+        opacity: .5;
+
+        &amp;:hover {
+            opacity: 1;
+        }
+    }
+    .popoverLink {
+        cursor: pointer;
+        text-decoration: underline;    
+    }
+    .hover:hover{
+        background-color: lightgray;
+        cursor: pointer;
+        position: relative;
+        i.edit-icon{
+            display: block;
+            position: absolute;
+            right: 2%;
+            top: 22%;
+        }
+    }
+    apt-input-field{
+        min-width: 300px;
+    }
+    popover-container.popover{
+        max-width: inherit;
+    }
+    .inline{
+        dt{
+            white-space: nowrap;
+            &amp;::after{
+                content: &quot;:&quot;;
+                margin: 0 2px 0 -2px;
+            }
+        }
+    }
+    dd.empty::after {
+        content: &quot;\200b&quot;; // unicode zero width space character
+    }
+
+    dd {
+        width: initial;
+    }
+
+}
+
+.lookupPopover {
+    max-width: unset;
+    width: 322px;
+    border-radius: 4px;
+
+    .popover-body {
+        padding: 0px;
+    }
+
+    .popHeader {
+        position: relative;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+
+    .bottomBar {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: -4px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        height: 10px;
+    }
+
+    .toggleButton {
+        position: absolute;
+        right: 20px;
+        bottom: -17px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 5;
+
+        i {
+            font-size: 18px;
+        }
+    }
+
+    .expandSection {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
+
+.editPopover {
+    min-width: 322px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><span class="d-flex" [class.mb-2]="!labelOnly" [class.align-items-baseline]="layout === \'inline\'" [class.flex-column]="layout === \'stacked\'" [class.inline]="layout === \'inline\'" *ngIf="metadata$ | async as metadata">  <ng-container *ngTemplateOutlet="template; context: { ref: getLookupFieldsObjectRef(metadata) }"></ng-container>  <ng-template let-lookupFieldsObjectRef="ref" #template>    <dt [ngClass]="labelClass">      {{label$ | async}}    </dt>    <dd *ngIf="!labelOnly" class="m-0 position-relative"  [class.px-1]="layout === \'inline\'" [class.py-1]="layout === \'stacked\'" [class.empty]="!getValue(metadata)" [ngClass]="valueClass" [ngSwitch]="true">      <ng-container *ngSwitchCase="metadata.type === \'date\' || metadata.type === \'datetime\'">{{getValue(metadata) | date:getDateFormat(metadata)}}</ng-container>        <ng-container *ngSwitchCase="metadata.type === \'currency\'">{{getValue(metadata) | localCurrency | async}}</ng-container>        <ng-container *ngSwitchCase="metadata.type === \'address\'">        <apt-address [value]="getValue(metadata)" [readonly]="true"></apt-address>      </ng-container>        <ng-container *ngSwitchCase="metadata.type === \'double\'">        {{getValue(metadata) | number:\'1.0-\' + metadata.scale}}      </ng-container>      <ng-container *ngSwitchDefault>        <ng-container *ngIf="getDetailPagePath(lookupFieldsObjectRef) && !showQuickView; else nonLink">          <a href="javascript:void(0)" [routerLink]="getDetailPagePath(lookupFieldsObjectRef)" [innerHTML]="getValue(metadata)" target="_blank"></a>        </ng-container>        <ng-template #nonLink>          <span            [ngClass]="showQuickView ? \'btn-link popoverLink\' : \'\'"            #lookupPop="bs-popover"            [popover]="lookupPopTemplate"            (click)="handleLookupPopClick()"            triggers=""            container="body"            containerClass="lookupPopover"            [outsideClick]="true"            [placement]="onShown()"            [innerHTML]="getValue(metadata)"></span>        </ng-template>      </ng-container>      <i        *ngIf="editable"        #pop="bs-popover"        class="fa fa-pencil edit-icon ml-3"        [popover]="editable ? popTemplate : null"        container="body"        containerClass="editPopover"        [outsideClick]="true"        (onShown)="hidePopover()"      ></i>    </dd>    <ng-template #lookupPopTemplate>      <div class="popHeader p-3 mb-1" [ngClass]="expanded ? \'bg-dark text-white\' : \'bg-white text-dark\'">        <div class="titleSection pb-2 border-bottom d-flex justify-content-between align-items-baseline">          <ng-container *ngIf="getDetailPagePath(lookupFieldsObjectRef); else noLinkPopoverTitle">            <a class="h5 btn-link" href="javascript:void(0)" [routerLink]="getDetailPagePath(lookupFieldsObjectRef)" [innerHTML]="getValue(metadata)" target="_blank"></a>          </ng-container>          <ng-template #noLinkPopoverTitle>            <h5 [innerHTML]="getValue(metadata)"></h5>          </ng-template>          <button aria-label="Close" [ngClass]="{\'text-white\': expanded}" class="close" type="button" (click)="hidePopover()">×</button>        </div>        <div class="fieldSection container-fluid py-2">          <div class="row">            <div *ngFor="let field of getLookupPopoverFields(lookupFieldsObjectRef) | slice:0:6" class="col-6 pl-0 d-flex flex-column">              <apt-output-field                [record]="lookupFieldsObjectRef"                [field]="field"                layout="stacked"                [editable]="false"                [showQuickView]="false"              ></apt-output-field>            </div>          </div>        </div>        <div *ngIf="!expanded" class="bottomBar bg-dark"></div>        <div          *ngIf="getLookupPopoverFields(lookupFieldsObjectRef).length > 6"          class="toggleButton justify-content-center align-items-center border d-flex"          [ngClass]="hovering ? \'bg-primary\' : \'bg-white\'"          (mouseover)="hovering = true"          (mouseout)="hovering = false"          (click)="expanded = !expanded"        >          <i class="fa" [ngClass]="{\'fa-chevron-up\': expanded, \'fa-chevron-down\': !expanded, \'text-white\': hovering, \'text-primary\': !hovering}" aria-hidden="true"></i>        </div>      </div>      <div *ngIf="expanded" class="expandSection p-3">        <div class="container-fluid">          <div class="row">            <div *ngFor="let field of getLookupPopoverFields(lookupFieldsObjectRef) | slice:6" class="col-6 pl-0 d-flex flex-column">              <apt-output-field                [record]="lookupFieldsObjectRef"                [field]="field"                layout="stacked"                [editable]="false"                [showQuickView]="false"                [label]="(field === \'OwnerId\') ? \'Owner\' : \'\'"              ></apt-output-field>            </div>          </div>        </div>      </div>    </ng-template>  </ng-template></span><ng-template #popTemplate>  <form class="p-3" (ngSubmit)="update()">    <apt-input-field (click)="handleInputFieldClick()" [(ngModel)]="model[fieldName]" [field]="fieldName" [entity]="entity" [name]="field"></apt-input-field>    <div class="d-flex justify-content-end">      <button class="btn-link btn" (click)="handleHidePop()">Cancel</button>      <button class="btn btn-primary" type="submit" [ladda]="loading">Update</button>    </div>  </form></ng-template></div>'
+    var COMPONENTS = [{'name': 'AddressBookComponent', 'selector': 'app-address-book'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'AttachmentComponent', 'selector': 'app-attachment'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'BuyMoreModalComponent', 'selector': 'apt-buy-more-modal'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartListComponent', 'selector': 'app-cart-list'},{'name': 'CartSummaryComponent', 'selector': 'app-cart-summary'},{'name': 'CartTableComponent', 'selector': 'app-cart-table'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChangeConfigurationModalComponent', 'selector': 'apt-change-configuration-modal'},{'name': 'ChangePasswordLayoutComponent', 'selector': 'app-change-password-layout'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CompareLayoutComponent', 'selector': 'app-compare-layout'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CreateQuoteComponent', 'selector': 'app-create-quote'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'DetailSectionComponent', 'selector': 'apt-detail-section'},{'name': 'DetailsLayoutComponent', 'selector': 'apt-detail'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'InstalledProductsLayoutComponent', 'selector': 'app-installed-products-layout'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'ManageCartComponent', 'selector': 'app-manage-cart'},{'name': 'MdDotsComponent', 'selector': 'apt-md-dots'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'MyAccountLayoutComponent', 'selector': 'app-my-account-layout'},{'name': 'NavAccountComponent', 'selector': 'nav-account'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderDetailsComponent', 'selector': 'app-order-details'},{'name': 'OrderHistoryLayoutComponent', 'selector': 'app-order-history-layout'},{'name': 'OrderListComponent', 'selector': 'app-order-list'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PaymentMethodComponent', 'selector': 'apt-payment-method'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'PriceTypeFilterComponent', 'selector': 'app-price-type-filter'},{'name': 'ProductAttributeComponent', 'selector': 'apt-product-attribute'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDetailsComponent', 'selector': 'app-product-details'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'QuoteDetailsComponent', 'selector': 'app-quote-details'},{'name': 'RenewalFilterComponent', 'selector': 'app-renewal-filter'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'RequestQuoteFormComponent', 'selector': 'app-request-quote-form'},{'name': 'ResultsComponent', 'selector': 'pl-results'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SummaryComponent', 'selector': 'cart-summary'},{'name': 'TabAttachmentsComponent', 'selector': 'pdp-tab-attachments'},{'name': 'TabFeaturesComponent', 'selector': 'pdp-tab-features'},{'name': 'TableRowSubItemComponent', 'selector': 'apt-table-row-sub-item'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'},{'name': 'WishlistsComponent', 'selector': 'app-wishlists'}];
+    var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[appAutoFocus]'}];
+    var ACTUAL_COMPONENT = {'name': 'OutputFieldComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'OutputFieldComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

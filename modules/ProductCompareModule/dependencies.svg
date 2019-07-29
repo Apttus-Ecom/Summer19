@@ -22,15 +22,11 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_ProductCompareModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="67,-70 67,-268 429,-268 429,-70 67,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="142,-70 142,-268 354,-268 354,-70 142,-70"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_ProductCompareModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="229,-78 229,-130 421,-130 421,-78 229,-78"/>
-</g>
-<g id="clust4" class="cluster">
-<title>cluster_ProductCompareModule_imports</title>
-<polygon fill="none" stroke="#000000" points="75,-78 75,-130 221,-130 221,-78 75,-78"/>
+<polygon fill="none" stroke="#000000" points="152,-78 152,-130 344,-130 344,-78 152,-78"/>
 </g>
 <g id="clust5" class="cluster">
 <title>cluster_ProductCompareModule_exports</title>
@@ -39,8 +35,8 @@
 <!-- ProductCompareComponent -->
 <g id="node1" class="node">
 <title>ProductCompareComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="413.1979,-122 236.8021,-122 236.8021,-86 413.1979,-86 413.1979,-122"/>
-<text text-anchor="middle" x="325" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductCompareComponent</text>
+<polygon fill="#ffffb3" stroke="#000000" points="336.1979,-122 159.8021,-122 159.8021,-86 336.1979,-86 336.1979,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductCompareComponent</text>
 </g>
 <!-- ProductCompareModule -->
 <g id="node2" class="node">
@@ -51,32 +47,20 @@
 <!-- ProductCompareComponent&#45;&gt;ProductCompareModule -->
 <g id="edge1" class="edge">
 <title>ProductCompareComponent&#45;&gt;ProductCompareModule</title>
-<path fill="none" stroke="#000000" d="M281.0544,-122.1061C281.0544,-122.1061 281.0544,-140.991 281.0544,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="277.5544,-140.9909 281.0544,-150.991 284.5544,-140.991 277.5544,-140.9909"/>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 <!-- ProductCompareComponent  -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>ProductCompareComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="337.6981,-252 158.3019,-252 158.3019,-216 337.6981,-216 337.6981,-252"/>
 <text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductCompareComponent </text>
 </g>
 <!-- ProductCompareModule&#45;&gt;ProductCompareComponent  -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>ProductCompareModule&#45;&gt;ProductCompareComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
-</g>
-<!-- ProductCardModule -->
-<g id="node3" class="node">
-<title>ProductCardModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="213.3104,-122 210.3104,-126 189.3104,-126 186.3104,-122 82.6896,-122 82.6896,-86 213.3104,-86 213.3104,-122"/>
-<text text-anchor="middle" x="148" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductCardModule</text>
-</g>
-<!-- ProductCardModule&#45;&gt;ProductCompareModule -->
-<g id="edge2" class="edge">
-<title>ProductCardModule&#45;&gt;ProductCompareModule</title>
-<path fill="none" stroke="#000000" d="M191.9737,-122.1061C191.9737,-122.1061 191.9737,-140.991 191.9737,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="188.4738,-140.9909 191.9737,-150.991 195.4738,-140.991 188.4738,-140.9909"/>
 </g>
 </g>
 </svg>

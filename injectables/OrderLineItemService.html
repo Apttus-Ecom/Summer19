@@ -81,10 +81,6 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getBundleItemsForOrderLineItem">getBundleItemsForOrderLineItem</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#getOrderLineItemsForOrder">getOrderLineItemsForOrder</a>
                             </li>
                         </ul>
@@ -105,93 +101,6 @@
         <h3 id="methods">
             Methods
         </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getBundleItemsForOrderLineItem"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            getBundleItemsForOrderLineItem
-                            </b>
-                            <a href="#getBundleItemsForOrderLineItem"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getBundleItemsForOrderLineItem(orderLineItem: <a href="../classes/OrderLineItem.html">string | OrderLineItem</a>)</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>This method returns a list of option line items for the order line item passed.</p>
-<h3 id="example-">Example:</h3>
-<p><code>`</code>typescript
-      import { OrderLineItemService, OrderLineItem } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       orderLineItemList: Array&lt;OrderLineItem&gt;;
-       orderLineItemList$: Observable&lt;Array&lt;OrderLineItem&gt;&gt;;
-
-       constructor(private orderLineItemService: OrderLineItemService){}
-
-       ngOnInit(){
-            this.orderLineItemService.getBundleItemsForOrderLineItem(orderLineItem: string | OrderLineItem).subscribe(o =&gt; this.orderLineItemList = o);
-            // or
-            this.orderLineItemList$ = this.orderLineItemService.getBundleItemsForOrderLineItem(orderLineItem: string | OrderLineItem);
-       }
-  }
- * This method returns the bundled options for the order line item passed.
- * &#64;param orderLineItem Instance of the order line item passed.
- * &#64;returns An observable containing the array of option line items for a given order line item.
- *</code></pre></div></div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>orderLineItem</td>
-                                                        <td>
-                                                                    <code><a href="../classes/OrderLineItem.html" target="_self" >string | OrderLineItem</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/OrderLineItem.html" target="_self" >Observable&lt;Array&lt;OrderLineItem&gt;&gt;</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>

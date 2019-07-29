@@ -79,8 +79,24 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#accountService">accountService</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#frequencyMap">frequencyMap</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#priceListService">priceListService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#productAttributeValueService">productAttributeValueService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#storefrontService">storefrontService</a>
                             </li>
                             <li>
                                 <a href="#type">type</a>
@@ -103,11 +119,23 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#getCartItemsForAsset">getCartItemsForAsset</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getCartItemsForCart">getCartItemsForCart</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#getCartItemsForProduct">getCartItemsForProduct</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getEndDate">getEndDate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getNextPrimaryLineNumber">getNextPrimaryLineNumber</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -152,7 +180,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getBundleItemsForCartItem(cartItem: <a href="../classes/CartItem.html">string | CartItem</a>)</code>
+                        <code>getBundleItemsForCartItem(item: <a href="../classes/QuoteLineItem.html">CartItem | AssetLineItem | QuoteLineItem | OrderLineItem</a>, supportingItems?: <a href="../classes/QuoteLineItem.html">Array<CartItem | AssetLineItem | QuoteLineItem | OrderLineItem></a>)</code>
                     </td>
                 </tr>
 
@@ -172,6 +200,87 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>item</td>
+                                                        <td>
+                                                                    <code><a href="../classes/QuoteLineItem.html" target="_self" >CartItem | AssetLineItem | QuoteLineItem | OrderLineItem</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>supportingItems</td>
+                                                        <td>
+                                                                    <code><a href="../classes/QuoteLineItem.html" target="_self" >Array&lt;CartItem | AssetLineItem | QuoteLineItem | OrderLineItem&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/QuoteLineItem.html" target="_self" >Observable&lt;Array&lt;CartItem | AssetLineItem | QuoteLineItem | OrderLineItem&gt;&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>An observable containing the array of option line items for a given cart item.</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getCartItemsForAsset"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getCartItemsForAsset
+                            </b>
+                            <a href="#getCartItemsForAsset"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getCartItemsForAsset(cartItem: <a href="../classes/CartItem.html">CartItem</a>, context?: <a href="../classes/Cart.html">Cart</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Method will generate the default cart items for a given asset.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
                                                     <td>Description</td>
                                             </tr>
                                         </thead>
@@ -179,7 +288,7 @@
                                                 <tr>
                                                         <td>cartItem</td>
                                                         <td>
-                                                                    <code><a href="../classes/CartItem.html" target="_self" >string | CartItem</a></code>
+                                                                    <code><a href="../classes/CartItem.html" target="_self" >CartItem</a></code>
                                                         </td>
                                                     
                                                     <td>
@@ -188,8 +297,22 @@
                                                     
 
                                                         <td>
-                                                                <code><p>Instance of the cart item passed.</p>
+                                                                <code><p>the primary cart item with a related asset. Generated from the amend / configure asset API</p>
 </code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>context</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -202,8 +325,7 @@
 
                             </div>
                                 <div class="io-description">
-                                    <p>An observable containing the array of option line items for a given cart item.</p>
-
+                                    
                                 </div>
                     </td>
                 </tr>
@@ -303,6 +425,207 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="getCartItemsForProduct"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getCartItemsForProduct
+                            </b>
+                            <a href="#getCartItemsForProduct"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getCartItemsForProduct(product: <a href="../classes/Product.html">Product</a>, quantity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, cart?: <a href="../classes/Cart.html">Cart</a>, cartItems?: <a href="../classes/CartItem.html">Array<CartItem></a>, productOptionComponent?: <a href="../classes/ProductOptionComponent.html">ProductOptionComponent</a>, parentBundleNumber?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, lineNumber?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, lineStatus?: <a href="../undefineds/LineStatus.html">LineStatus</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Method gets the cart items for a given product. A bundle product with option groups populated must be passed in to retrieve related option cart items.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Default value</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>product</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                        <td>
+                                                                <code><p>the product or bundle product record to generate the cart items for</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>quantity</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>1</code>
+                                                        </td>
+
+                                                        <td>
+                                                                <code><p>the quantity to use for the cart item(s)</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>cart</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Cart.html" target="_self" >Cart</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                        <td>
+                                                                <code><p>the related cart that the cart items will be added to. Must be passed in or the line number that is used will start at 1</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>cartItems</td>
+                                                        <td>
+                                                                    <code><a href="../classes/CartItem.html" target="_self" >Array&lt;CartItem&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                        <td>
+                                                                <code><p>optional list of related cart items to determine the starting primary line number</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>productOptionComponent</td>
+                                                        <td>
+                                                                    <code><a href="../classes/ProductOptionComponent.html" target="_self" >ProductOptionComponent</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                        <td>
+                                                                <code><p>The related ProductOptionComponent record for generating option line items</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>parentBundleNumber</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                        <td>
+                                                                <code><p>the default parent bundle number to use</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>lineNumber</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                        <td>
+                                                                <code><p>the default line number to use.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>lineStatus</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/enumerations.html#LineStatus" target="_self" >LineStatus</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/CartItem.html" target="_self" >Observable&lt;Array&lt;CartItem&gt;&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="getEndDate"></a>
                         <span class="name">
                             <b>
@@ -316,7 +639,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getEndDate(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, term: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, frequency: "Hourly" | "Daily" | "Weekly" | "Monthly" | "Quarterly" | "Half Yearly" | "Yearly")</code>
+                        <code>getEndDate(purchaseDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, term: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, frequency: "Hourly" | "Daily" | "Weekly" | "Monthly" | "Quarterly" | "Half Yearly" | "Yearly" | "--None--")</code>
                     </td>
                 </tr>
 
@@ -341,7 +664,7 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>date</td>
+                                                        <td>purchaseDate</td>
                                                         <td>
                                                                     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
                                                         </td>
@@ -373,7 +696,7 @@
                                                 <tr>
                                                         <td>frequency</td>
                                                         <td>
-                                                                    <code>&quot;Hourly&quot; | &quot;Daily&quot; | &quot;Weekly&quot; | &quot;Monthly&quot; | &quot;Quarterly&quot; | &quot;Half Yearly&quot; | &quot;Yearly&quot;</code>
+                                                                    <code>&quot;Hourly&quot; | &quot;Daily&quot; | &quot;Weekly&quot; | &quot;Monthly&quot; | &quot;Quarterly&quot; | &quot;Half Yearly&quot; | &quot;Yearly&quot; | &quot;--None--&quot;</code>
                                                         </td>
                                                     
                                                     <td>
@@ -407,6 +730,72 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="getNextPrimaryLineNumber"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getNextPrimaryLineNumber
+                            </b>
+                            <a href="#getNextPrimaryLineNumber"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getNextPrimaryLineNumber(cartItems: <a href="../classes/CartItem.html">Array<CartItem></a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cartItems</td>
+                                                        <td>
+                                                                    <code><a href="../classes/CartItem.html" target="_self" >Array&lt;CartItem&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="getReadableTerm"></a>
                         <span class="name">
                             <b>
@@ -420,7 +809,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getReadableTerm(term: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, frequency: "Hourly" | "Daily" | "Weekly" | "Monthly" | "Quarterly" | "Half Yearly" | "Yearly" | "One Time")</code>
+                        <code>getReadableTerm(term: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, frequency: "Hourly" | "Daily" | "Weekly" | "Monthly" | "Quarterly" | "Half Yearly" | "Yearly" | "One Time" | "--None--")</code>
                     </td>
                 </tr>
 
@@ -456,7 +845,7 @@
                                                 <tr>
                                                         <td>frequency</td>
                                                         <td>
-                                                                    <code>&quot;Hourly&quot; | &quot;Daily&quot; | &quot;Weekly&quot; | &quot;Monthly&quot; | &quot;Quarterly&quot; | &quot;Half Yearly&quot; | &quot;Yearly&quot; | &quot;One Time&quot;</code>
+                                                                    <code>&quot;Hourly&quot; | &quot;Daily&quot; | &quot;Weekly&quot; | &quot;Monthly&quot; | &quot;Quarterly&quot; | &quot;Half Yearly&quot; | &quot;Yearly&quot; | &quot;One Time&quot; | &quot;--None--&quot;</code>
                                                         </td>
                                                     
                                                     <td>
@@ -498,7 +887,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getTerm(startDate: moment.Moment, endDate: moment.Moment, frequency: "Hourly" | "Daily" | "Weekly" | "Monthly" | "Quarterly" | "Half Yearly" | "Yearly")</code>
+                        <code>getTerm(startDate: moment.Moment, endDate: moment.Moment, frequency: "Hourly" | "Daily" | "Weekly" | "Monthly" | "Quarterly" | "Half Yearly" | "Yearly" | "--None--")</code>
                     </td>
                 </tr>
 
@@ -557,7 +946,7 @@
                                                 <tr>
                                                         <td>frequency</td>
                                                         <td>
-                                                                    <code>&quot;Hourly&quot; | &quot;Daily&quot; | &quot;Weekly&quot; | &quot;Monthly&quot; | &quot;Quarterly&quot; | &quot;Half Yearly&quot; | &quot;Yearly&quot;</code>
+                                                                    <code>&quot;Hourly&quot; | &quot;Daily&quot; | &quot;Weekly&quot; | &quot;Monthly&quot; | &quot;Quarterly&quot; | &quot;Half Yearly&quot; | &quot;Yearly&quot; | &quot;--None--&quot;</code>
                                                         </td>
                                                     
                                                     <td>
@@ -598,6 +987,41 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="accountService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            accountService
+                            </b>
+                            <a href="#accountService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>accountService:     <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(AccountService)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="frequencyMap"></a>
                         <span class="name">
                             <b>
@@ -629,8 +1053,114 @@
         &#x27;Weekly&#x27;: &#x27;weeks&#x27;,
         &#x27;Quarterly&#x27;: &#x27;years&#x27;,
         &#x27;Half Yearly&#x27;: &#x27;years&#x27;,
-        &#x27;Yearly&#x27;: &#x27;years&#x27;
+        &#x27;Yearly&#x27;: &#x27;years&#x27;,
+        &#x27;--None--&#x27;:&#x27;--None--&#x27;
     }</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="priceListService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            priceListService
+                            </b>
+                            <a href="#priceListService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>priceListService:     <code><a href="../injectables/PriceListService.html" target="_self" >PriceListService</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/PriceListService.html" target="_self" >PriceListService</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(PriceListService)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="productAttributeValueService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            productAttributeValueService
+                            </b>
+                            <a href="#productAttributeValueService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>productAttributeValueService:     <code><a href="../classes/ProductAttributeValue.html" target="_self" >ProductAttributeValueService</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/ProductAttributeValue.html" target="_self" >ProductAttributeValueService</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(ProductAttributeValueService)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="storefrontService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            storefrontService
+                            </b>
+                            <a href="#storefrontService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>storefrontService:     <code><a href="../injectables/StorefrontService.html" target="_self" >StorefrontService</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/StorefrontService.html" target="_self" >StorefrontService</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(StorefrontService)</code>
                         </td>
                     </tr>
 

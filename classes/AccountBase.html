@@ -84,10 +84,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#BillingAddress">BillingAddress</a>
+                            </li>
+                            <li>
                                 <a href="#BillingCity">BillingCity</a>
                             </li>
                             <li>
                                 <a href="#BillingCountry">BillingCountry</a>
+                            </li>
+                            <li>
+                                <a href="#BillingCountryCode">BillingCountryCode</a>
                             </li>
                             <li>
                                 <a href="#BillingPostalCode">BillingPostalCode</a>
@@ -96,10 +102,19 @@
                                 <a href="#BillingState">BillingState</a>
                             </li>
                             <li>
+                                <a href="#BillingStateCode">BillingStateCode</a>
+                            </li>
+                            <li>
                                 <a href="#BillingStreet">BillingStreet</a>
                             </li>
                             <li>
+                                <a href="#Industry">Industry</a>
+                            </li>
+                            <li>
                                 <a href="#Name">Name</a>
+                            </li>
+                            <li>
+                                <a href="#OwnerId">OwnerId</a>
                             </li>
                             <li>
                                 <a href="#ParentId">ParentId</a>
@@ -111,16 +126,28 @@
                                 <a href="#PriceList">PriceList</a>
                             </li>
                             <li>
+                                <a href="#PriceListId__c">PriceListId__c</a>
+                            </li>
+                            <li>
+                                <a href="#ShippingAddress">ShippingAddress</a>
+                            </li>
+                            <li>
                                 <a href="#ShippingCity">ShippingCity</a>
                             </li>
                             <li>
                                 <a href="#ShippingCountry">ShippingCountry</a>
                             </li>
                             <li>
+                                <a href="#ShippingCountryCode">ShippingCountryCode</a>
+                            </li>
+                            <li>
                                 <a href="#ShippingPostalCode">ShippingPostalCode</a>
                             </li>
                             <li>
                                 <a href="#ShippingState">ShippingState</a>
+                            </li>
+                            <li>
+                                <a href="#ShippingStateCode">ShippingStateCode</a>
                             </li>
                             <li>
                                 <a href="#ShippingStreet">ShippingStreet</a>
@@ -144,6 +171,49 @@
         <h3 id="inputs">
             Properties
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="BillingAddress"></a>
+                        <span class="name">
+                            <b>
+                            BillingAddress
+                            </b>
+                            <a href="#BillingAddress"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>BillingAddress:     <code><a href="../interfaces/Address.html" target="_self" >Address</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Address.html" target="_self" >Address</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;BillingAddress&#x27;})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -223,6 +293,49 @@
                             <br />
                             <code>
                                 @AField({soql: &#x27;BillingCountry&#x27;, aql: &#x27;BillingCountry&#x27;})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="BillingCountryCode"></a>
+                        <span class="name">
+                            <b>
+                            BillingCountryCode
+                            </b>
+                            <a href="#BillingCountryCode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>BillingCountryCode:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;BillingCountryCode &#x27;, aql: &#x27;BillingCountryCode &#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -320,6 +433,49 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="BillingStateCode"></a>
+                        <span class="name">
+                            <b>
+                            BillingStateCode
+                            </b>
+                            <a href="#BillingStateCode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>BillingStateCode:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;BillingStateCode &#x27;, aql: &#x27;BillingStateCode &#x27;})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="BillingStreet"></a>
                         <span class="name">
                             <b>
@@ -363,6 +519,49 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="Industry"></a>
+                        <span class="name">
+                            <b>
+                            Industry
+                            </b>
+                            <a href="#Industry"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>Industry:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;Industry&#x27;, view: undefined})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="Name"></a>
                         <span class="name">
                             <b>
@@ -395,6 +594,49 @@
                             <br />
                             <code>
                                 @AField({soql: &#x27;Name&#x27;, aql: &#x27;Name&#x27;})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="OwnerId"></a>
+                        <span class="name">
+                            <b>
+                            OwnerId
+                            </b>
+                            <a href="#OwnerId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>OwnerId:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;OwnerId&#x27;, view: undefined})<br />
                             </code>
                         </td>
                     </tr>
@@ -480,7 +722,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Phone&#x27;})<br />
+                                @AField({soql: &#x27;Phone&#x27;, view: undefined})<br />
                             </code>
                         </td>
                     </tr>
@@ -515,7 +757,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new PriceList()</code>
+                            <i>Default value : </i><code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -523,7 +765,93 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;PriceListId__r&#x27;, aql: &#x27;DefaultPriceListId&#x27;})<br />
+                                @AField({soql: &#x27;PriceListId__r&#x27;, aql: &#x27;DefaultPriceListId&#x27;})<br />@Type(undefined)<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="PriceListId__c"></a>
+                        <span class="name">
+                            <b>
+                            PriceListId__c
+                            </b>
+                            <a href="#PriceListId__c"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>PriceListId__c:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;PriceListId__c&#x27;, view: undefined})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ShippingAddress"></a>
+                        <span class="name">
+                            <b>
+                            ShippingAddress
+                            </b>
+                            <a href="#ShippingAddress"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>ShippingAddress:     <code><a href="../interfaces/Address.html" target="_self" >Address</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Address.html" target="_self" >Address</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;ShippingAddress&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -621,6 +949,49 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="ShippingCountryCode"></a>
+                        <span class="name">
+                            <b>
+                            ShippingCountryCode
+                            </b>
+                            <a href="#ShippingCountryCode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>ShippingCountryCode:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;ShippingCountryCode &#x27;, aql: &#x27;ShippingCountryCode &#x27;})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="ShippingPostalCode"></a>
                         <span class="name">
                             <b>
@@ -696,6 +1067,49 @@
                             <br />
                             <code>
                                 @AField({soql: &#x27;ShippingState&#x27;, aql: &#x27;ShippingState&#x27;})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ShippingStateCode"></a>
+                        <span class="name">
+                            <b>
+                            ShippingStateCode
+                            </b>
+                            <a href="#ShippingStateCode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>ShippingStateCode:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @AField({soql: &#x27;ShippingStateCode &#x27;, aql: &#x27;ShippingStateCode &#x27;})<br />
                             </code>
                         </td>
                     </tr>

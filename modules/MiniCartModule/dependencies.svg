@@ -22,15 +22,11 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_MiniCartModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="110,-70 110,-268 386,-268 386,-70 110,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="164,-70 164,-268 332,-268 332,-70 164,-70"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_MiniCartModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="230,-78 230,-130 378,-130 378,-78 230,-78"/>
-</g>
-<g id="clust4" class="cluster">
-<title>cluster_MiniCartModule_imports</title>
-<polygon fill="none" stroke="#000000" points="118,-78 118,-130 222,-130 222,-78 118,-78"/>
+<polygon fill="none" stroke="#000000" points="174,-78 174,-130 322,-130 322,-78 174,-78"/>
 </g>
 <g id="clust5" class="cluster">
 <title>cluster_MiniCartModule_exports</title>
@@ -39,8 +35,8 @@
 <!-- MiniCartComponent -->
 <g id="node1" class="node">
 <title>MiniCartComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="370.161,-122 237.839,-122 237.839,-86 370.161,-86 370.161,-122"/>
-<text text-anchor="middle" x="304" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">MiniCartComponent</text>
+<polygon fill="#ffffb3" stroke="#000000" points="314.161,-122 181.839,-122 181.839,-86 314.161,-86 314.161,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">MiniCartComponent</text>
 </g>
 <!-- MiniCartModule -->
 <g id="node2" class="node">
@@ -51,32 +47,20 @@
 <!-- MiniCartComponent&#45;&gt;MiniCartModule -->
 <g id="edge1" class="edge">
 <title>MiniCartComponent&#45;&gt;MiniCartModule</title>
-<path fill="none" stroke="#000000" d="M270.5544,-122.1061C270.5544,-122.1061 270.5544,-140.991 270.5544,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="267.0544,-140.9909 270.5544,-150.991 274.0544,-140.991 267.0544,-140.9909"/>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 <!-- MiniCartComponent  -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>MiniCartComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="316.1607,-252 179.8393,-252 179.8393,-216 316.1607,-216 316.1607,-252"/>
 <text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">MiniCartComponent </text>
 </g>
 <!-- MiniCartModule&#45;&gt;MiniCartComponent  -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>MiniCartModule&#45;&gt;MiniCartComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
-</g>
-<!-- PriceModule -->
-<g id="node3" class="node">
-<title>PriceModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="214.3134,-122 211.3134,-126 190.3134,-126 187.3134,-122 125.6866,-122 125.6866,-86 214.3134,-86 214.3134,-122"/>
-<text text-anchor="middle" x="170" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PriceModule</text>
-</g>
-<!-- PriceModule&#45;&gt;MiniCartModule -->
-<g id="edge2" class="edge">
-<title>PriceModule&#45;&gt;MiniCartModule</title>
-<path fill="none" stroke="#000000" d="M203.3587,-122.1061C203.3587,-122.1061 203.3587,-140.991 203.3587,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="199.8588,-140.9909 203.3587,-150.991 206.8588,-140.991 199.8588,-140.9909"/>
 </g>
 </g>
 </svg>

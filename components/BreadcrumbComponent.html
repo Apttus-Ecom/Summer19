@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Apttus Ecommerce</title>
+        <title>Apttus Ecommerce Summer &#x27;19</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce Summer &#x27;19</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -78,7 +78,7 @@ export class AppModule {}</code></pre></div>
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
     </p>
 
     <p class="comment">
@@ -95,6 +95,10 @@ export class AppModule {}</code></pre></div>
     <table class="table table-sm table-hover">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
 
 
 
@@ -114,18 +118,16 @@ export class AppModule {}</code></pre></div>
 
             <tr>
                 <td class="col-md-3">template</td>
-                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;nav aria-label&#x3D;&quot;breadcrumb&quot;&gt;
-  &lt;ol class&#x3D;&quot;breadcrumb py-0&quot;&gt;
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;nav aria-label&#x3D;&quot;breadcrumb&quot; class&#x3D;&quot;container-fluid pt-3 border-top border-bottom&quot;&gt;
+  &lt;ol class&#x3D;&quot;breadcrumb p-0&quot;&gt;
     &lt;li class&#x3D;&quot;breadcrumb-item&quot;&gt;
-      &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot;&gt;Home&lt;/a&gt;
+      &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot;&gt;{{&#x27;BREADCRUMB.HOME&#x27; | translate}}&lt;/a&gt;
     &lt;/li&gt;
-
-    &lt;li class&#x3D;&quot;breadcrumb-item&quot; *ngFor&#x3D;&quot;let crumb of (breadcrumbs$ | async); let l &#x3D; last&quot; [class.active]&#x3D;&quot;l &amp;&amp; !isProduct&quot;&gt;
-      &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/product-list&#x27;, crumb.Name]&quot; *ngIf&#x3D;&quot;!l || isProduct&quot;&gt;{{crumb.Label}}&lt;/a&gt;
-      &lt;span *ngIf&#x3D;&quot;l &amp;&amp; !isProduct&quot;&gt;{{crumb.Label}}&lt;/span&gt;
+    &lt;li class&#x3D;&quot;breadcrumb-item&quot; [class.active]&#x3D;&quot;breadcrumb.active&quot; *ngFor&#x3D;&quot;let breadcrumb of breadcrumbs$ | async&quot;&gt;
+      &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;breadcrumb.route&quot; *ngIf&#x3D;&quot;!breadcrumb.active; else inactive&quot;&gt;{{breadcrumb.label}}&lt;/a&gt;
+      &lt;ng-template #inactive&gt;{{breadcrumb.label}}&lt;/ng-template&gt;
     &lt;/li&gt;
-
-    &lt;li class&#x3D;&quot;breadcrumb-item active&quot; *ngIf&#x3D;&quot;isProduct&quot;&gt;{{sobject?.Name}}&lt;/li&gt;
+    &lt;li class&#x3D;&quot;breadcrumb-item active&quot; [attr.aria-current]&#x3D;&quot;label&quot; *ngIf&#x3D;&quot;label&quot;&gt;{{label}}&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/nav&gt;
 </code></pre></td>
@@ -159,12 +161,29 @@ export class AppModule {}</code></pre></div>
                                 <a href="#breadcrumbs$">breadcrumbs$</a>
                             </li>
                             <li>
-                                <a href="#isProduct">isProduct</a>
+                                <a href="#productCatalogLabel">productCatalogLabel</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getAObjectBreadcrumbs">getAObjectBreadcrumbs</a>
+                            </li>
+                            <li>
+                                <a href="#mapCategories">mapCategories</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -174,6 +193,15 @@ export class AppModule {}</code></pre></div>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#autoGenerated">autoGenerated</a>
+                            </li>
+                            <li>
+                                <a href="#breadcrumbs">breadcrumbs</a>
+                            </li>
+                            <li>
+                                <a href="#label">label</a>
+                            </li>
                             <li>
                                 <a href="#sobject">sobject</a>
                             </li>
@@ -194,7 +222,7 @@ export class AppModule {}</code></pre></div>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(categoryService: <a href="../injectables/CategoryService.html">CategoryService</a>)</code>
+<code>constructor(categoryService: CategoryService, aobjectService: AObjectService, translateService: TranslateService)</code>
                     </td>
                 </tr>
 
@@ -215,7 +243,31 @@ export class AppModule {}</code></pre></div>
                                                         <td>categoryService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/CategoryService.html" target="_self" >CategoryService</a></code>
+                                                                    <code>CategoryService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>aobjectService</td>
+                                                  
+                                                        <td>
+                                                                    <code>AObjectService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -237,17 +289,74 @@ export class AppModule {}</code></pre></div>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
-                        <a name="sobject"></a>
-                        <code>sobject</code>
+                    <td class="col-md-4">
+                        <a name="autoGenerated"></a>
+                        <b>autoGenerated</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Object to use for this component. Can be Product or Category.</p>
-</div>
-                            <p>
-                            <em>Type :</em>    <code><a href="../classes/Product.html" target="_self" >Product | Category</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
-                            </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="breadcrumbs"></a>
+                        <b>breadcrumbs</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/BreadcrumbLink.html" target="_self" >Array&lt;BreadcrumbLink&gt;</a></code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="label"></a>
+                        <b>label</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sobject"></a>
+                        <b>sobject</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>AObject</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Object to use for this component.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -256,7 +365,109 @@ export class AppModule {}</code></pre></div>
 
 
 
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAObjectBreadcrumbs"></a>
+                    <span class="name">
+                        <b>
+                            getAObjectBreadcrumbs
+                        </b>
+                        <a href="#getAObjectBreadcrumbs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAObjectBreadcrumbs()</code>
+                </td>
+            </tr>
 
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/BreadcrumbLink.html" target="_self" >Observable&lt;Array&lt;BreadcrumbLink&gt;&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapCategories"></a>
+                    <span class="name">
+                        <b>
+                            mapCategories
+                        </b>
+                        <a href="#mapCategories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mapCategories(categoryList: Array<Category>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>categoryList</td>
+                                    <td>
+                                            <code>Array&lt;Category&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/BreadcrumbLink.html" target="_self" >Array&lt;BreadcrumbLink&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <section>
     
         <h3 id="inputs">
@@ -269,21 +480,14 @@ export class AppModule {}</code></pre></div>
                         <a name="breadcrumbs$"></a>
                         <span class="name">
                             <b>
-                            breadcrumbs$
-                            </b>
+                            breadcrumbs$</b>
                             <a href="#breadcrumbs$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>breadcrumbs$:     <code><a href="../classes/Category.html" target="_self" >Observable&lt;Array&lt;Category&gt;&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/Category.html" target="_self" >Observable&lt;Array&lt;Category&gt;&gt;</a></code>
+                            <i>Type : </i>        <code><a href="../interfaces/BreadcrumbLink.html" target="_self" >Observable&lt;Array&lt;BreadcrumbLink&gt;&gt;</a></code>
 
                         </td>
                     </tr>
@@ -295,30 +499,18 @@ export class AppModule {}</code></pre></div>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="isProduct"></a>
+                        <a name="productCatalogLabel"></a>
                         <span class="name">
                             <b>
-                            isProduct
-                            </b>
-                            <a href="#isProduct"><span class="icon ion-ios-link"></span></a>
+                            productCatalogLabel</b>
+                            <a href="#productCatalogLabel"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>isProduct:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
                         </td>
                     </tr>
 
@@ -358,9 +550,9 @@ export class AppModule {}</code></pre></div>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav aria-label="breadcrumb">  <ol class="breadcrumb py-0">    <li class="breadcrumb-item">      <a href="javascript:void(0)" [routerLink]="[\'/\']">Home</a>    </li>    <li class="breadcrumb-item" *ngFor="let crumb of (breadcrumbs$ | async); let l = last" [class.active]="l && !isProduct">      <a href="javascript:void(0)" [routerLink]="[\'/product-list\', crumb.Name]" *ngIf="!l || isProduct">{{crumb.Label}}</a>      <span *ngIf="l && !isProduct">{{crumb.Label}}</span>    </li>    <li class="breadcrumb-item active" *ngIf="isProduct">{{sobject?.Name}}</li>  </ol></nav></div>'
-    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionAppliedtoLineitemComponent', 'selector': 'apt-pr-lineitem'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><nav aria-label="breadcrumb" class="container-fluid pt-3 border-top border-bottom">  <ol class="breadcrumb p-0">    <li class="breadcrumb-item">      <a href="javascript:void(0)" [routerLink]="[\'/\']">{{\'BREADCRUMB.HOME\' | translate}}</a>    </li>    <li class="breadcrumb-item" [class.active]="breadcrumb.active" *ngFor="let breadcrumb of breadcrumbs$ | async">      <a href="javascript:void(0)" [routerLink]="breadcrumb.route" *ngIf="!breadcrumb.active; else inactive">{{breadcrumb.label}}</a>      <ng-template #inactive>{{breadcrumb.label}}</ng-template>    </li>    <li class="breadcrumb-item active" [attr.aria-current]="label" *ngIf="label">{{label}}</li>  </ol></nav></div>'
+    var COMPONENTS = [{'name': 'AddressBookComponent', 'selector': 'app-address-book'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'AttachmentComponent', 'selector': 'app-attachment'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'BuyMoreModalComponent', 'selector': 'apt-buy-more-modal'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartListComponent', 'selector': 'app-cart-list'},{'name': 'CartSummaryComponent', 'selector': 'app-cart-summary'},{'name': 'CartTableComponent', 'selector': 'app-cart-table'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChangeConfigurationModalComponent', 'selector': 'apt-change-configuration-modal'},{'name': 'ChangePasswordLayoutComponent', 'selector': 'app-change-password-layout'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CompareLayoutComponent', 'selector': 'app-compare-layout'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CreateQuoteComponent', 'selector': 'app-create-quote'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'DetailSectionComponent', 'selector': 'apt-detail-section'},{'name': 'DetailsLayoutComponent', 'selector': 'apt-detail'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'InstalledProductsLayoutComponent', 'selector': 'app-installed-products-layout'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'ManageCartComponent', 'selector': 'app-manage-cart'},{'name': 'MdDotsComponent', 'selector': 'apt-md-dots'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'MyAccountLayoutComponent', 'selector': 'app-my-account-layout'},{'name': 'NavAccountComponent', 'selector': 'nav-account'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderDetailsComponent', 'selector': 'app-order-details'},{'name': 'OrderHistoryLayoutComponent', 'selector': 'app-order-history-layout'},{'name': 'OrderListComponent', 'selector': 'app-order-list'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PaymentMethodComponent', 'selector': 'apt-payment-method'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'PriceTypeFilterComponent', 'selector': 'app-price-type-filter'},{'name': 'ProductAttributeComponent', 'selector': 'apt-product-attribute'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDetailsComponent', 'selector': 'app-product-details'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'QuoteDetailsComponent', 'selector': 'app-quote-details'},{'name': 'RenewalFilterComponent', 'selector': 'app-renewal-filter'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'RequestQuoteFormComponent', 'selector': 'app-request-quote-form'},{'name': 'ResultsComponent', 'selector': 'pl-results'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SummaryComponent', 'selector': 'cart-summary'},{'name': 'TabAttachmentsComponent', 'selector': 'pdp-tab-attachments'},{'name': 'TabFeaturesComponent', 'selector': 'pdp-tab-features'},{'name': 'TableRowSubItemComponent', 'selector': 'apt-table-row-sub-item'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'},{'name': 'WishlistsComponent', 'selector': 'app-wishlists'}];
+    var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[appAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'BreadcrumbComponent'};
 </script>
 <script src="../js/tree.js"></script>
@@ -374,6 +566,7 @@ export class AppModule {}</code></pre></div>
 
 
 
+                   
 
 
 

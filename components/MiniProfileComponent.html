@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Apttus Ecommerce</title>
+        <title>Apttus Ecommerce Summer &#x27;19</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce Summer &#x27;19</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -69,7 +69,14 @@
         <p>Mini profile allows user to login to the website through their existing ID&#39;s.
 For the new user, there is an option to register to the site .
 If the user has forgotten the password there is an option to reset password.</p>
+<h3>Usage</h3>
 
+<div><pre class="line-numbers"><code class="language-typescript">import { MiniProfileModule } from &#39;&#64;apttus/elements&#39;;
+
+&#64;NgModule({
+  imports: [MiniProfileModule, ...]
+})
+export class AppModule {}</code></pre></div>
     </p>
 
 
@@ -77,7 +84,7 @@ If the user has forgotten the password there is an option to reset password.</p>
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
     </p>
 
     <p class="comment">
@@ -85,7 +92,7 @@ If the user has forgotten the password there is an option to reset password.</p>
     </p>
     <div class="io-description">
                 <div>
-                    <pre class="line-numbers"><code class="language-html">&lt;apt-mini-profile&gt;&lt;/apt-mini-profile&gt;</code></pre>
+                    <pre class="line-numbers"><code class="language-html">&lt;apt-mini-profile(onRegister)=&quot;handleOnRegister($event)&quot;(onLogin)=&quot;handleOnLogin($event)&quot;&gt;&lt;/apt-mini-profile&gt;</code></pre>
                 </div>
     </div>
 
@@ -245,7 +252,7 @@ If the user has forgotten the password there is an option to reset password.</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html">UserService</a>, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, modalService: BsModalService)</code>
+<code>constructor(userService: UserService, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, modalService: BsModalService)</code>
                     </td>
                 </tr>
 
@@ -266,7 +273,7 @@ If the user has forgotten the password there is an option to reset password.</p>
                                                         <td>userService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                                    <code>UserService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -278,7 +285,7 @@ If the user has forgotten the password there is an option to reset password.</p>
                                                         <td>ngZone</td>
                                                   
                                                         <td>
-                                                                    <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
+                                                                        <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -313,13 +320,21 @@ If the user has forgotten the password there is an option to reset password.</p>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="onLogin"></a>
-                        <code>onLogin</code>
+                        <b>onLogin</b>
                     </td>
-                    <td class="col-md-10">
-                        <em><code>$event</code> Type:</em>    <code>EventEmitter&lt;boolean&gt;</code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;boolean&gt;</code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event emitter for when user logs in.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -327,13 +342,21 @@ If the user has forgotten the password there is an option to reset password.</p>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="onRegister"></a>
-                        <code>onRegister</code>
+                        <b>onRegister</b>
                     </td>
-                    <td class="col-md-10">
-                        <em><code>$event</code> Type:</em>    <code><a href="../classes/User.html" target="_self" >EventEmitter&lt;User&gt;</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;User&gt;</code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event emitter for when user registers.</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -343,221 +366,220 @@ If the user has forgotten the password there is an option to reset password.</p>
 
     <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="doLogin"></a>
-                        <span class="name">
-                            <b>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="doLogin"></a>
+                    <span class="name">
+                        <b>
                             doLogin
-                            </b>
-                            <a href="#doLogin"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#doLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>doLogin()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Allows user to login to the site using user credentials like username and password for the registered user otherwise it shows the error message.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Allows user to login to the site using user credentials like username and password for the registered user otherwise it shows the error message.</p>
 </div>
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="doLogout"></a>
-                        <span class="name">
-                            <b>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="doLogout"></a>
+                    <span class="name">
+                        <b>
                             doLogout
-                            </b>
-                            <a href="#doLogout"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#doLogout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>doLogout()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Allows user to logout form the site</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Allows user to logout form the site</p>
 </div>
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="doRegister"></a>
-                        <span class="name">
-                            <b>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="doRegister"></a>
+                    <span class="name">
+                        <b>
                             doRegister
-                            </b>
-                            <a href="#doRegister"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#doRegister"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>doRegister()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Allows user to register to the site using user email.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Allows user to register to the site using user email.</p>
 </div>
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="doResetPassword"></a>
-                        <span class="name">
-                            <b>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="doResetPassword"></a>
+                    <span class="name">
+                        <b>
                             doResetPassword
-                            </b>
-                            <a href="#doResetPassword"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#doResetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>doResetPassword()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Allows user to reset the password for the exisiting user.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Allows user to reset the password for the exisiting user.</p>
 </div>
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="openModal"></a>
-                        <span class="name">
-                            <b>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openModal"></a>
+                    <span class="name">
+                        <b>
                             openModal
-                            </b>
-                            <a href="#openModal"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#openModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>openModal(strClass: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>opens modal dialog for the tempalate.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>opens modal dialog for the tempalate.</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>strClass</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>null</code>
-                                                        </td>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>strClass</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
     <section>
     
         <h3 id="inputs">
@@ -570,21 +592,14 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="authModal"></a>
                         <span class="name">
                             <b>
-                            authModal
-                            </b>
+                            authModal</b>
                             <a href="#authModal"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>authModal:     <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
 
                         </td>
                     </tr>
@@ -608,21 +623,14 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="loading"></a>
                         <span class="name">
                             <b>
-                            loading
-                            </b>
+                            loading</b>
                             <a href="#loading"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>loading:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                         </td>
                     </tr>
@@ -642,21 +650,14 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="loginMessage"></a>
                         <span class="name">
                             <b>
-                            loginMessage
-                            </b>
+                            loginMessage</b>
                             <a href="#loginMessage"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>loginMessage:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </td>
                     </tr>
@@ -671,16 +672,9 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="loginState"></a>
                         <span class="name">
                             <b>
-                            loginState
-                            </b>
+                            loginState</b>
                             <a href="#loginState"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>loginState:     <code>&quot;LOGIN&quot; | &quot;REGISTER&quot; | &quot;RESET-PASSWORD&quot; | &quot;REGISTER-CONFIRM&quot; | &quot;RESET-CONFIRM&quot;</code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -711,21 +705,14 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="me$"></a>
                         <span class="name">
                             <b>
-                            me$
-                            </b>
+                            me$</b>
                             <a href="#me$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>me$:     <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
+                            <i>Type : </i>    <code>Observable&lt;User&gt;</code>
 
                         </td>
                     </tr>
@@ -740,16 +727,9 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="modalRef"></a>
                         <span class="name">
                             <b>
-                            modalRef
-                            </b>
+                            modalRef</b>
                             <a href="#modalRef"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>modalRef:     <code>BsModalRef</code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -775,21 +755,14 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="password"></a>
                         <span class="name">
                             <b>
-                            password
-                            </b>
+                            password</b>
                             <a href="#password"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>password:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </td>
                     </tr>
@@ -804,21 +777,14 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="registerMessage"></a>
                         <span class="name">
                             <b>
-                            registerMessage
-                            </b>
+                            registerMessage</b>
                             <a href="#registerMessage"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>registerMessage:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </td>
                     </tr>
@@ -833,21 +799,14 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="resetMessage"></a>
                         <span class="name">
                             <b>
-                            resetMessage
-                            </b>
+                            resetMessage</b>
                             <a href="#resetMessage"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>resetMessage:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </td>
                     </tr>
@@ -862,21 +821,14 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="resetUsername"></a>
                         <span class="name">
                             <b>
-                            resetUsername
-                            </b>
+                            resetUsername</b>
                             <a href="#resetUsername"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>resetUsername:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </td>
                     </tr>
@@ -891,21 +843,14 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="template"></a>
                         <span class="name">
                             <b>
-                            template
-                            </b>
+                            template</b>
                             <a href="#template"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>template:     <code><a href="../classes/Template.html" target="_self" >TemplateRef&lt;any&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/Template.html" target="_self" >TemplateRef&lt;any&gt;</a></code>
+                            <i>Type : </i>    <code>TemplateRef&lt;any&gt;</code>
 
                         </td>
                     </tr>
@@ -929,21 +874,14 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="user"></a>
                         <span class="name">
                             <b>
-                            user
-                            </b>
+                            user</b>
                             <a href="#user"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>user:     <code><a href="../classes/User.html" target="_self" >User</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/User.html" target="_self" >User</a></code>
+                            <i>Type : </i>    <code>User</code>
 
                         </td>
                     </tr>
@@ -963,21 +901,14 @@ If the user has forgotten the password there is an option to reset password.</p>
                         <a name="username"></a>
                         <span class="name">
                             <b>
-                            username
-                            </b>
+                            username</b>
                             <a href="#username"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>username:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </td>
                     </tr>
@@ -996,104 +927,104 @@ If the user has forgotten the password there is an option to reset password.</p>
 &lt;ng-template #template&gt;
     &lt;form *ngIf&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;LOGIN&#x27;&quot; (ngSubmit)&#x3D;&quot;doLogin()&quot;&gt;
         &lt;div class&#x3D;&quot;modal-header&quot;&gt;
-            &lt;h5 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;loginModalLabel&quot;&gt;Login&lt;/h5&gt;
+            &lt;h5 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;loginModalLabel&quot;&gt; {{&#x27;MINI_PROFILE.LOGIN&#x27; | translate}}&lt;/h5&gt;
             &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; (click)&#x3D;&quot;modalRef.hide()&quot;&gt;
                 &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
             &lt;/button&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;modal-body&quot;&gt;
             &lt;div class&#x3D;&quot;form-group&quot;&gt;
-                &lt;label for&#x3D;&quot;email&quot;&gt;Username&lt;/label&gt;
-                &lt;input type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;username&quot; name&#x3D;&quot;username&quot; placeholder&#x3D;&quot;Enter Username&quot; [(ngModel)]&#x3D;&quot;username&quot;&gt;
+                &lt;label for&#x3D;&quot;email&quot;&gt;{{&#x27;COMMON.USERNAME&#x27; | translate}}&lt;/label&gt;
+                &lt;input autofocus type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;username&quot; name&#x3D;&quot;username&quot; placeholder&#x3D;&quot;{{&#x27;MINI_PROFILE.ENTER_USERNAME&#x27; | translate}}&quot; [(ngModel)]&#x3D;&quot;username&quot;&gt;
             &lt;/div&gt;
             &lt;div class&#x3D;&quot;form-group&quot;&gt;
-                &lt;label for&#x3D;&quot;password&quot;&gt;Password&lt;/label&gt;
-                &lt;input type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Password&quot; [(ngModel)]&#x3D;&quot;password&quot;&gt;
+                &lt;label for&#x3D;&quot;password&quot;&gt;{{&#x27;MINI_PROFILE.PASSWORD&#x27; | translate}}&lt;/label&gt;
+                &lt;input type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; placeholder&#x3D;&quot;{{&#x27;MINI_PROFILE.PASSWORD&#x27; | translate}}&quot; [(ngModel)]&#x3D;&quot;password&quot;&gt;
             &lt;/div&gt;
             &lt;div class&#x3D;&quot;form-group form-check&quot;&gt;
                 &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;exampleCheck1&quot;&gt;
-                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;exampleCheck1&quot;&gt;Remember Me&lt;/label&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;exampleCheck1&quot;&gt;{{&#x27;MINI_PROFILE.REMEMBER_ME&#x27; | translate}}&lt;/label&gt;
             &lt;/div&gt;
-            &lt;small class&#x3D;&quot;text-danger animated fadeIn&quot; *ngIf&#x3D;&quot;loginMessage&quot;&gt;{{loginMessage}}&lt;/small&gt;
+            &lt;small class&#x3D;&quot;text-danger &quot; *ngIf&#x3D;&quot;loginMessage&quot;&gt;{{loginMessage}}&lt;/small&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;modal-footer d-flex justify-content-start&quot;&gt;
-            &lt;button class&#x3D;&quot;btn btn-link&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;loginState &#x3D; &#x27;REGISTER&#x27;&quot;&gt;Register&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-link&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;loginState &#x3D; &#x27;REGISTER&#x27;&quot;&gt;{{&#x27;COMMON.REGISTER&#x27; | translate}}&lt;/button&gt;
             |
-            &lt;button class&#x3D;&quot;btn btn-link&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;loginState &#x3D; &#x27;RESET-PASSWORD&#x27;&quot;&gt;Forgot Password&lt;/button&gt;
-            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary ml-auto&quot; [ladda]&#x3D;&quot;loading&quot;&gt;Submit&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-link&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;loginState &#x3D; &#x27;RESET-PASSWORD&#x27;&quot;&gt;{{&#x27;MINI_PROFILE.FORGOT_PASSWORD&#x27; | translate}}&lt;/button&gt;
+            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary ml-auto&quot; [ladda]&#x3D;&quot;loading&quot;&gt;{{&#x27;COMMON.SUBMIT&#x27; | translate}}&lt;/button&gt;
         &lt;/div&gt;
     &lt;/form&gt;
 
     &lt;form *ngIf&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;REGISTER&#x27;&quot; (ngSubmit)&#x3D;&quot;doRegister()&quot;&gt;
         &lt;div class&#x3D;&quot;modal-header&quot;&gt;
-            &lt;h5 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;loginModalLabel&quot;&gt;Register&lt;/h5&gt;
+            &lt;h5 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;loginModalLabel&quot;&gt;{{&#x27;COMMON.REGISTER&#x27; | translate}}&lt;/h5&gt;
             &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;modalRef.hide()&quot;&gt;
                 &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
             &lt;/button&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;modal-body&quot;&gt;
             &lt;div class&#x3D;&quot;form-group&quot;&gt;
-                &lt;label for&#x3D;&quot;exampleInputEmail1&quot;&gt;Email address&lt;/label&gt;
-                &lt;input type&#x3D;&quot;email&quot; [(ngModel)]&#x3D;&quot;user.Email&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Enter email&quot;&gt;
-                &lt;small id&#x3D;&quot;emailHelp&quot; class&#x3D;&quot;form-text text-muted&quot;&gt;We&#x27;ll never share your email with anyone else.&lt;/small&gt;
+                &lt;label for&#x3D;&quot;exampleInputEmail1&quot;&gt;{{&#x27;COMMON.EMAIL_ADDRESS&#x27; | translate}}&lt;/label&gt;
+                &lt;input type&#x3D;&quot;email&quot; [(ngModel)]&#x3D;&quot;user.Email&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;email&quot; placeholder&#x3D;&quot;{{&#x27;MINI_PROFILE.ENTER_EMAIL&#x27; | translate}}&quot;&gt;
+                &lt;small id&#x3D;&quot;emailHelp&quot; class&#x3D;&quot;form-text text-muted&quot;&gt; {{&#x27;MINI_PROFILE.NEVER_SHARE_YOUR_EMAIL&#x27; | translate}}&lt;/small&gt;
             &lt;/div&gt;
             &lt;div class&#x3D;&quot;form-group&quot;&gt;
-                &lt;label for&#x3D;&quot;firstName&quot;&gt;First Name&lt;/label&gt;
-                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;firstName&quot; [(ngModel)]&#x3D;&quot;user.FirstName&quot; name&#x3D;&quot;firstName&quot; placeholder&#x3D;&quot;First Name&quot;&gt;
+                &lt;label for&#x3D;&quot;firstName&quot;&gt;{{&#x27;COMMON.FIRST_NAME&#x27; | translate}}&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;firstName&quot; [(ngModel)]&#x3D;&quot;user.FirstName&quot; name&#x3D;&quot;firstName&quot; placeholder&#x3D;&quot;{{&#x27;COMMON.FIRST_NAME&#x27; | translate}}&quot;&gt;
             &lt;/div&gt;
             &lt;div class&#x3D;&quot;form-group&quot;&gt;
-                &lt;label for&#x3D;&quot;lastName&quot;&gt;Last Name&lt;/label&gt;
-                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Last Name&quot; [(ngModel)]&#x3D;&quot;user.LastName&quot; name&#x3D;&quot;lastName&quot; id&#x3D;&quot;lastName&quot;&gt;
+                &lt;label for&#x3D;&quot;lastName&quot;&gt;{{&#x27;COMMON.LAST_NAME&#x27; | translate}}&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;{{&#x27;COMMON.LAST_NAME&#x27; | translate}}&quot; [(ngModel)]&#x3D;&quot;user.LastName&quot; name&#x3D;&quot;lastName&quot; id&#x3D;&quot;lastName&quot;&gt;
             &lt;/div&gt;
-            &lt;small class&#x3D;&quot;text-danger animated fadeIn&quot; *ngIf&#x3D;&quot;registerMessage&quot;&gt;{{registerMessage}}&lt;/small&gt;
+            &lt;small class&#x3D;&quot;text-danger &quot; *ngIf&#x3D;&quot;registerMessage&quot;&gt;{{registerMessage}}&lt;/small&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
-            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;loginState &#x3D; &#x27;LOGIN&#x27;&quot;&gt;Go Back&lt;/button&gt;
-            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot; [ladda]&#x3D;&quot;loading&quot;&gt;Submit&lt;/button&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;loginState &#x3D; &#x27;LOGIN&#x27;&quot;&gt;{{&#x27;MINI_PROFILE.GO_BACK&#x27; | translate}}&lt;/button&gt;
+            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot; [ladda]&#x3D;&quot;loading&quot;&gt;{{&#x27;COMMON.SUBMIT&#x27; | translate}}&lt;/button&gt;
         &lt;/div&gt;
     &lt;/form&gt;
 
     &lt;form *ngIf&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;RESET-PASSWORD&#x27;&quot; (ngSubmit)&#x3D;&quot;doResetPassword()&quot;&gt;
         &lt;div class&#x3D;&quot;modal-header&quot;&gt;
-            &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Reset Password&lt;/h5&gt;
+            &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;{{&#x27;MINI_PROFILE.RESET_PASSWORD&#x27; | translate}}&lt;/h5&gt;
             &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;modalRef.hide()&quot;&gt;
                 &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
             &lt;/button&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;modal-body&quot;&gt;
-            &lt;p&gt;Having trouble logging in?&lt;/p&gt;
+            &lt;p&gt;{{&#x27;MINI_PROFILE.TROUBLE_LOGGINGIN&#x27; | translate}}&lt;/p&gt;
             &lt;ul&gt;
-                &lt;li&gt;Usernames are in the form of an email address.&lt;/li&gt;
-                &lt;li&gt;Passwords are case sensitive.&lt;/li&gt;
+                &lt;li&gt;{{&#x27;MINI_PROFILE.USERNAME_ARE_IN_EMAIL&#x27; | translate}}&lt;/li&gt;
+                &lt;li&gt;{{&#x27;MINI_PROFILE.PASSWORDS_ARE_CASESENSITIVE&#x27; | translate}}&lt;/li&gt;
             &lt;/ul&gt;
-            &lt;p&gt;To reset your password, enter your username.&lt;/p&gt;
+            &lt;p&gt;{{&#x27;MINI_PROFILE.TO_RESET_PASSWORD_ENTER_USERNAME&#x27; | translate}}&lt;/p&gt;
             &lt;div class&#x3D;&quot;form-group&quot;&gt;
-                &lt;label for&#x3D;&quot;resetUsername&quot;&gt;Username&lt;/label&gt;
-                &lt;input type&#x3D;&quot;email&quot; [(ngModel)]&#x3D;&quot;resetUsername&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;resetUsername&quot; placeholder&#x3D;&quot;Username&quot;&gt;
-                &lt;small id&#x3D;&quot;emailHelp&quot; class&#x3D;&quot;form-text text-muted&quot;&gt;To reset your password, enter your username.&lt;/small&gt;
+                &lt;label for&#x3D;&quot;resetUsername&quot;&gt;{{&#x27;COMMON.USERNAME&#x27; | translate}}&lt;/label&gt;
+                &lt;input type&#x3D;&quot;email&quot; [(ngModel)]&#x3D;&quot;resetUsername&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;resetUsername&quot; placeholder&#x3D;&quot;{{&#x27;COMMON.USERNAME&#x27; | translate}}&quot;&gt;
+                &lt;small id&#x3D;&quot;emailHelp&quot; class&#x3D;&quot;form-text text-muted&quot;&gt;{{&#x27;MINI_PROFILE.TO_RESET_PASSWORD_ENTER_USERNAME&#x27; | translate}}&lt;/small&gt;
             &lt;/div&gt;
-            &lt;small class&#x3D;&quot;text-danger animated fadeIn&quot; *ngIf&#x3D;&quot;resetMessage&quot;&gt;{{resetMessage}}&lt;/small&gt;
+            &lt;small class&#x3D;&quot;text-danger &quot; *ngIf&#x3D;&quot;resetMessage&quot;&gt;{{resetMessage}}&lt;/small&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
-            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;loginState &#x3D; &#x27;LOGIN&#x27;&quot;&gt;Go Back&lt;/button&gt;
-            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot; type&#x3D;&quot;submit&quot; [ladda]&#x3D;&quot;loading&quot;&gt;Submit&lt;/button&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;loginState &#x3D; &#x27;LOGIN&#x27;&quot;&gt;{{&#x27;MINI_PROFILE.GO_BACK&#x27; | translate}}&lt;/button&gt;
+            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot; type&#x3D;&quot;submit&quot; [ladda]&#x3D;&quot;loading&quot;&gt;{{&#x27;COMMON.SUBMIT&#x27; | translate}}&lt;/button&gt;
         &lt;/div&gt;
     &lt;/form&gt;
 
     &lt;div *ngIf&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;RESET-CONFIRM&#x27;&quot;&gt;
         &lt;div class&#x3D;&quot;modal-header&quot;&gt;
-            &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Password Reset&lt;/h5&gt;
+            &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;{{&#x27;MINI_PROFILE.PASSWORD_RESET&#x27; | translate}}&lt;/h5&gt;
             &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;modalRef.hide()&quot;&gt;
                 &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
             &lt;/button&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;modal-body&quot;&gt;
-            &lt;p&gt;We’ve sent you an email with a link to finish resetting your password.&lt;/p&gt;
-            &lt;p&gt;Can’t find the email? Try checking your spam folder.&lt;/p&gt;
-            &lt;p&gt;If you still can’t log in, try again or contact your Salesforce administrator.&lt;/p&gt;
+            &lt;p&gt;{{&#x27;MINI_PROFILE.PASSWORD_RESET_CONFIRM1&#x27; | translate}}&lt;/p&gt;
+            &lt;p&gt;{{&#x27;MINI_PROFILE.PASSWORD_RESET_CONFIRM2&#x27; | translate}}&lt;/p&gt;
+            &lt;p&gt;{{&#x27;MINI_PROFILE.PASSWORD_RESET_CONFIRM3&#x27; | translate}}&lt;/p&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
-            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;loginState &#x3D; &#x27;LOGIN&#x27;&quot;&gt;Go Back&lt;/button&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;loginState &#x3D; &#x27;LOGIN&#x27;&quot;&gt;{{&#x27;MINI_PROFILE.GO_BACK&#x27; | translate}}&lt;/button&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/ng-template&gt;</code></pre>
@@ -1141,9 +1072,9 @@ a .oi{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Modal --><ng-template #template>    <form *ngIf="loginState === \'LOGIN\'" (ngSubmit)="doLogin()">        <div class="modal-header">            <h5 class="modal-title" id="loginModalLabel">Login</h5>            <button type="button" class="close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <div class="form-group">                <label for="email">Username</label>                <input type="email" class="form-control" id="username" name="username" placeholder="Enter Username" [(ngModel)]="username">            </div>            <div class="form-group">                <label for="password">Password</label>                <input type="password" class="form-control" id="password" name="password" placeholder="Password" [(ngModel)]="password">            </div>            <div class="form-group form-check">                <input type="checkbox" class="form-check-input" id="exampleCheck1">                <label class="form-check-label" for="exampleCheck1">Remember Me</label>            </div>            <small class="text-danger animated fadeIn" *ngIf="loginMessage">{{loginMessage}}</small>        </div>        <div class="modal-footer d-flex justify-content-start">            <button class="btn btn-link" type="button" (click)="loginState = \'REGISTER\'">Register</button>            |            <button class="btn btn-link" type="button" (click)="loginState = \'RESET-PASSWORD\'">Forgot Password</button>            <button type="submit" class="btn btn-primary ml-auto" [ladda]="loading">Submit</button>        </div>    </form>    <form *ngIf="loginState === \'REGISTER\'" (ngSubmit)="doRegister()">        <div class="modal-header">            <h5 class="modal-title" id="loginModalLabel">Register</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <div class="form-group">                <label for="exampleInputEmail1">Email address</label>                <input type="email" [(ngModel)]="user.Email" class="form-control" name="email" placeholder="Enter email">                <small id="emailHelp" class="form-text text-muted">We\'ll never share your email with anyone else.</small>            </div>            <div class="form-group">                <label for="firstName">First Name</label>                <input type="text" class="form-control" id="firstName" [(ngModel)]="user.FirstName" name="firstName" placeholder="First Name">            </div>            <div class="form-group">                <label for="lastName">Last Name</label>                <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="user.LastName" name="lastName" id="lastName">            </div>            <small class="text-danger animated fadeIn" *ngIf="registerMessage">{{registerMessage}}</small>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">Go Back</button>            <button type="submit" class="btn btn-primary" [ladda]="loading">Submit</button>        </div>    </form>    <form *ngIf="loginState === \'RESET-PASSWORD\'" (ngSubmit)="doResetPassword()">        <div class="modal-header">            <h5 class="modal-title">Reset Password</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <p>Having trouble logging in?</p>            <ul>                <li>Usernames are in the form of an email address.</li>                <li>Passwords are case sensitive.</li>            </ul>            <p>To reset your password, enter your username.</p>            <div class="form-group">                <label for="resetUsername">Username</label>                <input type="email" [(ngModel)]="resetUsername" class="form-control" name="resetUsername" placeholder="Username">                <small id="emailHelp" class="form-text text-muted">To reset your password, enter your username.</small>            </div>            <small class="text-danger animated fadeIn" *ngIf="resetMessage">{{resetMessage}}</small>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">Go Back</button>            <button type="submit" class="btn btn-primary" type="submit" [ladda]="loading">Submit</button>        </div>    </form>    <div *ngIf="loginState === \'RESET-CONFIRM\'">        <div class="modal-header">            <h5 class="modal-title">Password Reset</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <p>We’ve sent you an email with a link to finish resetting your password.</p>            <p>Can’t find the email? Try checking your spam folder.</p>            <p>If you still can’t log in, try again or contact your Salesforce administrator.</p>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">Go Back</button>        </div>    </div></ng-template></div>'
-    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionAppliedtoLineitemComponent', 'selector': 'apt-pr-lineitem'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><!-- Modal --><ng-template #template>    <form *ngIf="loginState === \'LOGIN\'" (ngSubmit)="doLogin()">        <div class="modal-header">            <h5 class="modal-title" id="loginModalLabel"> {{\'MINI_PROFILE.LOGIN\' | translate}}</h5>            <button type="button" class="close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <div class="form-group">                <label for="email">{{\'COMMON.USERNAME\' | translate}}</label>                <input autofocus type="email" class="form-control" id="username" name="username" placeholder="{{\'MINI_PROFILE.ENTER_USERNAME\' | translate}}" [(ngModel)]="username">            </div>            <div class="form-group">                <label for="password">{{\'MINI_PROFILE.PASSWORD\' | translate}}</label>                <input type="password" class="form-control" id="password" name="password" placeholder="{{\'MINI_PROFILE.PASSWORD\' | translate}}" [(ngModel)]="password">            </div>            <div class="form-group form-check">                <input type="checkbox" class="form-check-input" id="exampleCheck1">                <label class="form-check-label" for="exampleCheck1">{{\'MINI_PROFILE.REMEMBER_ME\' | translate}}</label>            </div>            <small class="text-danger " *ngIf="loginMessage">{{loginMessage}}</small>        </div>        <div class="modal-footer d-flex justify-content-start">            <button class="btn btn-link" type="button" (click)="loginState = \'REGISTER\'">{{\'COMMON.REGISTER\' | translate}}</button>            |            <button class="btn btn-link" type="button" (click)="loginState = \'RESET-PASSWORD\'">{{\'MINI_PROFILE.FORGOT_PASSWORD\' | translate}}</button>            <button type="submit" class="btn btn-primary ml-auto" [ladda]="loading">{{\'COMMON.SUBMIT\' | translate}}</button>        </div>    </form>    <form *ngIf="loginState === \'REGISTER\'" (ngSubmit)="doRegister()">        <div class="modal-header">            <h5 class="modal-title" id="loginModalLabel">{{\'COMMON.REGISTER\' | translate}}</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <div class="form-group">                <label for="exampleInputEmail1">{{\'COMMON.EMAIL_ADDRESS\' | translate}}</label>                <input type="email" [(ngModel)]="user.Email" class="form-control" name="email" placeholder="{{\'MINI_PROFILE.ENTER_EMAIL\' | translate}}">                <small id="emailHelp" class="form-text text-muted"> {{\'MINI_PROFILE.NEVER_SHARE_YOUR_EMAIL\' | translate}}</small>            </div>            <div class="form-group">                <label for="firstName">{{\'COMMON.FIRST_NAME\' | translate}}</label>                <input type="text" class="form-control" id="firstName" [(ngModel)]="user.FirstName" name="firstName" placeholder="{{\'COMMON.FIRST_NAME\' | translate}}">            </div>            <div class="form-group">                <label for="lastName">{{\'COMMON.LAST_NAME\' | translate}}</label>                <input type="text" class="form-control" placeholder="{{\'COMMON.LAST_NAME\' | translate}}" [(ngModel)]="user.LastName" name="lastName" id="lastName">            </div>            <small class="text-danger " *ngIf="registerMessage">{{registerMessage}}</small>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">{{\'MINI_PROFILE.GO_BACK\' | translate}}</button>            <button type="submit" class="btn btn-primary" [ladda]="loading">{{\'COMMON.SUBMIT\' | translate}}</button>        </div>    </form>    <form *ngIf="loginState === \'RESET-PASSWORD\'" (ngSubmit)="doResetPassword()">        <div class="modal-header">            <h5 class="modal-title">{{\'MINI_PROFILE.RESET_PASSWORD\' | translate}}</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <p>{{\'MINI_PROFILE.TROUBLE_LOGGINGIN\' | translate}}</p>            <ul>                <li>{{\'MINI_PROFILE.USERNAME_ARE_IN_EMAIL\' | translate}}</li>                <li>{{\'MINI_PROFILE.PASSWORDS_ARE_CASESENSITIVE\' | translate}}</li>            </ul>            <p>{{\'MINI_PROFILE.TO_RESET_PASSWORD_ENTER_USERNAME\' | translate}}</p>            <div class="form-group">                <label for="resetUsername">{{\'COMMON.USERNAME\' | translate}}</label>                <input type="email" [(ngModel)]="resetUsername" class="form-control" name="resetUsername" placeholder="{{\'COMMON.USERNAME\' | translate}}">                <small id="emailHelp" class="form-text text-muted">{{\'MINI_PROFILE.TO_RESET_PASSWORD_ENTER_USERNAME\' | translate}}</small>            </div>            <small class="text-danger " *ngIf="resetMessage">{{resetMessage}}</small>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">{{\'MINI_PROFILE.GO_BACK\' | translate}}</button>            <button type="submit" class="btn btn-primary" type="submit" [ladda]="loading">{{\'COMMON.SUBMIT\' | translate}}</button>        </div>    </form>    <div *ngIf="loginState === \'RESET-CONFIRM\'">        <div class="modal-header">            <h5 class="modal-title">{{\'MINI_PROFILE.PASSWORD_RESET\' | translate}}</h5>            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>            </button>        </div>        <div class="modal-body">            <p>{{\'MINI_PROFILE.PASSWORD_RESET_CONFIRM1\' | translate}}</p>            <p>{{\'MINI_PROFILE.PASSWORD_RESET_CONFIRM2\' | translate}}</p>            <p>{{\'MINI_PROFILE.PASSWORD_RESET_CONFIRM3\' | translate}}</p>        </div>        <div class="modal-footer">            <button type="button" class="btn btn-secondary" (click)="loginState = \'LOGIN\'">{{\'MINI_PROFILE.GO_BACK\' | translate}}</button>        </div>    </div></ng-template></div>'
+    var COMPONENTS = [{'name': 'AddressBookComponent', 'selector': 'app-address-book'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'AttachmentComponent', 'selector': 'app-attachment'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'BuyMoreModalComponent', 'selector': 'apt-buy-more-modal'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartListComponent', 'selector': 'app-cart-list'},{'name': 'CartSummaryComponent', 'selector': 'app-cart-summary'},{'name': 'CartTableComponent', 'selector': 'app-cart-table'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChangeConfigurationModalComponent', 'selector': 'apt-change-configuration-modal'},{'name': 'ChangePasswordLayoutComponent', 'selector': 'app-change-password-layout'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CompareLayoutComponent', 'selector': 'app-compare-layout'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CreateQuoteComponent', 'selector': 'app-create-quote'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'DetailSectionComponent', 'selector': 'apt-detail-section'},{'name': 'DetailsLayoutComponent', 'selector': 'apt-detail'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'InstalledProductsLayoutComponent', 'selector': 'app-installed-products-layout'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'ManageCartComponent', 'selector': 'app-manage-cart'},{'name': 'MdDotsComponent', 'selector': 'apt-md-dots'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'MyAccountLayoutComponent', 'selector': 'app-my-account-layout'},{'name': 'NavAccountComponent', 'selector': 'nav-account'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderDetailsComponent', 'selector': 'app-order-details'},{'name': 'OrderHistoryLayoutComponent', 'selector': 'app-order-history-layout'},{'name': 'OrderListComponent', 'selector': 'app-order-list'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PaymentMethodComponent', 'selector': 'apt-payment-method'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'PriceTypeFilterComponent', 'selector': 'app-price-type-filter'},{'name': 'ProductAttributeComponent', 'selector': 'apt-product-attribute'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDetailsComponent', 'selector': 'app-product-details'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'QuoteDetailsComponent', 'selector': 'app-quote-details'},{'name': 'RenewalFilterComponent', 'selector': 'app-renewal-filter'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'RequestQuoteFormComponent', 'selector': 'app-request-quote-form'},{'name': 'ResultsComponent', 'selector': 'pl-results'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SummaryComponent', 'selector': 'cart-summary'},{'name': 'TabAttachmentsComponent', 'selector': 'pdp-tab-attachments'},{'name': 'TabFeaturesComponent', 'selector': 'pdp-tab-features'},{'name': 'TableRowSubItemComponent', 'selector': 'apt-table-row-sub-item'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'},{'name': 'WishlistsComponent', 'selector': 'app-wishlists'}];
+    var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[appAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'MiniProfileComponent'};
 </script>
 <script src="../js/tree.js"></script>
@@ -1157,6 +1088,7 @@ a .oi{
 
 
 
+                   
 
 
 

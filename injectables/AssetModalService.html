@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Apttus Ecommerce</title>
+        <title>Apttus Ecommerce Summer &#x27;19</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce Summer &#x27;19</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -66,6 +66,7 @@
             </p>
 
 
+
             <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
@@ -79,6 +80,14 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#openBuyMoreModal">openBuyMoreModal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#openChangeConfigurationModal">openChangeConfigurationModal</a>
+                            </li>
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#openRenewModal">openRenewModal</a>
@@ -145,189 +154,366 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="openRenewModal"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openBuyMoreModal"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            openBuyMoreModal
+                        </b>
+                        <a href="#openBuyMoreModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openBuyMoreModal(assetItem: AssetLineItem, assetList: Array<AssetLineItem>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Opens the Buy more asset modal.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>assetItem</td>
+                                    <td>
+                                            <code>AssetLineItem</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The first asset in the list.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>assetList</td>
+                                    <td>
+                                            <code>Array&lt;AssetLineItem&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The list of asset items.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openChangeConfigurationModal"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            openChangeConfigurationModal
+                        </b>
+                        <a href="#openChangeConfigurationModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openChangeConfigurationModal(assetItem: AssetLineItem, assetList: Array<AssetLineItem>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Opens the Change Configuration asset modal.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>assetItem</td>
+                                    <td>
+                                            <code>AssetLineItem</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The first asset in the list.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>assetList</td>
+                                    <td>
+                                            <code>Array&lt;AssetLineItem&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The list of asset items.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openRenewModal"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             openRenewModal
-                            </b>
-                            <a href="#openRenewModal"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>openRenewModal(assetItem: <a href="../classes/AssetLineItem.html">AssetLineItem</a>, assetList: <a href="../classes/AssetLineItem.html">Array<AssetLineItem></a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#openRenewModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openRenewModal(assetItem: AssetLineItem, assetList: Array<AssetLineItem>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Opens the renew asset modal.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Opens the renew asset modal.</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>assetItem</td>
-                                                        <td>
-                                                                    <code><a href="../classes/AssetLineItem.html" target="_self" >AssetLineItem</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>assetItem</td>
+                                    <td>
+                                            <code>AssetLineItem</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>The first asset in the list</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>assetList</td>
-                                                        <td>
-                                                                    <code><a href="../classes/AssetLineItem.html" target="_self" >Array&lt;AssetLineItem&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>The list of asset items.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="openTerminateModal"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    <td>
+                                        <p>The first asset in the list</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>assetList</td>
+                                    <td>
+                                            <code>Array&lt;AssetLineItem&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The list of asset items.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openTerminateModal"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             openTerminateModal
-                            </b>
-                            <a href="#openTerminateModal"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>openTerminateModal(assetItem: <a href="../classes/AssetLineItem.html">AssetLineItem</a>, assetList: <a href="../classes/AssetLineItem.html">Array<AssetLineItem></a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#openTerminateModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openTerminateModal(assetItem: AssetLineItem, assetList: Array<AssetLineItem>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Opens the terminate asset modal.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Opens the terminate asset modal.</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>assetItem</td>
-                                                        <td>
-                                                                    <code><a href="../classes/AssetLineItem.html" target="_self" >AssetLineItem</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>assetItem</td>
+                                    <td>
+                                            <code>AssetLineItem</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>The first asset in the list.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>assetList</td>
-                                                        <td>
-                                                                    <code><a href="../classes/AssetLineItem.html" target="_self" >Array&lt;AssetLineItem&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>The list of asset items.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    <td>
+                                        <p>The first asset in the list.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>assetList</td>
+                                    <td>
+                                            <code>Array&lt;AssetLineItem&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The list of asset items.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
 
     </div>
 
@@ -341,6 +527,7 @@
 
 
 
+                   
 
 
 
