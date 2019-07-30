@@ -92,7 +92,15 @@ export class AppModule {}</code></pre></div>
     </p>
     <div class="io-description">
                 <div>
-                    <pre class="line-numbers"><code class="language-html">&lt;apt-input-field
+                    <pre class="line-numbers"><code class="language-html">// Basic Usage
+&lt;apt-input-field
+  [(ngModel)]=&quot;myModel&quot;
+  [field]=&quot;fieldApiName&quot;
+  [entity]=&quot;entityApiName&quot;
+&gt;&lt;/apt-input-field&gt;
+
+// All inputs and outputs
+&lt;apt-input-field
   [(ngModel)]=&quot;myModel&quot;
   (ngModelChange)=&quot;handleChange($event)&quot;
   [field]=&quot;fieldApiName&quot;
@@ -104,6 +112,20 @@ export class AppModule {}</code></pre></div>
   [hiddenValues]=&quot;hiddenValues&quot;
   [inline]=&quot;isInline&quot;
   [small]=&quot;isSmall&quot;
+  [rows]=&quot;2&quot;
+  [placeholder]=&quot;myPlaceholder&quot;
+  [required]=&quot;true&quot;
+  [errorMsg]=&quot;errorMessage&quot;
+  [showLabel]=&quot;true&quot;
+  [primaryTextField]=&quot;primaryField&quot;
+  [secondaryTextField]=&quot;secondaryField&quot;
+  [thumbnailField]=&quot;thumbnailField&quot;
+  [labelClass]=&quot;labelClass&quot;
+  [filterValues]=&quot;filterValues&quot;
+  [hideOptions]=&quot;true&quot;
+  [hide]=&quot;true&quot;
+  [defaultValue]=&quot;true&quot;
+  [enableValues]=&quot;values&quot;
 &gt;&lt;/apt-input-field&gt;</code></pre>
                 </div>
     </div>
@@ -514,6 +536,8 @@ export class AppModule {}</code></pre></div>
                         <code>enableValues</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>List of enabled values.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code>Array&lt;string&gt;</code>
 
@@ -548,7 +572,7 @@ export class AppModule {}</code></pre></div>
                         <code>errorMsg</code>
                     </td>
                     <td class="col-md-10">
-                        <div><p>property to show error message</p>
+                        <div><p>Property to show error message</p>
 </div>
                             <p>
                             <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
@@ -566,7 +590,7 @@ export class AppModule {}</code></pre></div>
                         <code>field</code>
                     </td>
                     <td class="col-md-10">
-                        <div><p>field property of the model class</p>
+                        <div><p>Field property of the model class</p>
 </div>
                             <p>
                             <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
@@ -722,6 +746,8 @@ export class AppModule {}</code></pre></div>
                         <code>placeholder</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Placeholder string for the input.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
@@ -783,6 +809,8 @@ export class AppModule {}</code></pre></div>
                         <code>required</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Flag to set this input as required.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 

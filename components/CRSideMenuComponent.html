@@ -90,7 +90,10 @@ export class AppModule {}</code></pre></div>
     </p>
     <div class="io-description">
                 <div>
-                    <pre class="line-numbers"><code class="language-html">&lt;apt-cr-side-menu [ruleList]=&quot;constraintRules&quot;&gt;&lt;/apt-cr-side-menu&gt;</code></pre>
+                    <pre class="line-numbers"><code class="language-html">&lt;apt-cr-side-menu
+  [ruleList]=&quot;constraintRules&quot;
+  [items]=&quot;lineItems&quot;
+&gt;&lt;/apt-cr-side-menu&gt;</code></pre>
                 </div>
     </div>
 
@@ -350,6 +353,8 @@ export class AppModule {}</code></pre></div>
                         <code>items</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Array of cart line items.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../classes/CartItem.html" target="_self" >Array&lt;CartItem&gt;</a></code>
 

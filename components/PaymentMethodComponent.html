@@ -68,12 +68,12 @@
     <p class="comment">
         <p>The payment method layout component is a listing component for payment method object
 It is used to display all available payment method for logged in user and will select add credit/debit card option if no payment method exist.</p>
-<div><pre class="line-numbers"><code class="language-typescript">    import { PaymentComponentModule } from &#39;../payment/payment.module&#39;;
+<div><pre class="line-numbers"><code class="language-typescript">import { PaymentComponentModule } from &#39;../payment/payment.module&#39;;
 
-    &#64;NgModule({
-      imports: [PaymentComponentModule, ...]
-    })
-    export class AppModule {}</code></pre></div>
+&#64;NgModule({
+  imports: [PaymentComponentModule, ...]
+})
+export class AppModule {}</code></pre></div>
     </p>
 
 
@@ -91,8 +91,8 @@ It is used to display all available payment method for logged in user and will s
     <div class="io-description">
                 <div>
                     <pre class="line-numbers"><code class="language-html">&lt;apt-payment-method
-[account]=&quot;account&quot;
-(isAnyMethodExist)='selectDefaultPaymentOption($event)'
+   [account]=&quot;account&quot;
+   (isAnyMethodExist)='selectDefaultPaymentOption($event)'
 &gt;&lt;/apt-payment-method&gt;</code></pre>
                 </div>
     </div>

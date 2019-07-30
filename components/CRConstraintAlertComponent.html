@@ -68,7 +68,7 @@
     <p class="comment">
         <p>The Constraint Rules Alert component displays an alert for constraint rules.</p>
 <h3>Preview</h3>
-<img class="jumbotron" src="../res/constraintAlert.png" style="max-width: 100%">
+<img class="jumbotron" src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/constraintAlert.png" style="max-width: 100%">
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { ConstraintAlertModule } from &#39;&#64;apttus/elements&#39;;
@@ -93,8 +93,8 @@ export class AppModule {}</code></pre></div>
     <div class="io-description">
                 <div>
                     <pre class="line-numbers"><code class="language-html">&lt;apt-cr-constraint-alert
-  [ruleList]=&quot;constraintRuleArray&quot;
-  [detailPageAlert]=&quot;true&quot;
+   [ruleList]=&quot;constraintRuleArray&quot;
+   [detailPageAlert]=&quot;true&quot;
 &gt;&lt;/apt-cr-constraint-alert&gt;</code></pre>
                 </div>
     </div>
@@ -171,9 +171,6 @@ export class AppModule {}</code></pre></div>
                         <ul class="index-list">
                             <li>
                                 <a href="#hide">hide</a>
-                            </li>
-                            <li>
-                                <a href="#loadAlertMessages">loadAlertMessages</a>
                             </li>
                             <li>
                                 <a href="#viewDetails">viewDetails</a>
@@ -400,70 +397,6 @@ export class AppModule {}</code></pre></div>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="loadAlertMessages"></a>
-                        <span class="name">
-                            <b>
-                            loadAlertMessages
-                            </b>
-                            <a href="#loadAlertMessages"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>loadAlertMessages(actions: <a href="../classes/AppliedRuleActionInfo.html">Array<AppliedRuleActionInfo></a>)</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>actions</td>
-                                                        <td>
-                                                                    <code><a href="../classes/AppliedRuleActionInfo.html" target="_self" >Array&lt;AppliedRuleActionInfo&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../interfaces/AlertMessage.html" target="_self" >Array&lt;AlertMessage&gt;</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="viewDetails"></a>
                         <span class="name">
                             <b>
@@ -528,6 +461,12 @@ export class AppModule {}</code></pre></div>
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Observable array of AlertMessage objects.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>

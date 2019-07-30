@@ -87,12 +87,12 @@ export class AppModule {}</code></pre></div>
     <div class="io-description">
                 <div>
                     <pre class="line-numbers"><code class="language-html">&lt;apt-dependent-picklist
-   [(ngModel)]=&quot;myModel&quot;
-   [fieldMethod]=&quot;fieldService&quot;
-   [field]=&quot;stateCode&quot;
-   [parentField]=&quot;countryCode&quot;
-   [inline]=&quot;isInline&quot;
-   [size]=&quot;inputSize&quot;
+    [(ngModel)]=&quot;myModel&quot;
+    [fieldMethod]=&quot;fieldService&quot;
+    [field]=&quot;stateCode&quot;
+    [parentField]=&quot;countryCode&quot;
+    [inline]=&quot;isInline&quot;
+    [size]=&quot;inputSize&quot;
 &gt;&lt;/apt-dependent-picklist&gt;</code></pre>
                 </div>
     </div>
@@ -179,9 +179,6 @@ export class AppModule {}</code></pre></div>
                         <ul class="index-list">
                             <li>
                                 <a href="#onChange">onChange</a>
-                            </li>
-                            <li>
-                                <a href="#subscription">subscription</a>
                             </li>
                             <li>
                                 <a href="#value">value</a>
@@ -780,35 +777,6 @@ Sets the value property to the option selected in the dropdown.</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="subscription"></a>
-                        <span class="name">
-                            <b>
-                            subscription
-                            </b>
-                            <a href="#subscription"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>subscription:     <code>Subscription</code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>Subscription</code>
-
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="value"></a>
                         <span class="name">
                             <b>
@@ -831,6 +799,12 @@ Sets the value property to the option selected in the dropdown.</p>
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Current selected value.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -865,6 +839,12 @@ Sets the value property to the option selected in the dropdown.</p>
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Used to hold information for rendering the view.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>

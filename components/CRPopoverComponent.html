@@ -68,7 +68,7 @@
     <p class="comment">
         <p>The constraint rule popover component creates a popover on an element based on the constraint rule list and product passed to it.</p>
 <h3>Preview</h3>
-<img class="jumbotron" src="../res/constraintPopover.png" style="max-width: 100%">
+<img class="jumbotron" src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/constraintPopover.png" style="max-width: 100%">
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { ConstraintPopoverModule } from &#39;&#64;apttus/elements&#39;;
@@ -94,25 +94,25 @@ export class AppModule {}</code></pre></div>
     <div class="io-description">
                 <div>
                     <pre class="line-numbers"><code class="language-html">&lt;button
-  [popover]=&quot;popTemplate&quot;
-  container=&quot;body&quot;
-  [outsideClick]=&quot;true&quot;
-  containerClass=&quot;CRPopover&quot;
-  triggers=&quot;mouseenter:mouseleave focus:blur&quot;
+   [popover]=&quot;popTemplate&quot;
+   container=&quot;body&quot;
+   [outsideClick]=&quot;true&quot;
+   containerClass=&quot;CRPopover&quot;
+   triggers=&quot;mouseenter:mouseleave focus:blur&quot;
 &gt;
-  Add to Cart
+   Add to Cart
 &lt;/button&gt;
 
 &lt;ng-template #popTemplate&gt;
-  &lt;apt-cr-popover
-    [ruleList]=&quot;constraintRuleList&quot;
-    [product]=&quot;product&quot;
-    [message]=&quot;popoverMessage&quot;
-    [optionRules]=&quot;hasOptionRules&quot;
-    [triggers]=&quot;popoverTriggers&quot;
-    [outsideClick]=&quot;closeOnOutsideClick&quot;
-    [containerClass]=&quot;popoverWrapperClass&quot;
-  &gt;&lt;/apt-cr-popover&gt;
+   &lt;apt-cr-popover
+     [ruleList]=&quot;constraintRuleList&quot;
+     [product]=&quot;product&quot;
+     [message]=&quot;popoverMessage&quot;
+     [optionRules]=&quot;hasOptionRules&quot;
+     [triggers]=&quot;popoverTriggers&quot;
+     [outsideClick]=&quot;closeOnOutsideClick&quot;
+     [containerClass]=&quot;popoverWrapperClass&quot;
+   &gt;&lt;/apt-cr-popover&gt;
 &lt;/ng-template&gt;</code></pre>
                 </div>
     </div>
@@ -460,6 +460,8 @@ export class AppModule {}</code></pre></div>
                         <code>items</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Array of cart items.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../classes/CartItem.html" target="_self" >Array&lt;CartItem&gt;</a></code>
 
@@ -515,6 +517,8 @@ export class AppModule {}</code></pre></div>
                         <code>options</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Array of product options.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../classes/ProductOptionComponent.html" target="_self" >Array&lt;ProductOptionComponent&gt;</a></code>
 
@@ -570,6 +574,8 @@ export class AppModule {}</code></pre></div>
                         <code>ruleList</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Array of contraint rules.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../classes/ConstraintRule.html" target="_self" >Array&lt;ConstraintRule&gt;</a></code>
 
@@ -1493,6 +1499,12 @@ export class AppModule {}</code></pre></div>
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Reference to the popover directive in the template.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1522,6 +1534,12 @@ export class AppModule {}</code></pre></div>
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Holds an instance of ngx-bootstrap popover.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1560,6 +1578,12 @@ export class AppModule {}</code></pre></div>
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Reference to the popover template in the view.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
