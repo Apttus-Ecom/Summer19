@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Apttus Ecommerce</title>
+        <title>Apttus Ecommerce Summer &#x27;19</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce Summer &#x27;19</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -106,6 +106,10 @@
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#renewAssets">renewAssets</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#swapAssets">swapAssets</a>
                             </li>
                         </ul>
                     </td>
@@ -444,7 +448,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/AssetLineItem.html" target="_self" >Observable&lt;Array&lt;AssetLineItem&gt;&gt;</a></code>
+                                <b>Returns : </b>    <code><a href="../classes/AssetLineItemExtended.html" target="_self" >Observable&lt;Array&lt;AssetLineItemExtended&gt;&gt;</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -472,7 +476,7 @@
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getBundleItemsForAssetLineItem(assetLineItem: <a href="../classes/AssetLineItem.html">string | AssetLineItem</a>)</code>
+                        <code>getBundleItemsForAssetLineItem(assetLineItem: <a href="../classes/AssetLineItemExtended.html">string | AssetLineItemExtended</a>)</code>
                     </td>
                 </tr>
 
@@ -499,7 +503,7 @@
                                                 <tr>
                                                         <td>assetLineItem</td>
                                                         <td>
-                                                                    <code><a href="../classes/AssetLineItem.html" target="_self" >string | AssetLineItem</a></code>
+                                                                    <code><a href="../classes/AssetLineItemExtended.html" target="_self" >string | AssetLineItemExtended</a></code>
                                                         </td>
                                                     
                                                     <td>
@@ -518,7 +522,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/AssetLineItem.html" target="_self" >Observable&lt;Array&lt;AssetLineItem&gt;&gt;</a></code>
+                                <b>Returns : </b>    <code><a href="../classes/AssetLineItemExtended.html" target="_self" >Observable&lt;Array&lt;AssetLineItemExtended&gt;&gt;</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -813,6 +817,126 @@
                             </div>
                                 <div class="io-description">
                                     <p>Observable&lt;Array<AssetLineItem>&gt; returns an observable list of all line items with all their field values.</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="swapAssets"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            swapAssets
+                            </b>
+                            <a href="#swapAssets"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>swapAssets(assetIds: Array<string>, productIds: Array<string>, newStartDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>The primary method to swap the existing assets. Creates line items for the cancelled asset line item and new line items for swapped product.</p>
+<h3 id="example-">Example:</h3>
+<div><pre class="line-numbers"><code class="language-typescript">     import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
+
+     export class MyComponent implements OnInit{
+          lineItemMap: Array&lt;any&gt;;
+          lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
+
+          constructor(private assetService: AssetService){}
+
+          ngOnInit(){
+              this.assetService.swapAssets(assetIds: Array&lt;string&gt;)subscribe(lineItemMap =&gt; {...});
+              // or
+              this.lineItemMap$ = this.assetService.swapAssets(assetIds: Array&lt;string&gt;);
+          }
+     }</code></pre></div></div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>assetIds</td>
+                                                        <td>
+                                                                    <code>Array&lt;string&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>list of asset ids which are swapped</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>productIds</td>
+                                                        <td>
+                                                                    <code>Array&lt;string&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>list of ids of the product with which the asset is being swapped</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>newStartDate</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>new asset start date on swapping</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>Observable&lt;Array<any>&gt; returns an observable list of all line items with all their field values.</p>
 
                                 </div>
                     </td>

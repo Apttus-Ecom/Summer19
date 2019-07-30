@@ -22,15 +22,11 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_InputDateModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="87,-70 87,-268 409,-268 409,-70 87,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="162,-70 162,-268 334,-268 334,-70 162,-70"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_InputDateModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="247,-78 247,-130 401,-130 401,-78 247,-78"/>
-</g>
-<g id="clust4" class="cluster">
-<title>cluster_InputDateModule_imports</title>
-<polygon fill="none" stroke="#000000" points="95,-78 95,-130 239,-130 239,-78 95,-78"/>
+<polygon fill="none" stroke="#000000" points="171,-78 171,-130 325,-130 325,-78 171,-78"/>
 </g>
 <g id="clust5" class="cluster">
 <title>cluster_InputDateModule_exports</title>
@@ -39,8 +35,8 @@
 <!-- InputDateComponent -->
 <g id="node1" class="node">
 <title>InputDateComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="392.8104,-122 255.1896,-122 255.1896,-86 392.8104,-86 392.8104,-122"/>
-<text text-anchor="middle" x="324" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">InputDateComponent</text>
+<polygon fill="#ffffb3" stroke="#000000" points="316.8104,-122 179.1896,-122 179.1896,-86 316.8104,-86 316.8104,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">InputDateComponent</text>
 </g>
 <!-- InputDateModule -->
 <g id="node2" class="node">
@@ -51,32 +47,20 @@
 <!-- InputDateComponent&#45;&gt;InputDateModule -->
 <g id="edge1" class="edge">
 <title>InputDateComponent&#45;&gt;InputDateModule</title>
-<path fill="none" stroke="#000000" d="M280.5544,-122.1061C280.5544,-122.1061 280.5544,-140.991 280.5544,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="277.0544,-140.9909 280.5544,-150.991 284.0544,-140.991 277.0544,-140.9909"/>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 <!-- InputDateComponent  -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>InputDateComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="318.3101,-252 177.6899,-252 177.6899,-216 318.3101,-216 318.3101,-252"/>
 <text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">InputDateComponent </text>
 </g>
 <!-- InputDateModule&#45;&gt;InputDateComponent  -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>InputDateModule&#45;&gt;InputDateComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
-</g>
-<!-- OutputFieldModule -->
-<g id="node3" class="node">
-<title>OutputFieldModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="230.7162,-122 227.7162,-126 206.7162,-126 203.7162,-122 103.2838,-122 103.2838,-86 230.7162,-86 230.7162,-122"/>
-<text text-anchor="middle" x="167" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">OutputFieldModule</text>
-</g>
-<!-- OutputFieldModule&#45;&gt;InputDateModule -->
-<g id="edge2" class="edge">
-<title>OutputFieldModule&#45;&gt;InputDateModule</title>
-<path fill="none" stroke="#000000" d="M210.4222,-122.1061C210.4222,-122.1061 210.4222,-140.991 210.4222,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="206.9222,-140.9909 210.4222,-150.991 213.9222,-140.991 206.9222,-140.9909"/>
 </g>
 </g>
 </svg>

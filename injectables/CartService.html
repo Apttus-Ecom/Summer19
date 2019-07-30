@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Apttus Ecommerce</title>
+        <title>Apttus Ecommerce Summer &#x27;19</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">Apttus Ecommerce</a>
+            <a href="../" class="navbar-brand">Apttus Ecommerce Summer &#x27;19</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -148,7 +148,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#updateQuantity">updateQuantity</a>
+                                <a href="#updateCartItems">updateCartItems</a>
                             </li>
                         </ul>
                     </td>
@@ -1368,20 +1368,20 @@ Also further filters the carts returned by the currently selected price list and
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="updateQuantity"></a>
+                        <a name="updateCartItems"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            updateQuantity
+                            updateCartItems
                             </b>
-                            <a href="#updateQuantity"><span class="icon ion-ios-link"></span></a>
+                            <a href="#updateCartItems"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>updateQuantity(cartItemList: <a href="../classes/CartItem.html">Array<CartItem></a>, async: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, trigger: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                        <code>updateCartItems(cartItemList: <a href="../classes/CartItem.html">Array<CartItem></a>)</code>
                     </td>
                 </tr>
 
@@ -1398,9 +1398,9 @@ Also further filters the carts returned by the currently selected price list and
 
            constructor(private cartService: CartService){}
 
-           updateQuantity(cartItem: CartItem, quantity: number): void{
+           updateCartItems(cartItem: CartItem, quantity: number): void{
                cartItem.Quantity = quantity;
-               this.cartService.updateQuantity([cartItem]).subscribe(
+               this.cartService.updateCartItems([cartItem]).subscribe(
                    () =&gt; {...},
                    err =&gt; {...}
                );
@@ -1415,7 +1415,6 @@ Also further filters the carts returned by the currently selected price list and
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Default value</td>
                                                     <td>Description</td>
                                             </tr>
                                         </thead>
@@ -1430,49 +1429,9 @@ Also further filters the carts returned by the currently selected price list and
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                        </td>
 
                                                         <td>
                                                                 <code><p>an array of cart items. Matches based on the id and updates the related cart items with the new fields.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>async</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>true</code>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>when true, will use cartDebounceTime to wait for other quantity update operations before sending the quantity update request</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>trigger</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>true</code>
-                                                        </td>
-
-                                                        <td>
-                                                                <code><p>when set to false, will not notify other components that a product has been added to the cart</p>
 </code>
                                                         </td>
                                                 </tr>

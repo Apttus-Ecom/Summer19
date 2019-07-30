@@ -85,7 +85,7 @@ export class AppModule {}</code></pre></div>
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
     </p>
 
     <p class="comment">
@@ -93,7 +93,12 @@ export class AppModule {}</code></pre></div>
     </p>
     <div class="io-description">
                 <div>
-                    <pre class="line-numbers"><code class="language-html">&lt;apt-mini-cart  [productLink]=&quot;routeToProduct&quot;  [productIdentifier]=&quot;productIdentifier&quot;  [cartLink]=&quot;routeToCart&quot;  [manageCartLink]=&quot;routeToManageCart&quot;&gt;&lt;/apt-mini-cart&gt;</code></pre>
+                    <pre class="line-numbers"><code class="language-html">&lt;apt-mini-cart
+   [productLink]=&quot;routeToProduct&quot;
+   [productIdentifier]=&quot;productIdentifier&quot;
+   [cartLink]=&quot;routeToCart&quot;
+   [manageCartLink]=&quot;routeToManageCart&quot;
+&gt;&lt;/apt-mini-cart&gt;</code></pre>
                 </div>
     </div>
 
@@ -237,7 +242,7 @@ export class AppModule {}</code></pre></div>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(cartService: CartService, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, cartItemService: CartItemService, productOptionService: ProductOptionService)</code>
+<code>constructor(cartService: <a href="../injectables/CartService.html">CartService</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, cartItemService: <a href="../injectables/CartItemService.html">CartItemService</a>, productOptionService: <a href="../injectables/ProductOptionService.html">ProductOptionService</a>)</code>
                     </td>
                 </tr>
 
@@ -258,7 +263,7 @@ export class AppModule {}</code></pre></div>
                                                         <td>cartService</td>
                                                   
                                                         <td>
-                                                                    <code>CartService</code>
+                                                                    <code><a href="../injectables/CartService.html" target="_self" >CartService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -270,7 +275,7 @@ export class AppModule {}</code></pre></div>
                                                         <td>sanitizer</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+                                                                    <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -282,7 +287,7 @@ export class AppModule {}</code></pre></div>
                                                         <td>cartItemService</td>
                                                   
                                                         <td>
-                                                                    <code>CartItemService</code>
+                                                                    <code><a href="../injectables/CartItemService.html" target="_self" >CartItemService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -294,7 +299,7 @@ export class AppModule {}</code></pre></div>
                                                         <td>productOptionService</td>
                                                   
                                                         <td>
-                                                                    <code>ProductOptionService</code>
+                                                                    <code><a href="../injectables/ProductOptionService.html" target="_self" >ProductOptionService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -316,20 +321,18 @@ export class AppModule {}</code></pre></div>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-4">
+                    <td class="col-md-2">
                         <a name="cartLink"></a>
-                        <b>cartLink</b>
+                        <code>cartLink</code>
                     </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;/cart&#x27;</code>
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>&#x27;/cart&#x27;</code>
+                        </p>
                     </td>
                 </tr>
             </tbody>
@@ -337,20 +340,18 @@ export class AppModule {}</code></pre></div>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-4">
+                    <td class="col-md-2">
                         <a name="manageCartLink"></a>
-                        <b>manageCartLink</b>
+                        <code>manageCartLink</code>
                     </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;/manage-cart&#x27;</code>
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>&#x27;/manage-cart&#x27;</code>
+                        </p>
                     </td>
                 </tr>
             </tbody>
@@ -358,20 +359,18 @@ export class AppModule {}</code></pre></div>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-4">
+                    <td class="col-md-2">
                         <a name="productIdentifier"></a>
-                        <b>productIdentifier</b>
+                        <code>productIdentifier</code>
                     </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>this.cartService.configurationService.get(&#x27;productIdentifier&#x27;)</code>
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>this.cartService.configurationService.get(&#x27;productIdentifier&#x27;)</code>
+                        </p>
                     </td>
                 </tr>
             </tbody>
@@ -379,20 +378,18 @@ export class AppModule {}</code></pre></div>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-4">
+                    <td class="col-md-2">
                         <a name="productLink"></a>
-                        <b>productLink</b>
+                        <code>productLink</code>
                     </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;/product&#x27;</code>
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>&#x27;/product&#x27;</code>
+                        </p>
                     </td>
                 </tr>
             </tbody>
@@ -403,242 +400,243 @@ export class AppModule {}</code></pre></div>
 
     <section>
     
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="changeItemQuantity"></a>
-                    <span class="name">
-                        <b>
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changeItemQuantity"></a>
+                        <span class="name">
+                            <b>
                             changeItemQuantity
-                        </b>
-                        <a href="#changeItemQuantity"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>changeItemQuantity(cartItem: CartItem)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#changeItemQuantity"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>changeItemQuantity(cartItem: <a href="../classes/CartItem.html">CartItem</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Changes the quantity of the cart item passed to this method.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Changes the quantity of the cart item passed to this method.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>cartItem</td>
-                                    <td>
-                                            <code>CartItem</code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cartItem</td>
+                                                        <td>
+                                                                    <code><a href="../classes/CartItem.html" target="_self" >CartItem</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        No
-                                    </td>
+                                                        <td>
+                                                                <code><p>Cart item reference to change quantity.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-
-                                    <td>
-                                        <p>Cart item reference to change quantity.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="removeCartItem"></a>
-                    <span class="name">
-                        <b>
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="removeCartItem"></a>
+                        <span class="name">
+                            <b>
                             removeCartItem
-                        </b>
-                        <a href="#removeCartItem"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>removeCartItem(item: CartItem, evt)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#removeCartItem"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>removeCartItem(item: <a href="../classes/CartItem.html">CartItem</a>, evt)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Removes the provided CartItem from the user&#39;s current active cart.</p>
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Removes the provided CartItem from the user&#39;s current active cart.</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>item</td>
-                                    <td>
-                                            <code>CartItem</code>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>item</td>
+                                                        <td>
+                                                                    <code><a href="../classes/CartItem.html" target="_self" >CartItem</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        No
-                                    </td>
+                                                        <td>
+                                                                <code><p>CartItem instance to remove from cart.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>evt</td>
+                                                        <td>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
 
+                                                        <td>
+                                                                <code><p>Event associated with the user action.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                                    <td>
-                                        <p>CartItem instance to remove from cart.</p>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>evt</td>
-                                    <td>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>Event associated with the user action.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="trackById"></a>
-                    <span class="name">
-                        <b>
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="trackById"></a>
+                        <span class="name">
+                            <b>
                             trackById
-                        </b>
-                        <a href="#trackById"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>trackById(index, record: CartItem)</code>
-                </td>
-            </tr>
+                            </b>
+                            <a href="#trackById"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>trackById(index, record: <a href="../classes/CartItem.html">CartItem</a>)</code>
+                    </td>
+                </tr>
 
 
 
 
-            <tr>
-                <td class="col-md-4">
+                <tr>
+                    <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>index</td>
-                                    <td>
-                                    </td>
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>index</td>
+                                                        <td>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
 
-                                    <td>
-                                        No
-                                    </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>record</td>
+                                                        <td>
+                                                                    <code><a href="../classes/CartItem.html" target="_self" >CartItem</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
 
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                                </tr>
-                                <tr>
-                                    <td>record</td>
-                                    <td>
-                                            <code>CartItem</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </section>
+
     <section>
     
         <h3 id="inputs">
@@ -651,14 +649,21 @@ export class AppModule {}</code></pre></div>
                         <a name="cart$"></a>
                         <span class="name">
                             <b>
-                            cart$</b>
+                            cart$
+                            </b>
                             <a href="#cart$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>cart$:     <code><a href="../classes/Cart.html" target="_self" >Observable&lt;Cart&gt;</a></code>
+</code>
+                    </td>
+                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code>Observable&lt;Cart&gt;</code>
+                            <i>Type : </i>    <code><a href="../classes/Cart.html" target="_self" >Observable&lt;Cart&gt;</a></code>
 
                         </td>
                     </tr>
@@ -673,14 +678,21 @@ export class AppModule {}</code></pre></div>
                         <a name="cartItems$"></a>
                         <span class="name">
                             <b>
-                            cartItems$</b>
+                            cartItems$
+                            </b>
                             <a href="#cartItems$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>cartItems$:     <code><a href="../classes/CartItem.html" target="_self" >Observable&lt;Array&lt;CartItem&gt;&gt;</a></code>
+</code>
+                    </td>
+                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code>Observable&lt;Array&lt;CartItem&gt;&gt;</code>
+                            <i>Type : </i>    <code><a href="../classes/CartItem.html" target="_self" >Observable&lt;Array&lt;CartItem&gt;&gt;</a></code>
 
                         </td>
                     </tr>
@@ -695,9 +707,16 @@ export class AppModule {}</code></pre></div>
                         <a name="entity"></a>
                         <span class="name">
                             <b>
-                            entity</b>
+                            entity
+                            </b>
                             <a href="#entity"><span class="icon ion-ios-link"></span></a>
                         </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>entity:     <code></code>
+</code>
                     </td>
                 </tr>
                     <tr>
@@ -760,14 +779,21 @@ export class AppModule {}</code></pre></div>
                         <a name="identifier"></a>
                         <span class="name">
                             <b>
-                            identifier</b>
+                            identifier
+                            </b>
                             <a href="#identifier"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>identifier:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </td>
                     </tr>
@@ -793,14 +819,21 @@ export class AppModule {}</code></pre></div>
                         <a name="itemCount"></a>
                         <span class="name">
                             <b>
-                            itemCount</b>
+                            itemCount
+                            </b>
                             <a href="#itemCount"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>itemCount:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                         </td>
                     </tr>
@@ -822,14 +855,21 @@ export class AppModule {}</code></pre></div>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            sanitizer</b>
+                            sanitizer
+                            </b>
                             <a href="#sanitizer"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>sanitizer:     <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+</code>
+                    </td>
+                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+                            <i>Type : </i>    <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
 
                         </td>
                     </tr>
@@ -971,7 +1011,7 @@ export class AppModule {}</code></pre></div>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="cartItems$ | async as cartItems">    <div class="dropdown">        <a class="dropdown-toggle mr-2" href="#cartMenu" data-toggle="dropdown">            <span class="oi oi-cart oi-lg"></span>        </a>        <div class="dropdown-menu dropdown-menu-right m-0 p-0" aria-labelledby="dropdownMenuButton" id="cartMenu">            <ul class="list-group" *ngIf="cartItems?.length > 0; else empty">                <ng-container *ngFor="let item of cartItems; let i = index; trackBy: trackById">                    <li class="media list-group-item d-flex"                        *ngIf="item.LineType === \'Product/Service\' && item.Product">                        <img class="mr-3 align-self-center"                            [src]="sanitizer.bypassSecurityTrustUrl(item.Product?.IconId | image)"                            alt="Generic placeholder image">                        <div class="media-body">                            <h6 class="m-0">                                <a href="javascript:void(0)"                                    [routerLink]="[productLink, item.Product[identifier], item.Id]"                                    *ngIf="item?.Product && item?.Id; else read">                                    {{item.Product?.Name}}                                </a>                                <ng-template #read>                                    {{item.Product?.Name}}                                </ng-template>                            </h6>                            <span class="d-block">{{item.Product?.ProductCode}}</span>                            <div class="d-flex align-items-center">                                <!-- {{ \'COMMON.QUANTITY\' | translate }}: <input type="number" min="1" [(ngModel)]="item.Quantity" (ngModelChange)="changeItemQuantity(item)" [disabled]="item?.LineStatus?.toLowerCase()===\'cancelled\'" class="w-25 m-2 pl-3"/> -->                                <apt-input-field inline="true" [(ngModel)]="item.Quantity" [entity]="entity"                                    field="Quantity" (change)="changeItemQuantity(item)" [small]="true" [inline]="true"                                    [readonly]="item?.LineStatus?.toLowerCase()===\'cancelled\'" class="w-50 mt-2">                                </apt-input-field>                                <strong class="ml-auto">                                    <apt-price [record]="item"></apt-price>                                </strong>                            </div>                        </div>                        <div class="ml-auto">                            <button *ngIf="item?.IsPrimaryLine" class="btn btn-link"                                (click)="removeCartItem(item, $event)" [ladda]="item?._metadata?.deleting"                                data-style="zoom-in" data-spinner-color="black">                                <span class="oi oi-trash"></span>                            </button>                        </div>                    </li>                </ng-container>                <li class="list-group-item bg-light">                    <div class="d-flex justify-content-between">                        <span>{{ \'MINI_CART.CART_TOTAL\' | translate}}</span>                        <strong>                            <apt-price [record]="cart$ | async"></apt-price>                        </strong>                    </div>                </li>                <li class="list-group-item bg-light">                    <button class="btn btn-primary btn-block"                        [routerLink]="[manageCartLink]">{{ \'MINI_CART.VIEW_CART\' | translate}}</button>                </li>            </ul>            <ng-template #empty>                <ul class="list-group">                    <li class="list-group-item bg-light">                        {{ \'MINI_CART.YOUR_CART_IS_EMPTY\' | translate}}                    </li>                </ul>            </ng-template>        </div>    </div>    <span class="badge badge-secondary py-1"        *ngIf="cartItems?.length > 0">{{cartItems?.length}}</span></ng-container></div>'
-    var COMPONENTS = [{'name': 'AddressBookComponent', 'selector': 'app-address-book'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'AttachmentComponent', 'selector': 'app-attachment'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'BuyMoreModalComponent', 'selector': 'apt-buy-more-modal'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartListComponent', 'selector': 'app-cart-list'},{'name': 'CartSummaryComponent', 'selector': 'app-cart-summary'},{'name': 'CartTableComponent', 'selector': 'app-cart-table'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChangeConfigurationModalComponent', 'selector': 'apt-change-configuration-modal'},{'name': 'ChangePasswordLayoutComponent', 'selector': 'app-change-password-layout'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CompareLayoutComponent', 'selector': 'app-compare-layout'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CreateQuoteComponent', 'selector': 'app-create-quote'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'DetailSectionComponent', 'selector': 'apt-detail-section'},{'name': 'DetailsLayoutComponent', 'selector': 'apt-detail'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'InstalledProductsLayoutComponent', 'selector': 'app-installed-products-layout'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'ManageCartComponent', 'selector': 'app-manage-cart'},{'name': 'MdDotsComponent', 'selector': 'apt-md-dots'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'MyAccountLayoutComponent', 'selector': 'app-my-account-layout'},{'name': 'NavAccountComponent', 'selector': 'nav-account'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderDetailsComponent', 'selector': 'app-order-details'},{'name': 'OrderHistoryLayoutComponent', 'selector': 'app-order-history-layout'},{'name': 'OrderListComponent', 'selector': 'app-order-list'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PaymentMethodComponent', 'selector': 'apt-payment-method'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'PriceTypeFilterComponent', 'selector': 'app-price-type-filter'},{'name': 'ProductAttributeComponent', 'selector': 'apt-product-attribute'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDetailsComponent', 'selector': 'app-product-details'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'QuoteDetailsComponent', 'selector': 'app-quote-details'},{'name': 'RenewalFilterComponent', 'selector': 'app-renewal-filter'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'RequestQuoteFormComponent', 'selector': 'app-request-quote-form'},{'name': 'ResultsComponent', 'selector': 'pl-results'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SummaryComponent', 'selector': 'cart-summary'},{'name': 'TabAttachmentsComponent', 'selector': 'pdp-tab-attachments'},{'name': 'TabFeaturesComponent', 'selector': 'pdp-tab-features'},{'name': 'TableRowSubItemComponent', 'selector': 'apt-table-row-sub-item'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'},{'name': 'WishlistsComponent', 'selector': 'app-wishlists'}];
+    var COMPONENTS = [{'name': 'AddressBookComponent', 'selector': 'app-address-book'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'AttachmentComponent', 'selector': 'app-attachment'},{'name': 'BatchActionComponent', 'selector': 'apt-batch-action'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'BuyMoreModalComponent', 'selector': 'apt-buy-more-modal'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartListComponent', 'selector': 'app-cart-list'},{'name': 'CartSummaryComponent', 'selector': 'app-cart-summary'},{'name': 'CartTableComponent', 'selector': 'app-cart-table'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChangeConfigurationModalComponent', 'selector': 'apt-change-configuration-modal'},{'name': 'ChangePasswordLayoutComponent', 'selector': 'app-change-password-layout'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CompareLayoutComponent', 'selector': 'app-compare-layout'},{'name': 'CompareProductCardComponent', 'selector': 'apt-compare-product-card'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CreateQuoteComponent', 'selector': 'app-create-quote'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'DetailSectionComponent', 'selector': 'apt-detail-section'},{'name': 'DetailsLayoutComponent', 'selector': 'apt-detail'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsComponent', 'selector': 'apt-installed-products'},{'name': 'InstalledProductsLayoutComponent', 'selector': 'app-installed-products-layout'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'ManageCartComponent', 'selector': 'app-manage-cart'},{'name': 'MdDotsComponent', 'selector': 'apt-md-dots'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'MyAccountLayoutComponent', 'selector': 'app-my-account-layout'},{'name': 'NavAccountComponent', 'selector': 'nav-account'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderDetailsComponent', 'selector': 'app-order-details'},{'name': 'OrderHistoryLayoutComponent', 'selector': 'app-order-history-layout'},{'name': 'OrderListComponent', 'selector': 'app-order-list'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PaymentMesageComponent', 'selector': 'app-payment-message'},{'name': 'PaymentMethodComponent', 'selector': 'apt-payment-method'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'PriceTypeFilterComponent', 'selector': 'app-price-type-filter'},{'name': 'ProductAttributeComponent', 'selector': 'apt-product-attribute'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDetailsComponent', 'selector': 'app-product-details'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'QuoteDetailsComponent', 'selector': 'app-quote-details'},{'name': 'RenewalFilterComponent', 'selector': 'app-renewal-filter'},{'name': 'RenewModalComponent', 'selector': 'apt-renew-modal'},{'name': 'RequestQuoteFormComponent', 'selector': 'app-request-quote-form'},{'name': 'ResultsComponent', 'selector': 'pl-results'},{'name': 'SelectedProductCardComponent', 'selector': 'apt-selected-product-card'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SummaryComponent', 'selector': 'cart-summary'},{'name': 'TabAttachmentsComponent', 'selector': 'pdp-tab-attachments'},{'name': 'TabFeaturesComponent', 'selector': 'pdp-tab-features'},{'name': 'TableRowSubItemComponent', 'selector': 'apt-table-row-sub-item'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'},{'name': 'TerminateModalComponent', 'selector': 'apt-terminate-modal'},{'name': 'WishlistsComponent', 'selector': 'app-wishlists'}];
     var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[appAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'MiniCartComponent'};
 </script>
@@ -986,7 +1026,6 @@ export class AppModule {}</code></pre></div>
 
 
 
-                   
 
 
 

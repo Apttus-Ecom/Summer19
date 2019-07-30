@@ -59,7 +59,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>projects/getting-started/src/app/components/item-configuration-summary/item-configuration-summary.component.ts</code>
+    <code>src/app/components/item-configuration-summary/item-configuration-summary.component.ts</code>
 </p>
 
 
@@ -128,7 +128,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#attributeFormList">attributeFormList</a>
+                            </li>
+                            <li>
                                 <a href="#attributeList">attributeList</a>
+                            </li>
+                            <li>
+                                <a href="#optionGroupList">optionGroupList</a>
                             </li>
                             <li>
                                 <a href="#optionList">optionList</a>
@@ -150,6 +156,32 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#filterDefaultOptions">filterDefaultOptions</a>
+                            </li>
+                            <li>
+                                <a href="#filterLineItems">filterLineItems</a>
+                            </li>
+                            <li>
+                                <a href="#getOptionLineItemTree">getOptionLineItemTree</a>
+                            </li>
+                            <li>
+                                <a href="#getOptionQuantity">getOptionQuantity</a>
+                            </li>
+                            <li>
+                                <a href="#getProductOptionTree">getProductOptionTree</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -163,7 +195,16 @@
                                 <a href="#item">item</a>
                             </li>
                             <li>
+                                <a href="#optionLineItems">optionLineItems</a>
+                            </li>
+                            <li>
                                 <a href="#parent">parent</a>
+                            </li>
+                            <li>
+                                <a href="#product">product</a>
+                            </li>
+                            <li>
+                                <a href="#root">root</a>
                             </li>
                         </ul>
                     </td>
@@ -172,23 +213,6 @@
 
 
 
-                    <tr>
-                        <td class="col-md-4">
-                            <h6><b>Accessors</b></h6>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <ul class="index-list">
-                                <li>
-                                    <a href="#optionGroups">optionGroups</a>
-                                </li>
-                                <li>
-                                    <a href="#attributeGroups">attributeGroups</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
         </tbody>
     </table>
 </section>
@@ -199,7 +223,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(productService: <a href="../injectables/ProductService.html">ProductService</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, cartItemService: <a href="../injectables/CartItemService.html">CartItemService</a>, paService: <a href="../injectables/ProductAttributeService.html">ProductAttributeService</a>)</code>
+<code>constructor(productService: ProductService, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, cartItemService: CartItemService, paService: ProductAttributeService, poService: ProductOptionService, cdr: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, productAttributeService: ProductAttributeService)</code>
                     </td>
                 </tr>
 
@@ -220,7 +244,7 @@
                                                         <td>productService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/ProductService.html" target="_self" >ProductService</a></code>
+                                                                    <code>ProductService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -244,7 +268,7 @@
                                                         <td>cartItemService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/CartItemService.html" target="_self" >CartItemService</a></code>
+                                                                    <code>CartItemService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -256,7 +280,43 @@
                                                         <td>paService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/ProductAttributeService.html" target="_self" >ProductAttributeService</a></code>
+                                                                    <code>ProductAttributeService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>poService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ProductOptionService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cdr</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>productAttributeService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ProductAttributeService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -284,9 +344,28 @@
                     </td>
                     <td class="col-md-10">
                             <p>
-                            <em>Type :</em>    <code><a href="../classes/OrderLineItem.html" target="_self" >CartItem | OrderLineItem</a></code>
+                            <em>Type :</em>    <code>CartItem | OrderLineItem</code>
 
                             </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="optionLineItems"></a>
+                        <code>optionLineItems</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>[]</code>
+                        </p>
                     </td>
                 </tr>
             </tbody>
@@ -300,9 +379,44 @@
                     </td>
                     <td class="col-md-10">
                             <p>
-                            <em>Type :</em>    <code><a href="../classes/Order.html" target="_self" >Cart | Order</a></code>
+                            <em>Type :</em>    <code>Cart | Order | Quote</code>
 
                             </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="product"></a>
+                        <code>product</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code>Product</code>
+
+                            </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="root"></a>
+                        <code>root</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>true</code>
+                        </p>
                     </td>
                 </tr>
             </tbody>
@@ -311,12 +425,306 @@
 
 
 
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filterDefaultOptions"></a>
+                        <span class="name">
+                            <b>
+                            filterDefaultOptions
+                            </b>
+                            <a href="#filterDefaultOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>filterDefaultOptions(category: ProductOptionGroup)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>category</td>
+                                                        <td>
+                                                                    <code>ProductOptionGroup</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filterLineItems"></a>
+                        <span class="name">
+                            <b>
+                            filterLineItems
+                            </b>
+                            <a href="#filterLineItems"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>filterLineItems(category: ProductOptionGroup)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>category</td>
+                                                        <td>
+                                                                    <code>ProductOptionGroup</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getOptionLineItemTree"></a>
+                        <span class="name">
+                            <b>
+                            getOptionLineItemTree
+                            </b>
+                            <a href="#getOptionLineItemTree"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getOptionLineItemTree()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getOptionQuantity"></a>
+                        <span class="name">
+                            <b>
+                            getOptionQuantity
+                            </b>
+                            <a href="#getOptionQuantity"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getOptionQuantity(option)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>option</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getProductOptionTree"></a>
+                        <span class="name">
+                            <b>
+                            getProductOptionTree
+                            </b>
+                            <a href="#getProductOptionTree"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getProductOptionTree()</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
     <section>
     
         <h3 id="inputs">
             Properties
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="attributeFormList"></a>
+                        <span class="name">
+                            <b>
+                            attributeFormList
+                            </b>
+                            <a href="#attributeFormList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>attributeFormList:     <code>Array&lt;ProductAttributeForm&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Array&lt;ProductAttributeForm&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Array&lt;ProductAttributeForm&gt;()</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -339,6 +747,35 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="optionGroupList"></a>
+                        <span class="name">
+                            <b>
+                            optionGroupList
+                            </b>
+                            <a href="#optionGroupList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>optionGroupList:     <code>Array&lt;ProductOptionGroup&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Array&lt;ProductOptionGroup&gt;</code>
 
                         </td>
                     </tr>
@@ -390,13 +827,13 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>productAttributeValue:     <code><a href="../classes/ProductAttributeValue.html" target="_self" >ProductAttributeValue</a></code>
+                        <code>productAttributeValue:     <code>ProductAttributeValue</code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ProductAttributeValue.html" target="_self" >ProductAttributeValue</a></code>
+                            <i>Type : </i>    <code>ProductAttributeValue</code>
 
                         </td>
                     </tr>
@@ -449,13 +886,13 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>selectedProduct:     <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+                        <code>selectedProduct:     <code>Product</code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+                            <i>Type : </i>    <code>Product</code>
 
                         </td>
                     </tr>
@@ -478,13 +915,13 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>type:     <code><a href="../classes/Order.html" target="_self" >&quot;Cart&quot; | &quot;Order&quot;</a></code>
+                        <code>type:     <code>&quot;Cart&quot; | &quot;Order&quot;</code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/Order.html" target="_self" >&quot;Cart&quot; | &quot;Order&quot;</a></code>
+                            <i>Type : </i>    <code>&quot;Cart&quot; | &quot;Order&quot;</code>
 
                         </td>
                     </tr>
@@ -499,103 +936,174 @@
         </table>
 </section>
 
-    <section>
-    <h3 id="accessors">
-        Accessors
-    </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="optionGroups"></a>
-                        <span class="name"><b>optionGroups</b><a href="#optionGroups"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>optionGroups()</code></span>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="attributeGroups"></a>
-                        <span class="name"><b>attributeGroups</b><a href="#attributeGroups"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>attributeGroups()</code></span>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-</section>
 </div>
 
 
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;selectedProduct; else loading&quot;&gt;
-  &lt;div class&#x3D;&quot;d-flex justify-content-between mb-3&quot;&gt;
-    &lt;span class&#x3D;&quot;text-muted&quot;&gt;STARTING PRICE&lt;/span&gt;
-    &lt;span class&#x3D;&quot;text-muted&quot;&gt;{{(selectedProduct | ProductPricePipe | async)?.netPrice$ | async}}&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div *ngFor&#x3D;&quot;let attributeGroup of attributeGroups&quot;&gt;
-    &lt;div class&#x3D;&quot;text-muted mb-2&quot;&gt;
-      {{attributeGroup}}
-    &lt;/div&gt;
-    &lt;ng-container *ngFor&#x3D;&quot;let attribute of attributeList[attributeGroup]&quot;&gt;
-      &lt;div *ngIf&#x3D;&quot;productAttributeValue&quot; class&#x3D;&quot;mb-3 d-flex justify-content-between align-items-end&quot;&gt;
-          &lt;div&gt;
-            &lt;div&gt;{{attribute._describe.label}}&lt;/div&gt;
-            &lt;small&gt;{{productAttributeValue[attribute.Field]}}&lt;/small&gt;
-          &lt;/div&gt;
-          &lt;small class&#x3D;&quot;text-muted&quot;&gt;{{(productAttributeValue[attribute.Field] | AttributeValuePricePipe:
-            selectedProduct : attribute | async)?.netPrice$ | async}}&lt;/small&gt;
-      &lt;/div&gt;
-      &lt;/ng-container&gt;
-    &lt;hr/&gt;
-  &lt;/div&gt;
-  &lt;div *ngFor&#x3D;&quot;let optionGroup of optionGroups&quot;&gt;
-    &lt;span class&#x3D;&quot;text-muted&quot;&gt;
-      {{optionGroup}}
-    &lt;/span&gt;
-    &lt;div *ngFor&#x3D;&quot;let option of optionList[optionGroup]&quot; class&#x3D;&quot;my-3&quot;&gt;
-      &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
-        &lt;div class&#x3D;&quot;d-flex align-items-center&quot;&gt;
-          &lt;img class&#x3D;&quot;mr-3&quot; [src]&#x3D;&quot;sanitizer.bypassSecurityTrustUrl(option.Option.IconId | image)&quot;
-            width&#x3D;&quot;50&quot; alt&#x3D;&quot;Generic placeholder image&quot;&gt;
-          &lt;div&gt;
-            &lt;div&gt;{{option.Option.Name}}&lt;/div&gt;
-            &lt;div&gt;Quantity: {{option.Quantity}} @ {{option.NetUnitPrice | localCurrency
-              | async}}&lt;/div&gt;
-          &lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;(optionGroupList?.length&gt;0 || attributeFormList?.length&gt;0) &amp;&amp; selectedProduct; else loading&quot;&gt;
+    &lt;!-- Product Information --&gt;
+    &lt;div *ngIf&#x3D;&quot;root&quot; class&#x3D;&quot;card card-header border-0 px-2&quot;&gt;
+        &lt;div class&#x3D;&quot;d-flex&quot;&gt;
+            &lt;div class&#x3D;&quot;flex-grow-1 productDetails&quot;&gt;
+                &lt;h5&gt;{{selectedProduct?.Name}}&lt;/h5&gt;
+                &lt;span class&#x3D;&quot;text-muted&quot;&gt;
+                    Product Code: {{selectedProduct?.ProductCode}}
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;form class&#x3D;&quot;border-left pl-6 row&quot;&gt;
+                    &lt;div class&#x3D;&quot;col&quot;&gt;
+                        &lt;label class&#x3D;&quot;text-muted&quot;&gt;Net Price&lt;/label&gt;
+                        &lt;h6&gt;
+                            &lt;apt-price [record]&#x3D;&quot;selectedProduct&quot; *ngIf&#x3D;&quot;selectedProduct&quot;&gt;&lt;/apt-price&gt;
+                        &lt;/h6&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;col align-self-center&quot;&gt;
+                        &lt;button class&#x3D;&quot;btn btn-outline-primary btn-sm&quot; type&#x3D;&quot;button&quot;&gt;
+                            Change Configuration
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
-
-        &lt;span class&#x3D;&quot;text-muted&quot;&gt;
-          {{option.NetPrice | localCurrency | async}}
-        &lt;/span&gt;
-      &lt;/div&gt;
     &lt;/div&gt;
-    &lt;hr/&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
-    &lt;h5&gt;Total Build&lt;/h5&gt;
-    &lt;h5&gt;{{(item | CartItemPricePipe | async)?.netPrice$ | async}}&lt;/h5&gt;
-  &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+        &lt;!-- Attribute Information --&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;attributeFormList?.length&gt;0&quot;&gt;
+            &lt;div *ngFor&#x3D;&quot;let attributeForm of attributeFormList; let x &#x3D; index&quot;&gt;
+                &lt;div [class.card]&#x3D;&quot;root&quot; *ngIf&#x3D;&quot;attributeForm?.productAttributeList?.length&gt;0&quot;&gt;
+                    &lt;div [class.card-header]&#x3D;&quot;root&quot; class&#x3D;&quot;px-2&quot; [class.py-1]&#x3D;&quot;root&quot;&gt;
+                        &lt;h5 [class.border-bottom]&#x3D;&quot;!root&quot; [class.mb-0]&#x3D;&quot;root&quot;&gt;
+                            &lt;button class&#x3D;&quot;btn btn-link&quot; data-toggle&#x3D;&quot;collapse&quot;
+                                [attr.data-target]&#x3D;&quot;&#x27;#&#x27; + attributeForm.groupMember.Id + selectedProduct.Id&quot;
+                                [attr.aria-expanded]&#x3D;&quot;true&quot;&gt;
+                                {{attributeForm.groupMember?.AttributeGroup?.Name}}
+                            &lt;/button&gt;
+                        &lt;/h5&gt;
+                    &lt;/div&gt;
+                    &lt;div [id]&#x3D;&quot;attributeForm.groupMember.Id + selectedProduct.Id&quot; [class.show]&#x3D;&quot;true&quot;
+                        class&#x3D;&quot;collapse mb-3&quot; [class.pl-4]&#x3D;&quot;!root&quot; [attr.data-parent]&#x3D;&quot;&#x27;#acc-&#x27; + selectedProduct.Id&quot;&gt;
+                        &lt;div [class.card-body]&#x3D;&quot;root&quot; class&#x3D;&quot;py-1&quot;&gt;
+                            &lt;div class&#x3D;&quot;row no-gutters&quot;&gt;
+                                &lt;div class&#x3D;&quot;col-12&quot;
+                                    *ngFor&#x3D;&quot;let attribute of attributeForm.productAttributeList; let l &#x3D; last&quot;&gt;
+                                    &lt;div class&#x3D;&quot;d-flex align-items-center justify-content-between attributeData&quot;
+                                        [class.border-bottom]&#x3D;&quot;!l&quot; [class.py-2]&#x3D;&quot;root&quot;&gt;
+                                        &lt;div&gt;{{attribute._describe.label}}&lt;/div&gt;
+                                        &lt;div *ngIf&#x3D;&quot;type&quot; class&#x3D;&quot;text-muted&quot;&gt;
+                                            &lt;i&gt;{{attributeForm?.attributeValue[attribute._describe.label]}}&lt;/i&gt;&lt;/div&gt;
+                                        &lt;div *ngIf&#x3D;&quot;!type&quot; class&#x3D;&quot;text-muted&quot;&gt;
+                                            &lt;i&gt;{{attributeForm?.attributeValue[attribute._describe.name]}}&lt;/i&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/ng-container&gt;
+
+        &lt;!-- Option Information --&gt;
+        &lt;div [id]&#x3D;&quot;&#x27;acc-&#x27; + selectedProduct.Id&quot; *ngIf&#x3D;&quot;optionGroupList?.length&gt;0&quot; class&#x3D;&quot;accordion&quot;&gt;
+            &lt;div *ngFor&#x3D;&quot;let optionGroup of optionGroupList; let i &#x3D; index; let l &#x3D; last&quot;&gt;
+                &lt;div [class.card]&#x3D;&quot;root&quot; *ngIf&#x3D;&quot;optionGroup?.showLabel&quot;&gt;
+                    &lt;div [class.card-header]&#x3D;&quot;root&quot; class&#x3D;&quot;px-2 py-1&quot;&gt;
+                        &lt;div [class.border-bottom]&#x3D;&quot;!root&quot; [class.mb-0]&#x3D;&quot;root&quot;&gt;
+                            &lt;button class&#x3D;&quot;btn btn-link&quot; data-toggle&#x3D;&quot;collapse&quot;
+                                [attr.data-target]&#x3D;&quot;&#x27;#&#x27; + optionGroup.Id + selectedProduct.Id&quot;
+                                [attr.aria-expanded]&#x3D;&quot;true&quot;&gt;
+                                {{optionGroup?.Label}}
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div [id]&#x3D;&quot;optionGroup.Id + selectedProduct.Id&quot; class&#x3D;&quot;collapse&quot; [class.pl-4]&#x3D;&quot;!root&quot;
+                        [class.show]&#x3D;&quot;true&quot; [attr.data-parent]&#x3D;&quot;&#x27;#acc-&#x27; + selectedProduct.Id&quot;&gt;
+                        &lt;div [class.card-body]&#x3D;&quot;root&quot; class&#x3D;&quot;py-2&quot;&gt;
+                            &lt;!-- Sub groups --&gt;
+                            &lt;div [id]&#x3D;&quot;&#x27;sub-accordion-&#x27; + optionGroup.Id + selectedProduct.Id&quot;
+                                *ngIf&#x3D;&quot;optionGroup._children?.length &gt; 0&quot; class&#x3D;&quot;accordion&quot;&gt;
+                                &lt;ng-container *ngFor&#x3D;&quot;let childOptionGroup of optionGroup?._children; let c &#x3D; index&quot;&gt;
+                                    &lt;div
+                                        *ngIf&#x3D;&quot;childOptionGroup?._metadata?.options?.length &gt; 0 &amp;&amp; childOptionGroup?.showLabel&quot;&gt;
+                                        &lt;h5 class&#x3D;&quot;border-bottom&quot;&gt;
+                                            &lt;button class&#x3D;&quot;btn btn-link&quot; data-toggle&#x3D;&quot;collapse&quot;
+                                                [attr.data-target]&#x3D;&quot;&#x27;#&#x27; + childOptionGroup?.Id + selectedProduct.Id&quot;
+                                                [attr.aria-expanded]&#x3D;&quot;true&quot; aria-controls&#x3D;&quot;collapseOne&quot;&gt;
+                                                {{childOptionGroup?.Label}}
+                                            &lt;/button&gt;
+                                        &lt;/h5&gt;
+                                        &lt;!-- Options --&gt;
+                                        &lt;div class&#x3D;&quot;collapse pl-4&quot; [id]&#x3D;&quot;childOptionGroup?.Id + selectedProduct.Id&quot;
+                                            [class.show]&#x3D;&quot;true&quot;
+                                            [attr.data-parent]&#x3D;&quot;&#x27;#sub-accordion-&#x27; + optionGroup.Id + selectedProduct.Id&quot;&gt;
+                                            &lt;div *ngFor&#x3D;&quot;let component of childOptionGroup?._metadata?.options; index as i; last as l; first as f&quot;
+                                                class&#x3D;&quot;subOption&quot;
+                                                [class.border-bottom]&#x3D;&quot;!l &amp;&amp; !component.ComponentProduct?.HasOptions&quot;
+                                                [class.py-1]&#x3D;&quot;!f &amp;&amp; !l&quot; [class.pt-1]&#x3D;&quot;l&quot; [class.pb-1]&#x3D;&quot;f&quot;&gt;
+                                                &lt;ng-template [ngTemplateOutlet]&#x3D;&quot;componentTemplate&quot;
+                                                    [ngTemplateOutletContext]&#x3D;&quot;{component: component}&quot;&gt;
+                                                &lt;/ng-template&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/div&gt;
+                            &lt;!-- Options --&gt;
+                            &lt;div *ngFor&#x3D;&quot;let component of optionGroup?._metadata?.options; index as i; last as l; first as f&quot;
+                                class&#x3D;&quot;option&quot; [class.border-bottom]&#x3D;&quot;!l &amp;&amp; !component.ComponentProduct?.HasOptions&quot;
+                                [class.py-1]&#x3D;&quot;!f &amp;&amp; !l&quot; [class.pt-1]&#x3D;&quot;l&quot; [class.pb-1]&#x3D;&quot;f&quot;&gt;
+                                &lt;ng-template [ngTemplateOutlet]&#x3D;&quot;componentTemplate&quot;
+                                    [ngTemplateOutletContext]&#x3D;&quot;{component: component}&quot;&gt;&lt;/ng-template&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 &lt;ng-template #loading&gt;
-  &lt;div class&#x3D;&quot;d-flex justify-content-center py-5&quot;&gt;
-    &lt;apt-md-spinner&gt;&lt;/apt-md-spinner&gt;
-  &lt;/div&gt;
+    &lt;div class&#x3D;&quot;d-flex justify-content-center py-5&quot;&gt;
+        &lt;apt-md-spinner&gt;&lt;/apt-md-spinner&gt;
+    &lt;/div&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #componentTemplate let-component&#x3D;&quot;component&quot;&gt;
+    &lt;div *ngIf&#x3D;&quot;optionLineItems.length&gt;0; else productOptions&quot;&gt;
+        &lt;div *ngFor&#x3D;&quot;let lineItem of optionLineItems&quot;&gt;
+            &lt;div *ngIf&#x3D;&quot;lineItem?.ProductOption?.Id &#x3D;&#x3D;&#x3D; component?.Id&quot;
+                class&#x3D;&quot;d-flex justify-content-between my-2 optionData&quot; [class.pl-3]&#x3D;&quot;!root&quot;&gt;
+                &lt;div class&#x3D;&quot;itemName&quot;&gt;{{lineItem.Option.Name}}&lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label&gt;Qty:&lt;/label&gt;
+                    {{lineItem.Quantity}}
+                &lt;/div&gt;
+                &lt;div&gt;{{lineItem.NetPrice | localCurrency | async}}&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;component?.ComponentProduct?.HasOptions || component?.ComponentProduct.HasAttributes&quot;
+            class&#x3D;&quot;pl-3 mt-2&quot;&gt;
+            &lt;apt-item-configuration-summary [product]&#x3D;&quot;component.ComponentProduct&quot; [parent]&#x3D;&quot;parent&quot; [root]&#x3D;&quot;false&quot;
+                [optionLineItems]&#x3D;&quot;optionLineItems&quot;&gt;&lt;/apt-item-configuration-summary&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;ng-template #productOptions&gt;
+        &lt;div class&#x3D;&quot;d-flex justify-content-between my-2 optionData&quot; [class.pl-3]&#x3D;&quot;!root&quot;&gt;
+            &lt;div class&#x3D;&quot;itemName&quot;&gt;{{component?.ComponentProduct?.Name}}&lt;/div&gt;
+            &lt;div&gt;
+                &lt;label&gt;Qty:&lt;/label&gt;
+                {{getOptionQuantity(component?.ComponentProduct)}}
+            &lt;/div&gt;
+            &lt;apt-price [record]&#x3D;&quot;component&quot;&gt;&lt;/apt-price&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;component?.ComponentProduct?.HasOptions || component?.ComponentProduct.HasAttributes&quot;
+            class&#x3D;&quot;pl-3 mt-2&quot;&gt;
+            &lt;apt-item-configuration-summary [product]&#x3D;&quot;component.ComponentProduct&quot; [parent]&#x3D;&quot;parent&quot; [item]&#x3D;&quot;item&quot;
+                [root]&#x3D;&quot;false&quot;&gt;&lt;/apt-item-configuration-summary&gt;
+        &lt;/div&gt;
+    &lt;/ng-template&gt;
 &lt;/ng-template&gt;</code></pre>
     </div>
 
@@ -603,8 +1111,28 @@
                 <p class="comment">
                     <code>./item-configuration-summary.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">:host{
+                <pre class="line-numbers"><code class="language-scss">@import &quot;variables&quot;;
+
+:host{
     font-size: smaller;
+}
+
+.itemName{
+    width: calc(100% - 15vw);
+}
+
+button[aria-expanded&#x3D;&quot;true&quot;]:before{
+    font-family: &quot;FontAwesome&quot;;
+    content: &quot;\f0d7&quot;;
+    font-size: $font-size-sm;
+}
+button[aria-expanded&#x3D;&quot;false&quot;]:before{
+    font-family: &quot;FontAwesome&quot;;
+    content: &quot;\f0da&quot;;
+    font-size: $font-size-sm;
+}
+.optionData, .attributeData {
+    font-size: $font-size-sm;
 }</code></pre>
     </div>
 
@@ -633,8 +1161,8 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="selectedProduct; else loading">  <div class="d-flex justify-content-between mb-3">    <span class="text-muted">STARTING PRICE</span>    <span class="text-muted">{{(selectedProduct | ProductPricePipe | async)?.netPrice$ | async}}</span>  </div>  <div *ngFor="let attributeGroup of attributeGroups">    <div class="text-muted mb-2">      {{attributeGroup}}    </div>    <ng-container *ngFor="let attribute of attributeList[attributeGroup]">      <div *ngIf="productAttributeValue" class="mb-3 d-flex justify-content-between align-items-end">          <div>            <div>{{attribute._describe.label}}</div>            <small>{{productAttributeValue[attribute.Field]}}</small>          </div>          <small class="text-muted">{{(productAttributeValue[attribute.Field] | AttributeValuePricePipe:            selectedProduct : attribute | async)?.netPrice$ | async}}</small>      </div>      </ng-container>    <hr/>  </div>  <div *ngFor="let optionGroup of optionGroups">    <span class="text-muted">      {{optionGroup}}    </span>    <div *ngFor="let option of optionList[optionGroup]" class="my-3">      <div class="d-flex justify-content-between align-items-center">        <div class="d-flex align-items-center">          <img class="mr-3" [src]="sanitizer.bypassSecurityTrustUrl(option.Option.IconId | image)"            width="50" alt="Generic placeholder image">          <div>            <div>{{option.Option.Name}}</div>            <div>Quantity: {{option.Quantity}} @ {{option.NetUnitPrice | localCurrency              | async}}</div>          </div>        </div>        <span class="text-muted">          {{option.NetPrice | localCurrency | async}}        </span>      </div>    </div>    <hr/>  </div>  <div class="d-flex justify-content-between">    <h5>Total Build</h5>    <h5>{{(item | CartItemPricePipe | async)?.netPrice$ | async}}</h5>  </div></div><ng-template #loading>  <div class="d-flex justify-content-center py-5">    <apt-md-spinner></apt-md-spinner>  </div></ng-template></div>'
-    var COMPONENTS = [{'name': 'AddressBookComponent', 'selector': 'app-address-book'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AddToCartDialogComponent', 'selector': 'lib-add-to-cart-dialog'},{'name': 'AppComponent', 'selector': 'ngsw-root'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AttributeAccordionComponent', 'selector': 'app-attribute-accordion'},{'name': 'BreadcrumbComponent', 'selector': 'pdp-breadcrumb'},{'name': 'BreadcrumbComponent', 'selector': 'pl-breadcrumb'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartListComponent', 'selector': 'app-cart-list'},{'name': 'CartSummaryComponent', 'selector': 'app-cart-summary'},{'name': 'CartTableComponent', 'selector': 'app-cart-table'},{'name': 'ChangePasswordLayoutComponent', 'selector': 'app-change-password-layout'},{'name': 'ConfigureLayoutComponent', 'selector': 'app-configure-layout'},{'name': 'CRAddToCartComponent', 'selector': 'apt-cr-add-to-cart'},{'name': 'CRConstraintAlertComponent', 'selector': 'apt-cr-constraint-alert'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRModalComponent', 'selector': 'apt-cr-modal'},{'name': 'CRPopoverComponent', 'selector': 'apt-cr-popover'},{'name': 'CRProductCardComponent', 'selector': 'apt-cr-product-card'},{'name': 'CRProductCarouselComponent', 'selector': 'apt-cr-product-carousel'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'CRSideMenuComponent', 'selector': 'apt-cr-side-menu'},{'name': 'CybersourceComponent', 'selector': 'app-cybersource'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DateRangeInputComponent', 'selector': 'apt-date-range-input'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'FieldFilterComponent', 'selector': 'pl-field-filter'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputQuantityComponent', 'selector': 'apt-input-quantity'},{'name': 'ItemConfigurationSummaryComponent', 'selector': 'apt-item-configuration-summary'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'ManageCartComponent', 'selector': 'app-manage-cart'},{'name': 'MdSpinnerComponent', 'selector': 'apt-md-spinner'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'MyAccountLayoutComponent', 'selector': 'app-my-account-layout'},{'name': 'NavAccountComponent', 'selector': 'nav-account'},{'name': 'OptionAccordionComponent', 'selector': 'app-option-accordion'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderHistoryLayoutComponent', 'selector': 'app-order-history-layout'},{'name': 'OrderListComponent', 'selector': 'app-order-list'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceTierComponent', 'selector': 'pl-price-tier'},{'name': 'PricingComponent', 'selector': 'lib-pricing'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCatalogComponent', 'selector': 'app-product-catalog'},{'name': 'ProductDetailsComponent', 'selector': 'app-product-details'},{'name': 'ProductImagesComponent', 'selector': 'product-images'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductReplacementsComponent', 'selector': 'apt-product-replacements'},{'name': 'QuoteDetailComponent', 'selector': 'app-quote-detail'},{'name': 'QuoteListComponent', 'selector': 'app-quote-list'},{'name': 'RecommendationsComponent', 'selector': 'app-recommendations'},{'name': 'RelatedCategoryComponent', 'selector': 'pl-related-categories'},{'name': 'ReorderComponent', 'selector': 'app-reorder'},{'name': 'ResultsComponent', 'selector': 'pl-results'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SubcategoryComponent', 'selector': 'pl-subcategory'},{'name': 'SummaryComponent', 'selector': 'cart-summary'},{'name': 'SummaryComponent', 'selector': 'app-summary'},{'name': 'TabAttachmentsComponent', 'selector': 'pdp-tab-attachments'},{'name': 'TabFeaturesComponent', 'selector': 'pdp-tab-features'},{'name': 'WishlistsComponent', 'selector': 'app-wishlists'}];
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="(optionGroupList?.length>0 || attributeFormList?.length>0) && selectedProduct; else loading">    <!-- Product Information -->    <div *ngIf="root" class="card card-header border-0 px-2">        <div class="d-flex">            <div class="flex-grow-1 productDetails">                <h5>{{selectedProduct?.Name}}</h5>                <span class="text-muted">                    Product Code: {{selectedProduct?.ProductCode}}                </span>            </div>            <div>                <form class="border-left pl-6 row">                    <div class="col">                        <label class="text-muted">Net Price</label>                        <h6>                            <apt-price [record]="selectedProduct" *ngIf="selectedProduct"></apt-price>                        </h6>                    </div>                    <div class="col align-self-center">                        <button class="btn btn-outline-primary btn-sm" type="button">                            Change Configuration                        </button>                    </div>                </form>            </div>        </div>    </div>    <div class="mt-3">        <!-- Attribute Information -->        <ng-container *ngIf="attributeFormList?.length>0">            <div *ngFor="let attributeForm of attributeFormList; let x = index">                <div [class.card]="root" *ngIf="attributeForm?.productAttributeList?.length>0">                    <div [class.card-header]="root" class="px-2" [class.py-1]="root">                        <h5 [class.border-bottom]="!root" [class.mb-0]="root">                            <button class="btn btn-link" data-toggle="collapse"                                [attr.data-target]="\'#\' + attributeForm.groupMember.Id + selectedProduct.Id"                                [attr.aria-expanded]="true">                                {{attributeForm.groupMember?.AttributeGroup?.Name}}                            </button>                        </h5>                    </div>                    <div [id]="attributeForm.groupMember.Id + selectedProduct.Id" [class.show]="true"                        class="collapse mb-3" [class.pl-4]="!root" [attr.data-parent]="\'#acc-\' + selectedProduct.Id">                        <div [class.card-body]="root" class="py-1">                            <div class="row no-gutters">                                <div class="col-12"                                    *ngFor="let attribute of attributeForm.productAttributeList; let l = last">                                    <div class="d-flex align-items-center justify-content-between attributeData"                                        [class.border-bottom]="!l" [class.py-2]="root">                                        <div>{{attribute._describe.label}}</div>                                        <div *ngIf="type" class="text-muted">                                            <i>{{attributeForm?.attributeValue[attribute._describe.label]}}</i></div>                                        <div *ngIf="!type" class="text-muted">                                            <i>{{attributeForm?.attributeValue[attribute._describe.name]}}</i></div>                                    </div>                                </div>                            </div>                        </div>                    </div>                </div>            </div>        </ng-container>        <!-- Option Information -->        <div [id]="\'acc-\' + selectedProduct.Id" *ngIf="optionGroupList?.length>0" class="accordion">            <div *ngFor="let optionGroup of optionGroupList; let i = index; let l = last">                <div [class.card]="root" *ngIf="optionGroup?.showLabel">                    <div [class.card-header]="root" class="px-2 py-1">                        <div [class.border-bottom]="!root" [class.mb-0]="root">                            <button class="btn btn-link" data-toggle="collapse"                                [attr.data-target]="\'#\' + optionGroup.Id + selectedProduct.Id"                                [attr.aria-expanded]="true">                                {{optionGroup?.Label}}                            </button>                        </div>                    </div>                    <div [id]="optionGroup.Id + selectedProduct.Id" class="collapse" [class.pl-4]="!root"                        [class.show]="true" [attr.data-parent]="\'#acc-\' + selectedProduct.Id">                        <div [class.card-body]="root" class="py-2">                            <!-- Sub groups -->                            <div [id]="\'sub-accordion-\' + optionGroup.Id + selectedProduct.Id"                                *ngIf="optionGroup._children?.length > 0" class="accordion">                                <ng-container *ngFor="let childOptionGroup of optionGroup?._children; let c = index">                                    <div                                        *ngIf="childOptionGroup?._metadata?.options?.length > 0 && childOptionGroup?.showLabel">                                        <h5 class="border-bottom">                                            <button class="btn btn-link" data-toggle="collapse"                                                [attr.data-target]="\'#\' + childOptionGroup?.Id + selectedProduct.Id"                                                [attr.aria-expanded]="true" aria-controls="collapseOne">                                                {{childOptionGroup?.Label}}                                            </button>                                        </h5>                                        <!-- Options -->                                        <div class="collapse pl-4" [id]="childOptionGroup?.Id + selectedProduct.Id"                                            [class.show]="true"                                            [attr.data-parent]="\'#sub-accordion-\' + optionGroup.Id + selectedProduct.Id">                                            <div *ngFor="let component of childOptionGroup?._metadata?.options; index as i; last as l; first as f"                                                class="subOption"                                                [class.border-bottom]="!l && !component.ComponentProduct?.HasOptions"                                                [class.py-1]="!f && !l" [class.pt-1]="l" [class.pb-1]="f">                                                <ng-template [ngTemplateOutlet]="componentTemplate"                                                    [ngTemplateOutletContext]="{component: component}">                                                </ng-template>                                            </div>                                        </div>                                    </div>                                </ng-container>                            </div>                            <!-- Options -->                            <div *ngFor="let component of optionGroup?._metadata?.options; index as i; last as l; first as f"                                class="option" [class.border-bottom]="!l && !component.ComponentProduct?.HasOptions"                                [class.py-1]="!f && !l" [class.pt-1]="l" [class.pb-1]="f">                                <ng-template [ngTemplateOutlet]="componentTemplate"                                    [ngTemplateOutletContext]="{component: component}"></ng-template>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </div></div><ng-template #loading>    <div class="d-flex justify-content-center py-5">        <apt-md-spinner></apt-md-spinner>    </div></ng-template><ng-template #componentTemplate let-component="component">    <div *ngIf="optionLineItems.length>0; else productOptions">        <div *ngFor="let lineItem of optionLineItems">            <div *ngIf="lineItem?.ProductOption?.Id === component?.Id"                class="d-flex justify-content-between my-2 optionData" [class.pl-3]="!root">                <div class="itemName">{{lineItem.Option.Name}}</div>                <div>                    <label>Qty:</label>                    {{lineItem.Quantity}}                </div>                <div>{{lineItem.NetPrice | localCurrency | async}}</div>            </div>        </div>        <div *ngIf="component?.ComponentProduct?.HasOptions || component?.ComponentProduct.HasAttributes"            class="pl-3 mt-2">            <apt-item-configuration-summary [product]="component.ComponentProduct" [parent]="parent" [root]="false"                [optionLineItems]="optionLineItems"></apt-item-configuration-summary>        </div>    </div>    <ng-template #productOptions>        <div class="d-flex justify-content-between my-2 optionData" [class.pl-3]="!root">            <div class="itemName">{{component?.ComponentProduct?.Name}}</div>            <div>                <label>Qty:</label>                {{getOptionQuantity(component?.ComponentProduct)}}            </div>            <apt-price [record]="component"></apt-price>        </div>        <div *ngIf="component?.ComponentProduct?.HasOptions || component?.ComponentProduct.HasAttributes"            class="pl-3 mt-2">            <apt-item-configuration-summary [product]="component.ComponentProduct" [parent]="parent" [item]="item"                [root]="false"></apt-item-configuration-summary>        </div>    </ng-template></ng-template></div>'
+    var COMPONENTS = [{'name': 'AddressBookComponent', 'selector': 'app-address-book'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartListComponent', 'selector': 'app-cart-list'},{'name': 'CartSummaryComponent', 'selector': 'app-cart-summary'},{'name': 'CartTableComponent', 'selector': 'app-cart-table'},{'name': 'ChangePasswordLayoutComponent', 'selector': 'app-change-password-layout'},{'name': 'CompareLayoutComponent', 'selector': 'app-compare-layout'},{'name': 'CybersourceComponent', 'selector': 'app-cybersource'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InstalledProductsLayoutComponent', 'selector': 'app-installed-products-layout'},{'name': 'ItemConfigurationSummaryComponent', 'selector': 'apt-item-configuration-summary'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'ManageCartComponent', 'selector': 'app-manage-cart'},{'name': 'MyAccountLayoutComponent', 'selector': 'app-my-account-layout'},{'name': 'NavAccountComponent', 'selector': 'nav-account'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderHistoryLayoutComponent', 'selector': 'app-order-history-layout'},{'name': 'OrderListComponent', 'selector': 'app-order-list'},{'name': 'PriceTypeFilterComponent', 'selector': 'app-price-type-filter'},{'name': 'ProductCatalogComponent', 'selector': 'app-product-catalog'},{'name': 'ProductDetailsComponent', 'selector': 'app-product-details'},{'name': 'ProductImagesComponent', 'selector': 'product-images'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductReplacementsComponent', 'selector': 'apt-product-replacements'},{'name': 'QuoteDetailComponent', 'selector': 'app-quote-detail'},{'name': 'QuoteListComponent', 'selector': 'app-quote-list'},{'name': 'RenewalFilterComponent', 'selector': 'app-renewal-filter'},{'name': 'ReorderComponent', 'selector': 'app-reorder'},{'name': 'ResultsComponent', 'selector': 'pl-results'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SummaryComponent', 'selector': 'cart-summary'},{'name': 'TabAttachmentsComponent', 'selector': 'pdp-tab-attachments'},{'name': 'TabFeaturesComponent', 'selector': 'pdp-tab-features'},{'name': 'WishlistsComponent', 'selector': 'app-wishlists'}];
     var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[appAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'ItemConfigurationSummaryComponent'};
 </script>
