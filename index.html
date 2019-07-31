@@ -50,28 +50,42 @@
 <h2 id="angular-library-installation">Angular Library Installation</h2>
 <p>In order to install the apttus ecommerce libraries, you must first be granted access. Please reach out to Apttus support for obtaining access to this libraries.</p>
 <p>To install all required libraries, run:</p>
-<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;apttus/core &#64;apttus/ecommerce &#64;apttus/constraint-rules &#64;apttus/promotion &#64;apttus/abo &#64;apttus/elements</code></pre></div><p>During installation, you will be asked for a number of things to connect the application to your salesforce org (will be skipped if you already installed @apttus/core.</p>
-<p>AppModule.ts</p>
+<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;apttus/core &#64;apttus/ecommerce &#64;apttus/elements</code></pre></div><p>AppModule.ts</p>
 <div><pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#64;angular/platform-browser&#39;;
 import { NgModule } from &#39;&#64;angular/core&#39;;
-
+import { AppRoutingModule } from &#39;./app-routing.module&#39;;
 import { AppComponent } from &#39;./app.component&#39;;
+import { BrowserAnimationsModule } from &#39;&#64;angular/platform-browser/animations&#39;;
 
-// Import Apttus libraries.
 import { ApttusModule } from &#39;&#64;apttus/core&#39;;
-import { CommerceModule } from &#39;&#64;apttus/ecommerce&#39;;
-import { ConstraintRulesModule } from &#39;&#64;apttus/constraint-rules&#39;;
-import { PromotionModule } from &#39;&#64;apttus/promotion&#39;;
-import { AboModule } from &#39;&#64;apttus/abo&#39;;
+import { CommerceModule, TranslatorLoaderService } from &#39;&#64;apttus/ecommerce&#39;;
 
-// Import the following modules and components for library specific elements.
-import { ProductDrawerModule, ApttusModalModule, RenewModalComponent, TerminateModalComponent } from &#39;&#64;apttus/elements&#39;;
-
-// Import environment configuration file.
 import { environment } from &#39;../environments/environment&#39;;
+import { ComponentModule } from &#39;./components/component.module&#39;;
+import { RouteGuard } from &#39;./services/route.guard&#39;;
+import { AuthGuard } from &#39;./services/auth.guard&#39;;
+import { ConfigureGuard } from &#39;./services/configure.guard&#39;;
+import { ConstraintRuleGuard } from &#39;./services/constraint-rule.guard&#39;;
 
+// Register locale data
+import localeMx from &#39;&#64;angular/common/locales/es-MX&#39;;
+import localeMxExtra from &#39;&#64;angular/common/locales/extra/es-MX&#39;;
+import localeFr from &#39;&#64;angular/common/locales/fr&#39;;
+import localeFrExtra from &#39;&#64;angular/common/locales/extra/fr&#39;;
+import { registerLocaleData } from &#39;&#64;angular/common&#39;;
+import { ServiceWorkerModule } from &#39;&#64;angular/service-worker&#39;;
+import { ModalModule } from &#39;ngx-bootstrap/modal&#39;;
+import { HttpClientModule } from &#39;&#64;angular/common/http&#39;;
+
+import { ProductDrawerModule, ApttusModalModule } from &#39;&#64;apttus/elements&#39;;
 // If using additional locales, register the locale data here
 registerLocaleData(localeMx, &#39;es-MX&#39;, localeMxExtra);
+registerLocaleData(localeFr, &#39;fr-FR&#39;, localeFrExtra);
+
+// Translations
+import { TranslateModule, TranslateLoader } from &#39;&#64;ngx-translate/core&#39;;
+import { AboGuard } from &#39;./services/aboGuard&#39;;
+import { OrderDetailsGuard } from &#39;&#64;apttus/ecommerce&#39;;
 
 &#64;NgModule({
   declarations: [
@@ -79,19 +93,24 @@ registerLocaleData(localeMx, &#39;es-MX&#39;, localeMxExtra);
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
     // Pass environment file to ApttusModule.
     ApttusModule.forRoot(environment),
     // Pass the string name of the APTSMD_Store__c record you want to use to the CommerceModule.
     CommerceModule.forRoot(&#39;My Store&#39;),
-    ConstraintRulesModule,
-    PromotionModule,
-    AboModule,
     ProductDrawerModule,
-    ApttusModalModule
+    ModalModule.forRoot(),
+    ApttusModalModule,
+    TranslateModule.forRoot({
+      loader: { provide: TranslateLoader, useClass: TranslatorLoaderService }
+    }),
+    HttpClientModule,
+    ComponentModule,
+    ServiceWorkerModule,
+    ServiceWorkerModule.register(&#39;ngsw-worker.js&#39;, { enabled: environment.production })
   ],
-  providers: [],
-  // Note: RenewModalComponent and TerminateModalComponent must be added to entryComponents if using renew and terminate actions within your application.
-  entryComponents: [RenewModalComponent, TerminateModalComponent],
+  providers: [RouteGuard, AuthGuard, AboGuard, ConfigureGuard, ConstraintRuleGuard, OrderDetailsGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }</code></pre></div><p>Once your library is imported, you can use its components, directives and pipes in your Angular application:</p>
@@ -251,23 +270,7 @@ i ｢wdm｣: Failed to compile.</code></pre></div><h4 id="fix-add-path">Fix: Add
   imports: [RouterModule.forRoot(appRoutes,  { useHash: true })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }</code></pre></div><br/>
-
-<h2 id="-angular-cli-6-0-0-uncaught-referenceerror-global-is-not-defined">@Angular/cli 6.0.0 Uncaught ReferenceError: global is not defined</h2>
-<p>If you&#39;ve upgraded to @angular/cli 6, and you&#39;re seeing the following error</p>
-<div><pre class="line-numbers"><code class="language-bash">Uncaught ReferenceError: global is not defined
-    at Object.../../node_modules/lodash.support/index.js (index.js:30)
-    at __webpack_require__ (bootstrap:81)
-    at Object.../../node_modules/lodash._basecreatecallback/index.js (index.js:12)
-    at __webpack_require__ (bootstrap:81)
-    at Object.../../node_modules/lodash.foreach/index.js (index.js:9)
-    at __webpack_require__ (bootstrap:81)
-    at Object.../../node_modules/convert-units/lib/index.js (index.js:3)
-    at __webpack_require__ (bootstrap:81)
-    at Object.../../dist/&#64;apttus/ecommerce/fesm5/apttus-ecommerce.js (main.js:98)
-    at __webpack_require__ (bootstrap:81)</code></pre></div><h4 id="fix-add-the-global-polyfill">Fix: Add the global polyfill</h4>
-<p>Add the following to your polyfills.ts file:</p>
-<div><pre class="line-numbers"><code class="language-typescript">(window as any).global = window;</code></pre></div>
+export class AppRoutingModule { }</code></pre></div>
 
 
 

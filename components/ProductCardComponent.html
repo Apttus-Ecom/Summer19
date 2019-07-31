@@ -71,9 +71,9 @@ A product description is displayed if type input is set to &#39;media&#39;.</p>
 <h3>Preview</h3>
 <div class="jumbotron">
     <h4>Card</h4>
-    <img src="../res/productCard.png" style="max-width: 100%">
+    <img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/productCard.png" style="max-width: 100%">
     <h4>Media</h4>
-    <img src="../res/productCardMedia.png" style="max-width: 100%">
+    <img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/productCardMedia.png" style="max-width: 100%">
 </div>
 <h3>Usage</h3>
 
@@ -100,14 +100,18 @@ export class AppModule {}</code></pre></div>
     </p>
     <div class="io-description">
                 <div>
-                    <pre class="line-numbers"><code class="language-html">&lt;apt-product-card
-  [product]=&quot;product&quot;
-  [thumbnail]=&quot;showThumbnail&quot;
-  [type]=&quot;card&quot;
-  [showCategory]=&quot;showingCategory&quot;
-  [showCode]=&quot;showingCode&quot;
-  [showPrice]=&quot;showingPrice&quot;
-  [canAddToCart]=&quot;canAddToCart&quot;
+                    <pre class="line-numbers"><code class="language-html">// Basic Usage
+&lt;apt-product-card [product]=&quot;product&quot;&gt;&lt;/apt-product-card&gt;
+
+// All inputs and outputs
+&lt;apt-product-card
+   [product]=&quot;product&quot;
+   [thumbnail]=&quot;showThumbnail&quot;
+   [type]=&quot;card&quot;
+   [showCategory]=&quot;showingCategory&quot;
+   [showCode]=&quot;showingCode&quot;
+   [showPrice]=&quot;showingPrice&quot;
+   [canAddToCart]=&quot;canAddToCart&quot;
 &gt;&lt;/apt-product-card&gt;</code></pre>
                 </div>
     </div>

@@ -69,7 +69,7 @@
         <p>Product configuration summary component is used to show the hierarchical view of the selected configurations for a given cart/order line item in a modal window.
 The view is a tree like structure containing selected attributes and values within attribute groups, selected options/attributes within option groups, nested at different levels in the hierarchy.</p>
 <h3>Preview</h3>
-<img class="jumbotron" src="../res/productConfigSummary.png" style="max-width: 100%">
+<img class="jumbotron" src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/productConfigSummary.png" style="max-width: 100%">
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { ProductConfigurationSummaryModule } from &#39;&#64;apttus/elements&#39;;
@@ -94,8 +94,16 @@ export class AppModule {}</code></pre></div>
     </p>
     <div class="io-description">
                 <div>
-                    <pre class="line-numbers"><code class="language-html">&lt;apt-product-configuration-summary
-  [item]=&quot;product&quot;
+                    <pre class="line-numbers"><code class="language-html">// Basic Usage
+&lt;apt-product-configuration-summary [product]=&quot;product&quot;&gt;&lt;/apt-product-configuration-summary&gt;
+
+// All inputs and outputs.
+&lt;apt-product-configuration-summary
+  [product]=&quot;product&quot;
+  [relatedTo]=&quot;lineItem&quot;
+  [changes]=&quot;lineItems&quot;
+  [preload]=&quot;true&quot;
+  [position]=&quot;'top'&quot;
   (onProductAdd)=&quot;closeModal()&quot;
   (onNavigate)=&quot;closeModal()&quot;&gt;
 &lt;/apt-product-configuration-summary&gt;</code></pre>
@@ -395,6 +403,8 @@ export class AppModule {}</code></pre></div>
                         <code>changes</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>List of cart items that this configuration changes.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../classes/CartItem.html" target="_self" >Array&lt;CartItem&gt;</a></code>
 
@@ -411,6 +421,8 @@ export class AppModule {}</code></pre></div>
                         <code>position</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Sets the position.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code>&quot;left&quot; | &quot;right&quot; | &quot;middle&quot;</code>
 
@@ -469,6 +481,8 @@ export class AppModule {}</code></pre></div>
                         <code>relatedTo</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Related cart item.</p>
+</div>
                             <p>
                             <em>Type :</em>    <code><a href="../classes/CartItem.html" target="_self" >CartItem</a></code>
 
