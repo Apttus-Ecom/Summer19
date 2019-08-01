@@ -81,8 +81,8 @@ export class AppModule {}</code></pre></div>
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
     <p class="comment">
@@ -246,7 +246,7 @@ export class AppModule {}</code></pre></div>
                                                         <td>paymentService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/PaymentService.html" target="_self" >PaymentService</a></code>
+                                                                        <code><a href="../injectables/PaymentService.html" target="_self" >PaymentService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -270,7 +270,7 @@ export class AppModule {}</code></pre></div>
                                                         <td>_compiler</td>
                                                   
                                                         <td>
-                                                                    <code><a href="https://angular.io/api/core/Compiler" target="_blank" >Compiler</a></code>
+                                                                        <code><a href="https://angular.io/api/core/Compiler" target="_blank" >Compiler</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -304,17 +304,21 @@ export class AppModule {}</code></pre></div>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="paymentTransaction"></a>
-                        <code>paymentTransaction</code>
+                        <b>paymentTransaction</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Input parameter of contaning payment related details</p>
-</div>
-                            <p>
-                            <em>Type :</em>    <code><a href="../classes/PaymentTransaction.html" target="_self" >PaymentTransaction</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/PaymentTransaction.html" target="_self" >PaymentTransaction</a></code>
 
-                            </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Input parameter of contaning payment related details</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -325,15 +329,21 @@ export class AppModule {}</code></pre></div>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="callForNewPaymentMethod"></a>
-                        <code>callForNewPaymentMethod</code>
+                        <b>callForNewPaymentMethod</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Send true/false on payment method availability or selection</p>
-</div>
-                        <em><code>$event</code> Type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Send true/false on payment method availability or selection</p>
+</div>
                     </td>
                 </tr>
             </tbody>
@@ -343,241 +353,240 @@ export class AppModule {}</code></pre></div>
 
     <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="deletePayment"></a>
-                        <span class="name">
-                            <b>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePayment"></a>
+                    <span class="name">
+                        <b>
                             deletePayment
-                            </b>
-                            <a href="#deletePayment"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#deletePayment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>deletePayment(paymentItem: <a href="../classes/PaymentMethod.html">PaymentMethod</a>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Make it inactive only if it&#39;s not default method</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Make it inactive only if it&#39;s not default method</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>paymentItem</td>
-                                                        <td>
-                                                                    <code><a href="../classes/PaymentMethod.html" target="_self" >PaymentMethod</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>paymentItem</td>
+                                    <td>
+                                                <code><a href="../classes/PaymentMethod.html" target="_self" >PaymentMethod</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>PaymentMethod which need to make delete(inactive)</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="IsDateExpired"></a>
-                        <span class="name">
-                            <b>
+
+                                    <td>
+                                        <p>PaymentMethod which need to make delete(inactive)</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IsDateExpired"></a>
+                    <span class="name">
+                        <b>
                             IsDateExpired
-                            </b>
-                            <a href="#IsDateExpired"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#IsDateExpired"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>IsDateExpired(month: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, year: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Comparing current date with credit card expire date</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Comparing current date with credit card expire date</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>month</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>month</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>credit card month </p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>year</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>credit card year</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>return true if date has not expired else false</p>
+                                    <td>
+                                        <p>credit card month </p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="ondefaultMethodChange"></a>
-                        <span class="name">
-                            <b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>year</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>credit card year</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>return true if date has not expired else false</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ondefaultMethodChange"></a>
+                    <span class="name">
+                        <b>
                             ondefaultMethodChange
-                            </b>
-                            <a href="#ondefaultMethodChange"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#ondefaultMethodChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>ondefaultMethodChange(paymentItem: <a href="../classes/PaymentMethod.html">PaymentMethod</a>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Update default method for account and removed existing default method</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Update default method for account and removed existing default method</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>paymentItem</td>
-                                                        <td>
-                                                                    <code><a href="../classes/PaymentMethod.html" target="_self" >PaymentMethod</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>paymentItem</td>
+                                    <td>
+                                                <code><a href="../classes/PaymentMethod.html" target="_self" >PaymentMethod</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>PaymentMethod which need to make default</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+                                    <td>
+                                        <p>PaymentMethod which need to make default</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
     <section>
     
         <h3 id="inputs">
@@ -590,21 +599,14 @@ export class AppModule {}</code></pre></div>
                         <a name="isPaymentByMethod"></a>
                         <span class="name">
                             <b>
-                            isPaymentByMethod
-                            </b>
+                            isPaymentByMethod</b>
                             <a href="#isPaymentByMethod"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>isPaymentByMethod:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                         </td>
                     </tr>
@@ -630,21 +632,14 @@ export class AppModule {}</code></pre></div>
                         <a name="paymentMethodList"></a>
                         <span class="name">
                             <b>
-                            paymentMethodList
-                            </b>
+                            paymentMethodList</b>
                             <a href="#paymentMethodList"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>paymentMethodList:     <code><a href="../classes/PaymentMethod.html" target="_self" >Array&lt;PaymentMethod&gt;</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/PaymentMethod.html" target="_self" >Array&lt;PaymentMethod&gt;</a></code>
+                            <i>Type : </i>        <code><a href="../classes/PaymentMethod.html" target="_self" >Array&lt;PaymentMethod&gt;</a></code>
 
                         </td>
                     </tr>
@@ -814,6 +809,7 @@ input[type&#x3D;number]::-webkit-outer-spin-button {
 
 
 
+                   
 
 
 

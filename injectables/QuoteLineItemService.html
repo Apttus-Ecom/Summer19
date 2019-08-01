@@ -65,6 +65,13 @@
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../injectables/LineItemService.html" target="_self" >LineItemService</a></code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -101,6 +108,14 @@
                                     <span class="modifier">Public</span>
                                 <a href="#getPromotionDetailsForQuoteLineItem">getPromotionDetailsForQuoteLineItem</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getOptionsForItem">getOptionsForItem</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#groupItems">groupItems</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -116,112 +131,112 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getBundleItemsForQuoteLineItem"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBundleItemsForQuoteLineItem"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getBundleItemsForQuoteLineItem
-                            </b>
-                            <a href="#getBundleItemsForQuoteLineItem"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getBundleItemsForQuoteLineItem(quoteLineItem: <a href="../classes/QuoteLineItem.html">string | QuoteLineItem</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getBundleItemsForQuoteLineItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBundleItemsForQuoteLineItem(quoteLineItem: string | QuoteLineItem)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>This method returns the bundled options for the quote line item passed.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method returns the bundled options for the quote line item passed.</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>quoteLineItem</td>
-                                                        <td>
-                                                                    <code><a href="../classes/QuoteLineItem.html" target="_self" >string | QuoteLineItem</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>quoteLineItem</td>
+                                    <td>
+                                            <code>string | QuoteLineItem</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>Instance of the quote line item passed.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/QuoteLineItem.html" target="_self" >Observable&lt;Array&lt;QuoteLineItem&gt;&gt;</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>An observable containing the array of option line items for a given quote line item.</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getPromotionDetailsForQuoteLineItem"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    <td>
+                                        <p>Instance of the quote line item passed.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;QuoteLineItem&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable containing the array of option line items for a given quote line item.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPromotionDetailsForQuoteLineItem"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getPromotionDetailsForQuoteLineItem
-                            </b>
-                            <a href="#getPromotionDetailsForQuoteLineItem"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getPromotionDetailsForQuoteLineItem(lineItemId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getPromotionDetailsForQuoteLineItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPromotionDetailsForQuoteLineItem(lineItemId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>This method returns the quote line item with adjustment details.</p>
-<h3 id="example-">Example:</h3>
-<p><code>`</code>typescript
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method returns the quote line item with adjustment details.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
       import { QuoteLineItemService, QuoteLineItem } from &#39;@apttus/ecommerce&#39;;
       import { Observable } from &#39;rxjs/Observable&#39;;</p>
 <div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
@@ -241,47 +256,201 @@
  * &#64;returns An observable containing the given quote line item with adjustment item details.
  *</code></pre></div></div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>lineItemId</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>lineItemId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/QuoteLineItem.html" target="_self" >Observable&lt;Array&lt;QuoteLineItem&gt;&gt;</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;QuoteLineItem&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOptionsForItem"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getOptionsForItem
+                        </b>
+                        <a href="#getOptionsForItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getOptionsForItem(item: CartItem | AssetLineItem | QuoteLineItem | OrderLineItem, relatedTo?: Cart | Order | Quote)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method takes a line item and returns the full list of line items related to it. Can be any line item within the bundle.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                            <code>CartItem | AssetLineItem | QuoteLineItem | OrderLineItem</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>the primary line item to get the related cart items for</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>relatedTo</td>
+                                    <td>
+                                            <code>Cart | Order | Quote</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>An optional context object to avoid additional network callouts</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;CartItem | AssetLineItem | QuoteLineItem | OrderLineItem&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupItems"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            groupItems
+                        </b>
+                        <a href="#groupItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>groupItems(items: Array<CartItem | AssetLineItem | QuoteLineItem | OrderLineItem>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>items</td>
+                                    <td>
+                                            <code>Array&lt;CartItem | AssetLineItem | QuoteLineItem | OrderLineItem&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ItemGroup.html" target="_self" >Array&lt;ItemGroup&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -294,16 +463,9 @@
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type
-                            </b>
+                            type</b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -329,6 +491,7 @@
 
 
 
+                   
 
 
 

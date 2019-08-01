@@ -65,6 +65,13 @@
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>AObjectService</code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -112,94 +119,94 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getResponseUpdate"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getResponseUpdate"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getResponseUpdate
-                            </b>
-                            <a href="#getResponseUpdate"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getResponseUpdate(gatewayTransactionId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getResponseUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getResponseUpdate(gatewayTransactionId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Retrieves the gateway communication if response has been received from the
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the gateway communication if response has been received from the
 payment gateway (CyberSource) based on the gateway transaction&#39;s ID
 and also updating payment method cache</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">     import { GatewayCommunicationService} from &#39;&#64;apttus/ecommerce&#39;;
+<h3 id="example">Example:</h3>
+<p>```typescript
+     import { GatewayCommunicationService} from &#39;@apttus/ecommerce&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
+     gatewayCommunication: GatewayCommunication;
 
-     export class MyComponent implements OnInit{
-         gatewayCommunication: GatewayCommunication;
+      constructor(private gatewayCommunicationService: GatewayCommunicationService){}
 
-          constructor(private gatewayCommunicationService: GatewayCommunicationService){}
+      ngOnInit(){
+         this.gatewayCommunicationService.getResponseUpdate(this.gatewayCommunication.GatewayTransactionId).subscribe(response =&gt; {
+         });
+      }
+ }
+```</code></pre></div></div>
 
-          ngOnInit(){
-             this.gatewayCommunicationService.getResponseUpdate(this.gatewayCommunication.GatewayTransactionId).subscribe(response =&gt; {
-             });
-          }
-     }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gatewayTransactionId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>gatewayTransactionId</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/GatewayCommunication.html" target="_self" >Observable&lt;GatewayCommunication&gt;</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an Observable containing the gateway communication if response received otherwise null</p>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/GatewayCommunication.html" target="_self" >Observable&lt;GatewayCommunication&gt;</a></code>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    </div>
+                    <div class="io-description">
+                        <p>an Observable containing the gateway communication if response received otherwise null</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -212,16 +219,9 @@ and also updating payment method cache</p>
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type
-                            </b>
+                            type</b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -247,6 +247,7 @@ and also updating payment method cache</p>
 
 
 
+                   
 
 
 

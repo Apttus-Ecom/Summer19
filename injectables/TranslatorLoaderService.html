@@ -67,6 +67,7 @@ It also provides support for language translation of labels based on the salesfo
             </p>
 
 
+
             <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
@@ -157,7 +158,7 @@ It also provides support for language translation of labels based on the salesfo
                                                         <td>storefrontService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/StorefrontService.html" target="_self" >StorefrontService</a></code>
+                                                                        <code><a href="../injectables/StorefrontService.html" target="_self" >StorefrontService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -181,7 +182,7 @@ It also provides support for language translation of labels based on the salesfo
                                                         <td>userService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -193,7 +194,7 @@ It also provides support for language translation of labels based on the salesfo
                                                         <td>httpClient</td>
                                                   
                                                         <td>
-                                                                    <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -212,270 +213,270 @@ It also provides support for language translation of labels based on the salesfo
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getTranslation"></a>
-                        <span class="name">
-                            <b>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTranslation"></a>
+                    <span class="name">
+                        <b>
                             getTranslation
-                            </b>
-                            <a href="#getTranslation"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#getTranslation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>getTranslation(lang: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Retrieves translated labels based on current language and by configuring storefront value</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">     import { TranslatorLoaderService } from &#39;&#64;apttus/ecommerce&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves translated labels based on current language and by configuring storefront value</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+     import { TranslatorLoaderService } from &#39;@apttus/ecommerce&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  &#64;NgModule({
+    declarations: [
+      AppComponent
+    ],
+    imports: [
+      TranslateModule.forRoot({
+        loader: {provide: TranslateLoader, useClass: TranslatorLoaderService}
+    })
+    ],
+    providers: [,
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }
+```</code></pre></div></div>
 
-      &#64;NgModule({
-        declarations: [
-          AppComponent
-        ],
-        imports: [
-          TranslateModule.forRoot({
-            loader: {provide: TranslateLoader, useClass: TranslatorLoaderService}
-        })
-        ],
-        providers: [,
-        bootstrap: [AppComponent]
-      })
-      export class AppModule { }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>lang</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>lang</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>parameter specifying the language for translation.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an Observable containing the json string</p>
+                                    <td>
+                                        <p>parameter specifying the language for translation.</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="isValidURL"></a>
-                        <span class="name">
-                            <b>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an Observable containing the json string</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isValidURL"></a>
+                    <span class="name">
+                        <b>
                             isValidURL
-                            </b>
-                            <a href="#isValidURL"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#isValidURL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>isValidURL(value)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>This method take value and validate if that&#39;s a valid URL or not.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method take value and validate if that&#39;s a valid URL or not.</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>value</td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
 
-                                                        <td>
-                                                                <code><p>parameter to check for valid URL</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="ngOnDestroy"></a>
-                        <span class="name">
-                            <b>
+
+                                    <td>
+                                        <p>parameter to check for valid URL</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
                             ngOnDestroy
-                            </b>
-                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>ngOnDestroy()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="translateData"></a>
-                        <span class="name">
-                            <b>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="translateData"></a>
+                    <span class="name">
+                        <b>
                             translateData
-                            </b>
-                            <a href="#translateData"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#translateData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>translateData(recordList: Array<AObject>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method provides locale data translation for categories, products and product attribute groups based on the salesforce translation object.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method provides locale data translation for categories, products and product attribute groups based on the salesforce translation object.</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>recordList</td>
-                                                        <td>
-                                                                    <code>Array&lt;AObject&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>recordList</td>
+                                    <td>
+                                            <code>Array&lt;AObject&gt;</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>An array of Category, Product or Product Attribute Group data to be translated.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;Array&lt;any&gt;&gt;</code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an observable containing an array of Categories, Products or Product Attribute Groups.</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    <td>
+                                        <p>An array of Category, Product or Product Attribute Group data to be translated.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;any&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable containing an array of Categories, Products or Product Attribute Groups.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -488,16 +489,9 @@ It also provides support for language translation of labels based on the salesfo
                         <a name="productDataSubscription"></a>
                         <span class="name">
                             <b>
-                            productDataSubscription
-                            </b>
+                            productDataSubscription</b>
                             <a href="#productDataSubscription"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>productDataSubscription:     <code>Subscription</code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -524,6 +518,7 @@ It also provides support for language translation of labels based on the salesfo
 
 
 
+                   
 
 
 

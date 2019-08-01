@@ -65,6 +65,13 @@
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../injectables/AssetService.html" target="_self" >AssetServiceCore</a></code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -126,825 +133,830 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="amendAssets"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="amendAssets"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             amendAssets
-                            </b>
-                            <a href="#amendAssets"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>amendAssets(assetIds: Array<string>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#amendAssets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>amendAssets(assetIds: Array<string>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>The primary method to amend the existing assets.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">     import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The primary method to amend the existing assets.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+     import { AssetService } from &#39;@apttus/ecommerce&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
+      lineItemMap: Array&lt;any&gt;;
+      lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
 
-     export class MyComponent implements OnInit{
+      constructor(private assetService: AssetService){}
+
+      ngOnInit(){
+          this.assetService.amendAssets(assetIds: Array&lt;string&gt;)subscribe(lineItemMap =&gt; {...});
+          // or
+          this.lineItemMap$ = this.assetService.amendAssets(assetIds: Array&lt;string&gt;);
+      }
+ }
+```</code></pre></div></div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>assetIds</td>
+                                    <td>
+                                            <code>Array&lt;string&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>list of asset ids to amend</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Observable&lt;Array<any>&gt; returns an observable list of all line items with all their field values.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelAssets"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            cancelAssets
+                        </b>
+                        <a href="#cancelAssets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cancelAssets(assetIds: Array<string>, cancelDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The primary method to terminate the existing assets.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+         import { AssetService } from &#39;@apttus/ecommerce&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">     export class MyComponent implements OnInit{
           lineItemMap: Array&lt;any&gt;;
           lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
 
           constructor(private assetService: AssetService){}
 
           ngOnInit(){
-              this.assetService.amendAssets(assetIds: Array&lt;string&gt;)subscribe(lineItemMap =&gt; {...});
+              this.assetService.cancelAssets(assetIds: Array&lt;string&gt;, cancelDate: Date)subscribe(lineItemMap =&gt; {...});
               // or
-              this.lineItemMap$ = this.assetService.amendAssets(assetIds: Array&lt;string&gt;);
+              this.lineItemMap$ = this.assetService.cancelAssets(assetIds: Array&lt;string&gt;, cancelDate: Date);
           }
-     }</code></pre></div></div>
+     }
+    ```</code></pre></div></div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>assetIds</td>
-                                                        <td>
-                                                                    <code>Array&lt;string&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>assetIds</td>
+                                    <td>
+                                            <code>Array&lt;string&gt;</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>list of asset ids to amend</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>Observable&lt;Array<any>&gt; returns an observable list of all line items with all their field values.</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="cancelAssets"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            cancelAssets
-                            </b>
-                            <a href="#cancelAssets"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>cancelAssets(assetIds: Array<string>, cancelDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
-                    </td>
-                </tr>
+                                    <td>
+                                        No
+                                    </td>
 
 
+                                    <td>
+                                        <p>list of asset ids to terminate</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>cancelDate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>The primary method to terminate the existing assets.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">         import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
+                                    <td>
+                                        <p>cancel date for asset termination</p>
 
-         export class MyComponent implements OnInit{
-              lineItemMap: Array&lt;any&gt;;
-              lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
-              constructor(private assetService: AssetService){}
+                    </div>
+                    <div class="io-description">
+                        <p>Observable&lt;Array<any>&gt; returns an observable list of all line items with all their field values.</p>
 
-              ngOnInit(){
-                  this.assetService.cancelAssets(assetIds: Array&lt;string&gt;, cancelDate: Date)subscribe(lineItemMap =&gt; {...});
-                  // or
-                  this.lineItemMap$ = this.assetService.cancelAssets(assetIds: Array&lt;string&gt;, cancelDate: Date);
-              }
-         }</code></pre></div></div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>assetIds</td>
-                                                        <td>
-                                                                    <code>Array&lt;string&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                                <code><p>list of asset ids to terminate</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>cancelDate</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                                <code><p>cancel date for asset termination</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>Observable&lt;Array<any>&gt; returns an observable list of all line items with all their field values.</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getAssetLineItemForAccount"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAssetLineItemForAccount"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getAssetLineItemForAccount
-                            </b>
-                            <a href="#getAssetLineItemForAccount"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getAssetLineItemForAccount(accountId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, adtlConditions?: Array<ACondition>, sort?: Array<ASort>, pageInfo?: APageInfo)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getAssetLineItemForAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAssetLineItemForAccount(accountId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, adtlConditions?: Array<ACondition>, sort?: Array<ASort>, pageInfo?: APageInfo)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>The primary method to get the asset line items for given account.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">     import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The primary method to get the asset line items for given account.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+     import { AssetService } from &#39;@apttus/ecommerce&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
+      assetLineItems: Array&lt;AssetLineItem&gt;;
+      assetLineItems$: Observable&lt;Array&lt;AssetLineItem&gt;&gt;;
 
-     export class MyComponent implements OnInit{
-          assetLineItems: Array&lt;AssetLineItem&gt;;
-          assetLineItems$: Observable&lt;Array&lt;AssetLineItem&gt;&gt;;
+      constructor(private assetService: AssetService){}
 
-          constructor(private assetService: AssetService){}
+      ngOnInit(){
+          this.assetService.getAssetLineItemForAccount().subscribe(assetLineItems =&gt; {...});
+          // or
+          this.assetLineItems$ = this.assetService.getAssetLineItemForAccount();
+          // or
+          this.assetService.getAssetLineItemForAccount(accountId: string, adtlConditions: Array&lt;ACondition&gt;)subscribe(assetLineItems =&gt; {...});
+          // or
+          this.assetLineItems$ = this.assetService.getAssetLineItemForAccount(accountId: string, adtlConditions: Array&lt;ACondition&gt;);
+      }
+ }
+```</code></pre></div></div>
 
-          ngOnInit(){
-              this.assetService.getAssetLineItemForAccount().subscribe(assetLineItems =&gt; {...});
-              // or
-              this.assetLineItems$ = this.assetService.getAssetLineItemForAccount();
-              // or
-              this.assetService.getAssetLineItemForAccount(accountId: string, adtlConditions: Array&lt;ACondition&gt;)subscribe(assetLineItems =&gt; {...});
-              // or
-              this.assetLineItems$ = this.assetService.getAssetLineItemForAccount(accountId: string, adtlConditions: Array&lt;ACondition&gt;);
-          }
-     }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>accountId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>accountId</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
+                                    <td>
+                                        Yes
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>optional accountId, if accountId null then account details for logged in user is used to retrieve asset line item records</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>adtlConditions</td>
-                                                        <td>
-                                                                    <code>Array&lt;ACondition&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
 
-                                                        <td>
-                                                                <code><p>optional list of ACondition to filter asset line item records</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>sort</td>
-                                                        <td>
-                                                                    <code>Array&lt;ASort&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
+                                    <td>
+                                        <p>optional accountId, if accountId null then account details for logged in user is used to retrieve asset line item records</p>
 
-                                                        <td>
-                                                                <code><p>optional list of ASort objects for sorting the results.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>pageInfo</td>
-                                                        <td>
-                                                                    <code>APageInfo</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>adtlConditions</td>
+                                    <td>
+                                            <code>Array&lt;ACondition&gt;</code>
+                                    </td>
 
-                                                        <td>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/AssetLineItemExtended.html" target="_self" >Observable&lt;Array&lt;AssetLineItemExtended&gt;&gt;</a></code>
+                                    <td>
+                                        Yes
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>Observable&lt;Array<AssetLineItem>&gt; returns an observable list of asset line item records</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getBundleItemsForAssetLineItem"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    <td>
+                                        <p>optional list of ACondition to filter asset line item records</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>sort</td>
+                                    <td>
+                                            <code>Array&lt;ASort&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>optional list of ASort objects for sorting the results.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>pageInfo</td>
+                                    <td>
+                                            <code>APageInfo</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;AssetLineItemExtended&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Observable&lt;Array<AssetLineItem>&gt; returns an observable list of asset line item records</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBundleItemsForAssetLineItem"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getBundleItemsForAssetLineItem
-                            </b>
-                            <a href="#getBundleItemsForAssetLineItem"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getBundleItemsForAssetLineItem(assetLineItem: <a href="../classes/AssetLineItemExtended.html">string | AssetLineItemExtended</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getBundleItemsForAssetLineItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBundleItemsForAssetLineItem(assetLineItem: string | AssetLineItemExtended)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>This method returns the bundled options for the asset line item passed.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method returns the bundled options for the asset line item passed.</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>assetLineItem</td>
-                                                        <td>
-                                                                    <code><a href="../classes/AssetLineItemExtended.html" target="_self" >string | AssetLineItemExtended</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>assetLineItem</td>
+                                    <td>
+                                            <code>string | AssetLineItemExtended</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>Instance of the quote line item passed.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/AssetLineItemExtended.html" target="_self" >Observable&lt;Array&lt;AssetLineItemExtended&gt;&gt;</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>An observable containing the array of asset line items for a given asset line item.</p>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="groupFormItems"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    <td>
+                                        <p>Instance of the quote line item passed.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;AssetLineItemExtended&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable containing the array of asset line items for a given asset line item.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupFormItems"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             groupFormItems
-                            </b>
-                            <a href="#groupFormItems"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>groupFormItems(items: Array<any>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#groupFormItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>groupFormItems(items: Array<any>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>items</td>
-                                                        <td>
-                                                                    <code>Array&lt;any&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>items</td>
+                                    <td>
+                                            <code>Array&lt;any&gt;</code>
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="incrementAssets"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="incrementAssets"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             incrementAssets
-                            </b>
-                            <a href="#incrementAssets"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>incrementAssets(incrementAssetDOs: <a href="../interfaces/IncrementAssetDO.html">Array<IncrementAssetDO></a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#incrementAssets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>incrementAssets(incrementAssetDOs: <a href="../interfaces/IncrementAssetDO.html">Array<IncrementAssetDO></a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>The primary method to increment the existing assets.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">         import { AssetService, IncrementAssetDO, IncrementLineAction } from &#39;&#64;apttus/ecommerce&#39;;
-
-         export class MyComponent implements OnInit{
-              lineItemMap: Array&lt;any&gt;;
-              lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
-
-              constructor(private assetService: AssetService){}
-
-              ngOnInit(){
-                  this.assetService.incrementAssets(incrementAssetDO: Array&lt;IncrementAssetDO&gt;)subscribe(lineItemMap =&gt; {...});
-                  // or
-                  this.lineItemMap$ = this.assetService.incrementAssets(incrementAssetDO: Array&lt;IncrementAssetDO&gt;);
-              }
-         }</code></pre></div></div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>incrementAssetDOs</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/IncrementAssetDO.html" target="_self" >Array&lt;IncrementAssetDO&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                                <code><p>list of increment asset data objects for incrementing the existing assets</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>Observable&lt;Array<any>&gt; returns an observable list of all line items with all their field values.</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="renewAssets"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            renewAssets
-                            </b>
-                            <a href="#renewAssets"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>renewAssets(assetIds: Array<string>, renewEndDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, renewTerm: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, farthestAssetEndDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>The primary method to renew the existing assets.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">         import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
-
-         export class MyComponent implements OnInit{
-              lineItemMap: Array&lt;any&gt;;
-              lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
-
-              constructor(private assetService: AssetService){}
-
-              ngOnInit(){
-                  this.assetService.renewAssets(assetIds: Array&lt;string&gt;, renewEndDate: Date, renewTerm: number, cartId: string, farthestAssetEndDate: boolean)subscribe(lineItemMap =&gt; {...});
-                  // or
-                  this.lineItemMap$ = this.assetService.renewAssets(assetIds: Array&lt;string&gt;, renewEndDate: Date, renewTerm: number, cartId: string, farthestAssetEndDate: boolean);
-              }
-         }</code></pre></div></div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>assetIds</td>
-                                                        <td>
-                                                                    <code>Array&lt;string&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                                <code><p>list of asset ids to renew</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>renewEndDate</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                                <code><p>renew end date for asset renewal</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>renewTerm</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                                <code><p>renew term for asset renewal</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>farthestAssetEndDate</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                                <code><p>farthest asset end date for asset renewal</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/CartItem.html" target="_self" >Observable&lt;Array&lt;CartItem&gt;&gt;</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    <p>Observable&lt;Array<AssetLineItem>&gt; returns an observable list of all line items with all their field values.</p>
-
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="swapAssets"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            swapAssets
-                            </b>
-                            <a href="#swapAssets"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>swapAssets(assetIds: Array<string>, productIds: Array<string>, newStartDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>The primary method to swap the existing assets. Creates line items for the cancelled asset line item and new line items for swapped product.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">     import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
-
-     export class MyComponent implements OnInit{
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The primary method to increment the existing assets.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+         import { AssetService, IncrementAssetDO, IncrementLineAction } from &#39;@apttus/ecommerce&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">     export class MyComponent implements OnInit{
           lineItemMap: Array&lt;any&gt;;
           lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
 
           constructor(private assetService: AssetService){}
 
           ngOnInit(){
-              this.assetService.swapAssets(assetIds: Array&lt;string&gt;)subscribe(lineItemMap =&gt; {...});
+              this.assetService.incrementAssets(incrementAssetDO: Array&lt;IncrementAssetDO&gt;)subscribe(lineItemMap =&gt; {...});
               // or
-              this.lineItemMap$ = this.assetService.swapAssets(assetIds: Array&lt;string&gt;);
+              this.lineItemMap$ = this.assetService.incrementAssets(incrementAssetDO: Array&lt;IncrementAssetDO&gt;);
           }
-     }</code></pre></div></div>
+     }
+    ```</code></pre></div></div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>assetIds</td>
-                                                        <td>
-                                                                    <code>Array&lt;string&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>incrementAssetDOs</td>
+                                    <td>
+                                                <code><a href="../interfaces/IncrementAssetDO.html" target="_self" >Array&lt;IncrementAssetDO&gt;</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>list of asset ids which are swapped</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>productIds</td>
-                                                        <td>
-                                                                    <code>Array&lt;string&gt;</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>list of ids of the product with which the asset is being swapped</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>newStartDate</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
 
-                                                        <td>
-                                                                <code><p>new asset start date on swapping</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+                                    <td>
+                                        <p>list of increment asset data objects for incrementing the existing assets</p>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>Observable&lt;Array<any>&gt; returns an observable list of all line items with all their field values.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    </div>
+                    <div class="io-description">
+                        <p>Observable&lt;Array<any>&gt; returns an observable list of all line items with all their field values.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="renewAssets"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            renewAssets
+                        </b>
+                        <a href="#renewAssets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>renewAssets(assetIds: Array<string>, renewEndDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, renewTerm: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, farthestAssetEndDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The primary method to renew the existing assets.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+         import { AssetService } from &#39;@apttus/ecommerce&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">     export class MyComponent implements OnInit{
+          lineItemMap: Array&lt;any&gt;;
+          lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
+
+          constructor(private assetService: AssetService){}
+
+          ngOnInit(){
+              this.assetService.renewAssets(assetIds: Array&lt;string&gt;, renewEndDate: Date, renewTerm: number, cartId: string, farthestAssetEndDate: boolean)subscribe(lineItemMap =&gt; {...});
+              // or
+              this.lineItemMap$ = this.assetService.renewAssets(assetIds: Array&lt;string&gt;, renewEndDate: Date, renewTerm: number, cartId: string, farthestAssetEndDate: boolean);
+          }
+     }
+    ```</code></pre></div></div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>assetIds</td>
+                                    <td>
+                                            <code>Array&lt;string&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>list of asset ids to renew</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>renewEndDate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>renew end date for asset renewal</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>renewTerm</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>renew term for asset renewal</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>farthestAssetEndDate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>farthest asset end date for asset renewal</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;CartItem&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Observable&lt;Array<AssetLineItem>&gt; returns an observable list of all line items with all their field values.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="swapAssets"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            swapAssets
+                        </b>
+                        <a href="#swapAssets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>swapAssets(assetIds: Array<string>, productIds: Array<string>, newStartDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The primary method to swap the existing assets. Creates line items for the cancelled asset line item and new line items for swapped product.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+     import { AssetService } from &#39;@apttus/ecommerce&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
+      lineItemMap: Array&lt;any&gt;;
+      lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
+
+      constructor(private assetService: AssetService){}
+
+      ngOnInit(){
+          this.assetService.swapAssets(assetIds: Array&lt;string&gt;)subscribe(lineItemMap =&gt; {...});
+          // or
+          this.lineItemMap$ = this.assetService.swapAssets(assetIds: Array&lt;string&gt;);
+      }
+ }
+```</code></pre></div></div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>assetIds</td>
+                                    <td>
+                                            <code>Array&lt;string&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>list of asset ids which are swapped</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>productIds</td>
+                                    <td>
+                                            <code>Array&lt;string&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>list of ids of the product with which the asset is being swapped</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>newStartDate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>new asset start date on swapping</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Observable&lt;Array<any>&gt; returns an observable list of all line items with all their field values.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
 
     </div>
 
@@ -958,6 +970,7 @@
 
 
 
+                   
 
 
 

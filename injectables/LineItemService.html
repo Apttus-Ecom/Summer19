@@ -58,6 +58,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>AObjectService</code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -95,166 +102,165 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getOptionsForItem"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOptionsForItem"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getOptionsForItem
-                            </b>
-                            <a href="#getOptionsForItem"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getOptionsForItem(item: <a href="../classes/QuoteLineItem.html">CartItem | AssetLineItem | QuoteLineItem | OrderLineItem</a>, relatedTo?: <a href="../classes/Quote.html">Cart | Order | Quote</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getOptionsForItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getOptionsForItem(item: CartItem | AssetLineItem | QuoteLineItem | OrderLineItem, relatedTo?: Cart | Order | Quote)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method takes a line item and returns the full list of line items related to it. Can be any line item within the bundle.</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method takes a line item and returns the full list of line items related to it. Can be any line item within the bundle.</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>item</td>
-                                                        <td>
-                                                                    <code><a href="../classes/QuoteLineItem.html" target="_self" >CartItem | AssetLineItem | QuoteLineItem | OrderLineItem</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                            <code>CartItem | AssetLineItem | QuoteLineItem | OrderLineItem</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>the primary line item to get the related cart items for</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>relatedTo</td>
-                                                        <td>
-                                                                    <code><a href="../classes/Quote.html" target="_self" >Cart | Order | Quote</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>An optional context object to avoid additional network callouts</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/QuoteLineItem.html" target="_self" >Observable&lt;Array&lt;CartItem | AssetLineItem | QuoteLineItem | OrderLineItem&gt;&gt;</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="groupItems"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    <td>
+                                        <p>the primary line item to get the related cart items for</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>relatedTo</td>
+                                    <td>
+                                            <code>Cart | Order | Quote</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>An optional context object to avoid additional network callouts</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;CartItem | AssetLineItem | QuoteLineItem | OrderLineItem&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupItems"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             groupItems
-                            </b>
-                            <a href="#groupItems"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>groupItems(items: <a href="../classes/QuoteLineItem.html">Array<CartItem | AssetLineItem | QuoteLineItem | OrderLineItem></a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#groupItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>groupItems(items: Array<CartItem | AssetLineItem | QuoteLineItem | OrderLineItem>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>items</td>
-                                                        <td>
-                                                                    <code><a href="../classes/QuoteLineItem.html" target="_self" >Array&lt;CartItem | AssetLineItem | QuoteLineItem | OrderLineItem&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>items</td>
+                                    <td>
+                                            <code>Array&lt;CartItem | AssetLineItem | QuoteLineItem | OrderLineItem&gt;</code>
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../interfaces/ItemGroup.html" target="_self" >Array&lt;ItemGroup&gt;</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ItemGroup.html" target="_self" >Array&lt;ItemGroup&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
 
     </div>
 
@@ -268,6 +274,7 @@
 
 
 
+                   
 
 
 

@@ -65,6 +65,13 @@
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>AObjectService</code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -124,241 +131,240 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="saleCaptureMethod"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saleCaptureMethod"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             saleCaptureMethod
-                            </b>
-                            <a href="#saleCaptureMethod"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>saleCaptureMethod(transactionDetails: <a href="../classes/PaymentTransaction.html">PaymentTransaction</a>, gatewayTransaction: <a href="../classes/GatewayTransaction.html">GatewayTransaction</a>, gatewayCommunication: <a href="../classes/GatewayCommunication.html">GatewayCommunication</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#saleCaptureMethod"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saleCaptureMethod(transactionDetails: <a href="../classes/PaymentTransaction.html">PaymentTransaction</a>, gatewayTransaction: <a href="../classes/GatewayTransaction.html">GatewayTransaction</a>, gatewayCommunication: <a href="../classes/GatewayCommunication.html">GatewayCommunication</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>This is a silent method I-FRAME for payment</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is a silent method I-FRAME for payment</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>transactionDetails</td>
-                                                        <td>
-                                                                    <code><a href="../classes/PaymentTransaction.html" target="_self" >PaymentTransaction</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>transactionDetails</td>
+                                    <td>
+                                                <code><a href="../classes/PaymentTransaction.html" target="_self" >PaymentTransaction</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>payment related transaction details</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>gatewayTransaction</td>
-                                                        <td>
-                                                                    <code><a href="../classes/GatewayTransaction.html" target="_self" >GatewayTransaction</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>new GatewayTransaction()</code>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>gateway transaction details to store</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>gatewayCommunication</td>
-                                                        <td>
-                                                                    <code><a href="../classes/GatewayCommunication.html" target="_self" >GatewayCommunication</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>new GatewayCommunication()</code>
-                                                        </td>
+                                    <td>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>gateway communication details to store</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;Array&lt;any&gt;&gt;</code>
+                                    <td>
+                                        <p>payment related transaction details</p>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>observable of array including object and gateway transaction string to trace payment response</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>gatewayTransaction</td>
+                                    <td>
+                                                <code><a href="../classes/GatewayTransaction.html" target="_self" >GatewayTransaction</a></code>
+                                    </td>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="silentOrderPayment"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>new GatewayTransaction()</code>
+                                    </td>
+
+                                    <td>
+                                        <p>gateway transaction details to store</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>gatewayCommunication</td>
+                                    <td>
+                                                <code><a href="../classes/GatewayCommunication.html" target="_self" >GatewayCommunication</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>new GatewayCommunication()</code>
+                                    </td>
+
+                                    <td>
+                                        <p>gateway communication details to store</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;any&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>observable of array including object and gateway transaction string to trace payment response</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="silentOrderPayment"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             silentOrderPayment
-                            </b>
-                            <a href="#silentOrderPayment"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>silentOrderPayment(transactionDetails: <a href="../classes/PaymentTransaction.html">PaymentTransaction</a>, gatewayTransaction: <a href="../classes/GatewayTransaction.html">GatewayTransaction</a>, gatewayCommunication: <a href="../classes/GatewayCommunication.html">GatewayCommunication</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#silentOrderPayment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>silentOrderPayment(transactionDetails: <a href="../classes/PaymentTransaction.html">PaymentTransaction</a>, gatewayTransaction: <a href="../classes/GatewayTransaction.html">GatewayTransaction</a>, gatewayCommunication: <a href="../classes/GatewayCommunication.html">GatewayCommunication</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>This is a silent method I-FRAME for payment</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is a silent method I-FRAME for payment</p>
 </div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>transactionDetails</td>
-                                                        <td>
-                                                                    <code><a href="../classes/PaymentTransaction.html" target="_self" >PaymentTransaction</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>transactionDetails</td>
+                                    <td>
+                                                <code><a href="../classes/PaymentTransaction.html" target="_self" >PaymentTransaction</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>payment related transaction details</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>gatewayTransaction</td>
-                                                        <td>
-                                                                    <code><a href="../classes/GatewayTransaction.html" target="_self" >GatewayTransaction</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>new GatewayTransaction()</code>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>gateway transaction details to store</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>gatewayCommunication</td>
-                                                        <td>
-                                                                    <code><a href="../classes/GatewayCommunication.html" target="_self" >GatewayCommunication</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>new GatewayCommunication()</code>
-                                                        </td>
+                                    <td>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>gateway communication details to store</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;Array&lt;any&gt;&gt;</code>
+                                    <td>
+                                        <p>payment related transaction details</p>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>observable of array including object and gateway transaction string to trace payment response</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>gatewayTransaction</td>
+                                    <td>
+                                                <code><a href="../classes/GatewayTransaction.html" target="_self" >GatewayTransaction</a></code>
+                                    </td>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>new GatewayTransaction()</code>
+                                    </td>
+
+                                    <td>
+                                        <p>gateway transaction details to store</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>gatewayCommunication</td>
+                                    <td>
+                                                <code><a href="../classes/GatewayCommunication.html" target="_self" >GatewayCommunication</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>new GatewayCommunication()</code>
+                                    </td>
+
+                                    <td>
+                                        <p>gateway communication details to store</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;any&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>observable of array including object and gateway transaction string to trace payment response</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -372,16 +378,9 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Protected</span>
-                            gatewayCommunicationService
-                            </b>
+                            gatewayCommunicationService</b>
                             <a href="#gatewayCommunicationService"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>gatewayCommunicationService:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -401,16 +400,9 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Protected</span>
-                            gatewayTransactionService
-                            </b>
+                            gatewayTransactionService</b>
                             <a href="#gatewayTransactionService"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>gatewayTransactionService:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -429,16 +421,9 @@
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type
-                            </b>
+                            type</b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -464,6 +449,7 @@
 
 
 
+                   
 
 
 

@@ -58,6 +58,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>AObjectService</code>
+            </p>
+
 
             <section>
     <h3 id="index">Index</h3>
@@ -105,122 +112,122 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="addAttachment"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addAttachment"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             addAttachment
-                            </b>
-                            <a href="#addAttachment"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>addAttachment(attachment: <a href="../interfaces/Attachment.html">QuoteAttachment</a>, parentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#addAttachment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addAttachment(attachment: <a href="../interfaces/Attachment.html">QuoteAttachment</a>, parentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
 
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Method returns an observable of array of string.</p>
-<h3 id="example-">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">      import { QuoteAttachment, AttachmentService } from &#39;&#64;apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method returns an observable of array of string.</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { QuoteAttachment, AttachmentService } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+       attachments: Array&lt;string&gt;;
+       attachments$: Observable&lt;Array&lt;string&gt;&gt;;
 
-      export class MyComponent implements OnInit{
-           attachments: Array&lt;string&gt;;
-           attachments$: Observable&lt;Array&lt;string&gt;&gt;;
+       constructor(private attachmentService: AttachmentService){}
 
-           constructor(private attachmentService: AttachmentService){}
+       addAttachment(attachmentObj: QuoteAttachment, parentId: string){
+            this.attachmentService.addAttachment(attachmentObj, parentId).subscribe(res =&gt; attachments = res);
+            // or
+            attachments$ = this.attachmentService.addAttachment(attachmentObj, parentId);
+       }
+  }
+ ```</code></pre></div></div>
 
-           addAttachment(attachmentObj: QuoteAttachment, parentId: string){
-                this.attachmentService.addAttachment(attachmentObj, parentId).subscribe(res =&gt; attachments = res);
-                // or
-                attachments$ = this.attachmentService.addAttachment(attachmentObj, parentId);
-           }
-      }</code></pre></div></div>
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>attachment</td>
+                                    <td>
+                                                <code><a href="../interfaces/Attachment.html" target="_self" >QuoteAttachment</a></code>
+                                    </td>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>attachment</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/Attachment.html" target="_self" >QuoteAttachment</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code>new QuoteAttachment()</code>
-                                                        </td>
+                                    <td>
+                                        No
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>instance of QuoteAttachment is required to create attachment.It has the details of attachement object.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>parentId</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                        </td>
+                                    <td>
+                                        <code>new QuoteAttachment()</code>
+                                    </td>
 
-                                                        <td>
-                                                                <code><p>type string is required to create attachment. Id can be quoteId or OrderID.</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;Array&lt;string&gt;&gt;</code>
+                                    <td>
+                                        <p>instance of QuoteAttachment is required to create attachment.It has the details of attachement object.</p>
 
-                            </div>
-                                <div class="io-description">
-                                    <p>an array of string of id&#39;s in an observable for a given attachment.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>parentId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>type string is required to create attachment. Id can be quoteId or OrderID.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;string&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an array of string of id&#39;s in an observable for a given attachment.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -233,16 +240,9 @@
                         <a name="type"></a>
                         <span class="name">
                             <b>
-                            type
-                            </b>
+                            type</b>
                             <a href="#type"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>type:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -268,6 +268,7 @@
 
 
 
+                   
 
 
 
