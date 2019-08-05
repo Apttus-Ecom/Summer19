@@ -691,9 +691,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/SelectedProductCardComponent.html" data-type="entity-link">SelectedProductCardComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/TableRowSubItemComponent.html" data-type="entity-link">TableRowSubItemComponent</a>
-                            </li>
-                            <li class="link">
                                 <a href="components/TaxPopHoverComponent.html" data-type="entity-link">TaxPopHoverComponent</a>
                             </li>
                             <li class="link">
@@ -1295,6 +1292,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/DependentPicklistView.html" data-type="entity-link">DependentPicklistView</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/FeatureTableData.html" data-type="entity-link">FeatureTableData</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/HeaderView.html" data-type="entity-link">HeaderView</a>
                             </li>
                             <li class="link">
@@ -1353,6 +1353,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/ProductDetailsState.html" data-type="entity-link">ProductDetailsState</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ProductFeatureValue.html" data-type="entity-link">ProductFeatureValue</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ProductQuantityMap.html" data-type="entity-link">ProductQuantityMap</a>
