@@ -53,7 +53,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         <a href="additional-documentation/apttus-copyright-disclaimer.html" data-type="entity-link" data-context-id="additional">Apttus Copyright Disclaimer</a>
                                     </li>
                                     <li class="link ">
-                                        <a href="additional-documentation/spring-migration.html" data-type="entity-link" data-context-id="additional">Spring Migration</a>
+                                        <a href="additional-documentation/spring-v1901-to-summer-v1902.html" data-type="entity-link" data-context-id="additional">Spring v1901 to Summer v1902</a>
                                     </li>
                         </ul>
                     </li>
