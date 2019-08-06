@@ -568,9 +568,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/ChartComponent.html" data-type="entity-link">ChartComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/CommentsComponent.html" data-type="entity-link">CommentsComponent</a>
-                            </li>
-                            <li class="link">
                                 <a href="components/CompareProductCardComponent.html" data-type="entity-link">CompareProductCardComponent</a>
                             </li>
                             <li class="link">
