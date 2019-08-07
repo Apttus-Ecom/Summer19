@@ -93,8 +93,10 @@
 <p>Some components have been updated with different inputs which will need to be changed in order to work with the new libraries.</p>
 <h3 id="inputselectcomponent"><code>InputSelectComponent</code></h3>
 <p>The InputSelectComponent no longer uses describe information to form the list of select options. The updated version of the component simply takes in a list of elements and uses them for the select. Use the <code>picklistValues</code> input to pass in your list of values.</p>
+<hr>
 <h3 id="productcardcomponent"><code>ProductCardComponent</code></h3>
 <p>The ProductCardComponent no longer has a <code>constraintRuleList</code> input. This must be removed from existing templates.</p>
+<hr>
 <h3 id="pricecomponent"><code>PriceComponent</code></h3>
 <p>The PriceComponent no longer has the <code>options</code> or <code>attributes</code> inputs. New inputs include:</p>
 <ul>
@@ -102,10 +104,24 @@
 <li><code>bundle</code></li>
 <li><code>term</code></li>
 </ul>
+<hr>
 <h3 id="addtocartcomponent"><code>AddToCartComponent</code></h3>
 <p>The AddToCartComponent no longer has the <code>productAttributes</code>, <code>productOptions</code>, or <code>constraintRuleList</code> inputs.</p>
+<hr>
 <h3 id="productconfigurationcomponent"><code>ProductConfigurationComponent</code></h3>
-<p>All inputs for the ProductConfigurationComponent have changed. Please view the component documentation for details on how to use this component.</p>
+<p>All inputs for the ProductConfigurationComponent have changed. Please view the <a href="../components/ProductConfigurationComponent.html">component documentation</a> for details on how to use this component.</p>
+<hr>
+<h3 id="productconfigurationsummarycomponent"><code>ProductConfigurationSummaryComponent</code></h3>
+<p>All inputs for the ProductConfigurationSummaryComponent have changed. Please view the <a href="../components/ProductConfigurationSummaryComponent.html">component documentation</a> for details on how to use this component.</p>
+<hr>
+<h3 id="promotionappliedtolineitemcomponent"><code>PromotionAppliedtoLineitemComponent</code></h3>
+<p>The PromotionAppliedtoLineitemComponent has been removed.</p>
+<hr>
+<h3 id="promotioncomponent"><code>PromotionComponent</code></h3>
+<p>The PromotionComponent has changed the name of its input from <code>appliedpromos</code> to <code>cart</code>.</p>
+<hr>
+<h3 id="assetlistcomponent"><code>AssetListComponent</code></h3>
+<p>The <code>assets</code> input on AssetListComponent has removed. The <code>pageAssets</code> input now accepts an array of <code>AccordionRows</code> objects instead of an array of AssetLineItems.</p>
 <h2 id="file-updates">File Updates</h2>
 <h3 id="environmentts--environmentprodts"><code>environment.ts</code> &amp; <code>environment.prod.ts</code></h3>
 <p>Change the name of the property <code>cartDebounceTime</code> to <code>debounceTime</code>.</p>
@@ -144,7 +160,8 @@
       }
     }
   }
-}</code></pre></div><hr>
+}</code></pre></div><h2 id="default-template-specific-changes">Default Template Specific Changes</h2>
+<p>If you are using the default template the following is a list of all the files that must be updated with the changes needed in order to use the new Apttus libraries.</p>
 <h3 id="appmodulets"><code>app.module.ts</code></h3>
 <p>Remove the following modules:</p>
 <ul>
