@@ -155,22 +155,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method returns an observable containing array of product attribute groups for the list of products/product Ids passed.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { ProductAttributeGroupService, Product, ProductAttributeGroup } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       attributeGroupList: Array&lt;ProductAttributeGroup&gt;;
-       attributeGroupList$: Observable&lt;Array&lt;ProductAttributeGroup&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { ProductAttributeGroupService, Product, ProductAttributeGroup } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private productAttributeGroupService: ProductAttributeGroupService){}
+export class MyComponent implements OnInit{
+    attributeGroupList: Array&lt;ProductAttributeGroup&gt;;
+    attributeGroupList$: Observable&lt;Array&lt;ProductAttributeGroup&gt;&gt;;
 
-       getProductAttributeGroups(productList: Array&lt;string | Product&gt;){
-            this.productAttributeGroupService.getProductAttributeGroups(productList).subscribe(attributeGroups =&gt; this.attributeGroupList = attributeGroups);
-            // or
-            this.attributeGroupList$ = this.productAttributeGroupService.getProductAttributeGroups(productList);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private productAttributeGroupService: ProductAttributeGroupService){}
+
+    getProductAttributeGroups(productList: Array&lt;string | Product&gt;){
+        this.productAttributeGroupService.getProductAttributeGroups(productList).subscribe(attributeGroups =&gt; this.attributeGroupList = attributeGroups);
+        // or
+        this.attributeGroupList$ = this.productAttributeGroupService.getProductAttributeGroups(productList);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

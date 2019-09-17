@@ -144,17 +144,16 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method to compute tax using &#39;computeTaxForCart(cartId)&#39; CPQ API</p>
 <h3 id="example">Example:</h3>
-<p>  ```typescript
-         import { TaxService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">     export class MyComponent implements OnInit{
+<div><pre class="line-numbers"><code class="language-typescript">import { TaxService } from &#39;&#64;apttus/ecommerce&#39;;
 
-        constructor(private taxService: TaxService){}
+export class MyComponent implements OnInit{
 
-        ngOnInit(){
-            this.taxService.computeTaxForCart().subscribe(taxResults =&gt; {...})
-        }
-     }
-    ```</code></pre></div></div>
+    constructor(private taxService: TaxService){}
+
+    ngOnInit(){
+        this.taxService.computeTaxForCart().subscribe(taxResults =&gt; {...});
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
@@ -190,8 +189,18 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Retrieves Tax Breakup for a perticular line item</p>
-</div>
+                    <div class="io-description"><p>Retrieves Tax Breakup for a perticular line item.</p>
+<h3 id="example">Example:</h3>
+<div><pre class="line-numbers"><code class="language-typescript">import { TaxService } from &#39;&#64;apttus/ecommerce&#39;;
+
+export class MyComponent implements OnInit{
+
+    constructor(private taxService: TaxService){}
+
+    ngOnInit(){
+        this.taxService.getTaxBreakupForLineItem(lineItemId).subscribe(taxResults =&gt; {...});
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -218,18 +227,7 @@
 
                                     <td>
                                         <p>Line item id for which you want to retrieve tax breakups</p>
-<h3 id="example">Example:</h3>
-<p>```typescript
-         import { TaxService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">     export class MyComponent implements OnInit{
 
-        constructor(private taxService: TaxService){}
-
-        ngOnInit(){
-            this.taxService.getTaxBreakupForLineItem(lineItemId).subscribe(taxResults =&gt; {...})
-        }
-     }
-    ```</code></pre></div>
                                     </td>
                                 </tr>
                             </tbody>

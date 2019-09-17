@@ -175,22 +175,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method to amend the order for given order id</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { OrderService, Order } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       order: any;
-       order$: Observable&lt;any&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { OrderService, Order } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private orderService: OrderService){}
+export class MyComponent implements OnInit{
+    order: any;
+    order$: Observable&lt;any&gt;;
 
-       amendOrder(orderId: string, orderItems: Array&lt;OrderLineItem&gt;){
-            this.orderService.amendOrder(orderId, orderItems).subscribe(o =&gt; this.order = o);
-            // or
-            this.order$ = this.orderService.amendOrder(orderId, orderItems);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private orderService: OrderService){}
+
+    amendOrder(orderId: string, orderItems: Array&lt;OrderLineItem&gt;){
+        this.orderService.amendOrder(orderId, orderItems).subscribe(o =&gt; this.order = o);
+        // or
+        this.order$ = this.orderService.amendOrder(orderId, orderItems);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -281,22 +280,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method to cancel the order for given order id</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { OrderService, Order } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       order: any;
-       order$: Observable&lt;any&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { OrderService, Order } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private orderService: OrderService){}
+export class MyComponent implements OnInit{
+    order: any;
+    order$: Observable&lt;any&gt;;
 
-       cancelOrder(orderId: string){
-            this.orderService.cancelOrder(orderId).subscribe(o =&gt; this.order = o);
-            // or
-            this.order$ = this.orderService.cancelOrder(orderId);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private orderService: OrderService){}
+
+    cancelOrder(orderId: string){
+        this.orderService.cancelOrder(orderId).subscribe(o =&gt; this.order = o);
+        // or
+        this.order$ = this.orderService.cancelOrder(orderId);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -371,24 +369,23 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method converts the current cart into an order record. Will set the cart status to &#39;Finalized&#39;.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { OrderService, Order, Contact, Cart, ContactService } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       order: Order;
+<div><pre class="line-numbers"><code class="language-typescript">import { OrderService, Order, Contact, Cart, ContactService } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private orderService: OrderService, private contactService: ContactService){}
+export class MyComponent implements OnInit{
+    order: Order;
 
-       convertCartToOrder(){
-           // Use the contact record for the current user
-           this.contactService.getMyContact().pipe(take(1)).subscribe(contact =&gt; {
-                const order: Order = new Order();
-                order.Name = &#39;Sample Order&#39;;
-                this.orderService.convertCartToOrder(order, contact).subscribe(o =&gt; this.order = order);
-           });
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private orderService: OrderService, private contactService: ContactService){}
+
+    convertCartToOrder(){
+        // Use the contact record for the current user
+        this.contactService.getMyContact().pipe(take(1)).subscribe(contact =&gt; {
+            const order: Order = new Order();
+            order.Name = &#39;Sample Order&#39;;
+            this.orderService.convertCartToOrder(order, contact).subscribe(o =&gt; this.order = order);
+        });
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -519,19 +516,18 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Creates a cart from an order object.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { OrderService, Order, Cart } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       cart: Cart;
+<div><pre class="line-numbers"><code class="language-typescript">import { OrderService, Order, Cart } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private orderService: OrderService){}
+export class MyComponent implements OnInit{
+    cart: Cart;
 
-       convertOrderToCart(order: Order){
-           this.orderService.convertOrderToCart(order).subscribe(c =&gt; this.cart = c);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private orderService: OrderService){}
+
+    convertOrderToCart(order: Order){
+        this.orderService.convertOrderToCart(order).subscribe(c =&gt; this.cart = c);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -606,22 +602,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>method returns a list of orders for the current user</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { OrderService, Order } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       orderList: Array&lt;Order&gt;;
-       orderList$: Observable&lt;Array&lt;Order&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { OrderService, Order } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private orderService: OrderService){}
+export class MyComponent implements OnInit{
+    orderList: Array&lt;Order&gt;;
+    orderList$: Observable&lt;Array&lt;Order&gt;&gt;;
 
-       ngOnInit(){
-            this.orderService.getMyOrders().subscribe(o =&gt; this.orderList = o);
-            // or
-            this.orderList$ = this.orderService.getMyOrders();
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private orderService: OrderService){}
+
+    ngOnInit(){
+        this.orderService.getMyOrders().subscribe(o =&gt; this.orderList = o);
+        // or
+        this.orderList$ = this.orderService.getMyOrders();
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -792,22 +787,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method retrieves a specific order instance by a given name</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { OrderService, Order } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       order: Order;
-       order$: Observable&lt;Order&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { OrderService, Order } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private orderService: OrderService){}
+export class MyComponent implements OnInit{
+    order: Order;
+    order$: Observable&lt;Order&gt;;
 
-       getOrderByName(name: string){
-            this.orderService.getOrderByName(name).subscribe(o =&gt; this.order = o);
-            // or
-            this.order$ = this.orderService.getOrderByName(name);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private orderService: OrderService){}
+
+    getOrderByName(name: string){
+        this.orderService.getOrderByName(name).subscribe(o =&gt; this.order = o);
+        // or
+        this.order$ = this.orderService.getOrderByName(name);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -882,22 +876,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method retrieves order details for a given quote.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { OrderService, Order } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       order: Order;
-       order$: Observable&lt;Order&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { OrderService, Order } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private orderService: OrderService){}
+export class MyComponent implements OnInit{
+    order: Order;
+    order$: Observable&lt;Order&gt;;
 
-       getOrderByQuote(name: string){
-            this.orderService.getOrderByQuote(quoteId).subscribe(o =&gt; this.order = o);
-            // or
-            this.order$ = this.orderService.getOrderByQuote(quoteId);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private orderService: OrderService){}
+
+    getOrderByQuote(name: string){
+        this.orderService.getOrderByQuote(quoteId).subscribe(o =&gt; this.order = o);
+        // or
+        this.order$ = this.orderService.getOrderByQuote(quoteId);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1013,21 +1006,20 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method is used for adding an existing order to a cart (i.e. reorder). If the items already exist in the cart, it will increment the quantity.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { OrderService, Order, Cart } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       constructor(private orderService: OrderService){}
+<div><pre class="line-numbers"><code class="language-typescript">import { OrderService, Order, Cart } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       addOrderItemsToCart(order: Order){
-           this.orderService.mergeCartItems(order.OrderLineItems)
-            .subscribe(
-                () =&gt; {...},
-                err =&gt; {...}
-            );
-       }
-  }
- ```</code></pre></div></div>
+export class MyComponent implements OnInit{
+    constructor(private orderService: OrderService){}
+
+    addOrderItemsToCart(order: Order){
+        this.orderService.mergeCartItems(order.OrderLineItems)
+        .subscribe(
+            () =&gt; {...},
+            err =&gt; {...}
+        );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1118,22 +1110,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method to revert the amended order for given order id</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { OrderService, Order } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       order: any;
-       order$: Observable&lt;any&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { OrderService, Order } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private orderService: OrderService){}
+export class MyComponent implements OnInit{
+    order: any;
+    order$: Observable&lt;any&gt;;
 
-       undoAmendOrder(orderId: string){
-            this.orderService.undoAmendOrder(orderId).subscribe(o =&gt; this.order = o);
-            // or
-            this.order$ = this.orderService.undoAmendOrder(orderId);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private orderService: OrderService){}
+
+    undoAmendOrder(orderId: string){
+        this.orderService.undoAmendOrder(orderId).subscribe(o =&gt; this.order = o);
+        // or
+        this.order$ = this.orderService.undoAmendOrder(orderId);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1208,22 +1199,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method to revert the cancellation of an order for given order id</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { OrderService, Order } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       order: any;
-       order$: Observable&lt;any&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { OrderService, Order } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private orderService: OrderService){}
+export class MyComponent implements OnInit{
+    order: any;
+    order$: Observable&lt;any&gt;;
 
-       undoCancelOrder(orderId: string){
-            this.orderService.undoCancelOrder(orderId).subscribe(o =&gt; this.order = o);
-            // or
-            this.order$ = this.orderService.undoCancelOrder(orderId);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private orderService: OrderService){}
+
+    undoCancelOrder(orderId: string){
+        this.orderService.undoCancelOrder(orderId).subscribe(o =&gt; this.order = o);
+        // or
+        this.order$ = this.orderService.undoCancelOrder(orderId);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

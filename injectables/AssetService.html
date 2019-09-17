@@ -164,21 +164,20 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>The primary method to amend the existing assets.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { AssetService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
-      lineItemMap: Array&lt;any&gt;;
-      lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
 
-      constructor(private assetService: AssetService){}
+export class MyComponent implements OnInit{
+    lineItemMap: Array&lt;any&gt;;
+    lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
 
-      ngOnInit(){
-          this.assetService.amendAssets(assetIds: Array&lt;string&gt;)subscribe(lineItemMap =&gt; {...});
-          // or
-          this.lineItemMap$ = this.assetService.amendAssets(assetIds: Array&lt;string&gt;);
-      }
- }
-```</code></pre></div></div>
+    constructor(private assetService: AssetService){}
+
+    ngOnInit(){
+        this.assetService.amendAssets(assetIds: Array&lt;string&gt;)subscribe(lineItemMap =&gt; {...});
+        // or
+        this.lineItemMap$ = this.assetService.amendAssets(assetIds: Array&lt;string&gt;);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -253,21 +252,20 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>The primary method to terminate the existing assets.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-         import { AssetService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">     export class MyComponent implements OnInit{
-          lineItemMap: Array&lt;any&gt;;
-          lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
 
-          constructor(private assetService: AssetService){}
+export class MyComponent implements OnInit{
+    lineItemMap: Array&lt;any&gt;;
+    lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
 
-          ngOnInit(){
-              this.assetService.cancelAssets(assetIds: Array&lt;string&gt;, cancelDate: Date)subscribe(lineItemMap =&gt; {...});
-              // or
-              this.lineItemMap$ = this.assetService.cancelAssets(assetIds: Array&lt;string&gt;, cancelDate: Date);
-          }
-     }
-    ```</code></pre></div></div>
+    constructor(private assetService: AssetService){}
+
+    ngOnInit(){
+        this.assetService.cancelAssets(assetIds: Array&lt;string&gt;, cancelDate: Date)subscribe(lineItemMap =&gt; {...});
+        // or
+        this.lineItemMap$ = this.assetService.cancelAssets(assetIds: Array&lt;string&gt;, cancelDate: Date);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -358,25 +356,24 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>The primary method to get the asset line items for given account.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { AssetService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
-      assetLineItems: Array&lt;AssetLineItem&gt;;
-      assetLineItems$: Observable&lt;Array&lt;AssetLineItem&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
 
-      constructor(private assetService: AssetService){}
+export class MyComponent implements OnInit{
+    assetLineItems: Array&lt;AssetLineItem&gt;;
+    assetLineItems$: Observable&lt;Array&lt;AssetLineItem&gt;&gt;;
 
-      ngOnInit(){
-          this.assetService.getAssetLineItemForAccount().subscribe(assetLineItems =&gt; {...});
-          // or
-          this.assetLineItems$ = this.assetService.getAssetLineItemForAccount();
-          // or
-          this.assetService.getAssetLineItemForAccount(accountId: string, adtlConditions: Array&lt;ACondition&gt;)subscribe(assetLineItems =&gt; {...});
-          // or
-          this.assetLineItems$ = this.assetService.getAssetLineItemForAccount(accountId: string, adtlConditions: Array&lt;ACondition&gt;);
-      }
- }
-```</code></pre></div></div>
+    constructor(private assetService: AssetService){}
+
+    ngOnInit(){
+        this.assetService.getAssetLineItemForAccount().subscribe(assetLineItems =&gt; {...});
+        // or
+        this.assetLineItems$ = this.assetService.getAssetLineItemForAccount();
+        // or
+        this.assetService.getAssetLineItemForAccount(accountId: string, adtlConditions: Array&lt;ACondition&gt;)subscribe(assetLineItems =&gt; {...});
+        // or
+        this.assetLineItems$ = this.assetService.getAssetLineItemForAccount(accountId: string, adtlConditions: Array&lt;ACondition&gt;);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -637,21 +634,20 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>The primary method to increment the existing assets.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-         import { AssetService, IncrementAssetDO, IncrementLineAction } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">     export class MyComponent implements OnInit{
-          lineItemMap: Array&lt;any&gt;;
-          lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { AssetService, IncrementAssetDO, IncrementLineAction } from &#39;&#64;apttus/ecommerce&#39;;
 
-          constructor(private assetService: AssetService){}
+export class MyComponent implements OnInit{
+    lineItemMap: Array&lt;any&gt;;
+    lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
 
-          ngOnInit(){
-              this.assetService.incrementAssets(incrementAssetDO: Array&lt;IncrementAssetDO&gt;)subscribe(lineItemMap =&gt; {...});
-              // or
-              this.lineItemMap$ = this.assetService.incrementAssets(incrementAssetDO: Array&lt;IncrementAssetDO&gt;);
-          }
-     }
-    ```</code></pre></div></div>
+    constructor(private assetService: AssetService){}
+
+    ngOnInit(){
+        this.assetService.incrementAssets(incrementAssetDO: Array&lt;IncrementAssetDO&gt;)subscribe(lineItemMap =&gt; {...});
+        // or
+        this.lineItemMap$ = this.assetService.incrementAssets(incrementAssetDO: Array&lt;IncrementAssetDO&gt;);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -726,21 +722,20 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>The primary method to renew the existing assets.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-         import { AssetService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">     export class MyComponent implements OnInit{
-          lineItemMap: Array&lt;any&gt;;
-          lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
 
-          constructor(private assetService: AssetService){}
+export class MyComponent implements OnInit{
+    lineItemMap: Array&lt;any&gt;;
+    lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
 
-          ngOnInit(){
-              this.assetService.renewAssets(assetIds: Array&lt;string&gt;, renewEndDate: Date, renewTerm: number, cartId: string, farthestAssetEndDate: boolean)subscribe(lineItemMap =&gt; {...});
-              // or
-              this.lineItemMap$ = this.assetService.renewAssets(assetIds: Array&lt;string&gt;, renewEndDate: Date, renewTerm: number, cartId: string, farthestAssetEndDate: boolean);
-          }
-     }
-    ```</code></pre></div></div>
+    constructor(private assetService: AssetService){}
+
+    ngOnInit(){
+        this.assetService.renewAssets(assetIds: Array&lt;string&gt;, renewEndDate: Date, renewTerm: number, cartId: string, farthestAssetEndDate: boolean)subscribe(lineItemMap =&gt; {...});
+        // or
+        this.lineItemMap$ = this.assetService.renewAssets(assetIds: Array&lt;string&gt;, renewEndDate: Date, renewTerm: number, cartId: string, farthestAssetEndDate: boolean);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -863,21 +858,20 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>The primary method to swap the existing assets. Creates line items for the cancelled asset line item and new line items for swapped product.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { AssetService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
-      lineItemMap: Array&lt;any&gt;;
-      lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
 
-      constructor(private assetService: AssetService){}
+export class MyComponent implements OnInit{
+    lineItemMap: Array&lt;any&gt;;
+    lineItemMap$: Observable&lt;Array&lt;any&gt;&gt;;
 
-      ngOnInit(){
-          this.assetService.swapAssets(assetIds: Array&lt;string&gt;)subscribe(lineItemMap =&gt; {...});
-          // or
-          this.lineItemMap$ = this.assetService.swapAssets(assetIds: Array&lt;string&gt;);
-      }
- }
-```</code></pre></div></div>
+    constructor(private assetService: AssetService){}
+
+    ngOnInit(){
+        this.assetService.swapAssets(assetIds: Array&lt;string&gt;)subscribe(lineItemMap =&gt; {...});
+        // or
+        this.lineItemMap$ = this.assetService.swapAssets(assetIds: Array&lt;string&gt;);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

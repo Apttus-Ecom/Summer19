@@ -136,22 +136,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>method returns a list of order line items for the order</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { OrderLineItemService, OrderLineItem } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       orderLineItemList: Array&lt;OrderLineItem&gt;;
-       orderLineItemList$: Observable&lt;Array&lt;OrderLineItem&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { OrderLineItemService, OrderLineItem } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private orderLineItemService: OrderLineItemService){}
+export class MyComponent implements OnInit{
+    orderLineItemList: Array&lt;OrderLineItem&gt;;
+    orderLineItemList$: Observable&lt;Array&lt;OrderLineItem&gt;&gt;;
 
-       ngOnInit(){
-            this.orderLineItemService.getOrderLineItemsForOrder(orderId: string).subscribe(o =&gt; this.orderLineItemList = o);
-            // or
-            this.orderLineItemList$ = this.orderLineItemService.getOrderLineItemsForOrder(orderId: string);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private orderLineItemService: OrderLineItemService){}
+
+    ngOnInit(){
+        this.orderLineItemService.getOrderLineItemsForOrder(orderId: string).subscribe(o =&gt; this.orderLineItemList = o);
+        // or
+        this.orderLineItemList$ = this.orderLineItemService.getOrderLineItemsForOrder(orderId: string);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

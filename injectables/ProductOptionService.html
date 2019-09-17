@@ -457,22 +457,21 @@ that are empty and associate related cart items with each option</p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Method is similar to getProductsByCategory, however it returns the aggregate data (i.e. total records) instead of the sobject results.</p>
 <h3 id="example">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">        import { ProductService, Product } from &#39;&#64;apttus/ecommerce&#39;;
-        import { Observable } from &#39;rxjs/Observable&#39;;
+<div><pre class="line-numbers"><code class="language-typescript">import { ProductService, Product } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-        export class MyComponent implements OnInit{
-            aggregateData: any;
-            aggregateData$: Observable&lt;any&gt;;
+export class MyComponent implements OnInit{
+    aggregateData: any;
+    aggregateData$: Observable&lt;any&gt;;
 
-            constructor(private productService: ProductService){}
+    constructor(private productService: ProductService){}
 
-            getAggregateDataForCategory(categoryId: string){
-                this.productService.getAggregatesForCategory(categoryId).subscribe(p =&gt; this.aggregateData = p);
-                // or
-                this.aggregateData$ = this.productService.getAggregatesForCategory(categoryId);
-            }
-        }
-        ```</code></pre></div></div>
+    getAggregateDataForCategory(categoryId: string){
+        this.productService.getAggregatesForCategory(categoryId).subscribe(p =&gt; this.aggregateData = p);
+        // or
+        this.aggregateData$ = this.productService.getAggregatesForCategory(categoryId);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -594,22 +593,21 @@ that are empty and associate related cart items with each option</p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Similar to getAggregatesForCategory, however it returns the aggregate data (i.e. total records) for a list of specific product ids and filters instead of a category</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { ProductService, Product } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       aggregateData: any;
-       aggregateData$: Observable&lt;any&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { ProductService, Product } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private productService: ProductService){}
+export class MyComponent implements OnInit{
+    aggregateData: any;
+    aggregateData$: Observable&lt;any&gt;;
 
-       getAggregateDataForCategory(productIdList: Array&lt;string&gt;){
-            this.productService.getAggregatesForProductList(productIdList).subscribe(p =&gt; this.aggregateData = p);
-            // or
-            this.aggregateData$ = this.productService.getAggregatesForProductList(productIdList);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private productService: ProductService){}
+
+    getAggregateDataForCategory(productIdList: Array&lt;string&gt;){
+        this.productService.getAggregatesForProductList(productIdList).subscribe(p =&gt; this.aggregateData = p);
+        // or
+        this.aggregateData$ = this.productService.getAggregatesForProductList(productIdList);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -731,22 +729,21 @@ that are empty and associate related cart items with each option</p>
                 <td class="col-md-4">
                     <div class="io-description"><p>A method to retrieve a list of products for a specific category. Provides a number of optional filters.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { ProductService, Product } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       productList: Array&lt;Product&gt;;
-       productList$: Observable&lt;Array&lt;Product&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { ProductService, Product } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private productService: ProductService){}
+export class MyComponent implements OnInit{
+    productList: Array&lt;Product&gt;;
+    productList$: Observable&lt;Array&lt;Product&gt;&gt;;
 
-       getProductsByCategory(categoryId: string){
-            this.productService.getProductsByCategory(categoryId, 10, 0, &#39;Name&#39;, &#39;ASC&#39;, null, null, [`ProductFamily = &#39;Sample&#39;`, &#39;Active = TRUE&#39;]).subscribe(p =&gt; this.productList = p);
-            // or
-            this.productList$ = this.productService.getProductsByCategory(categoryId);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private productService: ProductService){}
+
+    getProductsByCategory(categoryId: string){
+        this.productService.getProductsByCategory(categoryId, 10, 0, &#39;Name&#39;, &#39;ASC&#39;, null, null, [`ProductFamily = &#39;Sample&#39;`, &#39;Active = TRUE&#39;]).subscribe(p =&gt; this.productList = p);
+        // or
+        this.productList$ = this.productService.getProductsByCategory(categoryId);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -954,22 +951,21 @@ that are empty and associate related cart items with each option</p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Method takes a list of product codes and returns a list of products.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { ProductService, Product } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       productList: Array&lt;Product&gt;;
-       productList$: Observable&lt;Array&lt;Product&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { ProductService, Product } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private productService: ProductService){}
+export class MyComponent implements OnInit{
+    productList: Array&lt;Product&gt;;
+    productList$: Observable&lt;Array&lt;Product&gt;&gt;;
 
-       getProductsByCode(productCodeList: Array&lt;string&gt;){
-            this.productService.getProductsByCode(productCodeList).subscribe(p =&gt; this.productList = p);
-            // or
-            this.productList$ = this.productService.getProductsByCode(productCodeList);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private productService: ProductService){}
+
+    getProductsByCode(productCodeList: Array&lt;string&gt;){
+        this.productService.getProductsByCode(productCodeList).subscribe(p =&gt; this.productList = p);
+        // or
+        this.productList$ = this.productService.getProductsByCode(productCodeList);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

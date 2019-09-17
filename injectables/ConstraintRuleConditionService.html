@@ -150,23 +150,22 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>getConstraintRuleConditionsForProduct method returns all the constraint conditions matching a given product</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { ConstraintRuleConditionService, Product } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       constraintRuleConditions: Array&lt;ConstraintRuleCondition&gt;;
-       constraintRuleConditions$: Observable&lt;Array&lt;ConstraintRuleCondition&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { ConstraintRuleConditionService, Product } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private constraintRuleConditionService: ConstraintRuleConditionService){}
+export class MyComponent implements OnInit{
+    constraintRuleConditions: Array&lt;ConstraintRuleCondition&gt;;
+    constraintRuleConditions$: Observable&lt;Array&lt;ConstraintRuleCondition&gt;&gt;;
 
-       getConstraintRuleConditionsForProduct(product: Product){
-           this.constraintRuleConditionService.getConstraintRuleConditionsForProduct(product)
-                .subscribe(conditions =&gt; this.constraintRuleConditions = conditions);
-            // or
-            this.constraintRuleConditions$ = this.constraintRuleConditionService.getConstraintRuleConditionsForProduct(product);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private constraintRuleConditionService: ConstraintRuleConditionService){}
+
+    getConstraintRuleConditionsForProduct(product: Product){
+        this.constraintRuleConditionService.getConstraintRuleConditionsForProduct(product)
+            .subscribe(conditions =&gt; this.constraintRuleConditions = conditions);
+        // or
+        this.constraintRuleConditions$ = this.constraintRuleConditionService.getConstraintRuleConditionsForProduct(product);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

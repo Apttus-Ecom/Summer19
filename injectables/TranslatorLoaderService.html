@@ -254,22 +254,21 @@ It also provides support for language translation of labels based on the salesfo
                 <td class="col-md-4">
                     <div class="io-description"><p>Retrieves translated labels based on current language and by configuring storefront value</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { TranslatorLoaderService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  &#64;NgModule({
-    declarations: [
-      AppComponent
-    ],
-    imports: [
-      TranslateModule.forRoot({
-        loader: {provide: TranslateLoader, useClass: TranslatorLoaderService}
-    })
-    ],
-    providers: [,
-    bootstrap: [AppComponent]
+<div><pre class="line-numbers"><code class="language-typescript">import { TranslatorLoaderService } from &#39;&#64;apttus/ecommerce&#39;;
+
+&#64;NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    TranslateModule.forRoot({
+      loader: {provide: TranslateLoader, useClass: TranslatorLoaderService}
   })
-  export class AppModule { }
-```</code></pre></div></div>
+  ],
+  providers: [,
+  bootstrap: [AppComponent]
+})
+export class AppModule { }</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

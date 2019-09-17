@@ -158,22 +158,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Retrieves the current active account (used for order-on-behalf functions)</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { AccountService, Account } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-        account: Account;
-        account$: Observable&lt;Account&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { AccountService, Account } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private accountService: AccountService){}
+export class MyComponent implements OnInit{
+    account: Account;
+    account$: Observable&lt;Account&gt;;
 
-       ngOnInit(){
-            this.accountService.getCurrentAccount().subscribe(a =&gt; this.account = a);
-            // or
-            this.account$ + this.accountService.getCurrentAccount();
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private accountService: AccountService){}
+
+    ngOnInit(){
+        this.accountService.getCurrentAccount().subscribe(a =&gt; this.account = a);
+        // or
+        this.account$ + this.accountService.getCurrentAccount();
+    }
+}</code></pre></div></div>
 
                     <div>
                     </div>
@@ -218,22 +217,21 @@
                     <div class="io-description"><p>Retrieves the account associated with the current user.
 For guest user it retrieves the account associated with the storefront object.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { AccountService, Account } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-        account: Account;
-        account$: Observable&lt;Account&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { AccountService, Account } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private accountService: AccountService){}
+export class MyComponent implements OnInit{
+    account: Account;
+    account$: Observable&lt;Account&gt;;
 
-       ngOnInit(){
-            this.accountService.getMyAccount().subscribe(a =&gt; this.account = a);
-            // or
-            this.account$ + this.accountService.getMyAccount();
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private accountService: AccountService){}
+
+    ngOnInit(){
+        this.accountService.getMyAccount().subscribe(a =&gt; this.account = a);
+        // or
+        this.account$ + this.accountService.getMyAccount();
+    }
+}</code></pre></div></div>
 
                     <div>
                     </div>
@@ -278,21 +276,20 @@ For guest user it retrieves the account associated with the storefront object.</
                     <div class="io-description"><p>Sets the selected account to be the current active account for order-on-behalf functions.
 Will store the selected account record in local storage</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { AccountService, Account } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       constructor(private accountService: AccountService){}
+<div><pre class="line-numbers"><code class="language-typescript">import { AccountService, Account } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       setAccount(account: Account){
-            this.accountService.setAccount(account, true)
-                .subscribe(
-                    a =&gt; {...},
-                    err =&gt; {...}
-                );
-       }
-  }
- ```</code></pre></div></div>
+export class MyComponent implements OnInit{
+    constructor(private accountService: AccountService){}
+
+    setAccount(account: Account){
+        this.accountService.setAccount(account, true)
+            .subscribe(
+                a =&gt; {...},
+                err =&gt; {...}
+            );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

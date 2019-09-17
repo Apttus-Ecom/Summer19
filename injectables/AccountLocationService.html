@@ -158,22 +158,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>gets all the account locations for the current account you have selected.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { AccountLocationService, AccountLocation } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       accountLocationList: Array&lt;AccountLocation&gt;;
-       accountLocationList$: Observable&lt;Array&lt;AccountLocation&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { AccountLocationService, AccountLocation } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private accountLocationService: AccountLocationService){}
+export class MyComponent implements OnInit{
+    accountLocationList: Array&lt;AccountLocation&gt;;
+    accountLocationList$: Observable&lt;Array&lt;AccountLocation&gt;&gt;;
 
-       getProductOptions(productCode: string){
-            this.accountLocationService.getAccountLocations().subscribe(a =&gt; this.accountLocationList = a);
-            // or
-            this.accountLocationList$ + this.accountLocationService.getAccountLocations();
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private accountLocationService: AccountLocationService){}
+
+    getProductOptions(productCode: string){
+        this.accountLocationService.getAccountLocations().subscribe(a =&gt; this.accountLocationList = a);
+        // or
+        this.accountLocationList$ + this.accountLocationService.getAccountLocations();
+    }
+}</code></pre></div></div>
 
                     <div>
                     </div>
@@ -217,22 +216,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Saves the account location record to the current account.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { AccountLocationService, AccountLocation } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+<div><pre class="line-numbers"><code class="language-typescript">import { AccountLocationService, AccountLocation } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private accountLocationService: AccountLocationService){}
+export class MyComponent implements OnInit{
 
-       saveAccountLocation(accountLocation: AccountLocation){
-            this.accountLocationService.saveLocationToAccount(accountLocation)
-                .subscribe(
-                    locationId =&gt; {...},
-                    err =&gt; {...}
-                );
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private accountLocationService: AccountLocationService){}
+
+    saveAccountLocation(accountLocation: AccountLocation){
+        this.accountLocationService.saveLocationToAccount(accountLocation)
+            .subscribe(
+                locationId =&gt; {...},
+                err =&gt; {...}
+            );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -307,22 +305,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Sets the selected address as the default address.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { AccountLocationService, AccountLocation } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+<div><pre class="line-numbers"><code class="language-typescript">import { AccountLocationService, AccountLocation } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private accountLocationService: AccountLocationService){}
+export class MyComponent implements OnInit{
 
-       setLocationAsDefault(accountLocation: AccountLocation){
-            this.accountLocationService.setLocationAsDefault(accountLocation)
-                .subscribe(
-                    locationIdList =&gt; {...},
-                    err =&gt; {...}
-                );
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private accountLocationService: AccountLocationService){}
+
+    setLocationAsDefault(accountLocation: AccountLocation){
+        this.accountLocationService.setLocationAsDefault(accountLocation)
+            .subscribe(
+                locationIdList =&gt; {...},
+                err =&gt; {...}
+            );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

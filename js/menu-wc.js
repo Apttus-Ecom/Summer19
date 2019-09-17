@@ -975,19 +975,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/AppliedRuleInfoService.html" data-type="entity-link">AppliedRuleInfoService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/AssetBatchActionService.html" data-type="entity-link">AssetBatchActionService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/AssetModalService.html" data-type="entity-link">AssetModalService</a>
-                                </li>
-                                <li class="link">
                                     <a href="injectables/AssetSelectionService.html" data-type="entity-link">AssetSelectionService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/AssetService.html" data-type="entity-link">AssetService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/AttachmentsService.html" data-type="entity-link">AttachmentsService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/AttributeRuleService.html" data-type="entity-link">AttributeRuleService</a>
@@ -997,9 +988,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/AttributeValueMatrixService.html" data-type="entity-link">AttributeValueMatrixService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/BatchActionService.html" data-type="entity-link">BatchActionService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/CartItemService.html" data-type="entity-link">CartItemService</a>

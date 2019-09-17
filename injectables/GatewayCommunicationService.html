@@ -152,19 +152,18 @@
 payment gateway (CyberSource) based on the gateway transaction&#39;s ID
 and also updating payment method cache</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { GatewayCommunicationService} from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
-     gatewayCommunication: GatewayCommunication;
+<div><pre class="line-numbers"><code class="language-typescript">import { GatewayCommunicationService} from &#39;&#64;apttus/ecommerce&#39;;
 
-      constructor(private gatewayCommunicationService: GatewayCommunicationService){}
+export class MyComponent implements OnInit{
+    gatewayCommunication: GatewayCommunication;
 
-      ngOnInit(){
-         this.gatewayCommunicationService.getResponseUpdate(this.gatewayCommunication.GatewayTransactionId).subscribe(response =&gt; {
-         });
-      }
- }
-```</code></pre></div></div>
+    constructor(private gatewayCommunicationService: GatewayCommunicationService){}
+
+    ngOnInit(){
+        this.gatewayCommunicationService.getResponseUpdate(this.gatewayCommunication.GatewayTransactionId).subscribe(response =&gt; {
+        });
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

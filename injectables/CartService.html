@@ -203,20 +203,19 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Adding a Product to Cart is the most common Cart action. Will trigger a reprice operation asynchronously.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CartService, Product, ProductAttributeValue } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+<div><pre class="line-numbers"><code class="language-typescript">import { CartService, Product, ProductAttributeValue } from &#39;&#64;apttus/ecommerce&#39;;
 
-       constructor(private cartService: CartService){}
+export class MyComponent implements OnInit{
 
-       addProductToCart(product: Product, quantity: number, productAttributeValueList: Array&lt;ProductAttributeValue&gt;): void{
-           this.cartService.addProductToCart(product, quantity, productAttributeValueList, null, true, true).subscribe(
-               () =&gt; {...},
-               err =&gt; {...}
-           )
-       }
-  }
-  ```</code></pre></div></div>
+    constructor(private cartService: CartService){}
+
+    addProductToCart(product: Product, quantity: number, productAttributeValueList: Array&lt;ProductAttributeValue&gt;): void{
+        this.cartService.addProductToCart(product, quantity, productAttributeValueList, null, true, true).subscribe(
+            () =&gt; {...},
+            err =&gt; {...}
+        )
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -330,21 +329,20 @@
                     <div class="io-description"><p>Method adds multiple products to the cart specified in an array mapping a product code to a quantity. If a product code is not available in the catalog,
 the method will throw an error specifying the product codes that cannot be added.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CartService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent{
+<div><pre class="line-numbers"><code class="language-typescript">import { CartService } from &#39;&#64;apttus/ecommerce&#39;;
 
-       constructor(private cartService: CartService){}
+export class MyComponent{
 
-       addMultipleProductsToCart(){
-           const productList: Array&lt;CartProductForm&gt; = [
-               {productCode: &#39;1111&#39;, quantity: 3},
-               {productCode: &#39;1112&#39;, quantity: 5}
-           ];
-           this.cartService.bulkAddProductToCart(productList).subscribe(productCodes =&gt; {...});
-       }
-  }
-  ```</code></pre></div></div>
+    constructor(private cartService: CartService){}
+
+    addMultipleProductsToCart(){
+        const productList: Array&lt;CartProductForm&gt; = [
+            {productCode: &#39;1111&#39;, quantity: 3},
+            {productCode: &#39;1112&#39;, quantity: 5}
+        ];
+        this.cartService.bulkAddProductToCart(productList).subscribe(productCodes =&gt; {...});
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -435,19 +433,18 @@ the method will throw an error specifying the product codes that cannot be added
                 <td class="col-md-4">
                     <div class="io-description"><p>Creates a new cart. Will set the account id, price list id, effective price list id on the cart and set the status to &#39;New&#39;</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CartService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent{
+<div><pre class="line-numbers"><code class="language-typescript">import { CartService } from &#39;&#64;apttus/ecommerce&#39;;
 
-       constructor(private cartService: CartService){}
+export class MyComponent{
 
-       createNewCart(){
-           const cart = new Cart();
-           cart.Apttus_Config2__Status__c = &#39;Finalized&#39;;
-           this.cartService.createNewCart(cart).subscribe(c =&gt; {...});
-       }
-  }
-  ```</code></pre></div></div>
+    constructor(private cartService: CartService){}
+
+    createNewCart(){
+        const cart = new Cart();
+        cart.Apttus_Config2__Status__c = &#39;Finalized&#39;;
+        this.cartService.createNewCart(cart).subscribe(c =&gt; {...});
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -560,17 +557,16 @@ the method will throw an error specifying the product codes that cannot be added
                 <td class="col-md-4">
                     <div class="io-description"><p>Deletes a specified cart instance from the database</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CartService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent{
-       private cart: Cart;
-       constructor(private cartService: CartService){}
+<div><pre class="line-numbers"><code class="language-typescript">import { CartService } from &#39;&#64;apttus/ecommerce&#39;;
 
-       deleteCart(){
-           this.cartService.deleteCart(cart).subscribe(c =&gt; {...});
-       }
-  }
-  ```</code></pre></div></div>
+export class MyComponent{
+    private cart: Cart;
+    constructor(private cartService: CartService){}
+
+    deleteCart(){
+        this.cartService.deleteCart(cart).subscribe(c =&gt; {...});
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -784,21 +780,20 @@ finalized also cart which is linked to quote Id equal to quoteId passed in the p
                 <td class="col-md-4">
                     <div class="io-description"><p>The primary method to get the user&#39;s current cart. This is a hot observable that will be updated when the state of the cart changes.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CartService } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       cart: Cart;
-       cart$: Observable&lt;Cart&gt;; // can be used in the template with {{(cart$ | async)?.Name}}
+<div><pre class="line-numbers"><code class="language-typescript">import { CartService } from &#39;&#64;apttus/ecommerce&#39;;
 
-       constructor(private cartService: CartService){}
+export class MyComponent implements OnInit{
+    cart: Cart;
+    cart$: Observable&lt;Cart&gt;; // can be used in the template with {{(cart$ | async)?.Name}}
 
-       ngOnInit(){
-           this.cartService.getMyCart().subscribe(cart =&gt; this.cart = cart);
-           // or
-           this.cart$ = this.cartService.getMyCart();
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private cartService: CartService){}
+
+    ngOnInit(){
+        this.cartService.getMyCart().subscribe(cart =&gt; this.cart = cart);
+        // or
+        this.cart$ = this.cartService.getMyCart();
+    }
+}</code></pre></div></div>
 
                     <div>
                     </div>
@@ -1021,21 +1016,19 @@ Also further filters the carts returned by the currently selected price list and
                 <td class="col-md-4">
                     <div class="io-description"><p>priceCart method triggers the server-side pricing engine for the cart</p>
 <h3 id="example">Example:</h3>
-<p>```typescript</p>
-<div><pre class="line-numbers"><code class="language-none">  import { CartService } from &#39;&#64;apttus/ecommerce&#39;;
+<div><pre class="line-numbers"><code class="language-typescript">import { CartService } from &#39;&#64;apttus/ecommerce&#39;;
 
-  export class MyComponent implements OnInit{
+export class MyComponent implements OnInit{
 
-       constructor(private cartService: CartService){}
+    constructor(private cartService: CartService){}
 
-       repriceCart(cart: Cart): void{
-           this.cartService.priceCart(cart, true).subscribe(
-               () =&gt; {...},
-               err =&gt; {...}
-           );
-       }
-  }
-  ```</code></pre></div></div>
+    repriceCart(cart: Cart): void{
+        this.cartService.priceCart(cart, true).subscribe(
+            () =&gt; {...},
+            err =&gt; {...}
+        );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1169,21 +1162,20 @@ Also further filters the carts returned by the currently selected price list and
                 <td class="col-md-4">
                     <div class="io-description"><p>Removes the specified cart item from the cart. Will trigger a reprice cart operation.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CartService, CartItem } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+<div><pre class="line-numbers"><code class="language-typescript">import { CartService, CartItem } from &#39;&#64;apttus/ecommerce&#39;;
 
-       constructor(private cartService: CartService){}
+export class MyComponent implements OnInit{
 
-       removeCartItem(cartItem: CartItem): void{
-           cartItem.Apttus_Config2__Quantity__c = quantity;
-           this.cartService.removeCartItem(cartItem).subscribe(
-               () =&gt; {...},
-               err =&gt; {...}
-           );
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private cartService: CartService){}
+
+    removeCartItem(cartItem: CartItem): void{
+        cartItem.Apttus_Config2__Quantity__c = quantity;
+        this.cartService.removeCartItem(cartItem).subscribe(
+            () =&gt; {...},
+            err =&gt; {...}
+        );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1297,17 +1289,16 @@ Also further filters the carts returned by the currently selected price list and
                 <td class="col-md-4">
                     <div class="io-description"><p>setActiveCart: Method sets the selected cart as active and deactivates any other carts</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CartService, Cart } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+<div><pre class="line-numbers"><code class="language-typescript">import { CartService, Cart } from &#39;&#64;apttus/ecommerce&#39;;
 
-       constructor(private cartService: CartService){}
+export class MyComponent implements OnInit{
 
-       setActive(cart: Cart){
-           this.cartService.setCartActive(cart).subscribe(success =&gt; {...});
-       }
-  }
-  ```</code></pre></div></div>
+    constructor(private cartService: CartService){}
+
+    setActive(cart: Cart){
+        this.cartService.setCartActive(cart).subscribe(success =&gt; {...});
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1377,21 +1368,20 @@ Also further filters the carts returned by the currently selected price list and
                 <td class="col-md-4">
                     <div class="io-description"><p>Update fields on the items specified in the cart item array. Will trigger a reprice cart operation.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CartService, CartItem } from &#39;@apttus/ecommerce&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+<div><pre class="line-numbers"><code class="language-typescript">import { CartService, CartItem } from &#39;&#64;apttus/ecommerce&#39;;
 
-       constructor(private cartService: CartService){}
+export class MyComponent implements OnInit{
 
-       updateCartItems(cartItem: CartItem, quantity: number): void{
-           cartItem.Quantity = quantity;
-           this.cartService.updateCartItems([cartItem]).subscribe(
-               () =&gt; {...},
-               err =&gt; {...}
-           );
-       }
-  }
-  ```</code></pre></div></div>
+    constructor(private cartService: CartService){}
+
+    updateCartItems(cartItem: CartItem, quantity: number): void{
+        cartItem.Quantity = quantity;
+        this.cartService.updateCartItems([cartItem]).subscribe(
+            () =&gt; {...},
+            err =&gt; {...}
+        );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

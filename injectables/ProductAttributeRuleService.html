@@ -150,22 +150,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method returns an array of product attribute rules for a given product</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { ProductAttributeRuleService, ProductAttributeValue } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       productAttributeRules: Array&lt;ProductAttributeRule&gt;;
-       productAttributeRules$: Observable&lt;Array&lt;ProductAttributeRule&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { ProductAttributeRuleService, ProductAttributeValue } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private productAttributeRuleService: ProductAttributeRuleService){}
+export class MyComponent implements OnInit{
+    productAttributeRules: Array&lt;ProductAttributeRule&gt;;
+    productAttributeRules$: Observable&lt;Array&lt;ProductAttributeRule&gt;&gt;;
 
-       getRulesForProduct(productCode: string){
-            this.productAttributeRuleService.getProductRules(productCode).subscribe(ruleList =&gt; this.productAttributeRules = ruleList);
-            // or
-            productAttributeRules$ = this.productAttributeRuleService.getProductRules(productCode);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private productAttributeRuleService: ProductAttributeRuleService){}
+
+    getRulesForProduct(productCode: string){
+        this.productAttributeRuleService.getProductRules(productCode).subscribe(ruleList =&gt; this.productAttributeRules = ruleList);
+        // or
+        productAttributeRules$ = this.productAttributeRuleService.getProductRules(productCode);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

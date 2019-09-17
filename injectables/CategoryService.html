@@ -166,22 +166,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Returns all the categories available to the user. Will translate the categories based on the user locale.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { CategoryService, Category } from &#39;@apttus/ecommerce&#39;;
-     import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
-      categoryList: Array&lt;Category&gt;;
-      categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-      constructor(private categoryService: CategoryService){}
+export class MyComponent implements OnInit{
+    categoryList: Array&lt;Category&gt;;
+    categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
 
-      ngOnInit(){
-          this.categoryList$ = this.categoryService.getCategories();
-          // or
-          this.categoryService.getCategories().subscribe(c =&gt; this.categoryList = c);
-      }
- }
-```</code></pre></div></div>
+    constructor(private categoryService: CategoryService){}
+
+    ngOnInit(){
+        this.categoryList$ = this.categoryService.getCategories();
+        // or
+        this.categoryService.getCategories().subscribe(c =&gt; this.categoryList = c);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -275,22 +274,21 @@
                     <div class="io-description"><p>getCategoryBranch takes a single category id and returns an array containing the category and its immediate parents up to the root.
 The first element in the array is the root and the last is the category specified in the argument. Designed for breadcrumbs.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CategoryService, Category } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       categoryList: Array&lt;Category&gt;;
-       categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private categoryService: CategoryService){}
+export class MyComponent implements OnInit{
+    categoryList: Array&lt;Category&gt;;
+    categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
 
-       ngOnInit(){
-           this.categoryList$ = this.categoryService.getCategoryBranch();
-           // or
-           this.categoryService.getCategoryBranch().subscribe(c =&gt; this.categoryList = c);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private categoryService: CategoryService){}
+
+    ngOnInit(){
+        this.categoryList$ = this.categoryService.getCategoryBranch();
+        // or
+        this.categoryService.getCategoryBranch().subscribe(c =&gt; this.categoryList = c);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -364,22 +362,21 @@ The first element in the array is the root and the last is the category specifie
                     <div class="io-description"><p>getCategoryBranchChildren takes a single category id and returns an array containing the category and all of its children down to the leaves.
 Note: does not maitain relationships with ancestor / child categories using _children property. This simply is a list of all categories under a given category.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CategoryService, Category } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       categoryList: Array&lt;Category&gt;;
-       categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private categoryService: CategoryService){}
+export class MyComponent implements OnInit{
+    categoryList: Array&lt;Category&gt;;
+    categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
 
-       ngOnInit(){
-           this.categoryList$ = this.categoryService.getCategoryBranchChildren();
-           // or
-           this.categoryService.getCategoryBranchChildren().subscribe(c =&gt; this.categoryList = c);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private categoryService: CategoryService){}
+
+    ngOnInit(){
+        this.categoryList$ = this.categoryService.getCategoryBranchChildren();
+        // or
+        this.categoryService.getCategoryBranchChildren().subscribe(c =&gt; this.categoryList = c);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -447,27 +444,26 @@ Note: does not maitain relationships with ancestor / child categories using _chi
                 <td class="col-md-4">
                     <div class="io-description"><p>Similar to getCategoryBranch, but takes a product for an argument and returns the array of categories leading to that product.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CategoryService, Category, Product, ProductService } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       categoryList: Array&lt;Category&gt;;
-       categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { CategoryService, Category, Product, ProductService } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private categoryService: CategoryService, private productService: productService){}
+export class MyComponent implements OnInit{
+    categoryList: Array&lt;Category&gt;;
+    categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
 
-       ngOnInit(){
-           this.categoryList$ = this.productService.getProductsByCode([&#39;xxx&#39;])
-                                    .map(p =&gt; p[0])
-                                    .flatMap(product =&gt; this.categoryService.getCategoryBranchForProduct(product));
-           // or
-           this.productService.getProductsByCode([&#39;xxx&#39;])
-                                    .map(p =&gt; p[0])
-                                    .flatMap(product =&gt; this.categoryService.getCategoryBranchForProduct(product))
-                                    .subscribe(categoryList =&gt; this.categoryList = categoryList);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private categoryService: CategoryService, private productService: productService){}
+
+    ngOnInit(){
+        this.categoryList$ = this.productService.getProductsByCode([&#39;xxx&#39;])
+                                .map(p =&gt; p[0])
+                                .flatMap(product =&gt; this.categoryService.getCategoryBranchForProduct(product));
+        // or
+        this.productService.getProductsByCode([&#39;xxx&#39;])
+                                .map(p =&gt; p[0])
+                                .flatMap(product =&gt; this.categoryService.getCategoryBranchForProduct(product))
+                                .subscribe(categoryList =&gt; this.categoryList = categoryList);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -540,22 +536,21 @@ Note: does not maitain relationships with ancestor / child categories using _chi
                 <td class="col-md-4">
                     <div class="io-description"><p>Returns a category matching the given category name.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { CategoryService, Category } from &#39;@apttus/ecommerce&#39;;
-     import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
-      category: Category;
-      category$: Observable&lt;Category&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-      constructor(private categoryService: CategoryService){}
+export class MyComponent implements OnInit{
+    category: Category;
+    category$: Observable&lt;Category&gt;;
 
-      ngOnInit(){
-          this.category$ = this.categoryService.getCategoryByName();
-          // or
-          this.categoryService.getCategoryByName().subscribe(c =&gt; this.category = c);
-      }
- }
-```</code></pre></div></div>
+    constructor(private categoryService: CategoryService){}
+
+    ngOnInit(){
+        this.category$ = this.categoryService.getCategoryByName();
+        // or
+        this.categoryService.getCategoryByName().subscribe(c =&gt; this.category = c);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -629,22 +624,21 @@ Note: does not maitain relationships with ancestor / child categories using _chi
                     <div class="io-description"><p>Returns the categories as a tree structure. Will return all categories or those specified in the categoryNames argument.
 Adds an additional attribute to all categories returned called &#39;_.children&#39;. This attribute contains an array of child categories.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CategoryService, Category } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       categoryList: Array&lt;Category&gt;;
-       categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private categoryService: CategoryService){}
+export class MyComponent implements OnInit{
+    categoryList: Array&lt;Category&gt;;
+    categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
 
-       ngOnInit(){
-           this.categoryList$ = this.categoryService.getCategoryTree();
-           // or
-           this.categoryService.getCategoryTree().subscribe(c =&gt; this.categoryList = c);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private categoryService: CategoryService){}
+
+    ngOnInit(){
+        this.categoryList$ = this.categoryService.getCategoryTree();
+        // or
+        this.categoryService.getCategoryTree().subscribe(c =&gt; this.categoryList = c);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -731,25 +725,24 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                 <td class="col-md-4">
                     <div class="io-description"><p>Returns a list of option categories for the given list of product option groups.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { CategoryService, Category, ProductOptionGroup } from &#39;@apttus/ecommerce&#39;;
-     import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
-      categoryList: Array&lt;Category&gt;;
-      categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { CategoryService, Category, ProductOptionGroup } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-      constructor(private categoryService: CategoryService){}
+export class MyComponent implements OnInit{
+    categoryList: Array&lt;Category&gt;;
+    categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
 
-      getOptionCategories(productOptionGroups: Array&lt;ProductOptionGroup&gt;){
-           this.categoryList$ = this.categoryService.getOptionCategories(productOptionGroups);
-           // or
-           this.categoryService.getOptionCategories(productOptionGroups).subscribe(
-               c =&gt; this.categoryList = c,
-               err =&gt; {...}
-           );
-       }
- }
-```</code></pre></div></div>
+    constructor(private categoryService: CategoryService){}
+
+    getOptionCategories(productOptionGroups: Array&lt;ProductOptionGroup&gt;){
+        this.categoryList$ = this.categoryService.getOptionCategories(productOptionGroups);
+        // or
+        this.categoryService.getOptionCategories(productOptionGroups).subscribe(
+            c =&gt; this.categoryList = c,
+            err =&gt; {...}
+        );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -817,25 +810,24 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                 <td class="col-md-4">
                     <div class="io-description"><p>gets all the categories under the same parent category as the category specified in the argument</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CategoryService, Category } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       categoryList: Array&lt;Category&gt;;
-       categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private categoryService: CategoryService){}
+export class MyComponent implements OnInit{
+    categoryList: Array&lt;Category&gt;;
+    categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
 
-       getSubcategories(category: Category){
-           this.categoryList$ = this.categoryService.getRelatedCategories(category.Id);
-           // or
-           this.categoryService.getRelatedCategories(category.Id).subscribe(
-               categoryList =&gt; this.categoryList = categoryList,
-               err =&gt; {...}
-           );
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private categoryService: CategoryService){}
+
+    getSubcategories(category: Category){
+        this.categoryList$ = this.categoryService.getRelatedCategories(category.Id);
+        // or
+        this.categoryService.getRelatedCategories(category.Id).subscribe(
+            categoryList =&gt; this.categoryList = categoryList,
+            err =&gt; {...}
+        );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -922,22 +914,21 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                 <td class="col-md-4">
                     <div class="io-description"><p>Returns all categories which do not have a parent cateogry.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { CategoryService, Category } from &#39;@apttus/ecommerce&#39;;
-     import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
-      categoryList: Array&lt;Category&gt;;
-      categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-      constructor(private categoryService: CategoryService){}
+export class MyComponent implements OnInit{
+    categoryList: Array&lt;Category&gt;;
+    categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
 
-      ngOnInit(){
-          this.categoryList$ = this.categoryService.getRootCategories();
-          // or
-          this.categoryService.getRootCategories().subscribe(c =&gt; this.categoryList = c);
-      }
- }
-```</code></pre></div></div>
+    constructor(private categoryService: CategoryService){}
+
+    ngOnInit(){
+        this.categoryList$ = this.categoryService.getRootCategories();
+        // or
+        this.categoryService.getRootCategories().subscribe(c =&gt; this.categoryList = c);
+    }
+}</code></pre></div></div>
 
                     <div>
                     </div>
@@ -979,25 +970,24 @@ Adds an additional attribute to all categories returned called &#39;_.children&#
                 <td class="col-md-4">
                     <div class="io-description"><p>Method returns a list of subcategories for a given category id</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { CategoryService, Category } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       categoryList: Array&lt;Category&gt;;
-       categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { CategoryService, Category } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private categoryService: CategoryService){}
+export class MyComponent implements OnInit{
+    categoryList: Array&lt;Category&gt;;
+    categoryList$: Observable&lt;Array&lt;Category&gt;&gt;;
 
-       getSubcategories(category: Category){
-           this.categoryList$ = this.categoryService.getSubcategories(category.Id);
-           // or
-           this.categoryService.getSubcategories(category.Id).subscribe(
-               categoryList =&gt; this.categoryList = categoryList,
-               err =&gt; {...}
-           );
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private categoryService: CategoryService){}
+
+    getSubcategories(category: Category){
+        this.categoryList$ = this.categoryService.getSubcategories(category.Id);
+        // or
+        this.categoryService.getSubcategories(category.Id).subscribe(
+            categoryList =&gt; this.categoryList = categoryList,
+            err =&gt; {...}
+        );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

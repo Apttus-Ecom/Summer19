@@ -162,22 +162,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method returns an array of product attributes.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { ProductAttributeService, ProductAttribute, Product } from &#39;@apttus/ecommerce&#39;;
-     import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
-      productAttributeList: Array&lt;ProductAttribute&gt;;
-      productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { ProductAttributeService, ProductAttribute, Product } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-      constructor(private productAttributeService: ProductAttributeService){}
+export class MyComponent implements OnInit{
+    productAttributeList: Array&lt;ProductAttribute&gt;;
+    productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
 
-      getAttributeGroupIdsForFields(attributes: Array&lt;ProductAttribute&gt;){
-           this.productAttributeService.getAttributeGroupIdsForFields(attributes).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
-           // or
-           this.productAttributeList$ = this.productAttributeService.getAttributeGroupIdsForFields(attributes);
-      }
- }
-```</code></pre></div></div>
+    constructor(private productAttributeService: ProductAttributeService){}
+
+    getAttributeGroupIdsForFields(attributes: Array&lt;ProductAttribute&gt;){
+        this.productAttributeService.getAttributeGroupIdsForFields(attributes).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
+        // or
+        this.productAttributeList$ = this.productAttributeService.getAttributeGroupIdsForFields(attributes);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -252,22 +251,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method returns an array of product attribute forms with default attribute values for a given list of products.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { ProductAttributeService, ProductAttribute, Product } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       attributeFormList: Array&lt;ProductAttributeForm&gt;;
-       attributeFormList$: Observable&lt;Array&lt;ProductAttributeForm&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { ProductAttributeService, ProductAttribute, Product } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private productAttributeService: ProductAttributeService){}
+export class MyComponent implements OnInit{
+    attributeFormList: Array&lt;ProductAttributeForm&gt;;
+    attributeFormList$: Observable&lt;Array&lt;ProductAttributeForm&gt;&gt;;
 
-       getAttributesForProduct(product: Product){
-            this.productAttributeService.getProductAttributeDefaults(productList).subscribe(attributeForms =&gt; this.attributeFormList = attributeForms);
-            // or
-            this.attributeFormList$ = this.productAttributeService.getProductAttributeDefaults(productList);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private productAttributeService: ProductAttributeService){}
+
+    getAttributesForProduct(product: Product){
+        this.productAttributeService.getProductAttributeDefaults(productList).subscribe(attributeForms =&gt; this.attributeFormList = attributeForms);
+        // or
+        this.attributeFormList$ = this.productAttributeService.getProductAttributeDefaults(productList);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -337,22 +335,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method gets a list of product attributes for a given product. Can further filter the list by a group.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { ProductAttributeService, ProductAttribute, Product } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       productAttributeList: Array&lt;ProductAttribute&gt;;
-       productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { ProductAttributeService, ProductAttribute, Product } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private productAttributeService: ProductAttributeService){}
+export class MyComponent implements OnInit{
+    productAttributeList: Array&lt;ProductAttribute&gt;;
+    productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
 
-       getAttributesForProduct(product: Product){
-            this.productAttributeService.getProductAttributes(product).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
-            // or
-            this.productAttributeList$ = this.productAttributeService.getProductAttributes(product);
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private productAttributeService: ProductAttributeService){}
+
+    getAttributesForProduct(product: Product){
+        this.productAttributeService.getProductAttributes(product).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
+        // or
+        this.productAttributeList$ = this.productAttributeService.getProductAttributes(product);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -443,22 +440,21 @@
                     <div class="io-description"><p>Method returns an array of product attributes.
 Adds an additional property to all attributes returned called &#39;_.describe&#39;. This property contains metadata information about the attribute.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { ProductAttributeService, ProductAttribute, Product } from &#39;@apttus/ecommerce&#39;;
-     import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
-      productAttributeList: Array&lt;ProductAttribute&gt;;
-      productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { ProductAttributeService, ProductAttribute, Product } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-      constructor(private productAttributeService: ProductAttributeService){}
+export class MyComponent implements OnInit{
+    productAttributeList: Array&lt;ProductAttribute&gt;;
+    productAttributeList$: Observable&lt;Array&lt;ProductAttribute&gt;&gt;;
 
-      setDescribeInformationOnProductAttributes(attributes: Array&lt;ProductAttribute&gt;){
-           this.productAttributeService.setDescribeInformationOnProductAttributes(attributes).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
-           // or
-           this.productAttributeList$ = this.productAttributeService.setDescribeInformationOnProductAttributes(attributes);
-      }
- }
-```</code></pre></div></div>
+    constructor(private productAttributeService: ProductAttributeService){}
+
+    setDescribeInformationOnProductAttributes(attributes: Array&lt;ProductAttribute&gt;){
+        this.productAttributeService.setDescribeInformationOnProductAttributes(attributes).subscribe(attributeList =&gt; this.productAttributeList = attributeList);
+        // or
+        this.productAttributeList$ = this.productAttributeService.setDescribeInformationOnProductAttributes(attributes);
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

@@ -144,22 +144,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>The primary method that takes a search query string and returns a list of products. Uses standard Salesforce SOSL to retrieve results.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { SearchService, SearchResults } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       searchResults: SearchResults;
+<div><pre class="line-numbers"><code class="language-typescript">import { SearchService, SearchResults } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private searchService: SearchService){}
+export class MyComponent implements OnInit{
+    searchResults: SearchResults;
 
-       getSearchResults(query: string){
-            this.searchService.getSearchResults(query).subscribe(
-                results =&gt; this.searchResults = results,
-                err =&gt; {...}
-            );
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private searchService: SearchService){}
+
+    getSearchResults(query: string){
+        this.searchService.getSearchResults(query).subscribe(
+            results =&gt; this.searchResults = results,
+            err =&gt; {...}
+        );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -370,22 +369,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>This method takes a search query string and returns a list of products matching the search criteria.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { SearchService, SearchResults } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       searchResults: SearchResults;
+<div><pre class="line-numbers"><code class="language-typescript">import { SearchService, SearchResults } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private searchService: SearchService){}
+export class MyComponent implements OnInit{
+    searchResults: SearchResults;
 
-       searchProducts(searchString: string){
-            this.searchService.searchProducts(searchString).subscribe(
-                results =&gt; this.searchResults = results,
-                err =&gt; {...}
-            );
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private searchService: SearchService){}
+
+    searchProducts(searchString: string){
+        this.searchService.searchProducts(searchString).subscribe(
+            results =&gt; this.searchResults = results,
+            err =&gt; {...}
+        );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -575,22 +573,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>searchProductsByCategory will get a list of products for a given category</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { SearchService, SearchResults } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       searchResults: SearchResults;
+<div><pre class="line-numbers"><code class="language-typescript">import { SearchService, SearchResults } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private searchService: SearchService){}
+export class MyComponent implements OnInit{
+    searchResults: SearchResults;
 
-       getSearchResults(categoryId: string){
-            this.searchService.searchProductsByCategory(categoryId).subscribe(
-                results =&gt; this.searchResults = results,
-                err =&gt; {...}
-            );
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private searchService: SearchService){}
+
+    getSearchResults(categoryId: string){
+        this.searchService.searchProductsByCategory(categoryId).subscribe(
+            results =&gt; this.searchResults = results,
+            err =&gt; {...}
+        );
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

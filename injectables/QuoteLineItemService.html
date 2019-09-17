@@ -236,25 +236,22 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>This method returns the quote line item with adjustment details.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { QuoteLineItemService, QuoteLineItem } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       quoteLineItem: OrderLineItem;
-       quoteLineItem$: Observable&lt;OrderLineItem&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { QuoteLineItemService, QuoteLineItem } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private quoteLineItemService: QuoteLineItemService){}
+export class MyComponent implements OnInit{
+    quoteLineItem: OrderLineItem;
+    quoteLineItem$: Observable&lt;OrderLineItem&gt;;
 
-       ngOnInit(){
-            this.quoteLineItemService.getPromotionDetailsForQuoteLineItem(lineItemId: string).subscribe(o =&gt; this.quoteLineItem = o);
-            // or
-            this.quoteLineItem$ = this.quoteLineItemService.getPromotionDetailsForQuoteLineItem(lineItemId: string);
-       }
-  }
- * This method returns the adjustment items on a given quote line item.
- * &#64;param lineItemId Id of the quote line item.
- * &#64;returns An observable containing the given quote line item with adjustment item details.
- *</code></pre></div></div>
+    constructor(private quoteLineItemService: QuoteLineItemService){}
+
+    ngOnInit(){
+        this.quoteLineItemService.getPromotionDetailsForQuoteLineItem(lineItemId: string).subscribe(o =&gt; this.quoteLineItem = o);
+        // or
+        this.quoteLineItem$ = this.quoteLineItemService.getPromotionDetailsForQuoteLineItem(lineItemId: string);
+    }
+}</code></pre></div><p>This method returns the adjustment items on a given quote line item.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -264,6 +261,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -278,6 +276,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Id of the quote line item.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -289,7 +291,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>An observable containing the given quote line item with adjustment item details.</p>
+
                     </div>
                 </td>
             </tr>

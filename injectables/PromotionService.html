@@ -168,17 +168,16 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method applies promotion to the current cart based on the promo code passed.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { PromotionService } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       constructor(private promotionService: PromotionService){}
+<div><pre class="line-numbers"><code class="language-typescript">import { PromotionService } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       applyPromotions(promocode: string){
-            this.promotionService.applyPromotions(promocode).subscribe({...});
-       }
-  }
- ```</code></pre></div></div>
+export class MyComponent implements OnInit{
+    constructor(private promotionService: PromotionService){}
+
+    applyPromotions(promocode: string){
+          this.promotionService.applyPromotions(promocode).subscribe({...});
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -251,24 +250,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method returns an observable containing an array of adjustment line items for the current cart.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-     import { PromotionService } from &#39;@apttus/ecommerce&#39;;
-     import { AdjustmentItem } from &#39;@apttus/ecommerce&#39;;
-     import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none"> export class MyComponent implements OnInit{
+<div><pre class="line-numbers"><code class="language-typescript">  import { PromotionService } from &#39;&#64;apttus/ecommerce&#39;;
+  import { AdjustmentItem } from &#39;&#64;apttus/ecommerce&#39;;
+  import { Observable } from &#39;rxjs/Observable&#39;;
+
+  export class MyComponent implements OnInit{
       adjustmentLineItems$: Observable&lt;Array&lt;AdjustmentLineItem&gt;&gt;;
       adjustmentLineItems; Array&lt;AdjustmentLineItem&gt;;
       constructor(private promotionService: PromotionService){}
 
       getAppliedPromotionForCart(){
-           this.promotionService.getAppliedPromotionForCart().subscribe(res =&gt; this.adjustmentLineItems = res);
-           or
-           this.adjustmentLineItems$ = this.promotionService.getAppliedPromotionForCart();
+            this.promotionService.getAppliedPromotionForCart().subscribe(res =&gt; this.adjustmentLineItems = res);
+            or
+            this.adjustmentLineItems$ = this.promotionService.getAppliedPromotionForCart();
       }
- }
-``
-* &#64;returns an observable containing an array of adjustment line items for the current cart.</code></pre></div><p>  *</p>
-</div>
+  }</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -303,7 +299,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>an observable containing an array of adjustment line items for the current cart.</p>
+
                     </div>
                 </td>
             </tr>
@@ -368,17 +365,16 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method removes the promotion from the current cart if it is already applied.</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { PromotionService } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       constructor(private promotionService: PromotionService){}
+<div><pre class="line-numbers"><code class="language-typescript">import { PromotionService } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       removeAppliedPromotion(promocode: string, msg: string = &#39;valid&#39;, incentiveName?: string){
-            this.promotionService.removeAppliedPromotion(promocode).subscribe({...});
-       }
-  }
- ```</code></pre></div></div>
+export class MyComponent implements OnInit{
+      constructor(private promotionService: PromotionService){}
+
+      removeAppliedPromotion(promocode: string, msg: string = &#39;valid&#39;, incentiveName?: string){
+          this.promotionService.removeAppliedPromotion(promocode).subscribe({...});
+      }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

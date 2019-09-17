@@ -147,22 +147,21 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Method is used to retrieve active templates within Apttus</p>
 <h3 id="example">Example:</h3>
-<p>```typescript
-      import { TemplateService, Template } from &#39;@apttus/ecommerce&#39;;
-      import { Observable } from &#39;rxjs/Observable&#39;;</p>
-<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
-       templateList: Array&lt;Template&gt;;
-       templateList$: Observable&lt;Array&lt;Template&gt;&gt;;
+<div><pre class="line-numbers"><code class="language-typescript">import { TemplateService, Template } from &#39;&#64;apttus/ecommerce&#39;;
+import { Observable } from &#39;rxjs/Observable&#39;;
 
-       constructor(private templateService: TemplateService){}
+export class MyComponent implements OnInit{
+    templateList: Array&lt;Template&gt;;
+    templateList$: Observable&lt;Array&lt;Template&gt;&gt;;
 
-       ngOnInit(){
-            this.templateService.getActiveTemplates().subscribe(t =&gt; this.templateList = t);
-            // or
-            this.templateList$ = this.templateService.getActiveTemplates();
-       }
-  }
- ```</code></pre></div></div>
+    constructor(private templateService: TemplateService){}
+
+    ngOnInit(){
+        this.templateService.getActiveTemplates().subscribe(t =&gt; this.templateList = t);
+        // or
+        this.templateList$ = this.templateService.getActiveTemplates();
+    }
+}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
